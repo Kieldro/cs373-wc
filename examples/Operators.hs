@@ -3,10 +3,9 @@
 -- ------------
 
 {-
-(>>)     :: IO a   -> IO b -> IO b  -- 'then' operator
-assert   :: Bool   -> a    -> a
-putStrLn :: String         -> IO ()
-return   :: a              -> IO a
+assert   :: Bool   -> a -> a
+putStrLn :: String      -> IO ()
+return   :: a           -> IO a
 -}
 
 import Control.Exception (assert)

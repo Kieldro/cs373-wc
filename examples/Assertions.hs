@@ -24,8 +24,8 @@ cycle_length n
     | (mod n 2) == 0  =  1 + cycle_length (div n 2)
     | otherwise       =  1 + cycle_length ((3 * n) + 1)
 
-main :: IO ()
-main =
+main1 :: IO ()
+main1 =
     putStrLn "Assertions.hs" >>
 
     assert ((cycle_length 1) == 1) return () >>
@@ -33,7 +33,24 @@ main =
 
     putStrLn "Done."
 
+main2 :: IO ()
+main2 = do
+    putStrLn "Assertions.hs"
+
+    assert ((cycle_length 1) == 1) return ()
+    assert ((cycle_length 5) == 6) return ()
+
+    putStrLn "Done."
+
+main :: IO ()
+main = main1
+
 {-
 Assertions.hs
-Assertions.hs.app: Assertions.hs:34:4-9: Assertion failed
+Assertions.hs.app: Assertions.hs:31:5-10: Assertion failed
+-}
+
+{-
+Assertions.hs
+Assertions.hs.app: Assertions.hs:40:5-10: Assertion failed
 -}

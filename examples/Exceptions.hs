@@ -25,10 +25,10 @@ handler2 :: SomeException -> IO ()
 handler2 e = assert ((show e) == "abc") return ()
 
 main :: IO ()
-main =
-    putStrLn "Exceptions.hs" >>
+main = do
+    putStrLn "Exceptions.hs"
 
-    Control.Exception.catch (assert ((f False) == 0) return ()) handler1 >>
-    Control.Exception.catch (assert ((f True)  == 1) return ()) handler2 >>
+    Control.Exception.catch (assert ((f False) == 0) return ()) handler1
+    Control.Exception.catch (assert ((f True)  == 1) return ()) handler2
 
     putStrLn "Done."

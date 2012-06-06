@@ -6,13 +6,22 @@ function assert (b) {
     if (!b) {
         throw "Assertion Error"}}
 
-function inc (v) {
-    return v + 1;}
+function cycle_length (n) {
+    assert(n > 0);
+    c = 0;
+    while (n > 1) {
+        if ((n % 2) == 0)
+            n = n / 2;
+        else
+            n = (3 * n) + 1;
+        ++c;}
+    assert(c > 0);
+    return c;}
 
 print("Assertions.js\n");
 
-assert(inc(2) == 3);
-assert(inc(2) == 4);
+assert(cycle_length(2) == 3);
+assert(cycle_length(2) == 4);
 
 print("Done.\n");
 
