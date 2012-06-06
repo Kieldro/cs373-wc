@@ -1,0 +1,39 @@
+TestCollatz.java
+..F.F.F.F..F
+Time: 0.039
+There were 5 failures:
+1) testEval1(TestCollatz)junit.framework.AssertionFailedError: null
+	at TestCollatz.testEval1(TestCollatz.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at TestCollatz.main(TestCollatz.java:91)
+2) testEval2(TestCollatz)junit.framework.AssertionFailedError: null
+	at TestCollatz.testEval2(TestCollatz.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at TestCollatz.main(TestCollatz.java:91)
+3) testEval3(TestCollatz)junit.framework.AssertionFailedError: null
+	at TestCollatz.testEval3(TestCollatz.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at TestCollatz.main(TestCollatz.java:91)
+4) testEval4(TestCollatz)junit.framework.AssertionFailedError: null
+	at TestCollatz.testEval4(TestCollatz.java:64)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at TestCollatz.main(TestCollatz.java:91)
+5) testSolve(TestCollatz)junit.framework.AssertionFailedError: null
+	at TestCollatz.testSolve(TestCollatz.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at TestCollatz.main(TestCollatz.java:91)
+
+FAILURES!!!
+Tests run: 7,  Failures: 5,  Errors: 0
+
+Done.
