@@ -1,7 +1,28 @@
 #!/usr/bin/env python
 
-print "Test2.py"
+print "Test.py"
+print
 
-print "c" in ["a", "b", "c", "d"]
+i = 2147483647
+print type(i)
+print "i =", i
+print
+
+i += 1
+print type(i)
+print "i =", i
+print
 
 print "Done."
+
+"""
+Test.py
+
+<type 'int'>
+i = 2147483647
+
+<type 'long'>
+i = 2147483648
+
+Done.
+"""
