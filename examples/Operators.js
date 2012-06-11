@@ -4,7 +4,7 @@
 
 function assert (b) {
     if (!b) {
-        throw "Assertion Error"}}
+        throw "Assertion Error";}}
 
 print("Operators.js\n");
 

@@ -4,7 +4,7 @@
 
 function assert (b) {
     if (!b) {
-        throw "Assertion Error"}}
+        throw "Assertion Error";}}
 
 function cycle_length (n) {
     assert(n > 0);
@@ -20,8 +20,8 @@ function cycle_length (n) {
 
 print("Assertions.js\n");
 
-assert(cycle_length(2) == 3);
-assert(cycle_length(2) == 4);
+assert(cycle_length(1) == 1);
+assert(cycle_length(5) == 6);
 
 print("Done.\n");
 
