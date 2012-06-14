@@ -4,12 +4,14 @@ Unique: 91055
 First Name:
 Last Name:
 EID:
+E-mail:
 Estimated number of hours:
 Actual    number of hours:
 
 Partner First Name:
 Partner Last Name:
 Partner EID:
+Partner E-mail:
 Partner Estimated number of hours:
 Partner Actual    number of hours:
 
