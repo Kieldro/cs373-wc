@@ -26,10 +26,10 @@ handler2 :: SomeException -> IO ()
 handler2 e = assert ((show e) == "stack overflow") return ()
 
 main :: IO ()
-main =
-    putStrLn "StackVsHeap.hs" >>
+main = do
+    putStrLn "StackVsHeap.hs"
 
-    Control.Exception.catch (assert ((f 123456)  == 123456)  return ()) handler1 >>
-    Control.Exception.catch (assert ((f 1234567) == 1234567) return ()) handler2 >>
+    Control.Exception.catch (assert ((f 123456)  == 123456)  return ()) handler1
+    Control.Exception.catch (assert ((f 1234567) == 1234567) return ()) handler2
 
     putStrLn "Done."
