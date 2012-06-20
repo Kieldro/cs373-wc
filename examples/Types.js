@@ -8,20 +8,20 @@ function assert (b) {
 
 print("Types.js\n");
 
-var b = false;
+b = false;
 b = true;
 assert((typeof b) == "boolean");
 
-var i = 2;
+i = 2;
 assert((typeof i) == "number");
 
-var f = 2.3;
+f = 2.3;
 assert((typeof f) == "number");
 
-var s = "abc";
+s = "abc";
 assert((typeof s) == "string");
 
-var a = [2, 3, 4];
+a = [2, 3, 4];
 assert((typeof a) == "object");
 assert(a     instanceof Array);
 assert(Array instanceof Function);
@@ -37,7 +37,7 @@ function A () {
     this.n = 2;
     this.s = "abc";}
 
-var x = new A();
+x = new A();
 assert((typeof x) == "object");
 assert(x      instanceof A);
 assert(x      instanceof Object);
