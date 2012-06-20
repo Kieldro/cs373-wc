@@ -32,15 +32,16 @@ assert(i == 10);
 assert(s == 45);
 
 a = [2, 3, 4];
+b = [5, 6, 7];
 s = 0;
-for (i = 0; i != 3; ++i)
-    s += a[i];
-assert(s == 9);
+for (i = 0, j = 0; i != 3; ++i, ++j)
+    s += a[i] + b[j];
+assert(s == 27);
 
 a = [2, 3, 4];
 s = 0;
 for (i in a)
-    s += a[i];
-assert(s == 9);
+    s += parseInt(i);
+assert(s == 3);
 
 print("Done.\n");
