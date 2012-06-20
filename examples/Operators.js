@@ -198,6 +198,6 @@ a = [2];
 b = [3, 4];
 c = a.concat(b);                             // array concatenation
 assert(c != [2, 3, 4]);
-assert(!(c < [2, 3, 4]) || (c > [2, 3, 4]));
+assert(!((c < [2, 3, 4]) || (c > [2, 3, 4])));
 
 print("Done.\n");

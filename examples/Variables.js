@@ -33,6 +33,6 @@ assert(a == b);
 a.push(5);
 assert(a == b);
 assert(a != [2, 3, 4, 5])
-assert(!(a < [2, 3, 4, 5]) || (a > [2, 3, 4, 5]));
+assert(!((a < [2, 3, 4, 5]) || (a > [2, 3, 4, 5])));
 
 print("Done.\n");

@@ -3,7 +3,6 @@
 -- --------------
 
 {-
-(>>)     :: IO a   -> IO b        -> IO b  -- 'then' operator
 assert   :: Bool   -> a           -> a
 catch    :: IO a   -> (e -> IO a) -> IO a
 error    :: [Char]                -> a

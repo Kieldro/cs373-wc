@@ -3,10 +3,9 @@
 -- ------------
 
 {-
-(>>)     :: IO a   -> IO b -> IO b -- 'then' operator
-assert   :: Bool   -> a    -> a
-putStrLn :: String         -> IO ()
-return   :: a              -> IO a
+assert   :: Bool   -> a -> a
+putStrLn :: String      -> IO ()
+return   :: a           -> IO a
 -}
 
 import Control.Exception (assert)
@@ -39,23 +38,23 @@ x n =
         _  ->  0
 
 main :: IO ()
-main =
-    putStrLn "Selection.hs" >>
+main = do
+    putStrLn "Selection.hs"
 
-    assert ((f (-2)) == -1) return () >>
-    assert ((f   0 ) ==  0) return () >>
-    assert ((f   3 ) ==  1) return () >>
+    assert ((f (-2)) == -1) return ()
+    assert ((f   0 ) ==  0) return ()
+    assert ((f   3 ) ==  1) return ()
 
-    assert ((g (-2)) == -1) return () >>
-    assert ((g   0 ) ==  0) return () >>
-    assert ((g   3 ) ==  1) return () >>
+    assert ((g (-2)) == -1) return ()
+    assert ((g   0 ) ==  0) return ()
+    assert ((g   3 ) ==  1) return ()
 
-    assert ((h (-2)) == -1) return () >>
-    assert ((h   0 ) ==  0) return () >>
-    assert ((h   3 ) ==  1) return () >>
+    assert ((h (-2)) == -1) return ()
+    assert ((h   0 ) ==  0) return ()
+    assert ((h   3 ) ==  1) return ()
 
-    assert ((x (-2)) == -1) return () >>
-    assert ((x   0 ) ==  0) return () >>
-    assert ((x   3 ) ==  1) return () >>
+    assert ((x (-2)) == -1) return ()
+    assert ((x   0 ) ==  0) return ()
+    assert ((x   3 ) ==  1) return ()
 
     putStrLn "Done."

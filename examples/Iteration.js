@@ -44,4 +44,16 @@ for (i in a)
     s += parseInt(i);
 assert(s == 3);
 
+a = [2, 3, 4];
+s = 0;
+for (p in Iterator(a))
+    s += p[0]
+assert(s == 3);
+
+a = [2, 3, 4];
+s = 0;
+for (p in Iterator(a))
+    p[1] += 1
+assert(!((a < [2, 3, 4]) || (a > [2, 3, 4])));
+
 print("Done.\n");

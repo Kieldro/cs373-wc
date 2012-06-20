@@ -3,7 +3,6 @@
 -- ------
 
 {-
-(>>)     :: IO a          -> IO b     -> IO b -- 'then' operator
 (+)      :: a             -> a        -> a
 assert   :: Bool          -> a        -> a
 foldl    :: (a -> b -> a) -> a -> [b] -> a
@@ -22,13 +21,13 @@ sum_2 :: Num a => [a] -> a
 sum_2 a = foldl (+) 0 a
 
 main :: IO ()
-main =
-    putStrLn "Sum.hs" >>
+main = do
+    putStrLn "Sum.hs"
 
     let a :: [Int]
         a = [2,  3,  4]
-    in assert ((sum_1 a) == 9) return () >>
-       assert ((sum_2 a) == 9) return () >>
-       assert ((sum   a) == 9) return () >>
+    assert ((sum_1 a) == 9) return ()
+    assert ((sum_2 a) == 9) return ()
+    assert ((sum   a) == 9) return ()
 
     putStrLn "Done."
