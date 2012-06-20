@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+elementFormDefault="qualified">
+
+<!-- definition of simple elements -->
+<xs:element name="author" type="xs:string"/>
+<xs:element name="comment" type="xs:string"/>
+<xs:element name="company" type="xs:string"/>
+<xs:element name="course_name" type="xs:string"/>
+<xs:element name="course_num">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]([A-Z]|\s){0,2}\s?[f|s|w|n]?[0-9]{3}[A-Z]{0,2}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="grade">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(([B-D][+|\-]?)|A|A\-|F|P|CR|NC|Q|I|X)?"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="id">
+	<xs:simpleType>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\S{8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:element>
+<xs:element name="instructor" type="xs:string"/>
+<xs:element name="isbn">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="(([0-9]{10})|([0-9]{13}))"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="location" type="xs:string"/>
+<xs:element name="os" type="xs:string"/>
+<xs:element name="paper_category">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="journal"/>
+            <xs:enumeration value="conference"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="password" type="xs:string"/>
+<xs:element name="place_name" type="xs:string"/>
+<xs:element name="rating">
+    <xs:simpleType>
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="semester">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+		 <xs:pattern value="(Fall|Spring|Summer)\s?[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+<xs:element name="title" type="xs:string"/>
+<xs:element name="unique">
+    <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:element>
+
+<!-- definition of group elements -->
+<xs:group name="rating_group">
+    <xs:sequence>
+        <xs:element ref="rating"/>
+        <xs:element ref="comment"/>
+    </xs:sequence>
+</xs:group>
+<xs:group name="biblio_group">
+    <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="author"/>
+    </xs:sequence>
+</xs:group>
+<xs:group name="time_place_group">
+    <xs:sequence>
+        <xs:element ref="place_name"/>
+        <xs:element ref="location"/>
+        <xs:element ref="semester"/>
+    </xs:sequence>
+</xs:group>
+
+<!-- definition of complex elements -->
+<xs:complexType name="class_type">
+    <xs:sequence>
+        <xs:element ref="unique"/>
+        <xs:element ref="course_num"/>
+        <xs:element ref="course_name"/>
+        <xs:element ref="semester"/>
+        <xs:element ref="instructor"/>
+        <xs:group ref="rating_group"/>
+        <xs:element ref="grade"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="book_type">
+    <xs:sequence>
+        <xs:element ref="isbn"/>
+        <xs:group ref="biblio_group"/>
+        <xs:group ref="rating_group"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="paper_type">
+    <xs:sequence>
+        <xs:element ref="paper_category"/>
+        <xs:group ref="biblio_group"/>
+        <xs:group ref="rating_group"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="internship_type">
+    <xs:sequence>
+        <xs:group ref="time_place_group"/>
+        <xs:group ref="rating_group"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="place_type">
+    <xs:sequence>
+    		<xs:group ref="time_place_group"/>
+    		<xs:group ref="rating_group"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="game_type">
+    <xs:sequence>
+        <xs:element ref="os"/>
+        <xs:element ref="title"/>
+        <xs:group ref="rating_group"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="student_type">
+    <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="password"/>
+        <xs:element name="class" type="class_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="book" type="book_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="paper" type="paper_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="internship" type="internship_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="study_place" type="place_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="live_place" type="place_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="eat_place" type="place_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="fun_place" type="place_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="game" type="game_type"
+                    minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+</xs:complexType>
+
+<xs:element name="students">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="student" type="student_type"
+                        minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>
+
