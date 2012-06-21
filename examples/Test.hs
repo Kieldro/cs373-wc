@@ -1,6 +1,6 @@
 main :: IO ()
 main = do
-    putStrLn "Operators.hs"
+    putStrLn "Test.hs"
 
     (
     let s :: String
