@@ -2,16 +2,10 @@ main :: IO ()
 main = do
     putStrLn "Test.hs"
 
-    (
-    let s :: String
-        s = "abc"
-    putStrLn s
-    )
+    (let s = "abc" in
+        putStrLn s)
 
-    (
-    let s :: String
-        s = "def"
-    putStrLn s
-    )
+    (let s = "def" in
+        putStrLn s)
 
     putStrLn "Done."
