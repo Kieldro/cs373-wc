@@ -1,18 +1,18 @@
 Course Name: CS373
 Unique: 91055
 
-Leader First Name: Robert
-Leader Last Name: Reed
-Leader EID: rer945
-Leader E-mail: callmeelasinthe@gmail.com
-Leader Estimated number of hours: 20
-Leader Actual number of hours:
-
 Member First Name: Ian
 Member Last Name: Buitrago
 Member EID: ib
 Member E-mail: kieldro@gmail.com
 Member Estimated number of hours: 12
+Member Actual number of hours:
+
+Member First Name: Robert
+Member Last Name: Reed
+Member EID: rer945
+Member E-mail: callmeelasinthe@gmail.com
+Member Estimated number of hours: 20
 Member Actual number of hours:
 
 Member First Name: Fayze
