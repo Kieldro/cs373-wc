@@ -1,19 +1,26 @@
 Course Name: CS373
 Unique: 91055
 
-First Name: Ian
-Last Name: Buitrago
-EID: ib
-E-mail: kieldro@gmail.com
-Estimated number of hours: 12
-Actual    number of hours:
+Leader First Name: Robert
+Leader Last Name: Reed
+Leader EID: rer945
+Leader E-mail: callmeelasinthe@gmail.com
+Leader Estimated number of hours: 20
+Leader Actual number of hours:
 
-Partner First Name: Fayze
-Partner Last Name: Rahman
-Partner EID:
-Partner E-mail:
-Partner Estimated number of hours:
-Partner Actual number of hours:
+Member First Name: Ian
+Member Last Name: Buitrago
+Member EID: ib
+Member E-mail: kieldro@gmail.com
+Member Estimated number of hours: 12
+Member Actual number of hours:
+
+Member First Name: Fayze
+Member Last Name: Rahman
+Member EID:
+Member E-mail:
+Member Estimated number of hours:
+Member Actual number of hours:
 
 Turnin CS Username: keo
 GitHub ID: Kieldro
