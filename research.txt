@@ -332,3 +332,62 @@ Person:
 -external links: http://www.edano.gr.jp/
 -crises: Fukushima Daiichi nuclear disaster
 -organizations: Federal Governemnt of Japan
+
+
+
+                                                                     
+                                                                     
+                                             
+Crises:
+
+-name: World Hunger
+-kind: Global, Biological
+-location: All countries and cities
+-date and time: Ongoing.
+-human impact: Death from malnutirition. 25,000 people die daily. 925 million hungry people in 2010.
+-economic impact: In the developing world, more than 1.4 billion people currently live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the developing world are undernourished. They consume less than the minimum amount of calories essential for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.
+-resources needed: Money donations and food donations.
+-ways to help: Learn and spread awareness about world hunger: http://www.worldhunger.org/learn.htm
+Donate to the cause.  There are many organaztions available, here's one for example: https://www.freedomfromhunger.org/help/online.php?origin=ggHP
+-embedded images (e.g. Bing, Flickr, Google): http://stopworldhunger.webs.com/hunger.jpg
+http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg
+-embedded videos (e.g. Bing, Google, Vimeo): http://www.youtube.com/watch?v=6jSBW0BOPqM
+http://www.youtube.com/watch?v=0W2Ic5hV28w
+-social networks (e.g. Facebook, Twitter): http://www.facebook.com/WorldHungerRelief
+https://twitter.com/#!/FAOWFD
+-external links: http://www.who.int/en/
+http://www.worldhunger.org/
+http://www.freedomfromhunger.org/
+-organizations: World Health Organization, Freedom From Hunger
+-people: 1 in 7 people go to bed hungry. More than 4.5 million children under the age of 5 will die from hunger related causes this year.
+
+Organization:
+
+-name: World Health Organization
+-kind: Public Health Worldwide
+-location: Headquarters at Geneva, Switzerland, but has offices on all 7 continents in 145 different countries.
+-history:  It was established on 7 April 1948, with headquarters in Geneva, Switzerland. Since then, it's played a major role in the eradication of smallpox, yaws, onchocerciasis, SARS and many other infectious diseases.
+-contact info: http://www.who.int/about/contact_form/en/index.html
+-embedded images (e.g. Bing, Flickr, Google): http://humanosphere.kplu.org/wp-content/uploads/2012/05/whologo.jpg
+https://encrypted-tbn2.google.com/images?q=tbn:ANd9GcSVoQ8m5nXTZL_62ejj_fLsfDdBtXTiMlx-8o72F9yItj9Cj1bc4Q
+-embedded videos (e.g. Bing, Google, Vimeo): http://www.youtube.com/who
+http://www.youtube.com/watch?v=GWtTQhWwdac
+-social networks (e.g. Facebook, Twitter): https://twitter.com/#!/WHO
+http://www.facebook.com/pages/World-Health-Organization-WHO/154163327962392?v=wall
+-external links: http://new.paho.org/index.php
+-crises: World Hunger, Public Health, SARS Outbreak, Polio Outbreak, Pandemic Influenza, Smallpox
+-people: Dr. Margaret Chan Director General of WHO
+
+Person:
+
+-name: Margaret Chan
+-kind: Director-General of the World Health Organization
+-location: Hong Kong
+-embedded images (e.g. Bing-Flickr, Google): http://topnews.in/files/margaret-chan1.jpg
+http://static.guim.co.uk/sys-images/Guardian/About/General/2009/7/15/1247677189175/Margaret-Chan-the-World-H-001.jpg
+-embedded videos (e.g. Bing-Google, Vimeo): http://www.youtube.com/watch?v=JE4t9vPX1jA
+-social networks (e.g. Facebook, Twitter): https://twitter.com/#!/WHO
+-external links: http://www.who.int/en/  
+-crises: Margaret Chan has aided in many crisis including world hunger, the SARS outbreak, and pandemic influenza.
+-organizations: World Health Organization
+
