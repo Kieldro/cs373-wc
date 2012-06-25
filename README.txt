@@ -18,11 +18,18 @@ Member Estimated number of hours: 20
 Member Actual number of hours:
 Member Nickname: Robby
 
-Member First Name: Fayze
+Member First Name: Fayz
 Member Last Name: Rahman
-Member EID:
-Member E-mail:
-Member Estimated number of hours:
+Member EID: fnr75
+Member E-mail: fayz.rahman@utexas.edu
+Member Estimated number of hours: 22
+Member Actual number of hours:
+
+Member First Name: Jacob
+Member Last Name: Wilke
+Member EID: jlw3599
+Member E-mail: jake.wilke@gmail.com
+Member Estimated number of hours: 24
 Member Actual number of hours:
 Member Nickname: Fayze
 
@@ -47,8 +54,6 @@ GitHub ID: Kieldro
 GitHub Repository Name: cs373-pfd
 
 Comments:
-* hashbang in script?
-* modify loop inside loop?
 
 ----------------
 Pair Programming
