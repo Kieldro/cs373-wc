@@ -44,6 +44,7 @@
 			<xs:group ref="basicInfo"/>
 			<xs:group ref="externalResources"/>
 		</xs:sequence>
+	    <xs:attribute name="id" type="xs:string"/>
 	</xs:complexType>
 	
 	
