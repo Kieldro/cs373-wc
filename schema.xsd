@@ -1,0 +1,114 @@
+<?xml version="1.0">
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<!-- User defined sub-types-->
+	<xs:group name="specificLocation">
+		<xs:sequence>
+			<xs:element name="city" type="xs:string" minOccurs="0"/>
+			<xs:element name="state" type="xs:string" minOccurs="0"/>
+			<xs:element name="country" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="locationType">
+		<xs:choice>
+			<xs:group ref="specificLocation">
+			<xs:element name="unspecific" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>	
+	<xs:complexType name="stringAndURI" mixed="true">
+		<xs:element name="link" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+	</xs:complexType>
+	
+	
+	<!--Shared Page Data Fields-->
+	<xs:group name="basicInfo"> 
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="kind" type="xs:string"/>
+			<xs:element name="location" type="locationType"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="externalResources">
+		<xs:sequence>
+			<xs:element name="image" type="xs:anyURI" maxOccurs="unbounded"/>
+			<xs:element name="video" type="xs:anyURI" maxOccurs="unbounded"/>
+			<xs:element name="network" type="xs:anyURI" maxOccurs="unbounded"/>
+			<xs:element name="link" type="xs:anyURI" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	
+	
+	<!-- Page parent, includes general data groups -->
+	<xs:complexType name="datapage">
+		<xs:sequence>
+			<xs:group ref="basicInfo"/>
+			<xs:group ref="externalResources"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<!-- Actual page types, all pages extend from datapage.-->
+	<xs:complexType name="crisisPage">
+		<xs:complexContent>
+			<xs:extension base="datapage">
+				<xs:sequence>
+					<xs:element name="humanImpact" type="xs:string"/>
+					<xs:element name="economicImpact" type="xs:string"/>
+					<xs:element name="resourcesNeeded" type="xs:string"/>
+					<xs:element name="waysToHelp" type="stringAndURI"/>
+					<xs:element name="organizationID" type="xs:positiveInteger" 
+								maxOccurs="unbounded"/>
+					<xs:element name="personID" type="xs:positiveInteger" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extention>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="organizationPage">
+		<xs:complexContent>
+			<xs:extension base="datapage">
+				<xs:sequence>
+					<xs:element name="history" type="xs:string"/>
+					<xs:element name="contactInfo" type="stringAndURI"/>
+					<xs:element name="crisisID" type="xs:positiveInteger" maxOccurs="unbounded"/>
+					<xs:element name="personID" type="xs:positiveInteger" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extention>
+		</xs:complexContent>
+	</xs:complexType>
+		<xs:complexType name="personPage">
+		<xs:complexContent>
+			<xs:extension base="datapage">
+				<xs:sequence>
+					<xs:element name="crisisID" type="xs:positiveInteger" maxOccurs="unbounded"/>
+					<xs:element name="organizationID" type="xs:positiveInteger"
+								maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extention>
+		</xs:complexContent>
+	</xs:complexType>
+	
+
+    <!--Actual schema elements defined here-->
+	<xs:element name="crises">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="crisis" type="crisisPage" minOccurs="4" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="organizations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="organization" type="organizationPage" minOccurs="4"
+							maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="people">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="person" type="personPage" minOccurs="4" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
