@@ -1,5 +1,6 @@
-Crises
+﻿Crises
 
+-id:1
 -name: 
 	World Hunger
 -kind: 
@@ -35,6 +36,7 @@ Crises
 -people: 
 	1 in 7 people go to bed hungry. More than 4.5 million children under the age of 5 will die from hunger related causes this year.
 
+-id:2
 -name: 
 	Fukushima Daiichi nuclear disaster
 -kind: 
@@ -66,6 +68,8 @@ Crises
 	Groupe INTRA
 -people
 
+
+-id:3
 -name
 	2011 Tōhoku earthquake and tsunami
 -kind
@@ -103,6 +107,8 @@ Crises
 -people
 	Tadateru Konoé
 	
+
+-id:4
 -name 
 	The Seige of homs
 -kind 
@@ -139,6 +145,7 @@ Crises
       
 Organization:
 
+-id:5
 -name: 
 	World Health Organization
 -kind: 
@@ -165,9 +172,7 @@ Organization:
 -people: 
 	Dr. Margaret Chan Director General of WHO
 
-
-
-
+-id:6
 -name: 
 	Groupe INTRA
 -kind: 
@@ -187,6 +192,7 @@ Organization:
 -people: 
 
 
+-id:7
 -name
 	Japanese Red Cross
 -kind
@@ -218,7 +224,8 @@ Organization:
 	2011 Tōhoku earthquake and tsunami
 -people
 	Tadateru Konoé
-	
+
+-id:8	
 -name 
 	The Free Syrian Army
 -kind 
@@ -249,6 +256,7 @@ Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals 
 	
 People:
 
+-id:9
 -name: 
 	Margaret Chan
 -kind: 
@@ -269,6 +277,7 @@ People:
 -organizations: 
 	World Health Organization
 
+-id:10
 -name: 
 	Yukio Edano
 -kind: 
@@ -286,6 +295,7 @@ People:
 -organizations: 
 	Federal Governemnt of Japan
 
+-id:11
 -name
 	Tadateru Konoé
 -kind
@@ -305,9 +315,10 @@ People:
 	2011 Tohoku earthquake
 -organizations
 	Japanese Red Cross
-		
+	
+-id:12	
 -name 
-	Basshar Al-assar
+	Basshar Al-assad
 -kind
 	Leader/ President
 -location 
