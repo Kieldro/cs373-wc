@@ -2,66 +2,72 @@ Course Name: CS373
 Unique: 91055
 Team Name: All the Single Ladies
 
-Member First Name: Ian
-Member Last Name: Buitrago
-Member EID: ib
-Member E-mail: kieldro@gmail.com
-Member Estimated number of hours: 12
-Member Actual number of hours:
-Member Nickname: Keo
+First Name:					Ian
+Last Name:					Buitrago
+EID:						ib
+E-mail:						kieldro@gmail.com
+Estimated number of hours:	18
+Actual    number of hours:	
 
-Member First Name: Robert
-Member Last Name: Reed
-Member EID: rer945
-Member E-mail: callmeelasinthe@gmail.com
-Member Estimated number of hours: 20
-Member Actual number of hours:
-Member Nickname: Robby
+Turnin CS Username:		keo
+GitHub ID:				Kieldro
+GitHub Repository Name:	cs373-wc
+Google App Engine URL:	jwilke-cs373-wc.appspot.com
 
-Member First Name: Fayz
-Member Last Name: Rahman
-Member EID: fnr75
-Member E-mail: fayz.rahman@utexas.edu
-Member Estimated number of hours: 22
-Member Actual number of hours:
+--------------------
+Group Member Information
+--------------------
 
-Member First Name: Jacob
-Member Last Name: Wilke
-Member EID: jlw3599
-Member E-mail: jake.wilke@gmail.com
-Member Estimated number of hours: 24
-Member Actual number of hours:
-Member Nickname: Fayze
+Member First Name:			Fayz
+Member Last Name:			Rahman
+Member EID:					fnr75
+Member E-mail:				fayz.rahman@utexas.edu
+Member Rating:				Excellent
+Member Point Adjustment:	NA	<only if you're leader>
 
-Member First Name: Jake
-Member Last Name: Rahman
-Member EID:
-Member E-mail:
-Member Estimated number of hours:
-Member Actual number of hours:
-Member Nickname: Jacob
+Member First Name:			Jake
+Member Last Name:			Wilke
+Member EID:					jlw3599
+Member E-mail:				jake.wilke@gmail.com
+Member Rating:				Excellent
+Member Point Adjustment:	NA	<only if you're leader>
 
-Member First Name: Fayze
-Member Last Name: Rahman
-Member EID:
-Member E-mail:
-Member Estimated number of hours:
-Member Actual number of hours:
-Member Nickname: Jorge
+Member First Name:			Ross
+Member Last Name:			Shwarts
+Member EID:					Big Guy
+Member E-mail:				grsshwarts@gmail.com
+Member Rating:				Excellent
+Member Point Adjustment:	NA	<only if you're leader>
 
-Turnin CS Username: keo
-GitHub ID: Kieldro
-GitHub Repository Name: cs373-pfd
+Member First Name:			Robert
+Member Last Name:			Reed
+Member EID:					rer945
+Member E-mail:				callmeelasinthe@gmail.com
+Member Rating:				Unsatisfactory
+Member Point Adjustment:	NA	<only if you're leader>
 
 Comments:
 
-----------------
-Pair Programming
-----------------
 
-I attest to that fact that, of the time spent working on this project,
-at least seventy-five (75) percent was spent working with the person
-listed above in pair programming.
+--------------------
+Group Member Ratings
+--------------------
+
+Excellent: consistently went above and beyond; tutored partner; carried more than her fair share of the load.
+
+Very Good: consistently did what she was supposed to do; very well prepared and cooperative.
+
+Satisfactory: usually did what she was supposed to do; minimally prepared and cooperative.
+
+Marginal: sometimes failed to show up; rarely prepared.
+
+Deficient: often failed to show up; rarely prepared.
+
+Unsatisfactory: consistently failed to show up; unprepared.
+
+Superficial: practically no participation.
+
+No Show: no participation at all.
 
 ---------------
 Code of Conduct
