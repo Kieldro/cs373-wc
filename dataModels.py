@@ -1,37 +1,83 @@
 import datetime
 from google.appengine.ext import db
 from google.appengine.api import users
+'''
+A model class describes a kind of entity.
+'''
 
 
 class Crisis(db.Model):
-	'''
-	A model class describes a kind of entity.
-	'''
 	# entity properties
 	name = db.StringProperty(required=True)
-	kind = db.StringProperty(required=True, choices=set(["executive", "manager", "producer"]))
-	date = db.DateProperty()
-	new_hire_training_completed = db.BooleanProperty(indexed=False)
-	account = db.UserProperty()
+	kind = db.StringProperty(required=True)
+	location = db.StringProperty(required=True)
+	image = db.StringProperty(required=True)
+	video = db.StringProperty(required=True)
+	network = db.StringProperty(required=True)
+	link = db.StringProperty(required=True)
+	humanImpact = db.StringProperty(required=True)
+	ecoImpact = db.StringProperty(required=True)
+	resources = db.StringProperty(required=True)
+	waysToHelp = db.StringProperty(required=True)
+	date = db.DateProperty(required=True)
+	
+	orgs = 0
+	people = 0
+
+class Organization(db.Model):
+	name = db.StringProperty(required=True)
+	kind = db.StringProperty(required=True)
+	location = db.StringProperty(required=True)
+	image = db.StringProperty(required=True)
+	video = db.StringProperty(required=True)
+	network = db.StringProperty(required=True)
+	link = db.StringProperty(required=True)
+	history = db.StringProperty(required=True)
+	contactInfo = db.StringProperty(required=True)
+	
+	crisis = 0
+	people = 0
+
+class Person(db.Model):
+	name = db.StringProperty(required=True)
+	kind = db.StringProperty(required=True)
+	location = db.StringProperty(required=True)
+	image = db.StringProperty(required=True)
+	video = db.StringProperty(required=True)
+	network = db.StringProperty(required=True)
+	link = db.StringProperty(required=True)
+	
+	orgs = 0
+	people = 0
+	
 
 
 # create an entity
-e = Crisis(name="Fukushima",
+c = Crisis(name="Fukushima",
 			role="nulcear",
-			account=users.get_current_user() )
+			location="Japan",
+			image="NA",
+			video="NA",
+			network="NA",
+			link="NA",
+			humanImpact="great",
+			ecoImpact="vast",
+			resources="food",
+			waysToHelp="yes",
+			date="Japan")
 
-e.date = datetime.datetime.now().date()
+c.date = datetime.datetime.now().date()
 
 # store in the datastore
-e.put()
+c.put()
 
 training_registration_list = [users.User("Alfred.Smith@example.com"),
 								users.User("jharrison@example.com"),
 								users.User("budnelson@example.com")]
 # GQL query to the datastore
-employees_trained = db.GqlQuery("SELECT * FROM Crisis WHERE account IN :1",
+employees_trained = db.GqlQuery("SELECT * FROM Crisis WHERE kind IN :1",
 								training_registration_list)
 
-for e in employees_trained:
-	e.new_hire_training_completed = True
-	db.put(e)
+for d in employees_trained:
+	d.new_hire_training_completed = 'BOOYAKASHA'
+	db.put(d)
