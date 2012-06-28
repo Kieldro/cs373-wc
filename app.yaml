@@ -1,0 +1,11 @@
+application: jwilke-cs373-wc
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /staticpages
+  static_dir: staticpages
+
+- url: /.*
+  script: helloworld.py
