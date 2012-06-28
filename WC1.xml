@@ -72,7 +72,7 @@
 		<name>The Seige of Homs</name>
 		<kind>Military</kind>
 		<location>
-			<city>Homs<city>
+			<city>Homs</city>
 			<country>Syria</country>
 		</location>
 		<image>http://www.blottr.com/sites/default/files/styles/620x390/public/tank-babaamro.png</image>
@@ -128,7 +128,7 @@
 		<kind>Relief Organization</kind>
 		<location>
 			<city>Tokyo</city>
-			<counry>Japan</country>
+			<country>Japan</country>
 		</location>
 		<image>http://en.wikipedia.org/wiki/File:Tsunetami_Sano.jpg</image>
 		<image>http://upload.wikimedia.org/wikipedia/commons/a/ac/Japanese_Red_Cross_near_the_Yalu_River_1904.jpg</image>
