@@ -1,6 +1,6 @@
 import datetime
-from google.appengine.ext import db
-from google.appengine.api import users
+from google.appengine.ext import *
+#from google.appengine.api import users
 '''
 A model class describes a kind of entity.
 '''
@@ -8,26 +8,35 @@ A model class describes a kind of entity.
 
 class Crisis(db.Model):
 	# entity properties
+	id = IntegerProperty
 	name = db.StringProperty(required=True)
 	kind = db.StringProperty(required=True)
 	location = db.StringProperty(required=True)
-	image = db.StringProperty(required=True)
-	video = db.StringProperty(required=True)
-	network = db.StringProperty(required=True)
-	link = db.StringProperty(required=True)
+	state = db.StringProperty()
+	city = db.StringProperty()
+	country = db.StringProperty()
+	image = db.ListProperty(db.StringProperty(required=True) )
+	video = db.ListProperty(db.StringProperty(required=True) )
+	network = db.ListProperty(db.StringProperty(required=True) )
+	link = db.ListProperty(db.StringProperty(required=True) )
 	humanImpact = db.StringProperty(required=True)
 	ecoImpact = db.StringProperty(required=True)
 	resources = db.StringProperty(required=True)
 	waysToHelp = db.StringProperty(required=True)
 	date = db.DateProperty(required=True)
+	time = db.TimeProperty()
 	
-	orgs = 0
-	people = 0
+	orgs = db.ListProperty(IntegerProperty)
+	people = db.ListProperty(IntegerProperty)
 
 class Organization(db.Model):
+	id = IntegerProperty
 	name = db.StringProperty(required=True)
 	kind = db.StringProperty(required=True)
 	location = db.StringProperty(required=True)
+	state = db.StringProperty()
+	city = db.StringProperty()
+	country = db.StringProperty()
 	image = db.StringProperty(required=True)
 	video = db.StringProperty(required=True)
 	network = db.StringProperty(required=True)
@@ -35,20 +44,24 @@ class Organization(db.Model):
 	history = db.StringProperty(required=True)
 	contactInfo = db.StringProperty(required=True)
 	
-	crisis = 0
-	people = 0
+	crisis = db.ListProperty(IntegerProperty)
+	people = db.ListProperty(IntegerProperty)
 
 class Person(db.Model):
+	id = IntegerProperty
 	name = db.StringProperty(required=True)
 	kind = db.StringProperty(required=True)
 	location = db.StringProperty(required=True)
+	state = db.StringProperty()
+	city = db.StringProperty()
+	country = db.StringProperty()
 	image = db.StringProperty(required=True)
 	video = db.StringProperty(required=True)
 	network = db.StringProperty(required=True)
 	link = db.StringProperty(required=True)
 	
-	orgs = 0
-	people = 0
+	orgs = db.ListProperty(IntegerProperty)
+	people = db.ListProperty(IntegerProperty)
 	
 
 

@@ -34,8 +34,15 @@ Member Point Adjustment:	NA	<only if you're leader>
 
 Member First Name:			Ross
 Member Last Name:			Shwarts
-Member EID:					Big Guy
+Member EID:					grs626
 Member E-mail:				grsshwarts@gmail.com
+Member Rating:				Excellent
+Member Point Adjustment:	NA	<only if you're leader>
+
+Member First Name:			Matt
+Member Last Name:			Hausmann
+Member EID:					mph453
+Member E-mail:				matthew.p.hausmann@gmail.com
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
