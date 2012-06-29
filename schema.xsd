@@ -1,4 +1,4 @@
-<?xml version="1.0">
+<?xml version="1.0"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	
 	<!-- User defined sub-types-->
@@ -9,10 +9,23 @@
 			<xs:element name="country" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
+	<xs:group name="dates">
+		<xs:sequence>
+			<xs:element name="date" type="xs:date"/>
+			<xs:element name="endDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="additional" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="dateType">
+		<xs:choice>
+			<xs:group ref="dates"/>
+			<xs:element name="otherDiscription" type="xs:string"/>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="locationType">
 		<xs:choice>
-			<xs:group ref="specificLocation">
-			<xs:element name="unspecific" type="xs:string"/>
+			<xs:group ref="Location"/>
+			<xs:element name="otherDiscription" type="xs:string"/>
 		</xs:choice>
 	</xs:complexType>	
 	<xs:complexType name="stringAndURI" mixed="true">
@@ -61,7 +74,7 @@
 								maxOccurs="unbounded"/>
 					<xs:element name="personID" type="xs:positiveInteger" maxOccurs="unbounded"/>
 				</xs:sequence>
-			</xs:extention>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="organizationPage">
@@ -73,7 +86,7 @@
 					<xs:element name="crisisID" type="xs:positiveInteger" maxOccurs="unbounded"/>
 					<xs:element name="personID" type="xs:positiveInteger" maxOccurs="unbounded"/>
 				</xs:sequence>
-			</xs:extention>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 		<xs:complexType name="personPage">
@@ -84,7 +97,7 @@
 					<xs:element name="organizationID" type="xs:positiveInteger"
 								maxOccurs="unbounded"/>
 				</xs:sequence>
-			</xs:extention>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	
