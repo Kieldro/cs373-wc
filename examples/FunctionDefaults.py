@@ -13,19 +13,19 @@ def f (x, y, z = 4) :
 def g (x = 2, y = 3, z = 4) :
     return [x, y, z]
 
-def h1 (y = []) : # mutable default
-    y += [2]
-    return y
+def h1 (x = []) : # mutable default
+    x += [2]
+    return x
 
-def h2 (y = ()) : # immutable default
-    y += (2,)
-    return y
+def h2 (x = ()) : # immutable default
+    x += (2,)
+    return x
 
-def h3 (y = None) :
-    if y is None :
-        y = []
-    y += [2]
-    return y
+def h3 (x = None) :
+    if x is None :
+        x = []
+    x += [2]
+    return x
 
 print "FunctionDefaults.py"
 
