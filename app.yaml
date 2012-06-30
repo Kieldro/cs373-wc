@@ -1,0 +1,17 @@
+application: jwilke-cs373-wc
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /test.*
+  script: TestWC1.py
+
+- url: /xml/export.*
+  script: TestWC1.py
+
+- url: /staticpages
+  static_dir: staticpages
+
+- url: /.*
+  script: WC.py
