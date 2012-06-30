@@ -65,5 +65,4 @@ class Person(db.Model):
 	orgs = db.ListProperty(int)
 	people = db.ListProperty(int)
 	
-model = Person(ID=1,name="Lyle",kind="Judge",location="pizza",image=[],video=[],network=[],link=[],orgs=[],people=[])
-model.put
+
