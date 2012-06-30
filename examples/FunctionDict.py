@@ -21,15 +21,14 @@ assert d            == {'a' : 3, 'b' : 4}
 assert f(2, 5, **d) == [2, 5, {'a' : 3, 'b' : 4}]
 assert f(2, 5, **d) == [2, 5, {'b' : 4, 'a' : 3}]
 
-d = {"a" : 3, "b" : 4, "c" : 5}
-#assert f(2, **d) == [{"a" : 3, "b" : 4, "c" : 5}] # TypeError: f() takes exactly 2 non-keyword arguments (1 given)
+d = {"y" : 3}
+assert f(2, **d) == [2, 3, {}]
+#f(**d)                        # TypeError: f() takes exactly 2 arguments (1 given)
 
-d = {"a" : 3, "b" : 4, "y" : 5}
-assert f(2, **d) == [2, 5, {'a': 3, 'b' : 4}]
-assert f(2, **d) == [2, 5, {'b': 4, 'a' : 3}]
+d = {"y" : 3, "a" : 2}
+assert f(2, **d) == [2, 3, {'a' : 2}]
 
-d = {"a" : 3, "x" : 4, "y" : 5}
-#assert f(2, **d) == [2, 5, {'a': 3, 'x' : 4}] # TypeError: f() got multiple values for keyword argument 'x'
-assert  f(**d)    == [4, 5, {'a': 3}]
+d = {"y" : 3, "x" : 2}
+#f(2, **d)             # TypeError: f() got multiple values for keyword argument 'x'
 
 print "Done."
