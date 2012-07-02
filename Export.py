@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # ----------------------
 # export.py
 # written by Robert Reed
