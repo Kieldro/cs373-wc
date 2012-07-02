@@ -74,7 +74,7 @@ def dictCommonElements(elem) :
 		print '%s = %s' % (k, v)
 		
 	print 'END-------------------------------------------------------'
-"""
+	"""
 	return d
 	
 def createCrisis(elem) :
@@ -134,16 +134,15 @@ def createCrisis(elem) :
 	
 	d['orgs'] = [o.text for o in elem.findall('organizationId')]
 	d['people'] = [p.text for p in elem.findall('personId')]
-
+	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
 		print '%s = %s' % (k, v)
 		
 	print 'END-------------------------------------------------------'
-	
-	#c = Crisis(**d)
-	#return c
-	return None
+	"""
+	c = Crisis(**d)
+	return c
 	
 def createOrganization(elem) :
 	"""
@@ -173,16 +172,16 @@ def createOrganization(elem) :
 	d['crisis'] = [c.text for c in elem.findall('crisisId')]
 	d['people'] = [p.text for p in elem.findall('personId')]
 	
-	#print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	#for k, v in d.items() :
-	#	print '%s = %s' % (k, v)
+	"""
+	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+	for k, v in d.items() :
+		print '%s = %s' % (k, v)
 		
-	#print 'END-------------------------------------------------------'
+	print 'END-------------------------------------------------------'
+	"""
+	o = Organizatinon(**d)
+	return o
 	
-	#o = Organizatinon(**d)
-	#return o
-	return None
-
 def createPerson(elem) :
 	"""
 	Creates a Person instance.
@@ -200,9 +199,8 @@ def createPerson(elem) :
 		
 	print 'END-------------------------------------------------------'
 	"""
-	#p = Person(**d)
-	#return p
-	return None
+	p = Person(**d)
+	return p
 
 if __name__ == "__main__" :
 	tree = parse(sys.stdin)
