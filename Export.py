@@ -9,7 +9,7 @@
 # -------
 
 from xml.etree.ElementTree import Element, SubElement
-from Models.py import Crisis, Organization, Person
+from Models import Crisis, Organization, Person
 
 # ---------
 # buildTree
@@ -38,7 +38,7 @@ return the root element of the data tree containing all the data
 # buildPages
 # ----------
 
-def buildPagesOfType(root, pageType, pageList, pageTypeBuildFunction) :
+def buildPagesofType(root, pageType, pageList, pageTypeBuildFunction) :
 	"""
 Given a root, build all the subElements of a given page type (using the 
 given function: pageTypeBuildFunction) and make them subElements of the

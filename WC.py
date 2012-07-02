@@ -1,5 +1,7 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
+from RunExport import runExport
+from minixsv import pyxsval
 
 class MainPage(webapp.RequestHandler):
     def get(self):
@@ -21,11 +23,13 @@ class ImportPage(webapp.RequestHandler):
 	self.response.out.write(str(xmlfile))
 
     def get(self):
-        self.response.out.write('Hello import')
+        print "hello world"
 
 class ExportPage(webapp.RequestHandler):
     def get(self):
-        self.response.out.write('hello world')
+        result = runExport()
+        self.response.headers['Content-Type'] = 'text/xml'
+        self.response.out.write(str(result))
 
 application = webapp.WSGIApplication([('/', MainPage), ('/xml/export', ExportPage), ('/xml/import', ImportPage)],
                                      debug=True)
