@@ -9,7 +9,7 @@
 # -------
 
 from xml.etree.ElementTree import Element, SubElement
-#from GAEModels.py import Crisis, Organization, Person
+from Models.py import Crisis, Organization, Person
 
 # ---------
 # buildTree
