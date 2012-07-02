@@ -68,7 +68,13 @@ def dictCommonElements(elem) :
 	d['video'] = [v.text for v in elem.findall('video')]
 	d['network'] = [n.text for n in elem.findall('network')]
 	d['link'] = [l.text for l in elem.findall('link')]
-	
+	"""
+	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+	for k, v in d.items() :
+		print '%s = %s' % (k, v)
+		
+	print 'END-------------------------------------------------------'
+	"""
 	return d
 	
 def createCrisis(elem) :
@@ -128,16 +134,15 @@ def createCrisis(elem) :
 	
 	d['orgs'] = [o.text for o in elem.findall('organizationId')]
 	d['people'] = [p.text for p in elem.findall('personId')]
-
-	#print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	#for k, v in d.items() :
-	#	print '%s = %s' % (k, v)
-	#	
-	#print 'END-------------------------------------------------------'
-	#
-	#c = Crisis(**d)
-	#return c
-	return None
+	"""
+	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+	for k, v in d.items() :
+		print '%s = %s' % (k, v)
+		
+	print 'END-------------------------------------------------------'
+	"""
+	c = Crisis(**d)
+	return c
 	
 def createOrganization(elem) :
 	"""
@@ -167,16 +172,16 @@ def createOrganization(elem) :
 	d['crisis'] = [c.text for c in elem.findall('crisisId')]
 	d['people'] = [p.text for p in elem.findall('personId')]
 	
-	#print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	#for k, v in d.items() :
-	#	print '%s = %s' % (k, v)
+	"""
+	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
+	for k, v in d.items() :
+		print '%s = %s' % (k, v)
 		
-	#print 'END-------------------------------------------------------'
+	print 'END-------------------------------------------------------'
+	"""
+	o = Organizatinon(**d)
+	return o
 	
-	#o = Organizatinon(**d)
-	#return o
-	return None
-
 def createPerson(elem) :
 	"""
 	Creates a Person instance.
@@ -187,16 +192,15 @@ def createPerson(elem) :
 	
 	d['orgs'] = [o.text for o in elem.findall('organizationId')]
 	d['crisis'] = [c.text for c in elem.findall('crisisId')]
-	
+	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
 		print '%s = %s' % (k, v)
 		
 	print 'END-------------------------------------------------------'
-	
-	#p = Person(**d)
-	#return p
-	return None
+	"""
+	p = Person(**d)
+	return p
 
 if __name__ == "__main__" :
 	tree = parse(sys.stdin)
