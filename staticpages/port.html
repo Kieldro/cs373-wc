@@ -6,10 +6,14 @@
 	<body>
 		<div class="Import">
 			<h2>IMPORT UTILITY</h2>
+			<form action="/xml/import" enctype="multipart/form-data" method="post">
+    				<div>Import File XML: <input type="file" name="data" /></div>
+				<input type="submit" />
+			</form>
 		</div>
 		<div class="Export">
 			<h2>EXPORT UTILITY</h2>
-			<a class="btn btn-primary" href="/xml/export">Export</a>
+			<a href="/xml/export"><button class="tool_button">Export XML</button></a>
 		</div>
 	</body>
 </html>
