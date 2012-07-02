@@ -72,7 +72,6 @@ returns a list of sub-elements to be added in correct order
 """
 #append shared data first
         elements = buildCommonData(crisisElement, crisisModel)
-
 	#append type specific data next
 	if crisisModel.date == "" :
 		if crisisModel.startDate != "":
@@ -111,7 +110,6 @@ returns a list of sub-elements to be added in correct order
 """
 	#create and append shared data first
         elements = buildCommonData(orgElement, orgModel)
-
 	#create type specific data
 	elements.append( Element("history", text=orgModel.history))
 	cie = Element("contactInfo", text=orgModel.contactInfoText[0])
@@ -140,8 +138,8 @@ returns a list of sub-elements to be added in correct order
 """
 	#append shared data first
         elements = buildCommonData(personElement, personModel) 
-
-	#create type specific data
+        
+		#create type specific data
 	for id in personModel.crises:
 		elements.append(Element("crisisId", text=str(id)))
 	for id in personModel.orgs:
@@ -185,4 +183,3 @@ model is a model that represents the same type as the element
 	for x in model.link:
 		elements.append(Element("link", text=x))
 	return elements
-
