@@ -3,14 +3,15 @@ from Import import parse, buildModels
 
 import sys, operator, Models
 
-tree = parse(sys.stdin)
-crises, organizations, people = buildModels(tree)
+def runImport(filestring):
+	tree = parse(filestring)
+	crises, organizations, people = buildModels(tree)
 
-for c in crises:
-	Crisis(c).put()
+	for c in crises:
+		Crisis(c).put()
 
-for o in organizations:
-	Organization(o).put()
+	for o in organizations:
+		Organization(o).put()
 
-for p in people:
-	Person(p).put()
+	for p in people:
+		Person(p).put()
