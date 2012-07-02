@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.ext import *
+from google.appengine.ext import db
 #from google.appengine.api import users
 '''
 A model class describes a kind of entity.
@@ -12,7 +12,7 @@ class Crisis(db.Model):
 	# entity properties
 	ID = db.IntegerProperty(required=True)
 	name = db.StringProperty(required=True)
-	kind = db.StringProperty(required=True)
+	knd = db.StringProperty(required=True)
 	location = db.StringProperty(required=True)
 	state = db.StringProperty()
 	city = db.StringProperty()
@@ -24,7 +24,7 @@ class Crisis(db.Model):
 	date = db.StringProperty(required=True)
 	startDate = db.DateProperty()
 	endDate = db.DateProperty()
-	additional = db.StringPeoperty()
+	additional = db.StringProperty()
 	humanImpact = db.StringProperty(required=True)
 	ecoImpact = db.StringProperty(required=True)
 	resources = db.StringProperty(required=True)
@@ -34,9 +34,9 @@ class Crisis(db.Model):
 	people = db.ListProperty(int)
 
 class Organization(db.Model):
-	ID = IntegerProperty(require=True)
+	ID = db.IntegerProperty(required=True)
 	name = db.StringProperty(required=True)
-	kind = db.StringProperty(required=True)
+	knd = db.StringProperty(required=True)
 	location = db.StringProperty(required=True)
 	state = db.StringProperty()
 	city = db.StringProperty()
@@ -52,9 +52,9 @@ class Organization(db.Model):
 	people = db.ListProperty(int)
 
 class Person(db.Model):
-	ID = IntegerProperty(required=True)
+	ID = db.IntegerProperty(required=True)
 	name = db.StringProperty(required=True)
-	kind = db.StringProperty(required=True)
+	knd = db.StringProperty(required=True)
 	location = db.StringProperty(required=True)
 	state = db.StringProperty()
 	city = db.StringProperty()
