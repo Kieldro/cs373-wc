@@ -156,14 +156,14 @@ def createOrganization(elem) :
 	d['history'] = elem.findtext('history')
 	
 	contactElem = elem.find('contactInfo')
-	first_text = contactElem.text
+	first_text = Element(contactElem).text
 	if first_text != None :
 		text_list = [first_text, ]
 	else :
 		text_list = ["", ]
 	
 	links_list	= []
-	linkElems = contactElem.findall('link')
+	linkElems = Element(contactElem).findall('link')
 	for link in linkElems :
 		links_list.append(str(link.text))	
 		text_list.append(str(link.tail))		#Should I append "" if no tail?

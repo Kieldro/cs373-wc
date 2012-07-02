@@ -75,28 +75,56 @@ returns a list of sub-elements to be added in correct order
         elements = buildCommonData(crisisElement, crisisModel)
 	#append type specific data next
 	DateElem = Element("date")
+	tempElem = Element("")
 	if crisisModel.date == "" :
 		if crisisModel.startDate != "":
-			DateElem.append(Element("start", text=crisisModel.startDate))
+			tempElem = Element("start")
+			tempElem.text = crisisModel.startDate
+			DateElem.append(tempElem)
 		if crisisModel.endDate != "":
-			DateElem.append(Element("end", text=crisisModel.startDate))
+			tempElem = Element("end")
+			tempElem.text = crisisModel.startDate
+			DateElem.append(tempElem)
 		if crisisModel.additional != "":
-			DateElem.append(Element("additional", text=crisisModel.additional))
+			tempElem = Element("additional")
+			tempElem.text = crisisModel.additional
+			DateElem.append(tempElem)
 	else :
-		DateElem.append(Element("otherDiscription", text=crisisModel.date)) 
+		tempElem = Element("otherDiscription")
+		tempElem.text = crisisModel.date
+		DateElem.append(tempElem) 
+
 	elements.append(DateElem)
-	elements.append(Element("humanImpact", text=crisisModel.humanImpact))
-	elements.append(Element("economicImpact", text=crisisModel.ecoImpact))
-	elements.append(Element("resourcesNeeded", text=crisisModel.resources))
-	wth = Element("waysToHelp", text=crisisModel.waysToHelpText[0])
+
+	tempElem = Element("humanImpact")
+	tempElem.text = crisisModel.humanImpact
+	elements.append(tempElem)
+	tempElem = Element("economicImpact")
+	tempElem.text = crisisModel.ecoImpact
+	elements.append(tempElem)
+	tempElem = Element("resourcesNeeded")
+	tempElem.text = crisisModel.resources
+	elements.append(tempElem)
+
+	wth = Element("waysToHelp")
+	wth.text = crisisModel.waysToHelpText[0]
 	i = 0
 	while i < len(crisisModel.waysToHelpLinks) :
-		SubElement(wth, "link", text=crisisModel.waysToHelpLinks[i], tail=crisisModel.waysToHelpText[i + 1])
+		tempElem = Element("link")
+		tempElem.text = crisisModel.waysToHelpLinks[i]
+		if crisisModel.waysToHelpText[i + 1] != "":
+			tempElem.tail = crisisModel.waysToHelpText[i + 1]
+		wth.append(tempElem)
 		i += 1
+	elements.append(wth)
 	for id in crisisModel.orgs:
-		elements.append(Element("organizationId", text=str(id)))
+		tempElem = Element("organizationId")
+		tempElem.text = str(id)
+		elements.append(tempElem)
 	for id in crisisModel.people:
-		elements.append(Element("personId", text=str(id)))
+		tempElem = Element("personId")
+		tempElem.text = str(id)
+		elements.append(tempElem)
 	return elements
 
 # ------------
@@ -115,17 +143,28 @@ returns a list of sub-elements to be added in correct order
 
         elements = buildCommonData(orgElement, orgModel)
 	#create type specific data
-	elements.append( Element("history", text=orgModel.history))
-	cie = Element("contactInfo", text=orgModel.contactInfoText[0])
+	tempElem = Element("history")
+	tempElem.text = orgModel.history
+	elements.append(tempElem)
+	cie = Element("contactInfo")
+	cie.text = orgModel.contactInfoText[0]
 	i = 0
 
 	while i < len(orgModel.contactInfoLinks) :
-		SubElement(cie, "link", text=orgModel.contactInfoLinks[i], tail=orgModel.contactInfoText[i + 1])
+		tempElem = Element("link")
+		tempElem.text = orgModel.contactInfoLinks[i]
+		if orgModel.contactInfoText[i + 1] != "None" :
+			tempElem.tail = orgModel.contactInfoText[i + 1]
+		cie.append(tempElem)
 		i += 1
 	for id in orgModel.crises:
-		elements.append(Element("crisisId", text=str(id)))
+		tempElem = Element("crisisId")
+		tempElem.text = str(id)
+		elements.append(tempElem)
 	for id in orgModel.people:
-		elements.append(Element("personId", text=str(id)))
+		tempElem = Element("personId")
+		tempElem.text = str(id)
+		elements.append(tempElem)
 	return elements
 
 # ---------------
@@ -145,10 +184,15 @@ returns a list of sub-elements to be added in correct order
         
 
 		#create type specific data
+	tempElem = Element("")
 	for id in personModel.crises:
-		elements.append(Element("crisisId", text=str(id)))
+		tempElem = Element("crisisId")
+		tempElem.text = str(id)
+		elements.append(tempElem)
 	for id in personModel.orgs:
-		elements.append(Element("personId", text=str(id)))
+		tempElem = Element("organizationId")
+		tempElem.text = str(id)
+		elements.append(tempElem)
 	return elements
 
 # ---------------
@@ -169,25 +213,46 @@ model is a model that represents the same type as the element
 	# create elements
 
 	elements = []
-	elements.append(Element("name", text=model.name))
-	elements.append(Element("knd", text=model.knd))
+	nameElem = Element("name")
+	nameElem.text = model.name
+	elements.append(nameElem)
+	tempElem = Element("kind")
+	tempElem.text = model.knd
+	elements.append(tempElem)
+
 	LocElem = Element("location")
 	if model.location == "":
 		if model.city != "":
-			LocElem.append( Element("city", text=model.city) )
+			tempElem = Element("city")
+			tempElem.text = model.city
+			LocElem.append( tempElem )
 		if model.state != "":
-			LocElem.append( Element("state", text=model.state) )
+			tempElem = Element("state")
+			tempElem.text = model.state
+			LocElem.append( tempElem )
 		if model.country != "":
-			LocElem.append( Element("country", text=model.country) )
+			tempElem = Element("country")
+			tempElem.text = model.country
+			LocElem.append( tempElem )
 	else:
-		LocElem.append(Element("unspecific", text=model.location))
+		tempElem = Element("unspecific")
+		tempElem.text = model.location
+		LocElem.append(tempElem)
 	elements.append(LocElem)
 	for x in model.image:
-		elements.append(Element("image", text=x))
+		tempElem = Element("image")
+		tempElem.text = x
+		elements.append(tempElem)
 	for x in model.video:
-		elements.append(Element("video", text=x))
+		tempElem = Element("video")
+		tempElem.text = x
+		elements.append(tempElem)
 	for x in model.network:
-		elements.append(Element("network", text=x))
+		tempElem = Element("network")
+		tempElem.text = x
+		elements.append(tempElem)
 	for x in model.link:
-		elements.append(Element("link", text=x))
+		tempElem = Element("link")
+		tempElem.text = x
+		elements.append(tempElem)
 	return elements
