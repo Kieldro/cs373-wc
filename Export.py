@@ -10,6 +10,7 @@
 
 from xml.etree.ElementTree import Element, SubElement
 from Models import Crisis, Organization, Person
+from google.appengine.ext.db import Property
 
 # ---------
 # buildTree
@@ -70,58 +71,29 @@ crisisModel is a model object that represents a crisis model
 returns a list of sub-elements to be added in correct order
 """
 #append shared data first
-	crisisElement.attrib("id", crisisModel.ID)
-	
-	# create elements
-	subElems = []
-	subElems.append(Element("name", crisisModel.name))
-	subElems.append(Element("kind", crisisModel.kind))
-	if crisisModel.location == "":
-		if crisisModel.city != "":
-			subElems.append( Element("city", crisisModel.city) )
-		if crisisModel.state != "":
-			subElems.append( Element("state", crisisModel.state) )
-		if crisisModel.country != "":
-			subElems.append( Element("country", crisisModel.country) )
-	else:
-		subElems.append(Element("unspecific", crisisModel.location))
-	for image in crisisModel.images:
-		subElems.append(Element("image", crisisModel.image))
-	for video in crisisModel.videos:
-		subElems.append(Element("video", crisisModel.video))
-	for network in crisisModel.networks:
-		subElems.append(Element("network", crisisModel.network))
-	for link in crisisModel.links:
-		subElems.append(Element("link", crisisModel.link))
-
-	# append elements
-	for elem in subElems:
-		crisisElement.append(elem)
-
-
+        elements = buildCommonData(crisisElement, crisisModel)
 	#append type specific data next
-	elements = []
 	if crisisModel.date == "" :
 		if crisisModel.startDate != "":
-			elements.append(Element("start", crisisModel.startDate))
+			elements.append(Element("start", text=crisisModel.startDate))
 		if crisisModel.endDate != "":
-			elements.append(Element("end", crisisModel.startDate))
-		if crisisMode.additional != "":
-			elements.append(Element("additional", crisisModel.additional))
+			elements.append(Element("end", text=crisisModel.startDate))
+		if crisisModel.additional != "":
+			elements.append(Element("additional", text=crisisModel.additional))
 	else :
-		elements.append(Element("otherDiscription", crisisModel.date)) 
-	elements.append(Element("humanImpact", crisisModel.humanImpact))
-	elements.append(Element("economicImpact", crisisModel.ecoImpact))
-	elements.append(Element("resourcesNeeded", crisisModel.resources))
-	wth = Element("waysToHelp", orgModel.contactInfoText[0])
+		elements.append(Element("otherDiscription", text=crisisModel.date)) 
+	elements.append(Element("humanImpact", text=crisisModel.humanImpact))
+	elements.append(Element("economicImpact", text=crisisModel.ecoImpact))
+	elements.append(Element("resourcesNeeded", text=crisisModel.resources))
+	wth = Element("waysToHelp", text=crisisModel.waysToHelpText[0])
 	i = 0
-	while i < len(waysToHelpLinks) :
-		subElement(wth, "link", crisisModel.waysToHelpLinks[i], tail=crisisModel.waysToHelpText[i + 1])
-		++i
+	while i < len(crisisModel.waysToHelpLinks) :
+		SubElement(wth, "link", text=crisisModel.waysToHelpLinks[i], tail=crisisModel.waysToHelpText[i + 1])
+		i += 1
 	for id in crisisModel.orgs:
-		elements.append(Element("organizationId", crisisModel.orgs[id]))
+		elements.append(Element("organizationId", text=str(id)))
 	for id in crisisModel.people:
-		elements.append(Element("personId", crisisModel.people[id]))
+		elements.append(Element("personId", text=str(id)))
 	return elements
 
 # ------------
@@ -137,47 +109,19 @@ orgModel is a model object that represents a org model
 returns a list of sub-elements to be added in correct order
 """
 	#create and append shared data first
-	orgElement.attrib("id", orgModel.ID)
-	
-	# create elements
-	subElems = []
-	subElems.append(Element("name", orgModel.name))
-	subElems.append(Element("kind", orgModel.kind))
-	if orgModel.location == "":
-		if orgModel.city != "":
-			subElems.append( Element("city", orgModel.city) )
-		if orgModel.state != "":
-			subElems.append( Element("state", orgModel.state) )
-		if orgModel.country != "":
-			subElems.append( Element("country", orgModel.country) )
-	else:
-		subElems.append(Element("unspecific", orgModel.location))
-	for image in orgModel.images:
-		subElems.append(Element("image", orgModel.image))
-	for video in orgModel.videos:
-		subElems.append(Element("video", orgModel.video))
-	for network in orgModel.networks:
-		subElems.append(Element("network", orgModel.network))
-	for link in orgModel.links:
-		subElems.append(Element("link", orgModel.link))
-
-	# append elements
-	for elem in subElems:
-		orgElement.append(elem)
-
-
+        elements = buildCommonData(orgElement, orgModel)
 	#create type specific data
-	elements = []
-	elements.append( Element("history", orgModel.history))
-	cie = Element("contactInfo", orgModel.contactInfoText[0])
+	elements.append( Element("history", text=orgModel.history))
+	cie = Element("contactInfo", text=orgModel.contactInfoText[0])
 	i = 0
-	while i < len(contactInfoLinks) :
-		subElement(cie, "link", orgModel.contactInfoLink[i], tail=orgMode.contactInfoText[i + 1])
-		++i
+
+	while i < len(orgModel.contactInfoLinks) :
+		SubElement(cie, "link", text=orgModel.contactInfoLinks[i], tail=orgModel.contactInfoText[i + 1])
+		i += 1
 	for id in orgModel.crises:
-		elements.append(Element("crisisId", orgModel.crises[id]))
+		elements.append(Element("crisisId", text=str(id)))
 	for id in orgModel.people:
-		elements.append(Element("personId", orgModel.people[id]))
+		elements.append(Element("personId", text=str(id)))
 	return elements
 
 # ---------------
@@ -193,41 +137,13 @@ personModel is a model object that represents a person model
 returns a list of sub-elements to be added in correct order
 """
 	#append shared data first
+        elements = buildCommonData(personElement, personModel) 
         
-	personElement.attrib("id", personModel.ID)
-	
-	# create elements
-	subElems = []
-	subElems.append(Element("name", personModel.name))
-	subElems.append(Element("kind", personModel.kind))
-	if personModel.location == "":
-		if personModel.city != "":
-			subElems.append( Element("city", personModel.city) )
-		if personModel.state != "":
-			subElems.append( Element("state", personModel.state) )
-		if personModel.country != "":
-			subElems.append( Element("country", personModel.country) )
-	else:
-		subElems.append(Element("unspecific", personModel.location))
-	for image in personModel.images:
-		subElems.append(Element("image", personModel.image))
-	for video in personModel.videos:
-		subElems.append(Element("video", personModel.video))
-	for network in personModel.networks:
-		subElems.append(Element("network", personModel.network))
-	for link in personModel.links:
-		subElems.append(Element("link", personModel.link))
-
-	# append elements
-	for elem in subElems:
-		personElement.append(elem)
-
-	#create type specific data
-	elements = []
+		#create type specific data
 	for id in personModel.crises:
-		elements.append(Element("crisisId", personModel.crises[id]))
+		elements.append(Element("crisisId", text=str(id)))
 	for id in personModel.orgs:
-		elements.append(Element("personId", orgModel.people[id]))
+		elements.append(Element("personId", text=str(id)))
 	return elements
 
 # ---------------
@@ -243,31 +159,27 @@ element is a Element that represents a page of any of the three types
 model is a model that represents the same type as the element
 """
 	# add id attribute
-	element.attrib("id", model.ID)
+	element.attrib["id"] =  model.ID
 	
 	# create elements
-	subElems = []
-	subElems.append(Element("name", model.name))
-	subElems.append(Element("kind", model.kind))
+	elements = []
+	elements.append(Element("name", text=model.name))
+	elements.append(Element("knd", text=model.knd))
 	if model.location == "":
 		if model.city != "":
-			subElems.append( Element("city", model.city) )
+			elements.append( Element("city", text=model.city) )
 		if model.state != "":
-			subElems.append( Element("state", model.state) )
+			elements.append( Element("state", text=model.state) )
 		if model.country != "":
-			subElems.append( Element("country", model.country) )
+			elements.append( Element("country", text=model.country) )
 	else:
-		subElems.append(Element("unspecific", model.location))
-	for image in model.images:
-		subElems.append(Element("image", model.image))
-	for video in model.videos:
-		subElems.append(Element("video", model.video))
-	for network in model.networks:
-		subElems.append(Element("network", model.network))
-	for link in model.links:
-		subElems.append(Element("link", model.link))
-
-	# append elements
-	for elem in subElems:
-		element.append(elem)
-
+		elements.append(Element("unspecific", text=model.location))
+	for x in model.image:
+		elements.append(Element("image", text=x))
+	for x in model.video:
+		elements.append(Element("video", text=x))
+	for x in model.network:
+		elements.append(Element("network", text=x))
+	for x in model.link:
+		elements.append(Element("link", text=x))
+	return elements

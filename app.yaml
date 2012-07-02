@@ -7,5 +7,8 @@ handlers:
 - url: /staticpages
   static_dir: staticpages
 
+- url: /test.*
+  script: gaeunit.py
+
 - url: /.*
   script: WC.py
