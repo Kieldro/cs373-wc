@@ -1,0 +1,46 @@
+TestCollatz.py
+FFFF..F
+======================================================================
+FAIL: test_eval_1 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./TestCollatz.py", line 46, in test_eval_1
+    self.assert_(v == 20)
+AssertionError
+
+======================================================================
+FAIL: test_eval_2 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./TestCollatz.py", line 50, in test_eval_2
+    self.assert_(v == 125)
+AssertionError
+
+======================================================================
+FAIL: test_eval_3 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./TestCollatz.py", line 54, in test_eval_3
+    self.assert_(v == 89)
+AssertionError
+
+======================================================================
+FAIL: test_eval_4 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./TestCollatz.py", line 58, in test_eval_4
+    self.assert_(v == 174)
+AssertionError
+
+======================================================================
+FAIL: test_solve (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./TestCollatz.py", line 77, in test_solve
+    self.assert_(w.getvalue() == "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
+AssertionError
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=5)
