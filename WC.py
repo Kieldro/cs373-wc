@@ -1,6 +1,9 @@
 from google.appengine.ext import webapp
+from google.appengine.ext.db import delete
+from Models import Crisis, Organization, Person
 from google.appengine.ext.webapp.util import run_wsgi_app
 from RunExport import runExport
+from RunImport import runImport
 from minixsv import pyxsval
 
 class MainPage(webapp.RequestHandler):
@@ -10,6 +13,12 @@ class MainPage(webapp.RequestHandler):
 class ImportPage(webapp.RequestHandler):
     def post(self):
         xmlfile = self.request.get("data")
+	delete(Crisis.all(keys_only=True))
+	delete(Organization.all(keys_only=True))
+	delete(Person.all(keys_only=True))
+	runImport(xmlfile)
+	self.response.headers['Content-Type'] = 'text/xml'
+        self.response.out.write(str(xmlfile))
         """xmlschema = open('/staticfiles/WC1.xsd', 'r')
 	try:
             domTreeWrapper = pyxsval.parseAndValidate(xmlfile, xsdFile=xmlschema)
@@ -19,8 +28,6 @@ class ImportPage(webapp.RequestHandler):
         except GenXmlIfError, errstr:
             print errstr
             print "Parsing aborted!" """
-	self.response.headers['Content-Type'] = 'text/xml'
-	self.response.out.write(str(xmlfile))
 
     def get(self):
         print "hello world"

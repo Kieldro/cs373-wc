@@ -10,6 +10,7 @@
 
 from xml.etree.ElementTree import Element, SubElement
 from Models import Crisis, Organization, Person
+from google.appengine.ext.db import Property
 
 # ---------
 # buildTree
@@ -55,7 +56,7 @@ a page Element object using the data from the model.
 
 		# add sub elements		
 		for element in elements :
-			crisisElement.append(element)	
+			root[x].append(element)	
 
 # ---------------
 # buildCrisisPage
@@ -70,31 +71,30 @@ crisisModel is a model object that represents a crisis model
 returns a list of sub-elements to be added in correct order
 """
 #append shared data first
-        buildCommonData(crisisElement, crisisModel)
+        elements = buildCommonData(crisisElement, crisisModel)
 
 	#append type specific data next
-	elements = []
 	if crisisModel.date == "" :
 		if crisisModel.startDate != "":
-			elements.append(Element("start", crisisModel.startDate))
+			elements.append(Element("start", text=crisisModel.startDate))
 		if crisisModel.endDate != "":
-			elements.append(Element("end", crisisModel.startDate))
-		if crisisMode.additional != "":
-			elements.append(Element("additional", crisisModel.additional))
+			elements.append(Element("end", text=crisisModel.startDate))
+		if crisisModel.additional != "":
+			elements.append(Element("additional", text=crisisModel.additional))
 	else :
-		elements.append(Element("otherDiscription", crisisModel.date)) 
-	elements.append(Element("humanImpact", crisisModel.humanImpact))
-	elements.append(Element("economicImpact", crisisModel.ecoImpact))
-	elements.append(Element("resourcesNeeded", crisisModel.resources))
-	wth = Element("waysToHelp", orgModel.contactInfoText[0])
+		elements.append(Element("otherDiscription", text=crisisModel.date)) 
+	elements.append(Element("humanImpact", text=crisisModel.humanImpact))
+	elements.append(Element("economicImpact", text=crisisModel.ecoImpact))
+	elements.append(Element("resourcesNeeded", text=crisisModel.resources))
+	wth = Element("waysToHelp", text=crisisModel.waysToHelpText[0])
 	i = 0
-	while i < len(waysToHelpLinks) :
-		subElement(wth, "link", crisisModel.waysToHelpLinks[i], tail=crisisModel.waysToHelpText[i + 1])
-		++i
+	while i < len(crisisModel.waysToHelpLinks) :
+		SubElement(wth, "link", text=crisisModel.waysToHelpLinks[i], tail=crisisModel.waysToHelpText[i + 1])
+		i += 1
 	for id in crisisModel.orgs:
-		elements.append(Element("organizationId", crisisModel.orgs[id]))
+		elements.append(Element("organizationId", text=str(id)))
 	for id in crisisModel.people:
-		elements.append(Element("personId", crisisModel.people[id]))
+		elements.append(Element("personId", text=str(id)))
 	return elements
 
 # ------------
@@ -110,20 +110,20 @@ orgModel is a model object that represents a org model
 returns a list of sub-elements to be added in correct order
 """
 	#create and append shared data first
-        buildCommonData(orgElement, orgModel)
+        elements = buildCommonData(orgElement, orgModel)
 
 	#create type specific data
-	elements = []
-	elements.append( Element("history", orgModel.history))
-	cie = Element("contactInfo", orgModel.contactInfoText[0])
+	elements.append( Element("history", text=orgModel.history))
+	cie = Element("contactInfo", text=orgModel.contactInfoText[0])
 	i = 0
-	while i < len(contactInfoLinks) :
-		subElement(cie, "link", orgModel.contactInfoLink[i], tail=orgMode.contactInfoText[i + 1])
-		++i
+
+	while i < len(orgModel.contactInfoLinks) :
+		SubElement(cie, "link", text=orgModel.contactInfoLinks[i], tail=orgModel.contactInfoText[i + 1])
+		i += 1
 	for id in orgModel.crises:
-		elements.append(Element("crisisId", orgModel.crises[id]))
+		elements.append(Element("crisisId", text=str(id)))
 	for id in orgModel.people:
-		elements.append(Element("personId", orgModel.people[id]))
+		elements.append(Element("personId", text=str(id)))
 	return elements
 
 # ---------------
@@ -139,14 +139,13 @@ personModel is a model object that represents a person model
 returns a list of sub-elements to be added in correct order
 """
 	#append shared data first
-        buildCommonData(personElement, personModel) 
+        elements = buildCommonData(personElement, personModel) 
 
 	#create type specific data
-	elements = []
 	for id in personModel.crises:
-		elements.append(Element("crisisId", personModel.crises[id]))
+		elements.append(Element("crisisId", text=str(id)))
 	for id in personModel.orgs:
-		elements.append(Element("personId", orgModel.people[id]))
+		elements.append(Element("personId", text=str(id)))
 	return elements
 
 # ---------------
@@ -162,31 +161,28 @@ element is a Element that represents a page of any of the three types
 model is a model that represents the same type as the element
 """
 	# add id attribute
-	element.attrib("id", model.ID)
+	element.attrib["id"] =  model.ID
 	
 	# create elements
-	subElems = []
-	subElems.append(Element("name", model.name))
-	subElems.append(Element("kind", model.kind))
+	elements = []
+	elements.append(Element("name", text=model.name))
+	elements.append(Element("knd", text=model.knd))
 	if model.location == "":
 		if model.city != "":
-			subElems.append( Element("city", model.city) )
+			elements.append( Element("city", text=model.city) )
 		if model.state != "":
-			subElems.append( Element("state", model.state) )
+			elements.append( Element("state", text=model.state) )
 		if model.country != "":
-			subElems.append( Element("country", model.country) )
+			elements.append( Element("country", text=model.country) )
 	else:
-		subElems.append(Element("unspecific", model.location))
-	for image in model.images:
-		subElems.append(Element("image", image))
-	for video in model.videos:
-		subElems.append(Element("video", video))
-	for network in model.networks:
-		subElems.append(Element("network", network))
-	for link in model.links:
-		subElems.append(Element("link", link))
-
-	# append elements
-	for elem in subElems:
-		element.append(elem)
+		elements.append(Element("unspecific", text=model.location))
+	for x in model.image:
+		elements.append(Element("image", text=x))
+	for x in model.video:
+		elements.append(Element("video", text=x))
+	for x in model.network:
+		elements.append(Element("network", text=x))
+	for x in model.link:
+		elements.append(Element("link", text=x))
+	return elements
 

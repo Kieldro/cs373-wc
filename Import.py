@@ -1,4 +1,5 @@
 import sys #remove this later
+from Models import Crisis, Organization, Person
 from xml.etree.ElementTree import Element, SubElement, parse
 
 def buildModels(tree) :
@@ -32,9 +33,9 @@ def dictCommonElements(elem) :
 	returns a dict with the values of the common elements.
 	"""
 	d = {}
-	d['id'] = elem.attrib['id']
+	d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
-	d['kind'] = elem.findtext('kind')
+	d['knd'] = elem.findtext('kind')
 	
 	"""
 	Within <location>, there can either be:
@@ -64,10 +65,10 @@ def dictCommonElements(elem) :
 			d['country'] = ""
 	
 	# The following four can have multiple tags of the same name
-	d['image'] = [i.text for i in elem.findall('image')]
-	d['video'] = [v.text for v in elem.findall('video')]
-	d['network'] = [n.text for n in elem.findall('network')]
-	d['link'] = [l.text for l in elem.findall('link')]
+	d['image'] = [str(i.text) for i in elem.findall('image')]
+	d['video'] = [str(v.text) for v in elem.findall('video')]
+	d['network'] = [str(n.text) for n in elem.findall('network')]
+	d['link'] = [str(l.text) for l in elem.findall('link')]
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
@@ -95,6 +96,7 @@ def createCrisis(elem) :
 	if date_text != None :
 		d['date'] = date_text
 	else :
+		d['date'] = ""
 		start_text = dateElem.findtext('start')
 		end_text = dateElem.findtext('end')
 		additional_text = dateElem.findtext('additional')
@@ -123,17 +125,17 @@ def createCrisis(elem) :
 	else :
 		text_list = ["", ]
 		
-	links_list	= []
+	links_list = []
 	linkElems = waysToHelpElem.findall('link')
 	for link in linkElems :
-		links_list.append(link.text)	
-		text_list.append(link.tail)		#Should I append "" if no tail?
+		links_list.append(str(link.text))	
+		text_list.append(str(link.tail))		#Should I append "" if no tail?
 	
 	d['waysToHelpText'] = text_list
 	d['waysToHelpLinks'] = links_list
 	
-	d['orgs'] = [o.text for o in elem.findall('organizationId')]
-	d['people'] = [p.text for p in elem.findall('personId')]
+	d['orgs'] = [str(o.text) for o in elem.findall('organizationId')]
+	d['people'] = [str(p.text) for p in elem.findall('personId')]
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
@@ -163,14 +165,14 @@ def createOrganization(elem) :
 	links_list	= []
 	linkElems = contactElem.findall('link')
 	for link in linkElems :
-		links_list.append(link.text)	
-		text_list.append(link.tail)		#Should I append "" if no tail?
+		links_list.append(str(link.text))	
+		text_list.append(str(link.tail))		#Should I append "" if no tail?
 	
 	d['contactInfoText'] = text_list
 	d['contactInfoLinks'] = links_list
 	
-	d['crisis'] = [c.text for c in elem.findall('crisisId')]
-	d['people'] = [p.text for p in elem.findall('personId')]
+	d['crises'] = [str(c.text) for c in elem.findall('crisisId')]
+	d['people'] = [str(p.text) for p in elem.findall('personId')]
 	
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
@@ -179,7 +181,7 @@ def createOrganization(elem) :
 		
 	print 'END-------------------------------------------------------'
 	"""
-	o = Organizatinon(**d)
+	o = Organization(**d)
 	return o
 	
 def createPerson(elem) :
@@ -191,7 +193,7 @@ def createPerson(elem) :
 	d = dictCommonElements(elem)
 	
 	d['orgs'] = [o.text for o in elem.findall('organizationId')]
-	d['crisis'] = [c.text for c in elem.findall('crisisId')]
+	d['crises'] = [c.text for c in elem.findall('crisisId')]
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
