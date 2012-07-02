@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 from google.appengine.ext import *
 #from google.appengine.api import users
@@ -47,7 +48,7 @@ class Organization(db.Model):
 	history = db.StringProperty(required=True)
 	contactInfoText = db.StringListProperty(required=True)
 	contactInfoLinks = db.StringListProperty(required=True)
-	crisis = db.ListProperty(int)
+	crises = db.ListProperty(int)
 	people = db.ListProperty(int)
 
 class Person(db.Model):
@@ -62,7 +63,7 @@ class Person(db.Model):
 	video = db.StringListProperty(required=True)
 	network = db.StringListProperty(required=True)
 	link = db.StringListProperty(required=True)
+	crises = db.ListProperty(int)
 	orgs = db.ListProperty(int)
-	people = db.ListProperty(int)
 	
 

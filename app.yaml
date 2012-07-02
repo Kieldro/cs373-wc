@@ -9,7 +9,7 @@ handlers:
 
 - url: /xml/export.*
   script: TestWC1.py
-
+  
 - url: /staticpages
   static_dir: staticpages
 
