@@ -17,10 +17,12 @@
 		<link>http://www.worldhunger.org/</link>
 		<link>http://www.freedomfromhunger.org/</link>
 		<date>
-			<otherDiscription>Ongoing.</otherDiscription>
+			<otherDiscription>
+				Ongoing.
+			</otherDiscription>
 		</date>
 		<humanImpact>1 in 7 people go to bed hungry. More than 4.5 million children under the age of 5 will die from hunger related causes this year. Death from malnutirition. 25,000 people die daily. 925 million hungry people in 2010.</humanImpact>
-		<economicImpact>In the developing world, more than 1.4 billion people live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the world are undernourished. They consume less than the minimum amount of calories for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.</economicImpact>
+		<economicImpact>In the developing world, more than 1.4 billion people currently live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the developing world are undernourished. They consume less than the minimum amount of calories essential for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.</economicImpact>
 		<resourcesNeeded>Money donations and food donations.</resourcesNeeded>
 		<waysToHelp>Learn and spread awareness about world hunger: <link>http://www.worldhunger.org/learn.htm</link> Donate to the cause. There are many organaztions available, here's one for example: <link>https://www.freedomfromhunger.org/help/online.php?origin=ggHP</link></waysToHelp>
 		<organizationId>5</organizationId>
@@ -52,7 +54,7 @@
 		<personId>10</personId>
 	</crisis>
 	<crisis id="3">
-		<name>2011 Tohoku Earthquake and Tsunami</name>
+		<name>2011 Tōhoku Earthquake and Tsunami</name>
 		<kind>Natural Disaster</kind>
 		<location>
 			<country>Japan</country>
@@ -178,7 +180,9 @@
 		<link>http://en.wikipedia.org/wiki/Free_Syrian_Army</link>
 		<link>http://en.wikipedia.org/wiki/Syrian_National_Council</link>
 		<history>
-			The Free Syrian Army is an armed opposition group operating in Syria that has been active during the Syrian uprising. Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government. The FSA has also claimed that the conflict is not sectarian. On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement and became the main opposition army group.
+			The Free Syrian Army (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr) is an armed opposition group operating in Syria that has been active during the Syrian uprising.[6] Composed mainly of defected Syrian Armed Forces personnel,[7][8] its formation was announced on 29 July 2011 in a video released on the internet by a uniformed group of deserters from the Syrian military who called upon members of the Syrian army to defect and join them.[9] The leader of the group, who identified himself as Colonel Riad al-Asaad, announced that the Free Syrian Army would work with demonstrators to bring down the system, and declared that all security forces attacking civilians are justified targets.[10][11]
+
+Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government.[12][13] The FSA has also claimed that the conflict is not sectarian, that they have in their ranks Alawis who oppose the government, and that there will be no reprisals if it falls.[14] On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement (Arabic: حركة الضباط الأحرار, ħarakat al-ḍubbaṭ al-aħrar) and became the main opposition army group.[6][15][16] By early December, there were an estimated 15,000 to 25,000 defectors from the armed forces according to activist and media sources,[17][18] western intelligence sources estimated greater than 10,000 defectors,[19][20] By the middle of January 2012, the Free Syrian Army reported because of continuing defections a total of 40,000 men in its ranks.[21][22] The actual number of soldiers defecting to the Free Syrian Army is unknown.[23][24]
 		</history>
 		<contactInfo>none</contactInfo>
 		<crisisId>4</crisisId>

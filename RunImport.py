@@ -1,17 +1,21 @@
 from xml.etree.ElementTree import Element, SubElement
 from Import import parse, buildModels
+from Models import Crisis, Organization, Person
+import StringIO
 
-import sys, operator, Models
+import sys, operator
 
 def runImport(filestring):
-	tree = parse(filestring)
+	stuff = StringIO.StringIO(filestring)
+	tree = parse(stuff)
 	crises, organizations, people = buildModels(tree)
 
 	for c in crises:
-		Crisis(c).put()
+		c.put()
+
 
 	for o in organizations:
-		Organization(o).put()
+		o.put()
 
 	for p in people:
-		Person(p).put()
+		p.put()
