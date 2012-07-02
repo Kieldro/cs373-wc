@@ -5,7 +5,7 @@ api_version: 1
 
 handlers:
 - url: /test.*
-  script: TestWC1.py
+  script: gaeunit.py
 
 - url: /xml/export.*
   script: TestWC1.py
