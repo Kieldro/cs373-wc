@@ -71,17 +71,20 @@ crisisModel is a model object that represents a crisis model
 returns a list of sub-elements to be added in correct order
 """
 #append shared data first
+
         elements = buildCommonData(crisisElement, crisisModel)
 	#append type specific data next
+	DateElem = Element("date")
 	if crisisModel.date == "" :
 		if crisisModel.startDate != "":
-			elements.append(Element("start", text=crisisModel.startDate))
+			DateElem.append(Element("start", text=crisisModel.startDate))
 		if crisisModel.endDate != "":
-			elements.append(Element("end", text=crisisModel.startDate))
+			DateElem.append(Element("end", text=crisisModel.startDate))
 		if crisisModel.additional != "":
-			elements.append(Element("additional", text=crisisModel.additional))
+			DateElem.append(Element("additional", text=crisisModel.additional))
 	else :
-		elements.append(Element("otherDiscription", text=crisisModel.date)) 
+		DateElem.append(Element("otherDiscription", text=crisisModel.date)) 
+	elements.append(DateElem)
 	elements.append(Element("humanImpact", text=crisisModel.humanImpact))
 	elements.append(Element("economicImpact", text=crisisModel.ecoImpact))
 	elements.append(Element("resourcesNeeded", text=crisisModel.resources))
@@ -109,6 +112,7 @@ orgModel is a model object that represents a org model
 returns a list of sub-elements to be added in correct order
 """
 	#create and append shared data first
+
         elements = buildCommonData(orgElement, orgModel)
 	#create type specific data
 	elements.append( Element("history", text=orgModel.history))
@@ -139,6 +143,7 @@ returns a list of sub-elements to be added in correct order
 	#append shared data first
         elements = buildCommonData(personElement, personModel) 
         
+
 		#create type specific data
 	for id in personModel.crises:
 		elements.append(Element("crisisId", text=str(id)))
@@ -162,18 +167,21 @@ model is a model that represents the same type as the element
 	element.attrib["id"] =  model.ID
 	
 	# create elements
+
 	elements = []
 	elements.append(Element("name", text=model.name))
 	elements.append(Element("knd", text=model.knd))
+	LocElem = Element("location")
 	if model.location == "":
 		if model.city != "":
-			elements.append( Element("city", text=model.city) )
+			LocElem.append( Element("city", text=model.city) )
 		if model.state != "":
-			elements.append( Element("state", text=model.state) )
+			LocElem.append( Element("state", text=model.state) )
 		if model.country != "":
-			elements.append( Element("country", text=model.country) )
+			LocElem.append( Element("country", text=model.country) )
 	else:
-		elements.append(Element("unspecific", text=model.location))
+		LocElem.append(Element("unspecific", text=model.location))
+	elements.append(LocElem)
 	for x in model.image:
 		elements.append(Element("image", text=x))
 	for x in model.video:
