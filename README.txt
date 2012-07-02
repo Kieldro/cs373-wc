@@ -2,11 +2,11 @@ Course Name: CS373
 Unique: 91055
 Team Name: All the Single Ladies
 
-First Name:					Ian
-Last Name:					Buitrago
-EID:						ib
-E-mail:						kieldro@gmail.com
-Estimated number of hours:	18
+First Name:					George
+Last Name:					Shwarts
+EID:						grs626
+E-mail:						grsshwarts@utexas.edu
+Estimated number of hours:	30
 Actual    number of hours:	
 
 Turnin CS Username:		keo
@@ -32,10 +32,10 @@ Member E-mail:				jake.wilke@gmail.com
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
-Member First Name:			Ross
-Member Last Name:			Shwarts
-Member EID:					grs626
-Member E-mail:				grsshwarts@gmail.com
+Member First Name:			Ian
+Last Name:					Buitrago
+EID:						ib
+E-mail:						kieldro@gmail.com
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
