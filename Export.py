@@ -118,12 +118,10 @@ returns a list of sub-elements to be added in correct order
 		i += 1
 	elements.append(wth)
 	for id in crisisModel.orgs:
-		tempElem = Element("organizationId")
-		tempElem.text = str(id)
+		tempElem = Element("organizationId", idref=str(id))
 		elements.append(tempElem)
 	for id in crisisModel.people:
-		tempElem = Element("personId")
-		tempElem.text = str(id)
+		tempElem = Element("personId", idref=str(id))
 		elements.append(tempElem)
 	return elements
 
@@ -158,12 +156,10 @@ returns a list of sub-elements to be added in correct order
 		cie.append(tempElem)
 		i += 1
 	for id in orgModel.crises:
-		tempElem = Element("crisisId")
-		tempElem.text = str(id)
+		tempElem = Element("crisisId", idref=str(id))
 		elements.append(tempElem)
 	for id in orgModel.people:
-		tempElem = Element("personId")
-		tempElem.text = str(id)
+		tempElem = Element("personId", idref=str(id))
 		elements.append(tempElem)
 	return elements
 
@@ -186,12 +182,10 @@ returns a list of sub-elements to be added in correct order
 		#create type specific data
 	tempElem = Element("")
 	for id in personModel.crises:
-		tempElem = Element("crisisId")
-		tempElem.text = str(id)
+		tempElem = Element("crisisId", idref=str(id))
 		elements.append(tempElem)
 	for id in personModel.orgs:
-		tempElem = Element("organizationId")
-		tempElem.text = str(id)
+		tempElem = Element("organizationId", idref=str(id))
 		elements.append(tempElem)
 	return elements
 

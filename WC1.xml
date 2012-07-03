@@ -1,7 +1,7 @@
 <?xml version="1.0" ?> 
 <data>
 <crises>
-	<crisis id="1">
+	<crisis id="worldhunger">
 		<name>World Hunger</name>
 		<kind>Global, Biological</kind>
 		<location>
@@ -23,10 +23,10 @@
 		<economicImpact>In the developing world, more than 1.4 billion people live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the world are undernourished. They consume less than the minimum amount of calories for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.</economicImpact>
 		<resourcesNeeded>Money donations and food donations.</resourcesNeeded>
 		<waysToHelp>Learn and spread awareness about world hunger: <link>http://www.worldhunger.org/learn.htm</link> Donate to the cause. There are many organaztions available, here's one for example: <link>https://www.freedomfromhunger.org/help/online.php?origin=ggHP</link></waysToHelp>
-		<organizationId>5</organizationId>
-		<personId>9</personId>
+		<organizationId idref="WHO"/>
+		<personId idref="Chan"/>
 	</crisis>
-	<crisis id="2">
+	<crisis id="fukushima">
 		<name>Fukushima Daiichi Nuclear Disaster</name>
 		<kind>Nuclear meltdown and release of radioactive materials</kind>
 		<location>
@@ -47,11 +47,11 @@
 		<humanImpact>~573</humanImpact>
 		<economicImpact>unknown</economicImpact>
 		<resourcesNeeded>food</resourcesNeeded>
-		<waysToHelp></waysToHelp>
-		<organizationId>6</organizationId>
-		<personId>10</personId>
+		<waysToHelp>Support the cause: <link>http://fukushimaupdate.com/support/</link></waysToHelp>
+		<organizationId idref="JRC"/>
+		<personId idref="Edan"/>
 	</crisis>
-	<crisis id="3">
+	<crisis id="tohoku">
 		<name>2011 Tohoku Earthquake and Tsunami</name>
 		<kind>Natural Disaster</kind>
 		<location>
@@ -77,10 +77,10 @@
 		Costs of damage possibly exceeding 25 trillion Yen ($300 billion)</economicImpact>
 		<resourcesNeeded>Food and medical supplies, temporary housing</resourcesNeeded>
 		<waysToHelp>Monetary donations directly to the Japanese Red Cross, or through your national Red Cross/Red Crescent society</waysToHelp>
-		<organizationId>7</organizationId>
-		<personId>10</personId>
+		<organizationId idref="INTRA"/>
+		<personId idref="Konoe"/>
 	</crisis>
-	<crisis id="4">
+	<crisis id="homs">
 		<name>The Seige of Homs</name>
 		<kind>Military</kind>
 		<location>
@@ -102,12 +102,12 @@
 		<economicImpact>The damascus stock exchange, fell 50 percent. The econmony was expected to contract 2% in 2011, and not rise more than 1.5%</economicImpact>
 		<resourcesNeeded>Red Cross/ Red Creseant aid is still being kept out of heavy hit areas.</resourcesNeeded>
 		<waysToHelp>Contact International Comitee of the Red Cross</waysToHelp>
-		<organizationId>8</organizationId>
-		<personId>12</personId>
+		<organizationId idref="FSA"/>
+		<personId idref="Assad"/>
 	</crisis>
 </crises>
 <organizations>
-	<organization id="5">
+	<organization id="WHO">
 		<name>World Health Organization</name>
 		<kind>Public Health Worldwide</kind>
 		<location>
@@ -122,24 +122,24 @@
 		<link>http://new.paho.org/index.php</link>
 		<history>It was established on 7 April 1948, with headquarters in Geneva, Switzerland. Since then, it's played a major role in the eradication of smallpox, yaws, onchocerciasis, SARS and many other infectious diseases.</history>
 		<contactInfo><link>http://www.who.int/about/contact_form/en/index.html</link></contactInfo>
-		<crisisId>1</crisisId>
-		<personId>9</personId>
+		<crisisId idref="worldhunger"/>
+		<personId idref="Chan"/>
 	</organization>
-	<organization id="6">
+	<organization id="INTRA">
 		<name>Groupe INTRA</name>
 		<kind>French emergency response organization</kind>
 		<location>
 			<country>France</country>
 		</location>
-		<image></image>
-		<video></video>
-		<network></network>
+		<image>http://thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</image>
+		<video>http://www.youtube.com/embed/_DSlAOK3Sak</video>
+		<network>http://www.facebook.com/pages/Groupe-INTRA/117365841676572</network>
 		<link>http://www.groupe-intra.com/index2.htm</link>
 		<history>created by the French CEA and Areva and EDF</history>
-		<contactInfo></contactInfo>
-		<crisisId>2</crisisId>
+		<contactInfo>Groupe Intra, BP 61, 37420 Avoine</contactInfo>
+		<crisisId idref="fukushima"/>
 	</organization>
-		<organization id="7">
+		<organization id="JRC">
 		<name>Japanese Red Cross</name>
 		<kind>Relief Organization</kind>
 		<location>
@@ -151,7 +151,7 @@
 		<image>http://www.flickr.com/photos/ifrc/5780388293/</image>
 		<image>http://www.flickr.com/photos/ifrc/5542584560/</image>
 		<video>http://www.youtube.com/watch?v=tNgDKyznXkI</video>
-		<network></network>
+		<network>http://www.facebook.com/pages/Japanese-Red-Cross/142705225740666</network>
 		<link>http://www.jrc.or.jp/english/index.html</link>
 		<history>Founded in 1877 as the Philanthropic Society, by Count Tsunetami Sano, to relieve the injured of the  Satsuma Rebellion.
 		In 1887, the organization changed its name to the Japanese Red Cross Society, officialy recognized by the International Committee of the Red Cross on September 2.
@@ -160,10 +160,10 @@
 		Phone:   +81-3-3438-1311
 		Email:   info@jrc.or.jp
 		URL:     <link>http://www.jrc.or.jp</link></contactInfo>
-		<crisisId>3</crisisId>
-		<personId>11</personId>
+		<crisisId idref="fukushima"/>
+		<personId idref="Konoe"/>
 	</organization>
-		<organization id="8">
+		<organization id="FSA">
 		<name>The Free Syrian Army</name>
 		<kind>Military organization</kind>
 		<location>
@@ -178,15 +178,15 @@
 		<link>http://en.wikipedia.org/wiki/Free_Syrian_Army</link>
 		<link>http://en.wikipedia.org/wiki/Syrian_National_Council</link>
 		<history>
-			The Free Syrian Army is an armed opposition group operating in Syria that has been active during the Syrian uprising. Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government. The FSA has also claimed that the conflict is not sectarian. On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement and became the main opposition army group.
+			The Free Syrian Army is an armed opposition group operating in Syria that has been active during the Syrian uprising. Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government. The FSA has also claimed that the conflict is not sectarian. On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement and became the main opposition army group
 		</history>
-		<contactInfo>none</contactInfo>
-		<crisisId>4</crisisId>
-		<personId>12</personId>
+		<contactInfo>NA</contactInfo>
+		<crisisId idref="homs"/>
+		<personId idref="Assad"/>
 	</organization>
 </organizations>
 <people>
-	<person id="9">
+	<person id="Chan">
 		<name>Margaret Chan</name>
 		<kind>Director-General of the World Health Organization</kind>
 		<location>
@@ -197,10 +197,10 @@
 		<video>http://www.youtube.com/watch?v=JE4t9vPX1jA</video>
 		<network>https://twitter.com/#!/WHO</network>
 		<link>http://www.who.int/en/</link>
-		<crisisId>1</crisisId>
-		<organizationId>5</organizationId>
+		<crisisId idref="worldhunger"/>
+		<organizationId idref="WHO"/>
 	</person>
-	<person id="10">
+	<person id="Edan">
 		<name>Yukio Edano</name>
 		<kind>Minister of Economy, Trade and Industry</kind>
 		<location>
@@ -210,10 +210,10 @@
 		<video>http://www.google.com/</video>
 		<network>http://www.google.com/</network>
 		<link>http://www.edano.gr.jp/</link>
-		<crisisId>2</crisisId>
-		<organizationId>6</organizationId>
+		<crisisId idref="fukushima"/>
+		<organizationId idref="INTRA"/>
 	</person>
-	<person id="11">
+	<person id="Konoe">
 		<name>Tadateru Konoe</name>
 		<kind>President of the International Federation of Red Cross and Red Crecent Societies</kind>
 		<location>
@@ -223,10 +223,10 @@
 		<video>http://www.google.com/</video>
 		<network>http://www.google.com/</network>
 		<link>http://www.ifrc.org/en/who-we-are/governance/president/</link>
-		<crisisId>3</crisisId>
-		<organizationId>7</organizationId>
+		<crisisId idref="tohoku"/>
+		<organizationId idref="JRC"/>
 	</person>
-	<person id="12">
+	<person id="Assad">
 		<name>Basshar Al-assad</name>
 		<kind>President of Syria</kind>
 		<location>
@@ -237,10 +237,9 @@
 		<video>http://edition.cnn.com/video/?/video/world/2012/01/10/sot-syria-pres-assad-terrorists.cnn</video>
 		<video>http://edition.cnn.com/video/?/video/world/2011/08/22/watson.assad.statement.cnn</video>
 		<network>http://www.facebook.com/Bashar.Al.Assad.page</network>
-		<network>http://www.facebook.com/pages/Bashar-al-Assad/108317299189627</network>
 		<link>http://en.wikipedia.org/wiki/Bashar_al-Assad</link>
-		<crisisId>4</crisisId>
-		<organizationId>8</organizationId>
+		<crisisId idref="homs"/>
+		<organizationId idref="FSA"/>
 	</person>
 </people>
 </data>

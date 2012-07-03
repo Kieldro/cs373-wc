@@ -2,6 +2,9 @@
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 <!-- User defined sub-types-->
+<xs:complexType name="idreftype">
+	<xs:attribute name="idref" type="xs:IDREF" use="required"/>
+</xs:complexType>
 <xs:group name="specificLocation">
 	<xs:sequence>
 		<xs:element name="city" type="xs:string" minOccurs="0"/>
@@ -57,7 +60,7 @@
 		<xs:group ref="basicInfo"/>
 		<xs:group ref="externalResources"/>
 	</xs:sequence>
-	<xs:attribute name="id" type="xs:string" use="required"/>
+	<xs:attribute name="id" type="xs:ID" use="required"/>
 </xs:complexType>
 
 <!-- Actual page types, all pages extend from datapage.-->
@@ -70,8 +73,8 @@
 				<xs:element name="economicImpact" type="xs:string"/>
 				<xs:element name="resourcesNeeded" type="xs:string"/>
 				<xs:element name="waysToHelp" type="stringAndURI"/>
-				<xs:element name="organizationId" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element name="personId" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="organizationId" type="idreftype" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="personId" type="idreftype" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:extension>
 	</xs:complexContent>
@@ -82,8 +85,8 @@
 			<xs:sequence>
 				<xs:element name="history" type="xs:string"/>
 				<xs:element name="contactInfo" type="stringAndURI"/>
-				<xs:element name="crisisId" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element name="personId" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="crisisId" type="idreftype" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="personId" type="idreftype" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:extension>
 	</xs:complexContent>
@@ -92,8 +95,8 @@
 	<xs:complexContent>
 		<xs:extension base="datapage">
 			<xs:sequence>
-				<xs:element name="crisisId" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element name="organizationId" type="xs:positiveInteger" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="crisisId" type="idreftype" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="organizationId" type="idreftype" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:extension>
 	</xs:complexContent>

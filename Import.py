@@ -134,8 +134,8 @@ def createCrisis(elem) :
 	d['waysToHelpText'] = text_list
 	d['waysToHelpLinks'] = links_list
 	
-	d['orgs'] = [str(o.text) for o in elem.findall('organizationId')]
-	d['people'] = [str(p.text) for p in elem.findall('personId')]
+	d['orgs'] = [o.attrib["idref"] for o in elem.findall('organizationId')]
+	d['people'] = [p.attrib["idref"] for p in elem.findall('personId')]
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
@@ -171,8 +171,8 @@ def createOrganization(elem) :
 	d['contactInfoText'] = text_list
 	d['contactInfoLinks'] = links_list
 	
-	d['crises'] = [str(c.text) for c in elem.findall('crisisId')]
-	d['people'] = [str(p.text) for p in elem.findall('personId')]
+	d['crises'] = [c.attrib["idref"] for c in elem.findall('crisisId')]
+	d['people'] = [p.attrib["idref"] for p in elem.findall('personId')]
 	
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
@@ -192,8 +192,8 @@ def createPerson(elem) :
 	"""
 	d = dictCommonElements(elem)
 	
-	d['orgs'] = [o.text for o in elem.findall('organizationId')]
-	d['crises'] = [c.text for c in elem.findall('crisisId')]
+	d['orgs'] = [o.attrib["idref"] for o in elem.findall('organizationId')]
+	d['crises'] = [c.attrib["idref"] for c in elem.findall('crisisId')]
 	"""
 	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
 	for k, v in d.items() :
