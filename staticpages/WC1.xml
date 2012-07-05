@@ -1,0 +1,250 @@
+<?xml version="1.0" ?> 
+<data>
+<crises>
+	<crisis id="1">
+		<name>World Hunger</name>
+		<kind>Global, Biological</kind>
+		<location>
+			<unspecific>All countries and cities</unspecific>
+		</location>
+		<image>http://stopworldhunger.webs.com/hunger.jpg</image>
+		<image>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</image>
+		<video>http://www.youtube.com/watch?v=6jSBW0BOPqM</video>
+		<video>http://www.youtube.com/watch?v=0W2Ic5hV28w</video>
+		<network>http://www.facebook.com/WorldHungerRelief</network>
+		<network>https://twitter.com/#!/FAOWFD</network>
+		<link>http://www.who.int/en/</link>
+		<link>http://www.worldhunger.org/</link>
+		<link>http://www.freedomfromhunger.org/</link>
+		<date>
+			<otherDiscription>
+				Ongoing.
+			</otherDiscription>
+		</date>
+		<humanImpact>1 in 7 people go to bed hungry. More than 4.5 million children under the age of 5 will die from hunger related causes this year. Death from malnutirition. 25,000 people die daily. 925 million hungry people in 2010.</humanImpact>
+		<economicImpact>In the developing world, more than 1.4 billion people currently live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the developing world are undernourished. They consume less than the minimum amount of calories essential for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.</economicImpact>
+		<resourcesNeeded>Money donations and food donations.</resourcesNeeded>
+		<waysToHelp>Learn and spread awareness about world hunger: <link>http://www.worldhunger.org/learn.htm</link> Donate to the cause. There are many organaztions available, here's one for example: <link>https://www.freedomfromhunger.org/help/online.php?origin=ggHP</link></waysToHelp>
+		<organizationId>5</organizationId>
+		<personId>9</personId>
+	</crisis>
+	<crisis id="2">
+		<name>Fukushima Daiichi Nuclear Disaster</name>
+		<kind>Nuclear meltdown and release of radioactive materials</kind>
+		<location>
+			<city>Okuma</city>
+			<state>Fukushima</state>
+			<country>Japan</country>
+		</location>
+		<image>http://upload.wikimedia.org/wikipedia/commons/d/d7/NIT_Combined_Flights_Ground_Measurements_30Mar_03Apr2011_results.jpg</image>
+		<image>http://upload.wikimedia.org/wikipedia/commons/1/16/Fukushima_I_by_Digital_Globe_crop.jpg</image>
+		<video>http://www.youtube.com/watch?v=PqQWpo_AsF8</video>
+		<video>http://www.youtube.com/watch?v=44hv-4C2yXI</video>
+		<video>http://www.youtube.com/watch?v=1rdWyrtX0cU</video>
+		<network>http://www.facebook.com/pages/Japanese-reaction-to-Fukushima-Daiichi-nuclear-disaster/245496545477108</network>
+		<link>http://fukushimaupdate.com/</link>
+		<date>
+			<start>2011-03-11</start>
+		</date>
+		<humanImpact>~573</humanImpact>
+		<economicImpact>unknown</economicImpact>
+		<resourcesNeeded>food</resourcesNeeded>
+		<waysToHelp></waysToHelp>
+		<organizationId>6</organizationId>
+		<personId>10</personId>
+	</crisis>
+	<crisis id="3">
+		<name>2011 Tōhoku Earthquake and Tsunami</name>
+		<kind>Natural Disaster</kind>
+		<location>
+			<country>Japan</country>
+		</location>
+		<image>http://upload.wikimedia.org/wikipedia/commons/5/5a/Shindomap_2011-03-11_Tohoku_earthquake.png</image>
+		<image>http://upload.wikimedia.org/wikipedia/commons/b/b9/Carried_train_in_Ishinomaki_Line_.JPG</image>
+		<image>http://www.flickr.com/photos/ifrc/5542584560/</image>
+		<image>http://www.flickr.com/photos/ifrc/5587996898/</image>
+		<video>http://www.youtube.com/watch?v=6ZJ3-tbkhA4</video>
+		<video>http://www.youtube.com/watch?v=oriVz1xE3wQ</video>
+		<video>http://www.youtube.com/watch?v=tNgDKyznXkI</video>
+		<network></network>
+		<link>http://en.wikipedia.org/wiki/2011_Tohoku_earthquake_and_tsunami</link>
+		<link>http://www.jrc.or.jp/eq-japan2011/index.html</link>
+		<date>
+			<start>2011-03-11</start>
+			<additional>05:46 UTC</additional>
+		</date>
+		<humanImpact>15,861 deaths, 6,107 injured, 3,018 missing</humanImpact>
+		<economicImpact>Reconstruction needed for over a million buildings
+		Reactor Meltdown at the Fukushima Daiichi Nuclear Power Plant
+		Costs of damage possibly exceeding 25 trillion Yen ($300 billion)</economicImpact>
+		<resourcesNeeded>Food and medical supplies, temporary housing</resourcesNeeded>
+		<waysToHelp>Monetary donations directly to the Japanese Red Cross, or through your national Red Cross/Red Crescent society</waysToHelp>
+		<organizationId>7</organizationId>
+		<personId>10</personId>
+	</crisis>
+	<crisis id="4">
+		<name>The Seige of Homs</name>
+		<kind>Military</kind>
+		<location>
+			<city>Homs</city>
+			<country>Syria</country>
+		</location>
+		<image>http://www.blottr.com/sites/default/files/styles/620x390/public/tank-babaamro.png</image>
+		<image>http://www.leftfootforward.org/images/2012/02/Marie-Colvin.jpg</image>
+		<image>http://www.globalpost.com/sites/default/files/imagecache/medium/homs_syria_violence_1.jpg</image>
+		<image>http://citizenside-cache.citizenside.com/en/photos/politics/2012-01-26/48628/anti-regime-protest-in-homs-city/all_fullscreen/364197-syria-politics-unrest.jpg</image>
+		<video>http://edition.cnn.com/video/?/video/world/2012/01/11/homs-under-siege-a-hardship.cnn</video>
+		<video>http://www.youtube.com/watch?v=h2VO3-neG7g</video>
+		<network>http://www.facebook.com/pages/Homs-Syria/106242242748623</network>
+		<link>http://en.wikipedia.org/wiki/Siege_of_Homs</link>
+		<date>
+			<start>2011-05-06</start>
+		</date>
+		<humanImpact>4,644 protesters and opposition fighters 859 syrian soldiers and policeman</humanImpact>
+		<economicImpact>The damascus stock exchange, fell 50 percent. The econmony was expected to contract 2% in 2011, and not rise more than 1.5%</economicImpact>
+		<resourcesNeeded>Red Cross/ Red Creseant aid is still being kept out of heavy hit areas.</resourcesNeeded>
+		<waysToHelp>Contact International Comitee of the Red Cross</waysToHelp>
+		<organizationId>8</organizationId>
+		<personId>12</personId>
+	</crisis>
+</crises>
+<organizations>
+	<organization id="5">
+		<name>World Health Organization</name>
+		<kind>Public Health Worldwide</kind>
+		<location>
+			<unspecific>Headquarters at Geneva, Switzerland, but has offices on all 7 continents in 145 different countries.</unspecific>
+		</location>
+		<image>http://humanosphere.kplu.org/wp-content/uploads/2012/05/whologo.jpg</image>
+		<image>https://encrypted-tbn2.google.com/images?q=tbn:ANd9GcSVoQ8m5nXTZL_62ejj_fLsfDdBtXTiMlx-8o72F9yItj9Cj1bc4Q</image>
+		<video>http://www.youtube.com/who</video>
+		<video>http://www.youtube.com/watch?v=GWtTQhWwdac</video>
+		<network>https://twitter.com/#!/WHO</network>
+		<network>http://www.facebook.com/pages/World-Health-Organization-WHO/154163327962392?v=wall</network>
+		<link>http://new.paho.org/index.php</link>
+		<history>It was established on 7 April 1948, with headquarters in Geneva, Switzerland. Since then, it's played a major role in the eradication of smallpox, yaws, onchocerciasis, SARS and many other infectious diseases.</history>
+		<contactInfo><link>http://www.who.int/about/contact_form/en/index.html</link></contactInfo>
+		<crisisId>1</crisisId>
+		<personId>9</personId>
+	</organization>
+	<organization id="6">
+		<name>Groupe INTRA</name>
+		<kind>French emergency response organization</kind>
+		<location>
+			<country>France</country>
+		</location>
+		<image></image>
+		<video></video>
+		<network></network>
+		<link>http://www.groupe-intra.com/index2.htm</link>
+		<history>created by the French CEA and Areva and EDF</history>
+		<contactInfo></contactInfo>
+		<crisisId>2</crisisId>
+	</organization>
+		<organization id="7">
+		<name>Japanese Red Cross</name>
+		<kind>Relief Organization</kind>
+		<location>
+			<city>Tokyo</city>
+			<country>Japan</country>
+		</location>
+		<image>http://en.wikipedia.org/wiki/File:Tsunetami_Sano.jpg</image>
+		<image>http://upload.wikimedia.org/wikipedia/commons/a/ac/Japanese_Red_Cross_near_the_Yalu_River_1904.jpg</image>
+		<image>http://www.flickr.com/photos/ifrc/5780388293/</image>
+		<image>http://www.flickr.com/photos/ifrc/5542584560/</image>
+		<video>http://www.youtube.com/watch?v=tNgDKyznXkI</video>
+		<network></network>
+		<link>http://www.jrc.or.jp/english/index.html</link>
+		<history>Founded in 1877 as the Philanthropic Society, by Count Tsunetami Sano, to relieve the injured of the  Satsuma Rebellion.
+		In 1887, the organization changed its name to the Japanese Red Cross Society, officialy recognized by the International Committee of the Red Cross on September 2.
+		Today, they operate 92 hospitals and 79 blood centers throughout Japan.</history>
+		<contactInfo>Address: 1-1-3, Shiba Daimon, Minato-ku, Tokyo 105-8521
+		Phone:   +81-3-3438-1311
+		Email:   info@jrc.or.jp
+		URL:     <link>http://www.jrc.or.jp</link></contactInfo>
+		<crisisId>3</crisisId>
+		<personId>11</personId>
+	</organization>
+		<organization id="8">
+		<name>The Free Syrian Army</name>
+		<kind>Military organization</kind>
+		<location>
+			<unspecific>Syria, main base: hatay turkey</unspecific>
+		</location>
+		<image>http://thinkpress.files.wordpress.com/2011/09/free-syrian-army-logo.png?w=480</image>
+		<image> http://www.thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</image>
+		<image>http://www.globalpost.com/sites/default/files/imagecache/gp3_small_article/free-syrian-army-2011-11-2.jpg</image>
+		<video>http://www.youtube.com/watch?v=_DSlAOK3Sak</video>
+		<video>http://www.cbsnews.com/video/watch/?id=7390803n</video>
+		<network></network>
+		<link>http://en.wikipedia.org/wiki/Free_Syrian_Army</link>
+		<link>http://en.wikipedia.org/wiki/Syrian_National_Council</link>
+		<history>
+			The Free Syrian Army (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr) is an armed opposition group operating in Syria that has been active during the Syrian uprising.[6] Composed mainly of defected Syrian Armed Forces personnel,[7][8] its formation was announced on 29 July 2011 in a video released on the internet by a uniformed group of deserters from the Syrian military who called upon members of the Syrian army to defect and join them.[9] The leader of the group, who identified himself as Colonel Riad al-Asaad, announced that the Free Syrian Army would work with demonstrators to bring down the system, and declared that all security forces attacking civilians are justified targets.[10][11]
+
+Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government.[12][13] The FSA has also claimed that the conflict is not sectarian, that they have in their ranks Alawis who oppose the government, and that there will be no reprisals if it falls.[14] On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement (Arabic: حركة الضباط الأحرار, ħarakat al-ḍubbaṭ al-aħrar) and became the main opposition army group.[6][15][16] By early December, there were an estimated 15,000 to 25,000 defectors from the armed forces according to activist and media sources,[17][18] western intelligence sources estimated greater than 10,000 defectors,[19][20] By the middle of January 2012, the Free Syrian Army reported because of continuing defections a total of 40,000 men in its ranks.[21][22] The actual number of soldiers defecting to the Free Syrian Army is unknown.[23][24]
+		</history>
+		<contactInfo>none</contactInfo>
+		<crisisId>4</crisisId>
+		<personId>12</personId>
+	</organization>
+</organizations>
+<people>
+	<person id="9">
+		<name>Margaret Chan</name>
+		<kind>Director-General of the World Health Organization</kind>
+		<location>
+			<city>Hong Kong</city>
+		</location>
+		<image>http://topnews.in/files/margaret-chan1.jpg</image>
+		<image>http://static.guim.co.uk/sys-images/Guardian/About/General/2009/7/15/1247677189175/Margaret-Chan-the-World-H-001.jpg</image>
+		<video>http://www.youtube.com/watch?v=JE4t9vPX1jA</video>
+		<network>https://twitter.com/#!/WHO</network>
+		<link>http://www.who.int/en/</link>
+		<crisisId>1</crisisId>
+		<organizationId>5</organizationId>
+	</person>
+	<person id="10">
+		<name>Yukio Edano</name>
+		<kind>Minister of Economy, Trade and Industry</kind>
+		<location>
+			<country>Japan</country>
+		</location>
+		<image>http://upload.wikimedia.org/wikipedia/commons/8/8f/Yukio_Edano_Sakado_20100910.JPG</image>
+		<video>http://www.google.com/</video>
+		<network>http://www.google.com/</network>
+		<link>http://www.edano.gr.jp/</link>
+		<crisisId>2</crisisId>
+		<organizationId>6</organizationId>
+	</person>
+	<person id="11">
+		<name>Tadateru Konoe</name>
+		<kind>President of the International Federation of Red Cross and Red Crecent Societies</kind>
+		<location>
+			<country>Japan</country>
+		</location>
+		<image>http://farm3.staticflickr.com/2620/4117211202_41d8b8e89c_o.jpg</image>
+		<video>http://www.google.com/</video>
+		<network>http://www.google.com/</network>
+		<link>http://www.ifrc.org/en/who-we-are/governance/president/</link>
+		<crisisId>3</crisisId>
+		<organizationId>7</organizationId>
+	</person>
+	<person id="12">
+		<name>Basshar Al-assad</name>
+		<kind>President of Syria</kind>
+		<location>
+			<city>DamascusM</city>
+			<country>Syria</country>
+		</location>
+		<image>http://upload.wikimedia.org/wikipedia/commons/7/7d/Bashar_al-Assad_%28cropped%29.jpg</image>
+		<video>http://edition.cnn.com/video/?/video/world/2012/01/10/sot-syria-pres-assad-terrorists.cnn</video>
+		<video>http://edition.cnn.com/video/?/video/world/2011/08/22/watson.assad.statement.cnn</video>
+		<network>http://www.facebook.com/Bashar.Al.Assad.page</network>
+		<network>http://www.facebook.com/pages/Bashar-al-Assad/108317299189627</network>
+		<link>http://en.wikipedia.org/wiki/Bashar_al-Assad</link>
+		<crisisId>4</crisisId>
+		<organizationId>8</organizationId>
+	</person>
+</people>
+</data>
