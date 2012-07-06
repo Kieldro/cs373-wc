@@ -11,3 +11,4 @@
 a.out
 
 # repo specific
+*.sublime-*
