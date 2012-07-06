@@ -54,6 +54,7 @@ Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
 Comments:
+UML diagram link: http://www.gliffy.com/pubdoc/3716424/L.png
 
 
 --------------------

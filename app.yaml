@@ -4,14 +4,11 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /test.*
-  script: gaeunit.py
-
-- url: /xml/export.*
-  script: TestWC1.py
-  
 - url: /staticpages
   static_dir: staticpages
+
+- url: /test.*
+  script: gaeunit.py
 
 - url: /.*
   script: WC.py

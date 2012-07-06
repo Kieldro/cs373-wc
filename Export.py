@@ -6,15 +6,12 @@
 
 # -------
 # imports
-# -------
-
 from xml.etree.ElementTree import Element, SubElement
-from Models.py import Crisis, Organization, Person
+from Models import Crisis, Organization, Person
+from google.appengine.ext.db import Property
 
 # ---------
 # buildTree
-# ---------
-
 def buildTree(crisisList, orgList, personList):
 	"""
 This method takes in three lists of models, and returns the data stored
@@ -24,7 +21,7 @@ crisisList is a list of Crisis model objects
 orgList is a list of Organizations model objects
 personList is a list of People model objects
 return the root element of the data tree containing all the data 
-"""
+	"""
 	root = Element("data")
 	SubElement(root, "crises")
 	SubElement(root, "organizations")
@@ -36,9 +33,7 @@ return the root element of the data tree containing all the data
 
 # ----------
 # buildPages
-# ----------
-
-def buildPagesOfType(root, pageType, pageList, pageTypeBuildFunction) :
+def buildPagesofType(root, pageType, pageList, pageTypeBuildFunction) :
 	"""
 Given a root, build all the subElements of a given page type (using the 
 given function: pageTypeBuildFunction) and make them subElements of the
@@ -48,14 +43,14 @@ pageType is a string that is the tag to be used for each child element
 pageList is a list of GAE models, all compatible with the function argumetn
 pageTypeBuildFunction is a function that builds up the structure underneath
 a page Element object using the data from the model.
-"""
+	"""
 	for x in range(len(pageList)) :
 		SubElement(root, pageType)
 		elements = pageTypeBuildFunction(root[x], pageList[x])		
 
 		# add sub elements		
 		for element in elements :
-			crisisElement.append(element)	
+			root[x].append(element)	
 
 # ---------------
 # buildCrisisPage
@@ -68,39 +63,64 @@ generates the sub-elements
 crisisElement is a Element that represents a crisis page
 crisisModel is a model object that represents a crisis model
 returns a list of sub-elements to be added in correct order
-"""
-#append shared data first
-        buildCommonData(crisisElement, crisisModel)
+	"""
+	#append shared data first
 
+	elements = buildCommonData(crisisElement, crisisModel)
 	#append type specific data next
-	elements = []
+	DateElem = Element("date")
+	tempElem = Element("")
 	if crisisModel.date == "" :
 		if crisisModel.startDate != "":
-			elements.append(Element("start", crisisModel.startDate))
+			tempElem = Element("start")
+			tempElem.text = crisisModel.startDate
+			DateElem.append(tempElem)
 		if crisisModel.endDate != "":
-			elements.append(Element("end", crisisModel.startDate))
-		if crisisMode.additional != "":
-			elements.append(Element("additional", crisisModel.additional))
+			tempElem = Element("end")
+			tempElem.text = crisisModel.startDate
+			DateElem.append(tempElem)
+		if crisisModel.additional != "":
+			tempElem = Element("additional")
+			tempElem.text = crisisModel.additional
+			DateElem.append(tempElem)
 	else :
-		elements.append(Element("otherDiscription", crisisModel.date)) 
-	elements.append(Element("humanImpact", crisisModel.humanImpact))
-	elements.append(Element("economicImpact", crisisModel.ecoImpact))
-	elements.append(Element("resourcesNeeded", crisisModel.resources))
-	wth = Element("waysToHelp", orgModel.contactInfoText[0])
+		tempElem = Element("otherDiscription")
+		tempElem.text = crisisModel.date
+		DateElem.append(tempElem) 
+
+	elements.append(DateElem)
+
+	tempElem = Element("humanImpact")
+	tempElem.text = crisisModel.humanImpact
+	elements.append(tempElem)
+	tempElem = Element("economicImpact")
+	tempElem.text = crisisModel.ecoImpact
+	elements.append(tempElem)
+	tempElem = Element("resourcesNeeded")
+	tempElem.text = crisisModel.resources
+	elements.append(tempElem)
+
+	wth = Element("waysToHelp")
+	wth.text = crisisModel.waysToHelpText[0]
 	i = 0
-	while i < len(waysToHelpLinks) :
-		subElement(wth, "link", crisisModel.waysToHelpLinks[i], tail=crisisModel.waysToHelpText[i + 1])
-		++i
+	while i < len(crisisModel.waysToHelpLinks) :
+		tempElem = Element("link")
+		tempElem.text = crisisModel.waysToHelpLinks[i]
+		if crisisModel.waysToHelpText[i + 1] != "":
+			tempElem.tail = crisisModel.waysToHelpText[i + 1]
+		wth.append(tempElem)
+		i += 1
+	elements.append(wth)
 	for id in crisisModel.orgs:
-		elements.append(Element("organizationId", crisisModel.orgs[id]))
+		tempElem = Element("organizationId", idref=str(id))
+		elements.append(tempElem)
 	for id in crisisModel.people:
-		elements.append(Element("personId", crisisModel.people[id]))
+		tempElem = Element("personId", idref=str(id))
+		elements.append(tempElem)
 	return elements
 
 # ------------
 # buildOrgPage
-# ------------
-
 def buildOrgPage(orgElement, orgModel) :
 	"""
 Build an organization page using the data from the model. Note: this 
@@ -108,28 +128,35 @@ method just generates the sub-elements
 orgElement is a Element that represents a org page
 orgModel is a model object that represents a org model
 returns a list of sub-elements to be added in correct order
-"""
+	"""
 	#create and append shared data first
-        buildCommonData(orgElement, orgModel)
 
+	elements = buildCommonData(orgElement, orgModel)
 	#create type specific data
-	elements = []
-	elements.append( Element("history", orgModel.history))
-	cie = Element("contactInfo", orgModel.contactInfoText[0])
+	tempElem = Element("history")
+	tempElem.text = orgModel.history
+	elements.append(tempElem)
+	cie = Element("contactInfo")
+	cie.text = orgModel.contactInfoText[0]
 	i = 0
-	while i < len(contactInfoLinks) :
-		subElement(cie, "link", orgModel.contactInfoLink[i], tail=orgMode.contactInfoText[i + 1])
-		++i
+
+	while i < len(orgModel.contactInfoLinks) :
+		tempElem = Element("link")
+		tempElem.text = orgModel.contactInfoLinks[i]
+		if orgModel.contactInfoText[i + 1] != "None" :
+			tempElem.tail = orgModel.contactInfoText[i + 1]
+		cie.append(tempElem)
+		i += 1
 	for id in orgModel.crises:
-		elements.append(Element("crisisId", orgModel.crises[id]))
+		tempElem = Element("crisisId", idref=str(id))
+		elements.append(tempElem)
 	for id in orgModel.people:
-		elements.append(Element("personId", orgModel.people[id]))
+		tempElem = Element("personId", idref=str(id))
+		elements.append(tempElem)
 	return elements
 
 # ---------------
 # buildPersonPage
-# ---------------
-
 def buildPersonPage(personElement, personModel) :
 	"""
 Build a person page using the data from the model. Note: this method just
@@ -137,22 +164,22 @@ generates the sub-elements
 personElement is a Element that represents a person page
 personModel is a model object that represents a person model
 returns a list of sub-elements to be added in correct order
-"""
+	"""
 	#append shared data first
-        buildCommonData(personElement, personModel) 
+	elements = buildCommonData(personElement, personModel) 
 
 	#create type specific data
-	elements = []
+	tempElem = Element("")
 	for id in personModel.crises:
-		elements.append(Element("crisisId", personModel.crises[id]))
+		tempElem = Element("crisisId", idref=str(id))
+		elements.append(tempElem)
 	for id in personModel.orgs:
-		elements.append(Element("personId", orgModel.people[id]))
+		tempElem = Element("organizationId", idref=str(id))
+		elements.append(tempElem)
 	return elements
 
 # ---------------
 # buildCommonData
-# ---------------
-
 def buildCommonData(element, model):
 	"""
 All pages have a certain amount of data incommon, represented in children
@@ -160,33 +187,52 @@ elements with the same tags. This is where these common elements are
 added to the page element from the model.
 element is a Element that represents a page of any of the three types
 model is a model that represents the same type as the element
-"""
+	"""
 	# add id attribute
-	element.attrib("id", model.ID)
+	element.attrib["id"] =  model.ID
 	
 	# create elements
-	subElems = []
-	subElems.append(Element("name", model.name))
-	subElems.append(Element("kind", model.kind))
+	elements = []
+	nameElem = Element("name")
+	nameElem.text = model.name
+	elements.append(nameElem)
+	tempElem = Element("kind")
+	tempElem.text = model.knd
+	elements.append(tempElem)
+
+	LocElem = Element("location")
 	if model.location == "":
 		if model.city != "":
-			subElems.append( Element("city", model.city) )
+			tempElem = Element("city")
+			tempElem.text = model.city
+			LocElem.append( tempElem )
 		if model.state != "":
-			subElems.append( Element("state", model.state) )
+			tempElem = Element("state")
+			tempElem.text = model.state
+			LocElem.append( tempElem )
 		if model.country != "":
-			subElems.append( Element("country", model.country) )
+			tempElem = Element("country")
+			tempElem.text = model.country
+			LocElem.append( tempElem )
 	else:
-		subElems.append(Element("unspecific", model.location))
-	for image in model.images:
-		subElems.append(Element("image", image))
-	for video in model.videos:
-		subElems.append(Element("video", video))
-	for network in model.networks:
-		subElems.append(Element("network", network))
-	for link in model.links:
-		subElems.append(Element("link", link))
-
-	# append elements
-	for elem in subElems:
-		element.append(elem)
-
+		tempElem = Element("unspecific")
+		tempElem.text = model.location
+		LocElem.append(tempElem)
+	elements.append(LocElem)
+	for x in model.image:
+		tempElem = Element("image")
+		tempElem.text = x
+		elements.append(tempElem)
+	for x in model.video:
+		tempElem = Element("video")
+		tempElem.text = x
+		elements.append(tempElem)
+	for x in model.network:
+		tempElem = Element("network")
+		tempElem.text = x
+		elements.append(tempElem)
+	for x in model.link:
+		tempElem = Element("link")
+		tempElem.text = x
+		elements.append(tempElem)
+	return elements
