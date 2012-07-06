@@ -1,37 +1,23 @@
 # file variables
-python=true
-
-source="PFD.py"
-unit="TestPFD.py"
-inFile="RunPFD.in"
-outFile="RunPFD.out"
-noError=false
+source="WC.py"
 
 
-echo RUNNING UNIT TESTS...
-python $unit #&> $unit.out
+#echo RUNNING UNIT TESTS...
 
-if ([ $? == 0 ]); then
-	echo RUNNING SOURCE...
-	python $source < $inFile #> $outFile
+dev_appserver .
 
 <<MULTICOMMENT
-	echo CHECKING OUTPUT...
-	diff -lc RunPFD.out RunPFD.in
-
-	echo GENERATING COMMIT LOG...
-	git log > PFD.log
-
-	echo UPDATING SPHERE FILE...
-	cp $source Sphere$source
-
-	echo RUNNING PYDOC...
-	pydoc -w ./$source
-
-	#echo ZIPPING FILE...
-	
-	
 # multicomment cannot have leading spaces
+echo RUNNING PYDOC...;	pydoc -w ./$source
+
+echo GENERATING COMMIT LOG...;	git log > WC2.log
+
+echo ZIPPING FILES...
+zip WC2 README.txt *.html *.py app.yaml WC2.log TestWC2.out test/TestWC2.py \
+		WC2.pdf UML.svg WC2.xml
+
+turnin --submit hychyc07 cs373pj4 WC2.zip
+turnin --list	hychyc07 cs373pj4 WC2.zip
+turnin --verify hychyc07 cs373pj4 WC2.zip
 MULTICOMMENT
 
-fi
