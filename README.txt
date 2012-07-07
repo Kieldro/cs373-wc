@@ -33,9 +33,9 @@ Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
 Member First Name:			George
-Last Name:					Shwarts
-EID:						grs626
-E-mail:						grsshwarts@utexas.edu
+Member Last Name:			Shwarts
+Member EID:					grs626
+Member E-mail:				grsshwarts@utexas.edu
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
