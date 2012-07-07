@@ -1,19 +1,57 @@
 # -*- coding: utf-8 -*-
 
 from google.appengine.ext import db
-#from google.appengine.api import users
-'''
-A model class describes a kind of entity.
-'''
+from google.appengine.ext.db import polymodel
 
-class Crisis(db.Model):
-	# entity properties
+# The data for each type of external link
+class PrimaryImageLink(db.Model):
+        pi_site = db.StringProperty(required=True)
+	pi_title = db.StringProperty(required=True)
+	pi_url = db.LinkProperty(required=True)
+	pi_description = db.TextProperty()
+
+class ImageData(PrimaryImageLink):
+        image_sites = db.StringListProperty(required=True)
+	image_titles = db.StringListProperty(required=True)
+ 	image_urls = db.ListProperty(db.Link, required=True)
+	image_descriptions = db.ListProperty(db.Text, required=True)
+
+class VideoData(ImageData):
+        video_sites = db.StringListProperty(required=True)
+	video_titles = db.StringListProperty(required=True)
+ 	video_urls = db.ListProperty(db.Link, required=True)
+	video_descriptions = db.ListProperty(db.Text, required=True)
+
+class SocialData(VideoData):
+        social_sites = db.StringListProperty(required=True)
+	social_titles = db.StringListProperty(required=True)
+ 	social_urls = db.ListProperty(db.Link, required=True)
+	social_descriptions = db.ListProperty(db.Text, required=True)
+
+class ExternalData(SocialData):
+        ext_sites = db.StringListProperty(required=True)
+	ext_titles = db.StringListProperty(required=True)
+ 	ext_urls = db.ListProperty(db.Link, required=True)
+	ext_descriptions = db.ListProperty(db.Text, required=True)
+
+# Common Fields to all models
+class CommonInfo(ExternalData):
 	ID = db.StringProperty(required=True)
 	name = db.StringProperty(required=True)
-	history = db.TextProperty(required=True)
-	help = db.TextProperty(required=True)
-	resources = db.TextProperty(required=True)
-	ctype = db.StringProperty(required=True)
+	misc = db.TextProperty(required=True)
+
+# References to pages to other types
+class CrisisRefs(db.Model):
+	crises = db.ListProperty(item_type=db.Key, required=True)
+
+class OrgRefs(db.Model):
+	orgs = db.ListProperty(item_type=db.Key, required=True)
+
+class PersonRefs(db.Model):
+	people = db.ListProperty(item_type=db.Key, required=True)
+
+# Breakdowns of the crisis data
+class CrisisLocAndTime(CommonInfo):
 	time = db.TextProperty(required=True)
 	day = db.IntegerProperty(required=True)
 	month = db.IntegerProperty(required=True)
@@ -22,6 +60,8 @@ class Crisis(db.Model):
 	city = db.StringProperty(required=True)
 	region = db.StringProperty(required=True)
 	country = db.StringProperty(required=True)
+
+class CrisisImpact(CrisisLocAndTime):
 	deaths = db.IntegerProperty(required=True)
 	displaced = db.IntegerProperty(required=True)
 	injured = db.IntegerProperty(required=True)
@@ -30,33 +70,16 @@ class Crisis(db.Model):
 	amount = db.IntegerProperty(required=True)
 	currency =  db.StringProperty(required=True)
 	eimpact_misc = db.TextProperty(required=True)
-	pi_site = db.StringProperty(required=True)
-	pi_title = db.StringProperty(required=True)
-	pi_url = db.LinkProperty(required=True)
-	pi_description = db.TextProperty()
-	image_sites = db.ListProperty(item_type=str, required=True)
-	image_titles = db.ListProperty(item_type=str, required=True)
-	image_urls = db.ListProperty(item_type=db.Link, required=True)
-	image_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	video_sites = db.ListProperty(item_type=str, required=True)
-	video_titles = db.ListProperty(item_type=str, required=True)
-	video_urls = db.ListProperty(item_type=db.Link, required=True)
-	video_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	social_sites = db.ListProperty(item_type=str, required=True)
-	social_titles = db.ListProperty(item_type=str, required=True)
-	social_urls = db.ListProperty(item_type=db.Link, required=True)
-	social_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	ext_sites = db.ListProperty(item_type=str, required=True)
-	ext_titles = db.ListProperty(item_type=str, required=True)
-	ext_urls = db.ListProperty(item_type=db.Link, required=True)
-	ext_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	misc = db.TextProperty(required=True)
-	orgs = db.ListProperty(item_type=db.Key, required=True)
-	people = db.ListProperty(item_type=db.Key, required=True)
 
-class Organization(db.Model):
-	ID = db.StringProperty(required=True)
-	name = db.StringProperty(required=True)
+# The main model declerations
+class Crisis(OrgRefs, PersonRefs, CrisisImpact):
+	# entity properties  
+	history = db.TextProperty(required=True)
+	helps = db.TextProperty(required=True)
+	resources = db.TextProperty(required=True)
+	ctype = db.StringProperty(required=True)
+
+class Organization(CommonInfo, CrisisRefs, PersonRefs):
 	history = db.TextProperty(required=True)
 	phone = db.PhoneNumberProperty(required=True)
 	email = db.EmailProperty(required=True)
@@ -64,67 +87,14 @@ class Organization(db.Model):
 	city = db.StringProperty(required=True)
 	region = db.StringProperty(required=True)
 	country = db.StringProperty(required=True)
-	pi_site = db.StringProperty(required=True)
-	pi_title = db.StringProperty(required=True)
-	pi_url = db.LinkProperty(required=True)
-	pi_description = db.TextProperty()
-	image_sites = db.ListProperty(item_type=str, required=True)
-	image_titles = db.ListProperty(item_type=str, required=True)
-	image_urls = db.ListProperty(item_type=db.Link, required=True)
-	image_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	video_sites = db.ListProperty(item_type=str, required=True)
-	video_titles = db.ListProperty(item_type=str, required=True)
-	video_urls = db.ListProperty(item_type=db.Link, required=True)
-	video_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	social_sites = db.ListProperty(item_type=str, required=True)
-	social_titles = db.ListProperty(item_type=str, required=True)
-	social_urls = db.ListProperty(item_type=db.Link, required=True)
-	social_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	ext_sites = db.ListProperty(item_type=str, required=True)
-	ext_titles = db.ListProperty(item_type=str, required=True)
-	ext_urls = db.ListProperty(item_type=db.Link, required=True)
-	ext_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	misc = db.TextProperty(required=True)
-	crises = db.ListProperty(item_type=db.Key, required=True)
-	people = db.ListProperty(item_type=db.Key, required=True)
 
-class Person(db.Model):
-	ID = db.StringProperty(required=True)
-	name = db.StringProperty(required=True)
+class Person(CommonInfo, CrisisRefs, OrgRefs):
 	ptype = db.StringProperty(required=True)
-	btime = db.TextProperty(required=True)
-	bday = db.IntegerProperty(required=True)
-	bmonth = db.IntegerProperty(required=True)
-	byear = db.IntegerProperty(required=True)
-	btime_misc = db.TextProperty(required=True)
+	birthtime = db.TextProperty(required=True)
+	birthday = db.IntegerProperty(required=True)
+	birthmonth = db.IntegerProperty(required=True)
+	birthyear = db.IntegerProperty(required=True)
+	birthtime_misc = db.TextProperty(required=True)
 	nationality = db.StringProperty(required=True)
 	biography = db.TextProperty(required=True)
-	pi_site = db.StringProperty(required=True)
-	pi_title = db.StringProperty(required=True)
-	pi_url = db.LinkProperty(required=True)
-	pi_description = db.TextProperty()
-	image_sites = db.ListProperty(item_type=str, required=True)
-	image_titles = db.ListProperty(item_type=str, required=True)
-	image_urls = db.ListProperty(item_type=db.Link, required=True)
-	image_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	video_sites = db.ListProperty(item_type=str, required=True)
-	video_titles = db.ListProperty(item_type=str, required=True)
-	video_urls = db.ListProperty(item_type=db.Link, required=True)
-	video_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	social_sites = db.ListProperty(item_type=str, required=True)
-	social_titles = db.ListProperty(item_type=str, required=True)
-	social_urls = db.ListProperty(item_type=db.Link, required=True)
-	social_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	ext_sites = db.ListProperty(item_type=str, required=True)
-	ext_titles = db.ListProperty(item_type=str, required=True)
-	ext_urls = db.ListProperty(item_type=db.Link, required=True)
-	ext_descriptions = db.ListProperty(item_type=db.Text, required=True)
-	misc = db.TextProperty(required=True)
-	crises = db.ListProperty(item_type=db.Key, required=True)
-	orgs = db.ListProperty(item_type=db.Key, required=True)
 
-class Ext(db.Model): #We'll add this in the future
-	ext_sites = db.ListProperty(item_type=str, required=True)
-	ext_titles = db.ListProperty(item_type=str, required=True)
-	ext_urls = db.ListProperty(item_type=db.Link, required=True)
-	ext_descriptions = db.ListProperty(item_type=db.Text, required=True)
