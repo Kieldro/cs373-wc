@@ -73,20 +73,21 @@ class CrisisImpact(CrisisLocAndTime):
 
 # The main model declerations
 class Crisis(OrgRefs, PersonRefs, CrisisImpact):
-	# entity properties  
 	history = db.TextProperty(required=True)
 	helps = db.TextProperty(required=True)
 	resources = db.TextProperty(required=True)
 	ctype = db.StringProperty(required=True)
 
 class Organization(CommonInfo, CrisisRefs, PersonRefs):
+	otype = db.StringProperty(required=True)
 	history = db.TextProperty(required=True)
 	phone = db.PhoneNumberProperty(required=True)
 	email = db.EmailProperty(required=True)
 	address = db.StringProperty(required=True, multiline=True)
 	city = db.StringProperty(required=True)
-	region = db.StringProperty(required=True)
-	country = db.StringProperty(required=True)
+	state= db.StringProperty(required=True)
+	country = db.StringProperty(required=True)	
+	zipcode = db.StringProperty(required=True)
 
 class Person(CommonInfo, CrisisRefs, OrgRefs):
 	ptype = db.StringProperty(required=True)
