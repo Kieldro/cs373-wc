@@ -92,9 +92,8 @@ class TestImport(unittest.TestCase) :
 	def test_buildModels(self) :
 		self.assert_(True == True)
 		
-# ------------------
-# dictCommonElements
-# ------------------
+	# ------------------
+	# dictCommonElements
 	def test_dictCommonElements_1(self) :
 		xml_in = StringIO.StringIO(crisis_1)
 		tree = parse(xml_in)
@@ -142,7 +141,6 @@ class TestImport(unittest.TestCase) :
 		
 # ------------
 # createCrisis
-# ------------
 	def test_createCrisis_1 (self) :
 		xml_in = StringIO.StringIO(crisis_1)
 		tree = parse(xml_in)

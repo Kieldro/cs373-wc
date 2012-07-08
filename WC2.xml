@@ -1,31 +1,102 @@
 <?xml version="1.0" ?> 
-<data>
-<crises>
+<worldCrises>
 	<crisis id="worldhunger">
 		<name>World Hunger</name>
-		<kind>Global, Biological</kind>
-		<location>
-			<unspecific>All countries and cities</unspecific>
-		</location>
-		<image>http://stopworldhunger.webs.com/hunger.jpg</image>
-		<image>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</image>
-		<video>http://www.youtube.com/watch?v=6jSBW0BOPqM</video>
-		<video>http://www.youtube.com/watch?v=0W2Ic5hV28w</video>
-		<network>http://www.facebook.com/WorldHungerRelief</network>
-		<network>https://twitter.com/#!/FAOWFD</network>
-		<link>http://www.who.int/en/</link>
-		<link>http://www.worldhunger.org/</link>
-		<link>http://www.freedomfromhunger.org/</link>
-		<date>
-			<otherDiscription>Ongoing.</otherDiscription>
-		</date>
-		<humanImpact>1 in 7 people go to bed hungry. More than 4.5 million children under the age of 5 will die from hunger related causes this year. Death from malnutirition. 25,000 people die daily. 925 million hungry people in 2010.</humanImpact>
-		<economicImpact>In the developing world, more than 1.4 billion people live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the world are undernourished. They consume less than the minimum amount of calories for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.</economicImpact>
-		<resourcesNeeded>Money donations and food donations.</resourcesNeeded>
-		<waysToHelp>Learn and spread awareness about world hunger: <link>http://www.worldhunger.org/learn.htm</link> Donate to the cause. There are many organaztions available, here's one for example: <link>https://www.freedomfromhunger.org/help/online.php?origin=ggHP</link></waysToHelp>
-		<organizationId idref="WHO"/>
-		<personId idref="Chan"/>
+		<info>
+			<history>RESEARCH ON WORLD HUNGER HISTORY</history>
+			<help>Learn and spread awareness about world hunger: http://www.worldhunger.org/learn.htm Donate to the cause. There are many organaztions available, here's one for example: https://www.freedomfromhunger.org/help/online.php?origin=ggHP</help>
+			<resources>Money donations and food donations.</resources>
+			<type>Global, Biological</type>
+			<time>
+				<time>Ongoing</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>Ongoing</misc>
+			</time>
+			<loc>
+				<city>All cities</city>
+				<region>All regions</region>
+				<country>All countries</country>
+			</loc>
+			<impact>
+				<human>
+					<deaths>-1</deaths>
+					<displaced>-1</displaced>
+					<injured>-1</injured>
+					<missing>-1</missing>
+					<misc>1 in 7 people go to bed hungry. More than 4.5 million children under the age of 5 will die from hunger related causes this year. Death from malnutirition. 25,000 people die daily. There were 925 million starving people in 2010.</misc>
+				</human>
+				<economic>
+					<amount>-1</amount>
+					<currency>RESEARCH burritos</currency>
+					<misc>In the developing world, more than 1.4 billion people live below the international poverty line, earning less than $1.25 per day. Among this group of poor people, many have problems obtaining adequate, nutritious food for themselves and their families. As a result, 1.02 billion people in the world are undernourished. They consume less than the minimum amount of calories for sound health and growth. In 2006, more than 36 million died of hunger or diseases due to deficiencies in micronutrients.</misc>
+				</economic>
+			</impact>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://stopworldhunger.webs.com</site>
+				<title>World Hunger</title>
+				<url>http://stopworldhunger.webs.com/hunger.jpg</url>
+				<description>Starving children</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://viroquafood.coop</site>
+				<title>Stop World Hunger</title>
+				<url>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</url>
+				<description>Homeless Sign</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>World hunger - A Billion for a Billion </title>
+				<url>http://www.youtube.com/watch?v=6jSBW0BOPqM</url>
+				<description>World hunger - A Billion for a Billion </description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>World Hunger PSA </title>
+				<url>http://www.youtube.com/watch?v=0W2Ic5hV28w</url>
+				<description>World Hunger PSA</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>World Hunger Relief</title>
+				<url>http://www.facebook.com/WorldHungerRelief</url>
+				<description>World Hunger Relief</description> <!-- OPTIONAL -->
+			</social>
+			<social>
+				<site>https://twitter.com</site>
+				<title>World Food Day </title>
+				<url>https://twitter.com/#!/FAOWFD</url>
+				<description>World Food Day</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.who.int</site>
+				<title>World Health Organization</title>
+				<url>http://www.who.int/en</url>
+				<description>World Health Organization</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.worldhunger.org/</site>
+				<title>http://www.worldhunger.org/</title>
+				<url>http://www.worldhunger.org/</url>
+				<description>http://www.worldhunger.org/</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.freedomfromhunger.org/</site>
+				<title>http://www.freedomfromhunger.org/</title>
+				<url>http://www.freedomfromhunger.org/</url>
+				<description>http://www.freedomfromhunger.org/</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<org idref="WHO"/>
+		<person idref="Chan"/>
 	</crisis>
+
+
+
 	<crisis id="fukushima">
 		<name>Fukushima Daiichi Nuclear Disaster</name>
 		<kind>Nuclear meltdown and release of radioactive materials</kind>
@@ -105,9 +176,113 @@
 		<organizationId idref="FSA"/>
 		<personId idref="Assad"/>
 	</crisis>
-</crises>
-<organizations>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ORGANIZATION START -->
 	<organization id="WHO">
+		<name>World Health Organization</name>
+		<info>
+			<type>Global, Biological</type>
+			<history>RESEARCH ON WORLD HUNGER HISTORY</history>
+			<contact>
+				<phone></phone>
+				<email></email>
+				<mail>
+					<address></address>
+					<city></city>
+					<state></state>
+					<country></country>
+					<zip></zip>
+				</mail>
+			</contact>
+			<loc>
+				<city>All cities</city>
+				<region>All regions</region>
+				<country>All countries</country>
+			</loc>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://stopworldhunger.webs.com</site>
+				<title>World Hunger</title>
+				<url>http://stopworldhunger.webs.com/hunger.jpg</url>
+				<description>Starving children</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://viroquafood.coop</site>
+				<title>Stop World Hunger</title>
+				<url>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</url>
+				<description>Homeless Sign</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>World hunger - A Billion for a Billion </title>
+				<url>http://www.youtube.com/watch?v=6jSBW0BOPqM</url>
+				<description>World hunger - A Billion for a Billion </description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>World Hunger PSA </title>
+				<url>http://www.youtube.com/watch?v=0W2Ic5hV28w</url>
+				<description>World Hunger PSA</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>World Hunger Relief</title>
+				<url>http://www.facebook.com/WorldHungerRelief</url>
+				<description>World Hunger Relief</description> <!-- OPTIONAL -->
+			</social>
+			<social>
+				<site>https://twitter.com</site>
+				<title>World Food Day </title>
+				<url>https://twitter.com/#!/FAOWFD</url>
+				<description>World Food Day</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.who.int</site>
+				<title>World Health Organization</title>
+				<url>http://www.who.int/en</url>
+				<description>World Health Organization</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.worldhunger.org/</site>
+				<title>http://www.worldhunger.org/</title>
+				<url>http://www.worldhunger.org/</url>
+				<description>http://www.worldhunger.org/</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.freedomfromhunger.org/</site>
+				<title>http://www.freedomfromhunger.org/</title>
+				<url>http://www.freedomfromhunger.org/</url>
+				<description>http://www.freedomfromhunger.org/</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<crisis idref="WHO"/>
+		<person idref="Chan"/>
+	</organization>
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<name>World Health Organization</name>
 		<kind>Public Health Worldwide</kind>
 		<location>
@@ -184,8 +359,104 @@
 		<crisisId idref="homs"/>
 		<personId idref="Assad"/>
 	</organization>
-</organizations>
-<people>
+
+
+
+
+
+
+<!-- PEOPLE START -->
+	<person id="Chan">
+		<name>World Health Organization</name>
+		<info>
+			<type>Global, Biological</type>
+			<birthdate>
+				<time>Ongoing</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>Ongoing</misc>
+			</birthdate>
+			<nationality></nationality>
+			<biography></biography>	
+			
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://stopworldhunger.webs.com</site>
+				<title>World Hunger</title>
+				<url>http://stopworldhunger.webs.com/hunger.jpg</url>
+				<description>Starving children</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://viroquafood.coop</site>
+				<title>Stop World Hunger</title>
+				<url>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</url>
+				<description>Homeless Sign</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>World hunger - A Billion for a Billion </title>
+				<url>http://www.youtube.com/watch?v=6jSBW0BOPqM</url>
+				<description>World hunger - A Billion for a Billion </description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>World Hunger PSA </title>
+				<url>http://www.youtube.com/watch?v=0W2Ic5hV28w</url>
+				<description>World Hunger PSA</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>World Hunger Relief</title>
+				<url>http://www.facebook.com/WorldHungerRelief</url>
+				<description>World Hunger Relief</description> <!-- OPTIONAL -->
+			</social>
+			<social>
+				<site>https://twitter.com</site>
+				<title>World Food Day </title>
+				<url>https://twitter.com/#!/FAOWFD</url>
+				<description>World Food Day</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.who.int</site>
+				<title>World Health Organization</title>
+				<url>http://www.who.int/en</url>
+				<description>World Health Organization</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.worldhunger.org/</site>
+				<title>http://www.worldhunger.org/</title>
+				<url>http://www.worldhunger.org/</url>
+				<description>http://www.worldhunger.org/</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.freedomfromhunger.org/</site>
+				<title>http://www.freedomfromhunger.org/</title>
+				<url>http://www.freedomfromhunger.org/</url>
+				<description>http://www.freedomfromhunger.org/</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<crisis idref="worldhunger"/>
+		<organization idref="WHO"/>
+	</person>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 	<person id="Chan">
 		<name>Margaret Chan</name>
 		<kind>Director-General of the World Health Organization</kind>
@@ -241,5 +512,4 @@
 		<crisisId idref="homs"/>
 		<organizationId idref="FSA"/>
 	</person>
-</people>
-</data>
+</worldCrises>

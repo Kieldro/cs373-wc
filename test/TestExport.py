@@ -6,16 +6,11 @@
 
 # -------
 # imports
-# -------
-
 from xml.etree.ElementTree import Element, SubElement
 from Models import Crisis, Organization, Person
 from Export import buildTree
 
 class TestExport (unittest.TestCase) :
-	
-	
-  
 	def build_tester_tree():
 		cmods = []
 		omods = []
@@ -106,7 +101,7 @@ class TestExport (unittest.TestCase) :
 		assert root[0].size() == 5
 		assert root[1].size() == 5
 		assert root[2].size() == 5
-	  
+	
 	# ----
 	# test build pages of type
 	# ----
@@ -292,8 +287,6 @@ class TestExport (unittest.TestCase) :
 
 # ----
 # main
-# ----
-
 print "TestWC.py"
 unittest.main()
 print "Done."
