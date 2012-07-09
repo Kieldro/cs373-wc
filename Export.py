@@ -206,10 +206,56 @@ def buildPersonInfo(personElement, personModel):
 
 
 def buildExternalRefs(element, model):
-	i=1
+	ref = Element(tag="ref")
+
+	pi = Element(tag="primaryImage")
+	buildLink(pi, model.pi_site, model.pi_title, model.pi_url, 
+		model.pi_description)
+	ref.append(pi)
+	
+	for x in range(len(image_sites)):
+		image = Element(tag="image")
+		buildLink(image, model.image_sites[x], model.image_titles[x],
+			 model.image_urls[x], model.image_descriptions[x])
+		ref.append(image)
+			
+	for x in range(len(video_sites)):
+		video = Element(tag="video")
+		buildLink(video, model.video_sites[x], model.video_titles[x],
+			 model.video_urls[x], model.video_descriptions[x])
+		ref.append(video)
+
+	for x in range(len(social_sites)):
+		social = Element(tag="social")
+		buildLink(social, model.social_sites[x], model.social_titles[x],
+			 model.social_urls[x], model.social_descriptions[x])
+		ref.append(social)
+
+
+	for x in range(len(ext_sites)):
+		ext = Element(tag="ext")
+		buildLink(ext, model.ext_sites[x], model.ext_titles[x],
+			 model.ext_urls[x], model.ext_descriptions[x])
+		ref.append(ext)
+
+	
+	element.append(ref)
+	SubElement(element, tag="misc", text=model.misc)
+
+def buildLink(element, site, title, url, description):
+	SubElement(element, tag="site", text=site)
+	SubElement(element, tag="title", text=title)
+	SubElement(element, tag="url", text=url)
+	SubElement(element, tag="description", text=description)
+
 def buildCrisisRefs(element, model):
-	i=2
-def buildOrgRefs(element, model):
-	i=3
-def buildPersonRefs(element, model):
-	i=4
+	for ref in model.crises:
+		SubElement(element, tag="crisis", text=ref)
+
+def buildOrgRefs(element, model):	
+	for ref in modeul.crises:
+		SubElement(element, tag="org", text=ref)
+
+def buildPersonRefs(element, model):	
+	for ref in model.crises:
+		SubElement(element, tag="person", text=ref)
