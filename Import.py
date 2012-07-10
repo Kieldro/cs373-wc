@@ -1,209 +1,260 @@
-import sys #remove this later
-from Models import Crisis, Organization, Person
-from xml.etree.ElementTree import Element, SubElement, parse
+# -*- coding: utf-8 -*-
+from Models import *
+from xml.etree.ElementTree import Element, SubElement
 
 def buildModels(tree) :
 	root = tree.getroot()
-	crisesRoot = tree.find('crises')
-	organizationsRoot = tree.find('organizations')
-	peopleRoot = tree.find('people')
-	
-	crisesList = crisesRoot.getchildren()
-	organizationsList = organizationsRoot.getchildren()
-	peopleList = peopleRoot.getchildren()
+	cri_list = root.findall('crisis')
+	org_list = root.findall('organization')
+	per_list= root.findall('person')
 	
 	cList = []
-	for crisis in crisesList :
+	for crisis in cri_list :
 		cList.append(createCrisis(crisis))
 	
 	oList = []
-	for org in organizationsList :
+	for org in org_list :
 			oList.append(createOrganization(org))
 	
 	pList= []
-	for person in peopleList :
+	for person in per_list :
 		pList.append(createPerson(person))
 	
 	return cList, oList, pList
-		
-def dictCommonElements(elem) :
-	"""
-	Builds a dict for the common elements.
-	elem is the root element of a crisis, organization, or person
-	returns a dict with the values of the common elements.
-	"""
+	
+def createCrisis(elem):
 	d = {}
-	d['ID'] = elem.attrib['id']
+	#d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
-	d['knd'] = elem.findtext('kind')
+	d['misc'] = elem.findtext('misc')
+	d['crisisinfo'] = createCrisisInfo(elem.find('info'))
+	d['reflink'] = createRefLinks(elem.find('ref'))
+	d['personref'] = createReferences('person', elem.find('person'))
+	d['orgref'] = createReferences('org', elem.find('org'))
 	
-	"""
-	Within <location>, there can either be:
-	- <unspecific> or 
-	- the set <city>, <state>, <country>, with each element optional.
-	"""
-	locationElem = elem.find('location')
-	location_text = locationElem.findtext('unspecific')
-	if location_text != None:
-		d['location'] = location_text
-	else :
-		d['location'] = ""
-		city_text = locationElem.findtext('city')
-		state_text = locationElem.findtext('state')
-		country_text = locationElem.findtext('country')
-		if city_text != None :
-			d['city'] = city_text
-		else :
-			d['city'] = ""
-		if state_text != None :
-			d['state'] = state_text
-		else :
-			d['state'] = ""
-		if country_text != None :
-			d['country'] = country_text
-		else :
-			d['country'] = ""
-	
-	# The following four can have multiple tags of the same name
-	d['image'] = [str(i.text) for i in elem.findall('image')]
-	d['video'] = [str(v.text) for v in elem.findall('video')]
-	d['network'] = [str(n.text) for n in elem.findall('network')]
-	d['link'] = [str(l.text) for l in elem.findall('link')]
-	"""
-	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	for k, v in d.items() :
-		print '%s = %s' % (k, v)
-		
-	print 'END-------------------------------------------------------'
-	"""
-	return d
-	
-def createCrisis(elem) :
-	"""
-	Creates a Crisis instance.
-	elem is the root element of a crisis (<crisis>)
-	returns the crisis as an instance of Crisis
-	"""
-	d = dictCommonElements(elem)
-
-	"""
-	The date tag contains either:
-	- <otherDiscription>
-	- or the set containing <start>, <end>, and/or <additional>
-	"""
-	dateElem = elem.find('date')
-	date_text = dateElem.findtext('otherDiscription')
-	if date_text != None :
-		d['date'] = date_text
-	else :
-		d['date'] = ""
-		start_text = dateElem.findtext('start')
-		end_text = dateElem.findtext('end')
-		additional_text = dateElem.findtext('additional')
-		if start_text != None:
-			d['startDate'] = start_text
-		else:
-			d['startDate'] = ""
-		if end_text != None:
-			d['endDate'] = end_text
-		else:
-			d['endDate'] = ""
-		if additional_text != None:
-			d['additional'] = additional_text
-		else:
-			d['additional'] = ""
-
-
-	d['humanImpact'] = elem.findtext('humanImpact')
-	d['ecoImpact'] = elem.findtext('economicImpact')
-	d['resources'] = elem.findtext('resourcesNeeded')
-	
-	waysToHelpElem = elem.find('waysToHelp')
-	first_text = waysToHelpElem.text
-	if first_text != None :
-		text_list = [first_text, ]
-	else :
-		text_list = ["", ]
-		
-	links_list = []
-	linkElems = waysToHelpElem.findall('link')
-	for link in linkElems :
-		links_list.append(str(link.text))	
-		text_list.append(str(link.tail))		#Should I append "" if no tail?
-	
-	d['waysToHelpText'] = text_list
-	d['waysToHelpLinks'] = links_list
-	
-	d['orgs'] = [o.attrib["idref"] for o in elem.findall('organizationId')]
-	d['people'] = [p.attrib["idref"] for p in elem.findall('personId')]
-	"""
-	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	for k, v in d.items() :
-		print '%s = %s' % (k, v)
-		
-	print 'END-------------------------------------------------------'
-	"""
 	c = Crisis(**d)
+	c.put()
 	return c
-	
-def createOrganization(elem) :
-	"""
-	Creates an Oragnization instance.
-	elem is the root element of an organization (<organization>)
-	returns the organization as an instance of Organization
-	"""
-	d = dictCommonElements(elem)
-	d['history'] = elem.findtext('history')
-	
-	contactElem = elem.find('contactInfo')
-	first_text = Element(contactElem).text
-	if first_text != None :
-		text_list = [first_text, ]
-	else :
-		text_list = ["", ]
-	
-	links_list	= []
-	linkElems = Element(contactElem).findall('link')
-	for link in linkElems :
-		links_list.append(str(link.text))	
-		text_list.append(str(link.tail))		#Should I append "" if no tail?
-	
-	d['contactInfoText'] = text_list
-	d['contactInfoLinks'] = links_list
-	
-	d['crises'] = [c.attrib["idref"] for c in elem.findall('crisisId')]
-	d['people'] = [p.attrib["idref"] for p in elem.findall('personId')]
-	
-	"""
-	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	for k, v in d.items() :
-		print '%s = %s' % (k, v)
 		
-	print 'END-------------------------------------------------------'
-	"""
+def createOrganization(elem):
+	d = {}
+	#d['ID'] = elem.attrib['id']
+	d['name'] = elem.findtext('name')
+	d['misc'] = elem.findtext('misc')
+	
+	d['orginfo'] = createOrgInfo(elem.find('info'))
+	d['reflink'] = createRefLinks(elem.find('ref'))
+	d['crisisref'] = createReferences('crisis', elem.find('crisis'))
+	d['personref'] = createReferences('person', elem.find('person'))
+	
 	o = Organization(**d)
+	o.put()
 	return o
 	
-def createPerson(elem) :
-	"""
-	Creates a Person instance.
-	elem is the root element of a person (<person>)
-	returns the person as an instance of Person
-	"""
-	d = dictCommonElements(elem)
+def createPerson(elem):
+	d = {}
+	#d['ID'] = elem.attrib['id']
+	d['name'] = elem.findtext('name')
+	d['misc'] = elem.findtext('misc')
 	
-	d['orgs'] = [o.attrib["idref"] for o in elem.findall('organizationId')]
-	d['crises'] = [c.attrib["idref"] for c in elem.findall('crisisId')]
-	"""
-	print 'START~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-	for k, v in d.items() :
-		print '%s = %s' % (k, v)
-		
-	print 'END-------------------------------------------------------'
-	"""
+	d['personinfo'] = createPersonInfo(elem.find('info'))
+	d['reflink'] = createRefLinks(elem.find('ref'))
+	d['crisisref'] = createReferences('crisis', elem.find('crisis'))
+	d['orgref'] = createReferences('org', elem.find('org'))
+	
 	p = Person(**d)
+	p.put()
 	return p
+	
+def createDate(elem) :
+	d = {}
+	d['time'] = elem.findtext('time')
+	d['day'] = elem.findtext('day')
+	d['month'] = elem.findtext('month')
+	d['year'] = elem.findtext('year')
+	d['time_misc'] = elem.findtext('misc')
+	
+	de = Date(**d)
+	de.put()
+	return de
+	
+def createCrisisInfo(elem):
+	d = {}
+	d['history'] = elem.findtext('history')
+	d['helps'] = elem.findtext('help')
+	d['resources'] = elem.findtext('resources')
+	d['ctype'] = elem.findtext('type')
+	
+	d['location'] = createLocationInfo(elem.find('loc'))
+	d['impact'] = createImpact(elem.find('impact'))
+	d['date'] = createDate(elem.find('time'))
+	
+	ci = CrisisInfo(**d)
+	ci.put()
+	return ci
+	
+def createOrgInfo(elem):
+	d = {}
+	d['otype'] = elem.findtext('type')
+	d['history'] = elem.findtext('history')	
+	
+	d['location'] = createLocationInfo(elem.find('loc'))
+	d['contacts'] = createContacts(elem.find('contact'))
+	
+	oi = OrgInfo(**d)
+	oi.put()
+	return oi
+	
+def createPersonInfo(elem):
+	d = {}
+	d['biography'] = elem.findtext('biography')
+	d['nationality'] = elem.findtext('nationality')
+	d['ptype'] = elem.findtext('type')
 
-if __name__ == "__main__" :
-	tree = parse(sys.stdin)
-	buildModels(tree)
+	d['birthdate'] = createDate(elem.find('birthdate'))
+	
+	pi = PersonInfo(**d)
+	pi.put()
+	return pi
+	
+def createRefLinks(elem) :
+	d = {}
+	d['primary_image'] = createLink('primary_image', elem.find('primaryImage'))
+	images = elem.findall('image')
+	image_list = []
+	for image in images :
+		image_list.append(createLink('image', image))
+	d['image'] = image_list[0]
+	
+	videos = elem.findall('video')
+	video_list = []
+	for video in videos :
+		video_list.append(createLink('video', video))
+	d['video'] = video_list[0]
+	
+	socials = elem.findall('social')
+	social_list = []
+	for social in socials :
+		social_list.append(createLink('social', social))
+	d['social'] = social_list[0]
+	
+	exts = elem.findall('ext')
+	ext_list = []
+	for ext in exts :
+		ext_list.append(createLink('ext', ext))
+	d['ext'] = ext_list[0]
+	
+	rl = RerferenceLinks(**d)
+
+	for image in image_list :
+		rl.image = image
+	
+	for video in video_list :
+		rl.video = video
+	
+	for social in social_list :
+		rl.social = social
+	
+	for ext in ext_list:
+		rl.ext = ext
+	
+	rl.put()
+	return rl
+	
+	
+def createLink(etype, elem) :
+	d = {}
+	d['site'] = elem.findtext('site')
+	d['title'] = elem.findtext('title')
+	d['url'] = elem.findtext('url')
+	desc = elem.findtext('description')
+	if(desc) :
+		d['description'] = desc
+	
+	d['link_type'] = etype
+	
+	l = Link(**d)
+	l.put()
+	return l
+
+
+def createReferences(itype, elem) :
+	d = {}
+	refs = elem.findall(itype)
+	ref_list = []
+	for ref in refs :
+		ref_list.append(ref.attrib['idref'])
+	d['ref'] = ref_list[0]
+	d['rType'] = itype
+	
+	
+	r = Reference(**d)
+	for ref in ref_list :
+		r.ref = ref
+	
+	r.put()
+	return r
+	
+def createLocation(elem) :
+	d = {}
+	d['city'] = elem.findtext('city')
+	d['region'] = elem.findtext('region')
+	d['country'] = elem.findtext('country')
+	
+	l = Location(**d)
+	l.put()
+	return l
+	
+	
+def createHumanImpact(elem) :
+	d = {}
+	d['deaths'] = elem.findtext('deaths')
+	d['displaced'] = elem.findtext('displaced')
+	d['injured'] = elem.findtext('injured')
+	d['missing'] = elem.findtext('missing')
+	d['himpact_misc'] = elem.findtext('misc')
+	
+	hi = HumanImpact(**d)
+	hi.put()
+	return hi
+	
+def createEconomicImpact(elem) :
+	d = {}
+	d['amount'] = elem.findtext('amount')
+	d['currency'] = elem.findtext('currency')
+	d['eimpact_misc'] = elem.findtext('misc')
+	
+	ei = EconomicImpact(**d)
+	ei.put()
+	return ei
+	
+def createImpact(elem) :
+	d = {}
+	d['human_impact'] = createHumanImpact(elem.find('human'))
+	d['eco_impact'] = createHumanImpact(elem.find('economic'))
+	
+	i = Impact(**d)
+	i.put()
+	return i
+	
+def createFullAddress(elem) :
+	d = {}
+	d['address'] = elem.findtext('address')
+	d['city'] = elem.findtext('city')
+	d['state'] = elem.findtext('state')
+	d['country'] = elem.findtext('country')
+	d['zipcode'] = elem.findtext('zip')
+	
+	fa = FullAddress(**d)
+	fa.put()
+	return fa
+	
+def createContacts(elem) :
+	d = {}
+	d['phone'] = elem.findtext('phone')
+	d['email'] = elem.findtext('email')
+	d['address'] = createFullAddress(elem.find('mail'))
+	
+	c = Contacts(**d)
+	c.put()
+	return c
