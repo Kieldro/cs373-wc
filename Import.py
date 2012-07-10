@@ -29,10 +29,19 @@ def createCrisis(elem):
 	d['misc'] = elem.findtext('misc')
 	d['crisisinfo'] = createCrisisInfo(elem.find('info'))
 	d['reflink'] = createRefLinks(elem.find('ref'))
-	d['personref'] = createReferences('person', elem.find('person'))
-	d['orgref'] = createReferences('org', elem.find('org'))
+
+	personrefs = createReferences('person', elem)
+	d['personref'] = personrefs[0]
+	orgrefs = createReferences('org', elem)
+	d['orgref'] = orgrefs[0]
 	
 	c = Crisis(**d)
+	for personref in personrefs :
+		c.personref = personref
+
+	for orgref in orgrefs:
+		c.orgref = orgref
+
 	c.put()
 	return c
 		
@@ -41,13 +50,21 @@ def createOrganization(elem):
 	#d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
 	d['misc'] = elem.findtext('misc')
-	
 	d['orginfo'] = createOrgInfo(elem.find('info'))
 	d['reflink'] = createRefLinks(elem.find('ref'))
-	d['crisisref'] = createReferences('crisis', elem.find('crisis'))
-	d['personref'] = createReferences('person', elem.find('person'))
+
+	crisisrefs = createReferences('crisis', elem)
+	d['crisisref'] = crisisrefs[0]
+	personrefs = createReferences('person', elem)
+	d['personref'] = personrefs[0]
 	
 	o = Organization(**d)
+	for crisisref in crisisrefs:
+		o.crisisref = crisisref
+
+	for personref in personrefs :
+		o.personref = personref
+
 	o.put()
 	return o
 	
@@ -56,22 +73,30 @@ def createPerson(elem):
 	#d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
 	d['misc'] = elem.findtext('misc')
-	
 	d['personinfo'] = createPersonInfo(elem.find('info'))
 	d['reflink'] = createRefLinks(elem.find('ref'))
-	d['crisisref'] = createReferences('crisis', elem.find('crisis'))
-	d['orgref'] = createReferences('org', elem.find('org'))
+
+	crisisrefs = createReferences('crisis', elem)
+	d['crisisref'] = crisisrefs[0]
+	orgrefs = createReferences('org', elem)
+	d['orgref'] = orgrefs[0]
 	
 	p = Person(**d)
+	for crisisref in crisisrefs:
+		p.crisisref = crisisref
+
+	for orgref in orgrefs:
+		p.orgref = orgref
+
 	p.put()
 	return p
 	
 def createDate(elem) :
 	d = {}
 	d['time'] = elem.findtext('time')
-	d['day'] = elem.findtext('day')
-	d['month'] = elem.findtext('month')
-	d['year'] = elem.findtext('year')
+	d['day'] = int(elem.findtext('day'))
+	d['month'] = int(elem.findtext('month'))
+	d['year'] = int(elem.findtext('year'))
 	d['time_misc'] = elem.findtext('misc')
 	
 	de = Date(**d)
@@ -144,7 +169,7 @@ def createRefLinks(elem) :
 		ext_list.append(createLink('ext', ext))
 	d['ext'] = ext_list[0]
 	
-	rl = RerferenceLinks(**d)
+	rl = ReferenceLinks(**d)
 
 	for image in image_list :
 		rl.image = image
@@ -183,19 +208,16 @@ def createReferences(itype, elem) :
 	refs = elem.findall(itype)
 	ref_list = []
 	for ref in refs :
-		ref_list.append(ref.attrib['idref'])
-	d['ref'] = ref_list[0]
-	d['rType'] = itype
+		d = {}
+		d['sref'] = ref.attrib['idref']
+		d['rType'] = itype
+		r = Reference(**d)
+		r.put()
+		ref_list.append(r)
+
+	return ref_list
 	
-	
-	r = Reference(**d)
-	for ref in ref_list :
-		r.ref = ref
-	
-	r.put()
-	return r
-	
-def createLocation(elem) :
+def createLocationInfo(elem) :
 	d = {}
 	d['city'] = elem.findtext('city')
 	d['region'] = elem.findtext('region')
@@ -208,10 +230,10 @@ def createLocation(elem) :
 	
 def createHumanImpact(elem) :
 	d = {}
-	d['deaths'] = elem.findtext('deaths')
-	d['displaced'] = elem.findtext('displaced')
-	d['injured'] = elem.findtext('injured')
-	d['missing'] = elem.findtext('missing')
+	d['deaths'] = int(elem.findtext('deaths'))
+	d['displaced'] = int(elem.findtext('displaced'))
+	d['injured'] = int(elem.findtext('injured'))
+	d['missing'] = int(elem.findtext('missing'))
 	d['himpact_misc'] = elem.findtext('misc')
 	
 	hi = HumanImpact(**d)
@@ -220,7 +242,7 @@ def createHumanImpact(elem) :
 	
 def createEconomicImpact(elem) :
 	d = {}
-	d['amount'] = elem.findtext('amount')
+	d['amount'] = int(elem.findtext('amount'))
 	d['currency'] = elem.findtext('currency')
 	d['eimpact_misc'] = elem.findtext('misc')
 	
@@ -231,7 +253,7 @@ def createEconomicImpact(elem) :
 def createImpact(elem) :
 	d = {}
 	d['human_impact'] = createHumanImpact(elem.find('human'))
-	d['eco_impact'] = createHumanImpact(elem.find('economic'))
+	d['eco_impact'] = createEconomicImpact(elem.find('economic'))
 	
 	i = Impact(**d)
 	i.put()
