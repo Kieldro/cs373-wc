@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% block title %}Import{% endblock %}
+{% block content %}
+<header>
+	<h1>Import <small>Data into the database</small></h1>
+</header>
+<section>
+	<div class="row">
+		<div class="span12">
+			<h1>Before You Import</h1>
+			<p>Insert import instructions here. Fancy diagram?</p>
+		</div>
+	</div>
+	<hr/>
+	<div class="row">
+		<div class="span12">
+			<h1>How to Import</h1>
+			<p>Just click the button below, choose your xml file, and hit ok! We do a validation check to see if your xml file conforms to our schema. 
+			If anything goes wrong, you'll see an error. Otherwise, you're good!</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span4 well">
+			<form action="/xml/import" enctype="multipart/form-data" method="post">
+				<input type="file" name="data" />
+				<input type="submit" value="Import" />
+			</form>
+		</div>
+		<div class="span4 alert alert-block alert-info">
+			<h4>Info</h4>
+			Watch this space-if anything goes wrong, you'll see an alert here!
+		</div>
+		</div>
+		
+	</div>
+</section>
+{% endblock %}
