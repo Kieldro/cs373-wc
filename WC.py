@@ -53,6 +53,20 @@ class PeoplePage(BaseHandler):
 class OrganizationsPage(BaseHandler):
 	def get(self):
 		self.render_template('organizations.html')
+
+class ImportPage(BaseHandler):
+	def post(self):
+		xmlfile = self.request.get("data")
+		deleteModels()
+		runImport(xmlfile)
+		try:
+			runImport(xmlfile)
+			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/staticpages/port.html">')
+		except:
+			self.response.out.write("XML file does not conform to the schema.")
+	
+	def get(self):
+		self.render_template('import.html')
 """
 class ImportPage(webapp.RequestHandler):
 	def post(self):
@@ -79,7 +93,8 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
 									  ('/crises', CrisesPage),
 									  ('/people', PeoplePage),
-									  ('/organizations', OrganizationsPage)
+									  ('/organizations', OrganizationsPage),
+									  ('/import', ImportPage)
 									  ], debug=True)
 #[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 
