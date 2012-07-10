@@ -1,0 +1,28 @@
+header h1 {
+	font-size: 54px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	line-height:1;
+}
+header small {
+	font-size: 30px;
+}
+
+.typeahead  {
+	z-index: 2000;
+}
+
+section {
+	padding-top: 60px;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+.entries {
+	list-style-type: none;
+}
+.entries li {
+	
+	background-color: 0;
+}

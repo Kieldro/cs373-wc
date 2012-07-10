@@ -4,8 +4,8 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /staticpages
-  static_dir: staticpages
+- url: /static
+  static_dir: static
 
 - url: /test.*
   script: gaeunit.py
