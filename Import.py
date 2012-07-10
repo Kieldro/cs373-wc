@@ -19,75 +19,59 @@ def buildModels(tree) :
 	pList= []
 	for person in per_list :
 		pList.append(createPerson(person))
+
+	buildReferences(cList, oList, pList)
 	
 	return cList, oList, pList
-	
+
 def createCrisis(elem):
 	d = {}
-	#d['ID'] = elem.attrib['id']
+	d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
 	d['misc'] = elem.findtext('misc')
 	d['crisisinfo'] = createCrisisInfo(elem.find('info'))
 	d['reflink'] = createRefLinks(elem.find('ref'))
 
 	personrefs = createReferences('person', elem)
-	d['personref'] = personrefs[0]
+	d['personref'] = personrefs
 	orgrefs = createReferences('org', elem)
-	d['orgref'] = orgrefs[0]
+	d['orgref'] = orgrefs
 	
 	c = Crisis(**d)
-	for personref in personrefs :
-		c.personref = personref
-
-	for orgref in orgrefs:
-		c.orgref = orgref
-
 	c.put()
 	return c
 		
 def createOrganization(elem):
 	d = {}
-	#d['ID'] = elem.attrib['id']
+	d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
 	d['misc'] = elem.findtext('misc')
 	d['orginfo'] = createOrgInfo(elem.find('info'))
 	d['reflink'] = createRefLinks(elem.find('ref'))
 
 	crisisrefs = createReferences('crisis', elem)
-	d['crisisref'] = crisisrefs[0]
+	d['crisisref'] = crisisrefs
 	personrefs = createReferences('person', elem)
-	d['personref'] = personrefs[0]
+	d['personref'] = personrefs
 	
 	o = Organization(**d)
-	for crisisref in crisisrefs:
-		o.crisisref = crisisref
-
-	for personref in personrefs :
-		o.personref = personref
-
 	o.put()
 	return o
 	
 def createPerson(elem):
 	d = {}
-	#d['ID'] = elem.attrib['id']
+	d['ID'] = elem.attrib['id']
 	d['name'] = elem.findtext('name')
 	d['misc'] = elem.findtext('misc')
 	d['personinfo'] = createPersonInfo(elem.find('info'))
 	d['reflink'] = createRefLinks(elem.find('ref'))
 
 	crisisrefs = createReferences('crisis', elem)
-	d['crisisref'] = crisisrefs[0]
+	d['crisisref'] = crisisrefs
 	orgrefs = createReferences('org', elem)
-	d['orgref'] = orgrefs[0]
+	d['orgref'] = orgrefs
 	
 	p = Person(**d)
-	for crisisref in crisisrefs:
-		p.crisisref = crisisref
-
-	for orgref in orgrefs:
-		p.orgref = orgref
-
 	p.put()
 	return p
 	
@@ -148,41 +132,28 @@ def createRefLinks(elem) :
 	images = elem.findall('image')
 	image_list = []
 	for image in images :
-		image_list.append(createLink('image', image))
-	d['image'] = image_list[0]
+		image_list.append(createLink('image', image).key())
+	d['image'] = image_list
 	
 	videos = elem.findall('video')
 	video_list = []
 	for video in videos :
-		video_list.append(createLink('video', video))
-	d['video'] = video_list[0]
+		video_list.append(createLink('video', video).key())
+	d['video'] = video_list
 	
 	socials = elem.findall('social')
 	social_list = []
 	for social in socials :
-		social_list.append(createLink('social', social))
-	d['social'] = social_list[0]
+		social_list.append(createLink('social', social).key())
+	d['social'] = social_list
 	
 	exts = elem.findall('ext')
 	ext_list = []
 	for ext in exts :
-		ext_list.append(createLink('ext', ext))
-	d['ext'] = ext_list[0]
+		ext_list.append(createLink('ext', ext).key())
+	d['ext'] = ext_list
 	
 	rl = ReferenceLinks(**d)
-
-	for image in image_list :
-		rl.image = image
-	
-	for video in video_list :
-		rl.video = video
-	
-	for social in social_list :
-		rl.social = social
-	
-	for ext in ext_list:
-		rl.ext = ext
-	
 	rl.put()
 	return rl
 	
@@ -213,7 +184,7 @@ def createReferences(itype, elem) :
 		d['rType'] = itype
 		r = Reference(**d)
 		r.put()
-		ref_list.append(r)
+		ref_list.append(r.key())
 
 	return ref_list
 	
@@ -280,3 +251,66 @@ def createContacts(elem) :
 	c = Contacts(**d)
 	c.put()
 	return c
+
+
+def buildReferences(cList, oList, pList) :
+	for crisis in cList:
+		orefs= crisis.orgref
+		for oref in orefs:
+			oref_elem = db.get(oref)
+			target = oref_elem.sref
+			for org in oList:
+				if org.ID == target:
+					oref_elem.ref = org
+					oref_elem.put()
+					break
+		prefs = crisis.personref
+		for pref in prefs:
+			pref_elem = db.get(pref)
+			target = pref_elem.sref
+			for person in pList:
+				if person.ID == target:
+					pref_elem.ref = person
+					pref_elem.put()
+					break
+
+	for orgs in oList:
+		crefs = orgs.crisisref
+		for cref in crefs:
+			cref_elem = db.get(cref)
+			target = cref_elem.sref
+			for crisis in cList:
+				if crisis.ID == target:
+					cref_elem.ref = crisis
+					cref_elem.put()
+					break
+		prefs = orgs.personref
+		for pref in prefs:
+			pref_elem = db.get(pref)
+			target = pref_elem.sref
+			for person in pList:
+				if person.ID == target:
+					pref_elem.ref = person
+					pref_elem.put()
+					break
+
+	for person in pList:
+		crefs = person.crisisref
+		for cref in crefs:
+			cref_elem = db.get(cref)
+			target = cref_elem.sref
+			for crisis in cList:
+				if crisis.ID == target:
+					cref_elem.ref = crisis	
+					cref_elem.put()
+					break
+		orefs= person.orgref
+		for oref in orefs:
+			oref_elem = db.get(oref)
+			target = oref_elem.sref
+			for org in oList:
+				if org.ID == target:
+					oref_elem.ref = org
+					oref_elem.put()
+					break
+
