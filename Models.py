@@ -56,11 +56,11 @@ class Link(db.Model):
 
 
 class ReferenceLinks(db.Model):
-	primary_image = db.ReferenceProperty(Link, collection_name="pimage")
-	image = db.ReferenceProperty(Link, collection_name="image")
-	social = db.ReferenceProperty(Link, collection_name="social")
-	video = db.ReferenceProperty(Link, collection_name="video")
-	ext = db.ReferenceProperty(Link, collection_name="ext")
+	primary_image = db.ReferenceProperty(Link)
+	image = db.ListProperty(db.Key, required = True)
+	social = db.ListProperty(db.Key, required = True)
+	video = db.ListProperty(db.Key, required = True)
+	ext = db.ListProperty(db.Key, required = True)
 	
 class Impact(db.Model):
 	human_impact = db.ReferenceProperty(HumanImpact, required=True)
@@ -88,25 +88,28 @@ class PersonInfo(db.Model):
 	birthdate = db.ReferenceProperty(Date, required=True)
 	
 class Organization(WorldCrisisPage):
+	ID = db.StringProperty(required=True)
 	name = db.StringProperty(required=True)
 	misc = db.TextProperty(required=True)
 	orginfo = db.ReferenceProperty(OrgInfo, required=True)
 	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
-	crisisref = db.ReferenceProperty(Reference, collection_name="org_criref", required = True)
-	personref = db.ReferenceProperty(Reference, collection_name="org_perref", required = True)
+	crisisref = db.ListProperty(db.Key, required = True)
+	personref = db.ListProperty(db.Key, required = True)
 	
 class Crisis(WorldCrisisPage):
+	ID = db.StringProperty(required=True)
 	name = db.StringProperty(required=True)
 	misc = db.TextProperty(required=True)
 	crisisinfo = db.ReferenceProperty(CrisisInfo, required=True)
 	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
-	personref = db.ReferenceProperty(Reference, collection_name="cri_perref", required = True)
-	orgref = db.ReferenceProperty(Reference, collection_name="cri_orgref", required = True)
+	personref = db.ListProperty(db.Key, required = True)
+	orgref = db.ListProperty(db.Key, required = True)
 	
 class Person(WorldCrisisPage):
+	ID = db.StringProperty(required=True)
 	name = db.StringProperty(required=True)
 	misc = db.TextProperty(required=True)
 	personinfo = db.ReferenceProperty(PersonInfo, required=True)
 	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
-	crisisref = db.ReferenceProperty(Reference, collection_name="per_criref", required = True)
-	orgref = db.ReferenceProperty(Reference, collection_name="per_orgref", required = True)
+	crisisref = db.ListProperty(db.Key, required = True)
+	orgref = db.ListProperty(db.Key, required = True)
