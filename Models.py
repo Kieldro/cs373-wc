@@ -26,8 +26,9 @@ class Date(db.Model):
 	time_misc = db.TextProperty(required=True)
 
 class Reference(db.Model):
-	ref = db.ReferenceProperty(WorldCrisisPage, required=True)
-	rType = db.StringProperty(required=True,choices=["crisis", "organization", "person"])
+	ref = db.ReferenceProperty(WorldCrisisPage)
+	sref = db.StringProperty(required=True)
+	rType = db.StringProperty(required=True,choices=["crisis", "org", "person"])
 	
 class FullAddress(db.Model):
 	address = db.StringProperty(required=True, multiline=True)
@@ -45,13 +46,6 @@ class Location(db.Model):
 	city = db.StringProperty(required=True)
 	region = db.StringProperty(required=True)
 	country = db.StringProperty(required=True)
-
-class Link(db.Model):
-	site = db.StringProperty(required=True)
-	title = db.StringProperty(required=True)
-	url = db.LinkProperty(required=True)
-	description = db.TextProperty(required=True, default="")
-	link_type = db.StringProperty(choices=["primary_image", "image", "video", "social", "ext"], required=True)
 
 class Link(db.Model):
 	site = db.StringProperty(required=True)
@@ -83,7 +77,7 @@ class CrisisInfo(db.Model):
 	helps = db.TextProperty(required=True)
 	resources = db.TextProperty(required=True)
 	ctype = db.StringProperty(required=True)
-	location = db.ReferenceProperty(FullAddress, required=True)
+	location = db.ReferenceProperty(Location, required=True)
 	impact = db.ReferenceProperty(Impact, required=True)
 	date = db.ReferenceProperty(Date, required=True)
 
