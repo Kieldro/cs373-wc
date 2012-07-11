@@ -3,9 +3,11 @@ from google.appengine.ext.db import delete
 from Models import *
 from google.appengine.ext.webapp.util import run_wsgi_app
 from RunExport import runExport
-from RunImport import runImport
+from RunImport import runImport, getSchemaString
 from minixsv import pyxsval
 from genxmlif import GenXmlIfError
+from google.appengine.ext.webapp import template
+import os
 
 import StringIO
 
@@ -27,33 +29,88 @@ def deleteModels() :
 	delete(Crisis.all(keys_only=True))
 	delete(Person.all(keys_only=True))
 
-class MainPage(webapp.RequestHandler):
+class BaseHandler(webapp.RequestHandler):
+	def render_template(self, filename, **template_args):
+		path = os.path.join(os.path.dirname(__file__), 'templates', filename)
+		self.response.out.write(template.render(path, template_args))
+	
+class MainPage(BaseHandler):
 	def get(self):
-		self.response.out.write('<meta http-equiv="Refresh" content="1;url=staticpages/splash.html">')
+		self.render_template('index.html')
+		
+class AboutPage(BaseHandler):
+	def get(self):
+		self.render_template('about.html')
+		
+class CrisesPage(BaseHandler):
+	def get(self):
+		self.render_template('crises.html')
+		
+class PeoplePage(BaseHandler):
+	def get(self):
+		self.render_template('people.html')
+		
+class OrganizationsPage(BaseHandler):
+	def get(self):
+		self.render_template('organizations.html')
 
+class ImportPage(BaseHandler):
+	def post(self):
+		xmlfile = self.request.get("data")
+		xmlschema = getSchemaString()
+		try:
+		    # call validator
+		    elementTreeWrapper = pyxsval.parseAndValidateXmlInputString (xmlfile, xsdText=str(xmlschema), verbose=0)
+		    #elementtree object after validation
+		    elemTree = elementTreeWrapper.getTree()
+		except pyxsval.XsvalError, errstr:
+		    self.response.out.write("Validation aborted!")
+		except GenXmlIfError, errstr:
+		    self.response.out.write("Parsing aborted!")
+		except:
+			self.response.out.write("XML file does not conform to the schema.")
+
+		deleteModels()
+
+		try:
+			runImport(xmlfile)
+			self.response.out.write('<h1>Successfully imported the xml file! Rerouting to import page</h1>')
+			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/import">')
+		except:
+			self.response.out.write("XML file does not conform to the schema.")
+	
+	def get(self):
+		self.render_template('import.html')
+"""
 class ImportPage(webapp.RequestHandler):
 	def post(self):
 		xmlfile = self.request.get("data")
 		deleteModels()
 		runImport(xmlfile)
-		"""try:
+		try:
 			runImport(xmlfile)
 			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/staticpages/port.html">')
 		except:
-			self.response.out.write("XML file does not conform to the schema.")"""
+			self.response.out.write("XML file does not conform to the schema.")
 
 	def get(self):
 		print "XML file does not conform to the schema."
-
+		
 class ExportPage(webapp.RequestHandler):
 	def get(self):
 		result = runExport()
 		self.response.headers['Content-Type'] = 'text/xml'
 		self.response.out.write(str(result))
+"""
 
-
-application = webapp.WSGIApplication([('/', MainPage), ('/xml/export', ExportPage),
-	('/xml/import', ImportPage)], debug=True)
+application = webapp.WSGIApplication([('/', MainPage),
+									  ('/about', AboutPage),
+									  ('/crises', CrisesPage),
+									  ('/people', PeoplePage),
+									  ('/organizations', OrganizationsPage),
+									  ('/import', ImportPage)
+									  ], debug=True)
+#[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 
 def main():
 	run_wsgi_app(application)

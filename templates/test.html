@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bootstrap Test</title>
+		
+		<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+			<style type="text/css">
+				body {
+					padding-top: 60px;
+					padding-bottom: 40px;
+				}
+			</style>
+		<link>
+		<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="#">World Crises</a>
+					<ul class="nav pull-right">
+						<li class="dropdown" id="cMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#Crises">Crises <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><p class="nav-header">Recent Entries:</p></li>
+								<li><a href="#">Crisis 1</a></li>
+								<li><a href="#">Crisis 2</a></li>
+								<li><a href="#">Crisis 3</a></li>
+								<li><a href="#">Crisis 4</a></li>
+								<li class="divider"></li>
+								<li><a href="#">See All...</a></li>
+							</ul>
+						</li>
+						<li class="dropdown" id="oMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#Orgs">Organizations <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><p class="nav-header">Recent Entries:</p></li>
+								<li><a href="#">Organization 1</a></li>
+								<li><a href="#">Organization 2</a></li>
+								<li><a href="#">Organization 3</a></li>
+								<li><a href="#">Organization 4</a></li>
+								<li class="divider"></li>
+								<li><a href="#">See All...</a></li>
+							</ul>
+						</li>
+						<li class="dropdown" id="pMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#Orgs">People <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><p class="nav-header">Recent Entries:</p></li>
+								<li><a href="#">Person 1</a></li>
+								<li><a href="#">Person 2</a></li>
+								<li><a href="#">Person 3</a></li>
+								<li><a href="#">Person 4</a></li>
+								<li class="divider"></li>
+								<li><a href="#">See All...</a></li>
+							</ul>
+						</li>
+						<li class="divider-vertical"></li>
+						<li class="dropdown" id="dataMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#Data">Data <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Import</a></li>
+								<li><a href="#">Export</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form method="get" class="navbar-search">
+						<input name="search" type="text" class="search-query span3" placeholder="search the database for..."/>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div class="span8 offset2">
+					<div id="myCarousel" class="carousel slide">
+						<div class="carousel-inner">
+							<div class="item active">
+								<img width="596" height="343" alt="alt 1"/>
+								<div class="carousel-caption">
+									<h4>First Image</h4>
+									<p>This is a thing!</p>
+								</div>
+							</div>
+							<div class="item">
+								<img width="596" height="343" alt="alt 2"/>
+								<div class="carousel-caption">
+									<h4>Second Image</h4>
+									<p>This is bad!</p>
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+					</div>
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="span4">
+					<h2>Crises</h2>
+					<p>Bad things are happening around the world! Please help us!</p>
+				</div>
+				<div class="span4">
+					<h2>Organizations</h2>
+					<p>Together, anything is possible! Take a look at these groups!</p>
+				</div>
+				<div class="span4" >
+					<h2>People</h2>
+					<p>The individuals who serve and inspire humanity. They have something to say!</p>
+				</div>
+			</div>
+			<hr/>
+			<div class="row">
+				<div class="span12">
+					<div style="width: 360px; margin: 10px auto 0;">
+						<blockquote >
+							<p>If you wanna make the world a better place<br/>Take a look at yourself, and then make a change</p>
+							<small>Michael Jackson</small>
+						</blockquote>
+					</div>
+					<p style="text-align: center;">
+						<button class="btn">Donate!</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<script src="/static/js/jquery-1.7.2.min.js"></script>
+		<script src="/static/bootstrap/js/bootstrap.js"></script>
+	</body>
+</html>

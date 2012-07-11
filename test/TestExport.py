@@ -9,9 +9,9 @@
 from xml.etree.ElementTree import Element, SubElement
 from Models import Crisis, Organization, Person
 from Export import buildTree
-
-class TestExport (unittest.TestCase) :
-	def build_tester_tree():
+'''
+class build_tester_tree():
+	def build_tester_tree(self):
 		cmods = []
 		omods = []
 		pmods = []
@@ -74,11 +74,13 @@ class TestExport (unittest.TestCase) :
 		orgs = [p1, p2]))
 
 		return [cmods, omods, pmods]
+	
 
+class TestExport (unittest.TestCase) :
 	# ----
 	# test build tree
 	# ----
-	def test_build_tree1():
+	def test_build_tree1(self):
 		try:
 			cmods = []
 			omods = []
@@ -88,14 +90,14 @@ class TestExport (unittest.TestCase) :
 		except Exception:
 			assert True
 
-	def test_build_tree2():
+	def test_build_tree2(self):
 		try:
 			cmods, omods, pmods = build_tester_tree()
 			root = buildTree(cmods, omods, pmods)
 		except Exception:
 			assert False
 
-	def test_build_tree3():
+	def test_build_tree3(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)
 		assert root[0].size() == 5
@@ -105,7 +107,7 @@ class TestExport (unittest.TestCase) :
 	# ----
 	# test build pages of type
 	# ----
-	def test_buildPagesofType1():
+	def test_buildPagesofType1(self):
 		cmods, omods, pmods = build_tester_tree()
 		root1 = buildTree(cmods, omods, pmods)[0]
 		root2 = buildTree(cmods, omods, pmods)[0]
@@ -121,7 +123,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root1 == root2
 
-	def test_buildPagesofType2():
+	def test_buildPagesofType2(self):
 		cmods, omods, pmods = build_tester_tree()
 		root1 = buildTree(cmods, omods, pmods)[0]
 		root2 = buildTree(cmods, omods, pmods)[0]
@@ -129,7 +131,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root1 != root2
 
-	def test_buildPagesofType3():
+	def test_buildPagesofType3(self):
 		cmods, omods, pmods = build_tester_tree()
 		root1 = buildTree(cmods, omods, pmods)[1]
 		root2 = buildTree(cmods, omods, pmods)[1]
@@ -145,7 +147,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root1 == root2
 
-	def test_buildPagesofType4():
+	def test_buildPagesofType4(self):
 		cmods, omods, pmods = build_tester_tree()
 		root1 = buildTree(cmods, omods, pmods)[2]
 		root2 = buildTree(cmods, omods, pmods)[2]
@@ -153,15 +155,15 @@ class TestExport (unittest.TestCase) :
 
 		for x in range(len(pmods)) :
 			SubElement(root2, "person")
-			elements = buildPersonPage(root2[x], pmods[x])		
+			elements = buildPersonPage(root2[x], pmods[x])
 
 			# add sub elements		
 			for element in elements :
-				root2[x].append(element)	
+				root2[x].append(element)
 
 		assert root1 == root2
 
-	def test_buildCrisisPage1():
+	def test_buildCrisisPage1(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[0]
 		SubElement(root, 'crisis')
@@ -171,7 +173,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0].size() == 20
 
-	def test_buildCrisisPage2():
+	def test_buildCrisisPage2(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[0]
 		SubElement(root, 'crisis')
@@ -181,7 +183,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0][0] = 'n'
 
-	def test_buildCrisisPage3():
+	def test_buildCrisisPage3(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[0]
 		SubElement(root, 'crisis')
@@ -191,7 +193,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0][root[0].size()-1][0] = p1
 
-	def test_buildOrganizationPage1():
+	def test_buildOrganizationPage1(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[1]
 		SubElement(root, 'Organization')
@@ -201,7 +203,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0].size() == 16
 
-	def test_buildOrganizationPage2():
+	def test_buildOrganizationPage2(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[1]
 		SubElement(root, 'Organization')
@@ -211,7 +213,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0][0] = 'n'
 
-	def test_buildOrganizationPage3():
+	def test_buildOrganizationPage3(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[1]
 		SubElement(root, 'Organization')
@@ -221,7 +223,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0][root[0].size()-1][0] = p1
 
-	def test_buildPersonPage1():
+	def test_buildPersonPage1(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[2]
 		SubElement(root, 'Person')
@@ -231,7 +233,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0].size() == 13
 
-	def test_buildPersonPage2():
+	def test_buildPersonPage2(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[2]
 		SubElement(root, 'Person')
@@ -241,7 +243,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0][0] = 'n'
 
-	def test_buildPersonPage3():
+	def test_buildPersonPage3(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[2]
 		SubElement(root, 'Person')
@@ -251,7 +253,7 @@ class TestExport (unittest.TestCase) :
 
 		assert root[0][root[0].size()-1][0] = p1
 
-	def test_buildCommonData():
+	def test_buildCommonData(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[0]
 		SubElement(root, 'crisis')
@@ -262,7 +264,7 @@ class TestExport (unittest.TestCase) :
 		assert root[0].size() == 11
 		assert root[0][0] = 'n'
 
-	def test_buildCommonData():
+	def test_buildCommonData(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[1]
 		SubElement(root, 'crisis')
@@ -273,7 +275,7 @@ class TestExport (unittest.TestCase) :
 		assert root[0].size() == 11
 		assert root[0][0] = 'n'
 
-	def test_buildCommonData():
+	def test_buildCommonData(self):
 		cmods, omods, pmods = build_tester_tree()
 		root = buildTree(cmods, omods, pmods)[2]
 		SubElement(root, 'crisis')
@@ -289,4 +291,6 @@ class TestExport (unittest.TestCase) :
 # main
 print "TestWC.py"
 unittest.main()
+
 print "Done."
+'''
