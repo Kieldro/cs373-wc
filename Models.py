@@ -54,7 +54,6 @@ class Link(db.Model):
 	description = db.TextProperty(required=True, default="")
 	link_type = db.StringProperty(choices=["primary_image", "image", "video", "social", "ext"], required=True)
 
-
 class ReferenceLinks(db.Model):
 	primary_image = db.ReferenceProperty(Link)
 	image = db.ListProperty(db.Key, required = True)
