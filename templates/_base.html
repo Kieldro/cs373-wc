@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{% block title %}World Crises{% endblock %}</title>
-		
+		{% block head %}
+		<title>World Crises</title>
+		{% endblock %}
 		<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
 		<style type="text/css">
 		  body {
@@ -12,6 +13,7 @@
 		</style>
 		<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
 		<link href="/static/misc/additional.css" rel="stylesheet"/>
+		<script src="/static/misc/jquery-1.7.2.min.js"></script>
 	</head>
 	<body>
 		<!-- Begin Menubar -->
@@ -62,7 +64,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="/import">Import</a></li>
 								<li><a href="#">Export</a></li>
-								<li><a href="#">Unit Tests</a></li>
+								<li><a href="/test">Unit Tests</a></li>
 								<li class="divider"></li>
 								<li><a href="/about">About</a></li>
 							</ul>
@@ -75,18 +77,20 @@
 			</div>
 		</div>
 		<!-- End Menubar -->
+		
+		{% block body %}
 		<div class="container">
-		{% block content %}
-		<div class="row">
-			<div class="span12">
-				<div style="width: 100px; margin: 10px auto 0; text-align: ceneter;">
-					<h1>ERROR</h1>
+			<div class="row">
+				<div class="span12">
+					<div style="width: 100px; margin: 10px auto 0; text-align: ceneter;">
+						<h1>ERROR</h1>
+					</div>
 				</div>
 			</div>
 		</div>
 		{% endblock %}
-		</div>
-		<script src="/static/misc/jquery-1.7.2.min.js"></script>
+		
+		<!--<script src="/static/misc/jquery-1.7.2.min.js"></script>-->
 		<script src="/static/bootstrap/js/bootstrap.js"></script>
 	</body>
 </html>

@@ -7,8 +7,8 @@ from RunImport import runImport
 from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
-import os
 
+import os
 import StringIO
 
 def deleteModels() :
@@ -58,12 +58,11 @@ class ImportPage(BaseHandler):
 	def post(self):
 		xmlfile = self.request.get("data")
 		deleteModels()
-		runImport(xmlfile)
 		try:
 			runImport(xmlfile)
-			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/staticpages/port.html">')
+			self.render_template('import.html', status='success')
 		except:
-			self.response.out.write("XML file does not conform to the schema.")
+			self.render_template('import.html', status='error')
 	
 	def get(self):
 		self.render_template('import.html')

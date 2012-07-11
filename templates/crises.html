@@ -1,40 +1,42 @@
 {% extends "_base.html" %}
-{% block title %}Crises{% endblock %}
-{% block content %}
-<header>
-	<h1>Crises <small>Around the world</small></h1>
-</header>
-<section id="featuredCrises">
-	<ul class="thumbnails">
-		<li class="span3">
-			<a href="#" class="thumbnail">
-				<img src="http://placehold.it/260x180" alt="">
-			</a>
-		</li>
-		<li class="span3">
-			<a href="#" class="thumbnail">
-				<img src="http://placehold.it/260x180" alt="">
-			</a>
-		</li>
-		<li class="span3">
-			<a href="#" class="thumbnail">
-				<img src="http://placehold.it/260x180" alt="">
-			</a>
-		</li>
-		<li class="span3">
-			<a href="#" class="thumbnail">
-				<img src="http://placehold.it/260x180" alt="">
-			</a>
-		</li>
-	</ul>
-</section>
-<section id="crisesList">
-	<h2>On File:</h2>
-	<ul>
-		<li>Crisis 1</li>
-		<li>Crisis 2</li>
-		<li>Crisis 3</li>
-		<li>Crisis 4</li>
-	</ul>
-</section>
+{% block head %}<title>Crises</title>{% endblock %}
+{% block body %}
+<div class="container">
+	<header>
+		<h1>Crises <small>Around the world</small></h1>
+	</header>
+	<section id="featuredCrises">
+		<ul class="thumbnails">
+			<li class="span3">
+				<a href="#" class="thumbnail">
+					<img src="http://placehold.it/260x180" alt="">
+				</a>
+			</li>
+			<li class="span3">
+				<a href="#" class="thumbnail">
+					<img src="http://placehold.it/260x180" alt="">
+				</a>
+			</li>
+			<li class="span3">
+				<a href="#" class="thumbnail">
+					<img src="http://placehold.it/260x180" alt="">
+				</a>
+			</li>
+			<li class="span3">
+				<a href="#" class="thumbnail">
+					<img src="http://placehold.it/260x180" alt="">
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section id="crisesList">
+		<h2>On File:</h2>
+		<ul>
+			<li>Crisis 1</li>
+			<li>Crisis 2</li>
+			<li>Crisis 3</li>
+			<li>Crisis 4</li>
+		</ul>
+	</section>
+</div>
 {% endblock %}
