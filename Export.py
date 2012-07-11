@@ -185,7 +185,7 @@ def buildContact(parentElem, contactModel):
 	contact = Element(tag="contact")	
 	SubElement(contact, tag="phone", text=contactModel.phone)
 	SubElement(contact, tag="email", text=contactModel.email)
-  buildAddress(contact, db.get(contactModel.address))
+  	buildAddress(contact, db.get(contactModel.address))
 	parentElem.append(contact)
 
 def buildAddress(parentElem, addressModel)
