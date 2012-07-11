@@ -1,6 +1,6 @@
 from xml.etree.ElementTree import Element, SubElement, ElementTree, tostring, dump
 from Export import buildTree
-from Models import Crisis, Organization, Person
+from Models import *
 
 import sys, operator, StringIO
 
