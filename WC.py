@@ -3,7 +3,7 @@ from google.appengine.ext.db import delete
 from Models import *
 from google.appengine.ext.webapp.util import run_wsgi_app
 from RunExport import runExport
-from RunImport import runImport
+from RunImport import runImport, getSchemaString
 from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
@@ -57,11 +57,25 @@ class OrganizationsPage(BaseHandler):
 class ImportPage(BaseHandler):
 	def post(self):
 		xmlfile = self.request.get("data")
+		xmlschema = getSchemaString()
+		try:
+		    # call validator
+		    elementTreeWrapper = pyxsval.parseAndValidateXmlInputString (xmlfile, xsdText=str(xmlschema), verbose=0)
+		    #elementtree object after validation
+		    elemTree = elementTreeWrapper.getTree()
+		except pyxsval.XsvalError, errstr:
+		    self.response.out.write("Validation aborted!")
+		except GenXmlIfError, errstr:
+		    self.response.out.write("Parsing aborted!")
+		except:
+			self.response.out.write("XML file does not conform to the schema.")
+
 		deleteModels()
-		runImport(xmlfile)
+
 		try:
 			runImport(xmlfile)
-			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/staticpages/port.html">')
+			self.response.out.write('<h1>Successfully imported the xml file! Rerouting to import page</h1>')
+			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/import">')
 		except:
 			self.response.out.write("XML file does not conform to the schema.")
 	
