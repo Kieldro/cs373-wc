@@ -1,9 +1,6 @@
 # file variables
 source="WC.py"
 
-
-#echo RUNNING UNIT TESTS...
-
 dev_appserver.py .
 
 <<MULTICOMMENT
@@ -20,4 +17,3 @@ turnin --submit hychyc07 cs373pj4 WC2.zip
 turnin --list	hychyc07 cs373pj4 WC2.zip
 turnin --verify hychyc07 cs373pj4 WC2.zip
 MULTICOMMENT
-

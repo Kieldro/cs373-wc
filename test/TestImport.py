@@ -2,8 +2,8 @@ import unittest
 import StringIO
 from Import import *
 from Models import *
-
-crisis_1 = '''
+'''
+crisis_1 = """
 <crisis id="1">
 		<name>World Hunger</name>
 		<kind>Global, Biological</kind>
@@ -29,7 +29,7 @@ crisis_1 = '''
 		<organizationId>5</organizationId>
 		<personId>9</personId>
 	</crisis>
-	'''
+	"""
 crisis_2 = """<crisis id="2">
 		<name>Fukushima Daiichi Nuclear Disaster</name>
 		<kind>Nuclear meltdown and release of radioactive materials</kind>
@@ -213,3 +213,4 @@ class TestImport(unittest.TestCase) :
 		self.assert_(c.orgs == ['7'])
 		self.assert_(c.people == ['10'])
 
+'''
