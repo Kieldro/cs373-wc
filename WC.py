@@ -7,8 +7,8 @@ from RunImport import runImport, getSchemaString
 from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
-import os
 
+import os
 import StringIO
 
 def deleteModels() :
@@ -71,16 +71,23 @@ class ImportPage(BaseHandler):
 			self.response.out.write("XML file does not conform to the schema.")
 
 		deleteModels()
-
 		try:
 			runImport(xmlfile)
-			self.response.out.write('<h1>Successfully imported the xml file! Rerouting to import page</h1>')
-			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/import">')
+			self.render_template('import.html', status='success')
 		except:
-			self.response.out.write("XML file does not conform to the schema.")
+			self.render_template('import.html', status='error')
 	
 	def get(self):
 		self.render_template('import.html')
+		
+class ExportPage(BaseHandler):
+	def post(self):
+		result = runExport()
+		self.response.headers['Content-Type'] = 'text/xml'
+		self.response.out.write(str(result))
+
+	def get(self):
+		self.render_template('export.html')
 """
 class ImportPage(webapp.RequestHandler):
 	def post(self):
@@ -108,7 +115,8 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/crises', CrisesPage),
 									  ('/people', PeoplePage),
 									  ('/organizations', OrganizationsPage),
-									  ('/import', ImportPage)
+									  ('/import', ImportPage),
+									  ('/export', ExportPage)
 									  ], debug=True)
 #[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 

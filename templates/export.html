@@ -1,0 +1,20 @@
+{% extends "_base.html" %}
+{% block head %}<title>Export</title>{% endblock %}
+{% block body %}
+<div class="container">
+	<header>
+		<h1>Export<small> Data from the database</small></h1>
+	<header>
+	<section>
+		<div class="row">
+			<div class="span12">
+				<form action="/export" method="post">
+					<p>Click to Export!<br/>
+						<input type="submit" value="Export"/>
+					</P>
+				</form>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
