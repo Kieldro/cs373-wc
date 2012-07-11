@@ -4,7 +4,7 @@ source="WC.py"
 
 #echo RUNNING UNIT TESTS...
 
-dev_appserver .
+dev_appserver.py .
 
 <<MULTICOMMENT
 # multicomment cannot have leading spaces
