@@ -3,7 +3,7 @@ from google.appengine.ext.db import delete
 from Models import *
 from google.appengine.ext.webapp.util import run_wsgi_app
 from RunExport import runExport
-from RunImport import runImport
+from RunImport import runImport, getSchemaString
 from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
@@ -79,6 +79,15 @@ class ImportPage(BaseHandler):
 	
 	def get(self):
 		self.render_template('import.html')
+		
+class ExportPage(BaseHandler):
+	def post(self):
+		result = runExport()
+		self.response.headers['Content-Type'] = 'text/xml'
+		self.response.out.write(str(result))
+
+	def get(self):
+		self.render_template('export.html')
 """
 class ImportPage(webapp.RequestHandler):
 	def post(self):
@@ -106,7 +115,8 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/crises', CrisesPage),
 									  ('/people', PeoplePage),
 									  ('/organizations', OrganizationsPage),
-									  ('/import', ImportPage)
+									  ('/import', ImportPage),
+									  ('/export', ExportPage)
 									  ], debug=True)
 #[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 
