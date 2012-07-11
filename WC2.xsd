@@ -73,7 +73,7 @@
 		<xsd:element name="type" type="xsd:normalizedString"/>
 		<xsd:element name="time" type="dateType"/>
 		<xsd:element name="loc" type="locationType"/>
-		<xsd:element name="impact" type="impactType"/>   
+		<xsd:element name="impact" type="impactType"/>
 	</xsd:sequence>
 </xsd:complexType>
 

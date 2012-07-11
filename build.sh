@@ -1,10 +1,7 @@
 # file variables
 source="WC.py"
 
-
-#echo RUNNING UNIT TESTS...
-
-dev_appserver .
+dev_appserver.py .
 
 <<MULTICOMMENT
 # multicomment cannot have leading spaces
@@ -20,4 +17,3 @@ turnin --submit hychyc07 cs373pj4 WC2.zip
 turnin --list	hychyc07 cs373pj4 WC2.zip
 turnin --verify hychyc07 cs373pj4 WC2.zip
 MULTICOMMENT
-

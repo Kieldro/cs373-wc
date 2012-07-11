@@ -64,10 +64,11 @@ crisisModel is a model object that represents a crisis model
 returns a list of sub-elements to be added in correct order
 	"""
 	buildInitInfo(crisisElement, crisisModel);
-	buildCrisisInfo(crisisElement, crisisModel);
-	buildExternalRefs(crisisElement, crisisModel); 
-	buildOrgRefs(crisisElement, crisisModel);
-	buildPersonRefs(crisisElement, crisisModel);
+	buildCrisisInfo(crisisElement, db.get(crisisModel.crisisinfo))
+	buildExternalRefs(crisisElement, db.get(crisisModel.reflink))
+	SubElement(crisisElement, tag="misc", text=crisisModel.misc)
+	buildOrgRefs(crisisElement, crisisModel.orgref)
+	buildPersonRefs(crisisElement, crisisModel.personref)
 
 # ------------
 # buildOrgPage
@@ -82,10 +83,11 @@ orgModel is a model object that represents a org model
 returns a list of sub-elements to be added in correct order
 	"""
 	buildInitInfo(orgElement, orgModel);
-	buildOrgInfo(orgElement, orgModel);
-	buildExternalRefs(orgElement, orgModel); 
-	buildCrisisRefs(orgElement, orgModel);
-	buildPersonRefs(orgElement, orgModel);
+	buildOrgInfo(orgElement, db.get(orgModel.orginfo)) 
+	buildExternalRefs(orgElement, db.get(orgModel.reflink))
+	SubElement(orgElement, tag="misc", text=orgModel.misc)
+	buildCrisisRefs(orgElement, orgModel.crisisref)
+	buildPersonRefs(orgElement, orgModel.personref)
 
 # ---------------
 # buildPersonPage
@@ -100,10 +102,11 @@ personModel is a model object that represents a person model
 returns a list of sub-elements to be added in correct order
 	"""
 	buildInitInfo(personElement, personModel)
-	buildPersonInfo(personElement, personModel)
-	buildExternalRefs(personElement, personModel)
-	buildCrisisRefs(personElement, personModel)
-	buildOrgRefs(personElement, personModel)
+	buildPersonInfo(personElement, db.get(personModel.personinfo))
+	buildExternalRefs(personElement, db.get(personModel.reflink))
+	SubElement(personElement, tag="misc", text=personModel.misc)
+	buildCrisisRefs(personElement, personModel.crisisref)
+	buildOrgRefs(personElement, personModel.orgref)
 
 # -------------
 # buildInitInfo
@@ -117,73 +120,83 @@ def buildInitInfo(element, model):
 # buildCrisisInfo
 # ---------------
 
-def buildCrisisInfo(crisisElement, crisisModel):
+def buildCrisisInfo(crisisElement, crisisInfoModel):
 	info = Element(tag="info")
-	SubElement(info, tag="histroy", text=crisisModel.history)
-	SubElement(info, tag="help", text=crisisModel.helps)
-	SubElement(info, tag="resources", text=crisisModel.resources)
-	SubElement(info, tag="type", text=crisisModel.ctype)
-
-	time = Element(tag="time")
-	SubElement(time, tag="time", text=crisisModel.time)
-	SubElement(time, tag="day", text=crisisModel.day)
-	SubElement(time, tag="month", text=crisisModel.month)
-	SubElement(time, tag="year", text=crisisModel.year)
-	SubElement(time, tag="misc", test=crisisModel.time_misc)
-	info.append(time)
-
-	loc = Element(tag="loc")
-	SubElement(loc, tag="city", text=crisisModel.city)
-	SubElement(loc, tag="region", text=crisisModel.region)
-	SubElement(loc, tag="country", text=crisisModel.country)
-	info.append(loc)
-
-	impact = Element(tag="impact")
-	human = Element(tag="human")
-	SubElement(human, tag="deaths", text=crisisModel.deaths)
-	SubElement(human, tag="displaced", text=crisisModel.displaced)
-	SubElement(human, tag="injured", text=crisisModel.injured)
-	SubElement(human, tag="missing", text=crisisModel.missing)
-	SubElement(human, tag="misc", test=crisisModel.himpact_misc)
-	impact.append(human)
-
-	eco = Element(tag="economic")
-	SubElement(eco, tag="amount", text=crisisModel.amount)
-	SubElement(eco, tag="currency", text=crisisModel.currency)
-	SubElement(eco, tag="misc", text=crisisModel.eimpact_misc)
-	impact.append(eco)
-	info.append(impact)
+	SubElement(info, tag="histroy", text=crisisInfoModel.history)
+	SubElement(info, tag="help", text=crisisInfoModel.helps)
+	SubElement(info, tag="resources", text=crisisInfoModel.resources)
+	SubElement(info, tag="type", text=crisisInfoModel.ctype)
+	buildDate(info, db.get(crisisInfoModel.date), 'time')
+	buildLocation(info, db.get(crisisInfoModel.location))
+	buildImpact(info. db.get(crisisInfoModel.impact))
 	crisisElement.append(info)
 
+def buildDate(parentElem, dateModel, title)
+	time = Element(tag=title)
+	SubElement(time, tag="time", text=dateModel.time)
+	SubElement(time, tag="day", text=dateModel.day)
+	SubElement(time, tag="month", text=dateModel.month)
+	SubElement(time, tag="year", text=dateModel.year)
+	SubElement(time, tag="misc", test=dateModel.time_misc)
+	parentElem.append(time)
+
+def buildLocation(parentElem, locationModel)
+	loc = Element(tag="loc")
+	SubElement(loc, tag="city", text=locationModel.city)
+	SubElement(loc, tag="region", text=locationModel.region)
+	SubElement(loc, tag="country", text=locationModel.country)
+	parent.append(loc)
+
+def buildImpact(parentElem, impactModel)
+	impact = Element(tag="impact")
+	buildHumanImpact(impact, db.get(impactModel.human_impact))
+	buildHumanImpact(impact, db.get(impactModel.eco_impact))
+	parentElem.append(impact)
+	
+def buildHumanImpact(parentElem, hImpactModel)
+	human = Element(tag="human")
+	SubElement(human, tag="deaths", text=hImpactModel.deaths)
+	SubElement(human, tag="displaced", text=hImpactModel.displaced)
+	SubElement(human, tag="injured", text=hImpactModel.injured)
+	SubElement(human, tag="missing", text=hImpactModel.missing)
+	SubElement(human, tag="misc", test=hImpactModel.himpact_misc)
+	parentElem.append(human)
+
+def buildEconomicImpact(parentElem, eImpactModel)
+	eco = Element(tag="economic")
+	SubElement(eco, tag="amount", text=eImpactModel.amount)
+	SubElement(eco, tag="currency", text=eImpactModel.currency)
+	SubElement(eco, tag="misc", text=eImpactModel.eimpact_misc)
+	parentElem.append(eco)
+	
 # ---------------
 # buildOrgInfo
 # ---------------
 
-def buildOrgInfo(orgElement, orgModel):
+def buildOrgInfo(orgElement, orgInfoModel):
 	info = Element(tag="info")
-	SubElement(info, tag="type", text=orgModel.cType)
-	SubElement(info, tag="history", text=orgModel.history)
-	
-	contact = Element(tag="contact")	
-	SubElement(contact, tag="phone", text=orgModel.phone)
-	SubElement(contact, tag="email", text=orgModel.email)
-
-	mail = Element(tag="mail")	
-	SubElement(mail, tag="address", text=orgModel.address)
-	SubElement(mail, tag="city", text=orgModel.city)
-	SubElement(mail, tag="state", text=orgModel.state)
-	SubElement(mail, tag="country", text=orgModel.country)
-	SubElement(mail, tag="zip", text=orgModel.zipcode)
-	contact.append(mail)
-	info.append(contact)
-	
-	loc = Element(tag="loc")
-	SubElement(loc, tag="city", text=orgModel.city)
-	SubElement(loc, tag="region", text=orgModel.region)
-	SubElement(loc, tag="country", text=orgModel.country)
-	info.append(loc)
+	SubElement(info, tag="type", text=orgInfoModel.oType)
+	SubElement(info, tag="history", text=orgInfoModel.history)
+	buildContact(info, db.get(orgInfoModel.contacts))
+	buildLocation(info, db.get(orgInfoModel.location))
 	orgElement.append(info)
 
+def buildContact(parentElem, contactModel):
+	contact = Element(tag="contact")	
+	SubElement(contact, tag="phone", text=contactModel.phone)
+	SubElement(contact, tag="email", text=contactModel.email)
+  	buildAddress(contact, db.get(contactModel.address))
+	parentElem.append(contact)
+
+def buildAddress(parentElem, addressModel)
+	mail = Element(tag="mail")	
+	SubElement(mail, tag="address", text=addressModel.address)
+	SubElement(mail, tag="city", text=addressModel.city)
+	SubElement(mail, tag="state", text=addressModel.state)
+	SubElement(mail, tag="country", text=addressModel.country)
+	SubElement(mail, tag="zip", text=addressModel.zipcode)
+	parentElem.append(mail)
+	
 # ---------------
 # buildPersonInfo
 # ---------------
@@ -191,56 +204,25 @@ def buildOrgInfo(orgElement, orgModel):
 def buildPersonInfo(personElement, personModel):
 	info = Element(tag="info")
 	Subelement(info, tag="type", text=personModel.ptype)	
-
-	bday = Element(tag="birthday")
-	SubElement(bday, tag="time", text=personModel.birthtime)
-	SubElement(bday, tag="day", text=personModel.birthday)
-	SubElement(bday, tag="month", text=personModel.birthmonth)
-	SubElement(bday, tag="year", text=personModel.birthyear)
-	SubElement(bday, tag="misc", text=personModel.birthtime_misc)
-	info.append(bday)
-	
+	buildDate(info, db.get(personModel.birthdate), 'birthdate')
 	SubElement(info, tag="nationality", text=personModel.nationality)
 	SubElement(info, tag="biography", text=personModel.biography)
 	personElement.append(info)
 
+def buildRefs(elem, refs):
+	for ref in refs:
+		temp = Element(tag=ref.link_type)
+		buildLink(temp, ref.site, ref.title, ref.url, ref.description)
+		elem.append(temp)
 
 def buildExternalRefs(element, model):
 	ref = Element(tag="ref")
-
-	pi = Element(tag="primaryImage")
-	buildLink(pi, model.pi_site, model.pi_title, model.pi_url, 
-		model.pi_description)
-	ref.append(pi)
-	
-	for x in range(len(image_sites)):
-		image = Element(tag="image")
-		buildLink(image, model.image_sites[x], model.image_titles[x],
-			 model.image_urls[x], model.image_descriptions[x])
-		ref.append(image)
-			
-	for x in range(len(video_sites)):
-		video = Element(tag="video")
-		buildLink(video, model.video_sites[x], model.video_titles[x],
-			 model.video_urls[x], model.video_descriptions[x])
-		ref.append(video)
-
-	for x in range(len(social_sites)):
-		social = Element(tag="social")
-		buildLink(social, model.social_sites[x], model.social_titles[x],
-			 model.social_urls[x], model.social_descriptions[x])
-		ref.append(social)
-
-
-	for x in range(len(ext_sites)):
-		ext = Element(tag="ext")
-		buildLink(ext, model.ext_sites[x], model.ext_titles[x],
-			 model.ext_urls[x], model.ext_descriptions[x])
-		ref.append(ext)
-
-	
+	buildRefs(ref, [model.primary_image])
+	buildRefs(ref, model.image)
+	buildRefs(ref, model.video)
+	buildRefs(ref, model.social)
+	buildRefs(ref, model.ext)
 	element.append(ref)
-	SubElement(element, tag="misc", text=model.misc)
 
 def buildLink(element, site, title, url, description):
 	SubElement(element, tag="site", text=site)
@@ -248,14 +230,8 @@ def buildLink(element, site, title, url, description):
 	SubElement(element, tag="url", text=url)
 	SubElement(element, tag="description", text=description)
 
-def buildCrisisRefs(element, model):
-	for ref in model.crises:
-		SubElement(element, tag="crisis", text=ref)
-
-def buildOrgRefs(element, model):	
-	for ref in modeul.crises:
-		SubElement(element, tag="org", text=ref)
-
-def buildPersonRefs(element, model):	
-	for ref in model.crises:
-		SubElement(element, tag="person", text=ref)
+def buildCrisisRefs(element, refs):
+	for ref in refs:
+		temp = Element(tag=ref.rType)
+		temp.attrib["idref"] = ref.sref
+		element.append(temp)

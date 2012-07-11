@@ -1,28 +1,4 @@
-import unittest
-from Models import *
-from Import import *
-from xml.etree.ElementTree import Element, SubElement, parse
-import StringIO
-#from google.appengine.ext import db
-
-
-
-class Success(unittest.TestCase):
-	def test_success(self):
-		self.assertTrue(True)
-	
-	# import tests
-	
-	def test_import(self):
-		xmlstring = StringIO.StringIO(filestring)
-		tree = parse(xmlstring)
-		
-		buildModels(tree)
-		self.assertTrue(True)
-
-
-
-filestring = '''<?xml version="1.0" ?> 
+<?xml version="1.0" ?> 
 <worldCrises>
 	<crisis id="worldhunger">
 		<name>World Hunger</name>
@@ -125,7 +101,7 @@ filestring = '''<?xml version="1.0" ?>
 			<type>Global, Biological</type>
 			<history>RESEARCH ON WORLD HUNGER HISTORY</history>
 			<contact>
-				<phone></phone>
+				<phone>123</phone>
 				<email></email>
 				<mail>
 					<address></address>
@@ -277,4 +253,4 @@ filestring = '''<?xml version="1.0" ?>
 		<crisis idref="worldhunger"/>
 		<org idref="WHO"/>
 	</person>
-</worldCrises>'''
+</worldCrises>

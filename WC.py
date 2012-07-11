@@ -57,6 +57,19 @@ class OrganizationsPage(BaseHandler):
 class ImportPage(BaseHandler):
 	def post(self):
 		xmlfile = self.request.get("data")
+		xmlschema = getSchemaString()
+		try:
+		    # call validator
+		    elementTreeWrapper = pyxsval.parseAndValidateXmlInputString (xmlfile, xsdText=str(xmlschema), verbose=0)
+		    #elementtree object after validation
+		    elemTree = elementTreeWrapper.getTree()
+		except pyxsval.XsvalError, errstr:
+		    self.response.out.write("Validation aborted!")
+		except GenXmlIfError, errstr:
+		    self.response.out.write("Parsing aborted!")
+		except:
+			self.response.out.write("XML file does not conform to the schema.")
+
 		deleteModels()
 		try:
 			runImport(xmlfile)

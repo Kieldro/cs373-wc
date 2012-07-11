@@ -38,8 +38,8 @@ class FullAddress(db.Model):
 	zipcode = db.StringProperty(required=True)
 
 class Contacts(db.Model):
-	phone = db.PhoneNumberProperty(required=True)
-	email = db.EmailProperty(required=True)
+	phone = db.StringProperty(required=True)
+	email = db.StringProperty(required=True)
 	address = db.ReferenceProperty(FullAddress, required=True)
 
 class Location(db.Model):
@@ -53,7 +53,6 @@ class Link(db.Model):
 	url = db.LinkProperty(required=True)
 	description = db.TextProperty(required=True, default="")
 	link_type = db.StringProperty(choices=["primary_image", "image", "video", "social", "ext"], required=True)
-
 
 class ReferenceLinks(db.Model):
 	primary_image = db.ReferenceProperty(Link)

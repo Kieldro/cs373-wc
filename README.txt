@@ -39,13 +39,6 @@ Member E-mail:				grsshwarts@utexas.edu
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
-Member First Name:			Matt
-Member Last Name:			Hausmann
-Member EID:					mph453
-Member E-mail:				matthew.p.hausmann@gmail.com
-Member Rating:				Excellent
-Member Point Adjustment:	NA	<only if you're leader>
-
 Member First Name:			Robert
 Member Last Name:			Reed
 Member EID:					rer945
