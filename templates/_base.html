@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block title %}World Crises{% endblock %}</title>
+		
+		<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+		<style type="text/css">
+		  body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+		  }
+		</style>
+		<link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+		<link href="/static/misc/additional.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<!-- Begin Menubar -->
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="/">World Crises</a>
+					<ul class="nav pull-right">
+						<li class="dropdown" id="cMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Crises <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><p class="nav-header">Recent Entries:</p></li>
+								<li><a href="#">Crisis 1</a></li>
+								<li><a href="#">Crisis 2</a></li>
+								<li><a href="#">Crisis 3</a></li>
+								<li><a href="#">Crisis 4</a></li>
+								<li class="divider"></li>
+								<li><a href="/crises">See All...</a></li>
+							</ul>
+						</li>
+						<li class="dropdown" id="oMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Organizations <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><p class="nav-header">Recent Entries:</p></li>
+								<li><a href="#">Organization 1</a></li>
+								<li><a href="#">Organization 2</a></li>
+								<li><a href="#">Organization 3</a></li>
+								<li><a href="#">Organization 4</a></li>
+								<li class="divider"></li>
+								<li><a href="/organizations">See All...</a></li>
+							</ul>
+						</li>
+						<li class="dropdown" id="pMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">People <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><p class="nav-header">Recent Entries:</p></li>
+								<li><a href="#">Person 1</a></li>
+								<li><a href="#">Person 2</a></li>
+								<li><a href="#">Person 3</a></li>
+								<li><a href="#">Person 4</a></li>
+								<li class="divider"></li>
+								<li><a href="/people">See All...</a></li>
+							</ul>
+						</li>
+						<li class="divider-vertical"></li>
+						<li class="dropdown" id="dataMenu">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Data <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="/import">Import</a></li>
+								<li><a href="#">Export</a></li>
+								<li><a href="#">Unit Tests</a></li>
+								<li class="divider"></li>
+								<li><a href="/about">About</a></li>
+							</ul>
+						</li>
+					</ul>
+					<form method="get" class="navbar-search" autocomplete="off">
+						<input type="text" class="span3 search-query" name="search" placeholder="Search for..." data-provide="typeahead" data-items="4" data-source='["2011 Tohu Earthquake and Tsunami","2001 Indian Ocean Earthquake and Tsunami"]'>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- End Menubar -->
+		<div class="container">
+		{% block content %}
+		<div class="row">
+			<div class="span12">
+				<div style="width: 100px; margin: 10px auto 0; text-align: ceneter;">
+					<h1>ERROR</h1>
+				</div>
+			</div>
+		</div>
+		{% endblock %}
+		</div>
+		<script src="/static/misc/jquery-1.7.2.min.js"></script>
+		<script src="/static/bootstrap/js/bootstrap.js"></script>
+	</body>
+</html>
