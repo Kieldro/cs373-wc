@@ -17,10 +17,10 @@ class WorldCrisisPage(polymodel.PolyModel):
 # ---------------
 
 class HumanImpact(db.Model):
-	deaths = db.IntegerProperty(required=True)
-	displaced = db.IntegerProperty(required=True)
-	injured = db.IntegerProperty(required=True)
-	missing = db.IntegerProperty(required=True)
+	deaths = db.StringProperty(required=True)
+	displaced = db.StringProperty(required=True)
+	injured = db.StringProperty(required=True)
+	missing = db.StringProperty(required=True)
 	himpact_misc = db.TextProperty()
 
 
@@ -29,7 +29,7 @@ class HumanImpact(db.Model):
 # ---------------
 
 class EconomicImpact(db.Model):
-	amount = db.IntegerProperty(required=True)
+	amount = db.StringProperty(required=True)
 	currency =  db.StringProperty()
 	eimpact_misc = db.TextProperty()
 
@@ -40,9 +40,9 @@ class EconomicImpact(db.Model):
 
 class Date(db.Model):
 	time = db.TextProperty()
-	day = db.IntegerProperty(required=True)
-	month = db.IntegerProperty(required=True)
-	year = db.IntegerProperty(required=True)
+	day = db.StringProperty(required=True)
+	month = db.StringProperty(required=True)
+	year = db.StringProperty(required=True)
 	time_misc = db.TextProperty()
 
 
