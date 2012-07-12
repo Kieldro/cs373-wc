@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 from Models import *
 from xml.etree.ElementTree import Element, SubElement
+	
+	
+# ------------------
+# buildModels
+# ------------------
 
 def buildModels(tree) :
 	root = tree.getroot()
@@ -23,6 +28,11 @@ def buildModels(tree) :
 	buildReferences(cList, oList, pList)
 	
 	return cList, oList, pList
+	
+	
+# ------------------
+# createCrisis
+# ------------------
 
 def createCrisis(elem):
 	d = {}
@@ -40,7 +50,12 @@ def createCrisis(elem):
 	c = Crisis(**d)
 	c.put()
 	return c
-		
+	
+	
+# ------------------
+# createOrganization
+# ------------------
+
 def createOrganization(elem):
 	d = {}
 	d['ID'] = elem.attrib['id']
@@ -57,7 +72,12 @@ def createOrganization(elem):
 	o = Organization(**d)
 	o.put()
 	return o
+		
 	
+# ------------------
+# createPerson
+# ------------------
+
 def createPerson(elem):
 	d = {}
 	d['ID'] = elem.attrib['id']
@@ -74,7 +94,12 @@ def createPerson(elem):
 	p = Person(**d)
 	p.put()
 	return p
+		
 	
+# ------------------
+# createDate
+# ------------------
+
 def createDate(elem) :
 	d = {}
 	d['time'] = elem.findtext('time')
@@ -86,7 +111,12 @@ def createDate(elem) :
 	de = Date(**d)
 	de.put()
 	return de
+		
 	
+# ------------------
+# createCrisisInfo
+# ------------------
+
 def createCrisisInfo(elem):
 	d = {}
 	d['history'] = elem.findtext('history')
@@ -101,7 +131,12 @@ def createCrisisInfo(elem):
 	ci = CrisisInfo(**d)
 	ci.put()
 	return ci
+		
 	
+# ------------------
+# createOrgInfo
+# ------------------
+
 def createOrgInfo(elem):
 	d = {}
 	d['otype'] = elem.findtext('type')
@@ -113,7 +148,12 @@ def createOrgInfo(elem):
 	oi = OrgInfo(**d)
 	oi.put()
 	return oi
+		
 	
+# ------------------
+# createPersonInfo
+# ------------------
+
 def createPersonInfo(elem):
 	d = {}
 	d['biography'] = elem.findtext('biography')
@@ -125,7 +165,12 @@ def createPersonInfo(elem):
 	pi = PersonInfo(**d)
 	pi.put()
 	return pi
+		
 	
+# ------------------
+# createRefLinks
+# ------------------
+
 def createRefLinks(elem) :
 	d = {}
 	d['primary_image'] = createLink('primary_image', elem.find('primaryImage'))
@@ -156,8 +201,12 @@ def createRefLinks(elem) :
 	rl = ReferenceLinks(**d)
 	rl.put()
 	return rl
+		
 	
-	
+# ------------------
+# createLink
+# ------------------
+
 def createLink(etype, elem) :
 	d = {}
 	d['site'] = elem.findtext('site')
@@ -166,13 +215,16 @@ def createLink(etype, elem) :
 	desc = elem.findtext('description')
 	if(desc) :
 		d['description'] = desc
-	
 	d['link_type'] = etype
 	
 	l = Link(**d)
 	l.put()
 	return l
-
+	
+	
+# ------------------
+# createReferences
+# ------------------
 
 def createReferences(itype, elem) :
 	d = {}
@@ -187,7 +239,12 @@ def createReferences(itype, elem) :
 		ref_list.append(r.key())
 
 	return ref_list
+		
 	
+# ------------------
+# createLocationInfo
+# ------------------
+
 def createLocationInfo(elem) :
 	d = {}
 	d['city'] = elem.findtext('city')
@@ -197,8 +254,12 @@ def createLocationInfo(elem) :
 	l = Location(**d)
 	l.put()
 	return l
+		
 	
-	
+# ------------------
+# createHumanImpact
+# ------------------
+
 def createHumanImpact(elem) :
 	d = {}
 	d['deaths'] = int(elem.findtext('deaths'))
@@ -210,7 +271,12 @@ def createHumanImpact(elem) :
 	hi = HumanImpact(**d)
 	hi.put()
 	return hi
+		
 	
+# ------------------
+# createEconomicImpact
+# ------------------
+
 def createEconomicImpact(elem) :
 	d = {}
 	d['amount'] = int(elem.findtext('amount'))
@@ -220,7 +286,12 @@ def createEconomicImpact(elem) :
 	ei = EconomicImpact(**d)
 	ei.put()
 	return ei
+		
 	
+# ------------------
+# createImpact
+# ------------------
+
 def createImpact(elem) :
 	d = {}
 	d['human_impact'] = createHumanImpact(elem.find('human'))
@@ -229,7 +300,12 @@ def createImpact(elem) :
 	i = Impact(**d)
 	i.put()
 	return i
+		
 	
+# ------------------
+# createFullAddress
+# ------------------
+
 def createFullAddress(elem) :
 	d = {}
 	d['address'] = elem.findtext('address')
@@ -241,7 +317,12 @@ def createFullAddress(elem) :
 	fa = FullAddress(**d)
 	fa.put()
 	return fa
+		
 	
+# ------------------
+# createContacts
+# ------------------
+
 def createContacts(elem) :
 	d = {}
 	d['phone'] = elem.findtext('phone')
@@ -251,7 +332,11 @@ def createContacts(elem) :
 	c = Contacts(**d)
 	c.put()
 	return c
-
+	
+	
+# ------------------
+# buildReferences
+# ------------------
 
 def buildReferences(cList, oList, pList) :
 	for crisis in cList:
@@ -273,7 +358,7 @@ def buildReferences(cList, oList, pList) :
 					pref_elem.ref = person
 					pref_elem.put()
 					break
-
+	
 	for orgs in oList:
 		crefs = orgs.crisisref
 		for cref in crefs:
