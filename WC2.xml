@@ -91,15 +91,15 @@
 			</ext>
 		</ref>
 		<misc>RESEARCH</misc>
-		<org idref="WHO"/>
-		<person idref="Chan"/>
+		<org idref="who"/>
+		<person idref="chan"/>
 	</crisis>
 
 	<crisis id="fukushima">
 		<name>Fukushima Daiichi Nuclear Disaster</name>
 		<info>
 			<history>RESEARCH ON FUKUSHIMA</history>
-			<help>Support the cause: <link>http://fukushimaupdate.com/support/</link></help>
+			<help>Support the cause: http://fukushimaupdate.com/support/</help>
 			<resources>Money donations and food donations.</resources>
 			<type>Nuclear meltdown and release of radioactive materials</type>
 			<time>
@@ -177,16 +177,15 @@
 		<org idref="jrc"/>
 		<person idref="edan"/>
 	</crisis>
-	<!-- HERERERERERRERERLSADF;FDSVB;LKSAFGB;ALFG;LAFHG;LADF;LAFDHG;LASG;LKJHDAFGLKJBVLKJABGKUBRT;QNHGAKGNBA;LRTGN;HGOPN HERE -->
 	<crisis id="tohoku">
 		<name>2011 Tohoku Earthquake and Tsunami</name>
 		<info>
 			<history>RESEARCH ON TOHOKU</history>
-			<help></help>
-			<resources>Money donations and food donations.</resources>
+			<help>Monetary donations directly to the Japanese Red Cross, or through your national Red Cross/Red Crescent society</help>
+			<resources>Food and medical supplies, temporary housing</resources>
 			<type>Natural Disaster</type>
 			<time>
-				<time>2:46 p.m.</time>
+				<time>5:46 UTC</time>
 				<day>11</day>
 				<month>3</month>
 				<year>2011</year>
@@ -199,451 +198,625 @@
 			</loc>
 			<impact>
 				<human>
-					<deaths>573</deaths>
+					<deaths>15861</deaths>
 					<displaced>-1</displaced>
-					<injured>-1</injured>
-					<missing>-1</missing>
+					<injured>6107</injured>
+					<missing>3018</missing>
 					<misc>RESEARCH</misc>
 				</human>
 				<economic>
-					<amount>-1</amount>
-					<currency>RESEARCH</currency>
-					<misc>RESEARCH</misc>
+					<amount>25000000000000</amount>
+					<currency>Yen</currency>
+					<misc>Reconstruction needed for over a million buildings. Reactor Meltdown at the Fukushima Daiichi Nuclear Power Plant. Costs of damage possibly exceeding 25 trillion Yen ($300 billion)</misc>
 				</economic>
 			</impact>
 		</info>
 		<ref>
 			<primaryImage>
 				<site>http://upload.wikimedia.org/</site>
-				<title>Fukushima Tsunami Overview</title>
-				<url>http://upload.wikimedia.org/wikipedia/commons/d/d7/NIT_Combined_Flights_Ground_Measurements_30Mar_03Apr2011_results.jpg</url>
-				<description>Location of impact</description> <!-- OPTIONAL -->
+				<title>Earthquake Impact Map</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/5/5a/Shindomap_2011-03-11_Tohoku_earthquake.png</url>
+				<description>Earthquake Impact Map</description> <!-- OPTIONAL -->
 			</primaryImage>
 			<image>
 				<site>http://upload.wikimedia.org/</site>
 				<title>Aftermath</title>
-				<url>http://upload.wikimedia.org/wikipedia/commons/1/16/Fukushima_I_by_Digital_Globe_crop.jpg</url>
-				<description>Destroyed buildings from the tsunami</description> <!-- OPTIONAL -->
+				<url>http://upload.wikimedia.org/wikipedia/commons/b/b9/Carried_train_in_Ishinomaki_Line_.JPG</url>
+				<description>Destroyed buildings from the earthquake</description> <!-- OPTIONAL -->
+			</image>
+			<image>
+				<site>http://www.flickr.com</site>
+				<title>Aftermath 2</title>
+				<url>http://farm6.staticflickr.com/5139/5542584560_bf1e3dc2cb_o.jpg</url>
+				<description>Destroyed buildings from the earthquake</description> <!-- OPTIONAL -->
+			</image>
+			<image>
+				<site>http://www.flickr.com</site>
+				<title>Aftermath 3</title>
+				<url>http://farm6.staticflickr.com/5141/5587996898_bf98bafbcd_o.jpg</url>
+				<description>Destroyed buildings from the earthquake</description> <!-- OPTIONAL -->
 			</image>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>A year at Fukushima </title>
-				<url>http://www.youtube.com/watch?v=PqQWpo_AsF8</url>
-				<description>A year at Fukushima</description> <!-- OPTIONAL -->
+				<title>Record of the initial response to the East Japan Great Earthquake </title>
+				<url>http://www.youtube.com/watch?v=6ZJ3-tbkhA4</url>
+				<description>Record of the initial response to the East Japan Great Earthquake </description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>Fukushima Nuclear Power Plant </title>
-				<url>http://www.youtube.com/watch?v=44hv-4C2yXI</url>
-				<description>Fukushima Nuclear Power Plant</description> <!-- OPTIONAL -->
+				<title>Japan earthquake and tsunami: one year</title>
+				<url>http://www.youtube.com/watch?v=oriVz1xE3wQ</url>
+				<description>Japan earthquake and tsunami</description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>Live Fukushima Nuclear Plant Cam</title>
-				<url>http://www.youtube.com/watch?v=1rdWyrtX0cU</url>
-				<description>Live Fukushima Nuclear Plant Cam</description> <!-- OPTIONAL -->
+				<title>Japan tsunami: the Red Cross response so far</title>
+				<url>http://www.youtube.com/watch?v=tNgDKyznXkI</url>
+				<description>Japan tsunami: the Red Cross response so far</description> <!-- OPTIONAL -->
 			</video>
 			<social>
 				<site>http://www.facebook.com</site>
-				<title>Japanese reaction to Fukushima Daiichi nuclear disaster</title>
-				<url>http://www.facebook.com/pages/Japanese-reaction-to-Fukushima-Daiichi-nuclear-disaster/245496545477108</url>
-				<description>Japanese reaction to Fukushima Daiichi nuclear disaster</description> <!-- OPTIONAL -->
+				<title>2011 Tohoku earthquake and tsunami </title>
+				<url>http://www.facebook.com/pages/%E6%9D%B1%E6%97%A5%E6%9C%AC%E5%A4%A7%E9%9C%87%E7%81%BD/124143401000635?rf=118866381524204</url>
+				<description>2011 Tohoku earthquake and tsunami</description> <!-- OPTIONAL -->
 			</social>
 			<ext>
-				<site>http://fukushimaupdate.com/</site>
-				<title>Fukushima Update</title>
-				<url>http://fukushimaupdate.com/</url>
-				<description>Fukushima Update</description> <!-- OPTIONAL -->
+				<site>http://en.wikipedia.org/</site>
+				<title>2011 Tohoku earthquake and tsunami</title>
+				<url>http://en.wikipedia.org/wiki/2011_Tohoku_earthquake_and_tsunami</url>
+				<description>2011 Tohoku earthquake and tsunami</description> <!-- OPTIONAL -->
+			</ext>
+			<ext>
+				<site>http://www.jrc.or.jp/</site>
+				<title>Red Cross Japanese Society</title>
+				<url>http://www.jrc.or.jp/eq-japan2011/index.html</url>
+				<description>Red Cross Japanese Society</description> <!-- OPTIONAL -->
 			</ext>
 		</ref>
 		<misc>RESEARCH</misc>
-		<org idref="jrc"/>
-		<person idref="edan"/>
-	</crisis>
-
-	<crisis id="tohoku">
-		<image>http://upload.wikimedia.org/wikipedia/commons/5/5a/Shindomap_2011-03-11_Tohoku_earthquake.png</image>
-		<image>http://upload.wikimedia.org/wikipedia/commons/b/b9/Carried_train_in_Ishinomaki_Line_.JPG</image>
-		<image>http://www.flickr.com/photos/ifrc/5542584560/</image>
-		<image>http://www.flickr.com/photos/ifrc/5587996898/</image>
-		<video>http://www.youtube.com/watch?v=6ZJ3-tbkhA4</video>
-		<video>http://www.youtube.com/watch?v=oriVz1xE3wQ</video>
-		<video>http://www.youtube.com/watch?v=tNgDKyznXkI</video>
-		<network></network>
-		<link>http://en.wikipedia.org/wiki/2011_Tohoku_earthquake_and_tsunami</link>
-		<link>http://www.jrc.or.jp/eq-japan2011/index.html</link>
-		<date>
-			<start>2011-03-11</start>
-			<additional>05:46 UTC</additional>
-		</date>
-		<humanImpact>15,861 deaths, 6,107 injured, 3,018 missing</humanImpact>
-		<economicImpact>Reconstruction needed for over a million buildings
-		Reactor Meltdown at the Fukushima Daiichi Nuclear Power Plant
-		Costs of damage possibly exceeding 25 trillion Yen ($300 billion)</economicImpact>
-		<resourcesNeeded>Food and medical supplies, temporary housing</resourcesNeeded>
-		<waysToHelp>Monetary donations directly to the Japanese Red Cross, or through your national Red Cross/Red Crescent society</waysToHelp>
-		<organizationId idref="INTRA"/>
-		<personId idref="Konoe"/>
+		<org idref="intra"/>
+		<person idref="konoe"/>
 	</crisis>
 	<crisis id="homs">
-		<name>The Seige of Homs</name>
-		<kind>Military</kind>
-		<location>
-			<city>Homs</city>
-			<country>Syria</country>
-		</location>
-		<image>http://www.blottr.com/sites/default/files/styles/620x390/public/tank-babaamro.png</image>
-		<image>http://www.leftfootforward.org/images/2012/02/Marie-Colvin.jpg</image>
-		<image>http://www.globalpost.com/sites/default/files/imagecache/medium/homs_syria_violence_1.jpg</image>
-		<image>http://citizenside-cache.citizenside.com/en/photos/politics/2012-01-26/48628/anti-regime-protest-in-homs-city/all_fullscreen/364197-syria-politics-unrest.jpg</image>
-		<video>http://edition.cnn.com/video/?/video/world/2012/01/11/homs-under-siege-a-hardship.cnn</video>
-		<video>http://www.youtube.com/watch?v=h2VO3-neG7g</video>
-		<network>http://www.facebook.com/pages/Homs-Syria/106242242748623</network>
-		<link>http://en.wikipedia.org/wiki/Siege_of_Homs</link>
-		<date>
-			<start>2011-05-06</start>
-		</date>
-		<humanImpact>4,644 protesters and opposition fighters 859 syrian soldiers and policeman</humanImpact>
-		<economicImpact>The damascus stock exchange, fell 50 percent. The econmony was expected to contract 2% in 2011, and not rise more than 1.5%</economicImpact>
-		<resourcesNeeded>Red Cross/ Red Creseant aid is still being kept out of heavy hit areas.</resourcesNeeded>
-		<waysToHelp>Contact International Comitee of the Red Cross</waysToHelp>
-		<organizationId idref="FSA"/>
-		<personId idref="Assad"/>
+		<name>The Seige of homs</name>
+		<info>
+			<history>RESEARCH ON HOMS</history>
+			<help>Contact International Commitee of the Red Cross</help>
+			<resources>Red Cross/ Red Creseant aid is still being kept out of heavy hit areas.</resources>
+			<type>Military</type>
+			<time>
+				<time>1:30 p.m.</time>
+				<day>6</day>
+				<month>5</month>
+				<year>2011</year>
+				<misc>RESEARCH</misc>
+			</time>
+			<loc>
+				<city>Homs</city>
+				<region>Syria</region>
+				<country>Asia</country>
+			</loc>
+			<impact>
+				<human>
+					<deaths>4644</deaths>
+					<displaced>-1</displaced>
+					<injured>-1</injured>
+					<missing>-1</missing>
+					<misc>Numbers are hard to find since it's ongoing.</misc>
+				</human>
+				<economic>
+					<amount>-1</amount>
+					<currency>dollars</currency>
+					<misc>The damascus stock exchange fell 50 percent. The econmony was expected to contract 2% in 2011, and not rise more than 1.5%</misc>
+				</economic>
+			</impact>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://www.blottr.com</site>
+				<title>Milatary Battle Tanks</title>
+				<url>http://www.blottr.com/sites/default/files/styles/620x390/public/tank-babaamro.png</url>
+				<description>Milatary Battle Tanks</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://www.leftfootforward.org</site>
+				<title>Marie Colvin</title>
+				<url>http://www.leftfootforward.org/images/2012/02/Marie-Colvin.jpg</url>
+				<description>Marie Colvin, who's secretly a pirate</description> <!-- OPTIONAL -->
+			</image>
+			<image>
+				<site>http://www.globalpost.com/</site>
+				<title>Syria violence</title>
+				<url>http://www.globalpost.com/sites/default/files/imagecache/medium/homs_syria_violence_1.jpg</url>
+				<description>Syria violence</description> <!-- OPTIONAL -->
+			</image>
+			<image>
+				<site>http://citizenside-cache.citizenside.com</site>
+				<title>Protestors</title>
+				<url>http://citizenside-cache.citizenside.com/en/photos/politics/2012-01-26/48628/anti-regime-protest-in-homs-city/all_fullscreen/364197-syria-politics-unrest.jpg</url>
+				<description>Protestors</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Conditions in Homs </title>
+				<url>http://www.youtube.com/embed/h2VO3-neG7g</url>
+				<description>Conditions in Homs</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Inside the Free Syrian Army</title>
+				<url>http://www.youtube.com/embed/_DSlAOK3Sak</url>
+				<description>Inside the Free Syrian Army</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Homs, Syria </title>
+				<url>http://www.facebook.com/pages/Syria-Homs/356427327710403</url>
+				<description>Homs, Syria</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://en.wikipedia.org/</site>
+				<title>Siege of Homs</title>
+				<url>http://en.wikipedia.org/wiki/Siege_of_Homs</url>
+				<description>Siege of Homs</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<org idref="fsa"/>
+		<person idref="assad"/>
 	</crisis>
 
-
-
-
-
-
-
-
-
-
-
 <!-- ORGANIZATION START -->
-	<organization id="WHO">
+	<organization id="who">
 		<name>World Health Organization</name>
 		<info>
-			<type>Global, Biological</type>
-			<history>RESEARCH ON WORLD HUNGER HISTORY</history>
+			<type>Public Health Worldwide</type>
+			<history>It was established on 7 April 1948, with headquarters in Geneva, Switzerland. Since then, it's played a major role in the eradication of smallpox, yaws, onchocerciasis, SARS and many other infectious diseases.</history>
 			<contact>
-				<phone></phone>
-				<email></email>
+				<phone>8888888</phone>
+				<email>none@none.com</email>
 				<mail>
-					<address></address>
-					<city></city>
-					<state></state>
-					<country></country>
-					<zip></zip>
+					<address>Avenue Appia 20</address>
+					<city>Geneva</city>
+					<state>Switzerland</state>
+					<country>Switzerland</country>
+					<zip>022 791 22 22</zip>
 				</mail>
 			</contact>
 			<loc>
-				<city>All cities</city>
-				<region>All regions</region>
-				<country>All countries</country>
+				<city>Geneva</city>
+				<region>Switzerland</region>
+				<country>Switzerland</country>
 			</loc>
 		</info>
 		<ref>
 			<primaryImage>
-				<site>http://stopworldhunger.webs.com</site>
-				<title>World Hunger</title>
-				<url>http://stopworldhunger.webs.com/hunger.jpg</url>
-				<description>Starving children</description> <!-- OPTIONAL -->
+				<site>http://humanosphere.kplu.org</site>
+				<title>WHO Logo</title>
+				<url>http://humanosphere.kplu.org/wp-content/uploads/2012/05/whologo.jpg</url>
+				<description>WHO Logo</description> <!-- OPTIONAL -->
 			</primaryImage>
 			<image>
-				<site>http://viroquafood.coop</site>
-				<title>Stop World Hunger</title>
-				<url>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</url>
-				<description>Homeless Sign</description> <!-- OPTIONAL -->
+				<site>http://2.bp.blogspot.com</site>
+				<title>WHO PSA</title>
+				<url>http://2.bp.blogspot.com/_vzMXlfzgosE/TNySZIIDPSI/AAAAAAAADpE/smrlxXaS0_I/s1600/WHO%2Bhealth%2Bdefinition.jpg</url>
+				<description>WHO PSA</description> <!-- OPTIONAL -->
 			</image>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>World hunger - A Billion for a Billion </title>
-				<url>http://www.youtube.com/watch?v=6jSBW0BOPqM</url>
-				<description>World hunger - A Billion for a Billion </description> <!-- OPTIONAL -->
+				<title>Immunization Message </title>
+				<url>http://www.youtube.com/watch?v=GWtTQhWwdac</url>
+				<description>Immunization Message</description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>World Hunger PSA </title>
-				<url>http://www.youtube.com/watch?v=0W2Ic5hV28w</url>
-				<description>World Hunger PSA</description> <!-- OPTIONAL -->
+				<title>Every blood donor is a hero </title>
+				<url>http://www.youtube.com/watch?v=Af0gk_kiGac</url>
+				<description>Every blood donor is a hero </description> <!-- OPTIONAL -->
 			</video>
 			<social>
 				<site>http://www.facebook.com</site>
-				<title>World Hunger Relief</title>
-				<url>http://www.facebook.com/WorldHungerRelief</url>
-				<description>World Hunger Relief</description> <!-- OPTIONAL -->
+				<title>World Health Org Facebook</title>
+				<url>http://www.facebook.com/pages/World-Health-Organization-WHO/154163327962392?v=wall</url>
+				<description>World Health Org Facebook</description> <!-- OPTIONAL -->
 			</social>
 			<social>
 				<site>https://twitter.com</site>
-				<title>World Food Day </title>
-				<url>https://twitter.com/#!/FAOWFD</url>
-				<description>World Food Day</description> <!-- OPTIONAL -->
+				<title>WHO Twitter</title>
+				<url>https://twitter.com/#!/WHO</url>
+				<description>WHO Twitter</description> <!-- OPTIONAL -->
 			</social>
 			<ext>
-				<site>http://www.who.int</site>
-				<title>World Health Organization</title>
-				<url>http://www.who.int/en</url>
-				<description>World Health Organization</description> <!-- OPTIONAL -->
-			</ext>
-			<ext>
-				<site>http://www.worldhunger.org/</site>
-				<title>http://www.worldhunger.org/</title>
-				<url>http://www.worldhunger.org/</url>
-				<description>http://www.worldhunger.org/</description> <!-- OPTIONAL -->
-			</ext>
-			<ext>
-				<site>http://www.freedomfromhunger.org/</site>
-				<title>http://www.freedomfromhunger.org/</title>
-				<url>http://www.freedomfromhunger.org/</url>
-				<description>http://www.freedomfromhunger.org/</description> <!-- OPTIONAL -->
+				<site>http://new.paho.org</site>
+				<title>Pan American World Health Organization</title>
+				<url>http://new.paho.org/index.php</url>
+				<description>Pan American World Health Organization</description> <!-- OPTIONAL -->
 			</ext>
 		</ref>
 		<misc>RESEARCH</misc>
-		<crisis idref="WHO"/>
-		<person idref="Chan"/>
+		<crisis idref="worldhunger"/>
+		<person idref="chan"/>
 	</organization>
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<name>World Health Organization</name>
-		<kind>Public Health Worldwide</kind>
-		<location>
-			<unspecific>Headquarters at Geneva, Switzerland, but has offices on all 7 continents in 145 different countries.</unspecific>
-		</location>
-		<image>http://humanosphere.kplu.org/wp-content/uploads/2012/05/whologo.jpg</image>
-		<image>https://encrypted-tbn2.google.com/images?q=tbn:ANd9GcSVoQ8m5nXTZL_62ejj_fLsfDdBtXTiMlx-8o72F9yItj9Cj1bc4Q</image>
-		<video>http://www.youtube.com/who</video>
-		<video>http://www.youtube.com/watch?v=GWtTQhWwdac</video>
-		<network>https://twitter.com/#!/WHO</network>
-		<network>http://www.facebook.com/pages/World-Health-Organization-WHO/154163327962392?v=wall</network>
-		<link>http://new.paho.org/index.php</link>
-		<history>It was established on 7 April 1948, with headquarters in Geneva, Switzerland. Since then, it's played a major role in the eradication of smallpox, yaws, onchocerciasis, SARS and many other infectious diseases.</history>
-		<contactInfo><link>http://www.who.int/about/contact_form/en/index.html</link></contactInfo>
-		<crisisId idref="worldhunger"/>
-		<personId idref="Chan"/>
-	</organization>
-	<organization id="INTRA">
+	<organization id="intra">
 		<name>Groupe INTRA</name>
-		<kind>French emergency response organization</kind>
-		<location>
-			<country>France</country>
-		</location>
-		<image>http://thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</image>
-		<video>http://www.youtube.com/embed/_DSlAOK3Sak</video>
-		<network>http://www.facebook.com/pages/Groupe-INTRA/117365841676572</network>
-		<link>http://www.groupe-intra.com/index2.htm</link>
-		<history>created by the French CEA and Areva and EDF</history>
-		<contactInfo>Groupe Intra, BP 61, 37420 Avoine</contactInfo>
-		<crisisId idref="fukushima"/>
+		<info>
+			<type>French emergency response organization</type>
+			<history>created by the French CEA and Areva and EDF</history>
+			<contact>
+				<phone>8888888</phone>
+				<email>none@none.com</email>
+				<mail>
+					<address>unkown</address>
+					<city>unkown</city>
+					<state>unkown</state>
+					<country>France</country>
+					<zip>00000</zip>
+				</mail>
+			</contact>
+			<loc>
+				<city>unkown</city>
+				<region>unkown</region>
+				<country>France</country>
+			</loc>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://pressoffice.talkabout.de/uploads/tx_txBildmaterial/ERASE_01.JPG</site>
+				<title>Intra Robot</title>
+				<url>http://pressoffice.talkabout.de/uploads/tx_txBildmaterial/ERASE_01.JPG</url>
+				<description>Intra Robot</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://i.ytimg.com</site>
+				<title>Intra</title>
+				<url>http://i.ytimg.com/vi/6loeBmfRDQ4/0.jpg</url>
+				<description>Intra</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Group Intra Robot </title>
+				<url>http://www.youtube.com/watch?v=u8huW1vBOQg</url>
+				<description>Group Intra Robot</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Groupe INTRA</title>
+				<url>http://www.facebook.com/pages/Groupe-INTRA/117365841676572</url>
+				<description>Groupe INTRA</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.groupe-intra.com</site>
+				<title>Groupe INTRA</title>
+				<url>http://www.groupe-intra.com/index2.htm</url>
+				<description>Groupe INTRA</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>Groupe Intra, BP 61, 37420 Avoine</misc>
+		<crisis idref="fukushima"/>
+		<person idref="edan"/>
 	</organization>
-		<organization id="JRC">
+	<organization id="jrc">
 		<name>Japanese Red Cross</name>
-		<kind>Relief Organization</kind>
-		<location>
-			<city>Tokyo</city>
-			<country>Japan</country>
-		</location>
-		<image>http://en.wikipedia.org/wiki/File:Tsunetami_Sano.jpg</image>
-		<image>http://upload.wikimedia.org/wikipedia/commons/a/ac/Japanese_Red_Cross_near_the_Yalu_River_1904.jpg</image>
-		<image>http://www.flickr.com/photos/ifrc/5780388293/</image>
-		<image>http://www.flickr.com/photos/ifrc/5542584560/</image>
-		<video>http://www.youtube.com/watch?v=tNgDKyznXkI</video>
-		<network>http://www.facebook.com/pages/Japanese-Red-Cross/142705225740666</network>
-		<link>http://www.jrc.or.jp/english/index.html</link>
-		<history>Founded in 1877 as the Philanthropic Society, by Count Tsunetami Sano, to relieve the injured of the  Satsuma Rebellion.
-		In 1887, the organization changed its name to the Japanese Red Cross Society, officialy recognized by the International Committee of the Red Cross on September 2.
-		Today, they operate 92 hospitals and 79 blood centers throughout Japan.</history>
-		<contactInfo>Address: 1-1-3, Shiba Daimon, Minato-ku, Tokyo 105-8521
-		Phone:   +81-3-3438-1311
-		Email:   info@jrc.or.jp
-		URL:     <link>http://www.jrc.or.jp</link></contactInfo>
-		<crisisId idref="fukushima"/>
-		<personId idref="Konoe"/>
+		<info>
+			<type>Relief Organization</type>
+			<history>Founded in 1877 as the Philanthropic Society, by Count Tsunetami Sano, to relieve the injured of the  Satsuma Rebellion. In 1887, the organization changed its name to the Japanese Red Cross Society, officialy recognized by the International Committee of the Red Cross on September 2. Today, they operate 92 hospitals and 79 blood centers throughout Japan.</history>
+			<contact>
+				<phone>+81-3-3438-1311</phone>
+				<email>info@jrc.or.jp</email>
+				<mail>
+					<address>1-1-3 Shiba Daimon</address>
+					<city>Minato-ku</city>
+					<state>Tokyo</state>
+					<country>Japan</country>
+					<zip>00000</zip>
+				</mail>
+			</contact>
+			<loc>
+				<city>Minato-ku</city>
+				<region>Tokyo</region>
+				<country>Japan</country>
+			</loc>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://en.wikipedia.org/</site>
+				<title>Tsunetami Sano</title>
+				<url>http://en.wikipedia.org/wiki/File:Tsunetami_Sano.jpg</url>
+				<description>Tsunetami Sano</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://upload.wikimedia.org/</site>
+				<title>Japanese Red Cross</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/a/ac/Japanese_Red_Cross_near_the_Yalu_River_1904.jpg</url>
+				<description>Japanese Red Cross</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Japan tsunami: the Red Cross response so far </title>
+				<url>http://www.youtube.com/watch?v=tNgDKyznXkI</url>
+				<description>Japan tsunami: the Red Cross response so far </description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Japanese Red Cross Facebook</title>
+				<url>http://www.facebook.com/pages/Japanese-Red-Cross/142705225740666</url>
+				<description>Japanese Red Cross Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.jrc.or.jp/english/index.html</site>
+				<title>Japanese Red Cross Society</title>
+				<url>http://www.jrc.or.jp/english/index.html</url>
+				<description>Japanese Red Cross Society</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH JRC</misc>
+		<crisis idref="tohoku"/>
+		<person idref="konoe"/>
 	</organization>
-		<organization id="FSA">
+	<organization id="fsa">
 		<name>The Free Syrian Army</name>
-		<kind>Military organization</kind>
-		<location>
-			<unspecific>Syria, main base: hatay turkey</unspecific>
-		</location>
-		<image>http://thinkpress.files.wordpress.com/2011/09/free-syrian-army-logo.png?w=480</image>
-		<image> http://www.thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</image>
-		<image>http://www.globalpost.com/sites/default/files/imagecache/gp3_small_article/free-syrian-army-2011-11-2.jpg</image>
-		<video>http://www.youtube.com/watch?v=_DSlAOK3Sak</video>
-		<video>http://www.cbsnews.com/video/watch/?id=7390803n</video>
-		<network></network>
-		<link>http://en.wikipedia.org/wiki/Free_Syrian_Army</link>
-		<link>http://en.wikipedia.org/wiki/Syrian_National_Council</link>
-		<history>
-			The Free Syrian Army is an armed opposition group operating in Syria that has been active during the Syrian uprising. Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government. The FSA has also claimed that the conflict is not sectarian. On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement and became the main opposition army group
-		</history>
-		<contactInfo>NA</contactInfo>
-		<crisisId idref="homs"/>
-		<personId idref="Assad"/>
+		<info>
+			<type>Military organization</type>
+			<history>The Free Syrian Army (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr) is an armed opposition group operating in Syria that has been active during the Syrian uprising.[6] Composed mainly of defected Syrian Armed Forces personnel,[7][8] its formation was announced on 29 July 2011 in a video released on the internet by a uniformed group of deserters from the Syrian military who called upon members of the Syrian army to defect and join them.[9] The leader of the group, who identified himself as Colonel Riad al-Asaad, announced that the Free Syrian Army would work with demonstrators to bring down the system, and declared that all security forces attacking civilians are justified targets.[10][11]Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government.[12][13] The FSA has also claimed that the conflict is not sectarian, that they have in their ranks Alawis who oppose the government, and that there will be no reprisals if it falls.[14] On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement (Arabic: حركة الضباط الأحرار, ħarakat al-ḍubbaṭ al-aħrar) and became the main opposition army group.[6][15][16] By early December, there were an estimated 15,000 to 25,000 defectors from the armed forces according to activist and media sources,[17][18] western intelligence sources estimated greater than 10,000 defectors,[19][20] By the middle of January 2012, the Free Syrian Army reported because of continuing defections a total of 40,000 men in its ranks.[21][22] The actual number of soldiers defecting to the Free Syrian Army is unknown.</history>
+			<contact>
+				<phone>8888888</phone>
+				<email>none@none.com</email>
+				<mail>
+					<address>unkown</address>
+					<city>unkown</city>
+					<state>unkown</state>
+					<country>Syria</country>
+					<zip>00000</zip>
+				</mail>
+			</contact>
+			<loc>
+				<city>unkown</city>
+				<region>unkown</region>
+				<country>Syria</country>
+			</loc>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://troubledkashmir.com/</site>
+				<title>Syrian Army</title>
+				<url>http://troubledkashmir.com/kashmir/wp-content/uploads/2011/12/prt.jpg</url>
+				<description>Syrian Army</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://www.thegatewaypundit.com</site>
+				<title>Syrian Army</title>
+				<url>http://www.thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</url>
+				<description>Syrian Army</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Inside the Free Syrian Army </title>
+				<url>http://www.youtube.com/embed/_DSlAOK3Sak</url>
+				<description>Inside the Free Syrian Army</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Free Syrian Army Facebook</title>
+				<url>http://www.facebook.com/pages/The-Free-Syrian-Army-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%AD%D8%B1/178402408929860</url>
+				<description>Free Syrian Army Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://en.wikipedia.org/</site>
+				<title>Free Syrian Army</title>
+				<url>http://en.wikipedia.org/wiki/Free_Syrian_Army</url>
+				<description>Free Syrian Army</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH ON FSA</misc>
+		<crisis idref="homs"/>
+		<person idref="assad"/>
 	</organization>
-
-
-
-
-
 
 <!-- PEOPLE START -->
-	<person id="Chan">
-		<name>World Health Organization</name>
+	<person id="chan">
+		<name>Margaret Chan</name>
 		<info>
-			<type>Global, Biological</type>
+			<type>Director-General of the World Health Organization</type>
 			<birthdate>
-				<time>Ongoing</time>
+				<time>5:00 p.m.</time>
 				<day>-1</day>
 				<month>-1</month>
 				<year>-1</year>
 				<misc>Ongoing</misc>
 			</birthdate>
-			<nationality></nationality>
-			<biography></biography>	
-			
+			<nationality>Hong Kong</nationality>
+			<biography>Director-General of the World Health Organization</biography>
 		</info>
 		<ref>
 			<primaryImage>
-				<site>http://stopworldhunger.webs.com</site>
-				<title>World Hunger</title>
-				<url>http://stopworldhunger.webs.com/hunger.jpg</url>
-				<description>Starving children</description> <!-- OPTIONAL -->
+				<site>http://topnews.in/</site>
+				<title>Margaret Chan</title>
+				<url>http://topnews.in/files/margaret-chan1.jpg</url>
+				<description>Margaret Chan</description> <!-- OPTIONAL -->
 			</primaryImage>
 			<image>
-				<site>http://viroquafood.coop</site>
-				<title>Stop World Hunger</title>
-				<url>http://viroquafood.coop/Portals/62289/images/hunger%20in%20america.jpg</url>
-				<description>Homeless Sign</description> <!-- OPTIONAL -->
+				<site>http://static.guim.co.uk</site>
+				<title>Margaret Chan</title>
+				<url>http://static.guim.co.uk/sys-images/Guardian/About/General/2009/7/15/1247677189175/Margaret-Chan-the-World-H-001.jpg</url>
+				<description>Margaret Chan</description> <!-- OPTIONAL -->
 			</image>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>World hunger - A Billion for a Billion </title>
-				<url>http://www.youtube.com/watch?v=6jSBW0BOPqM</url>
-				<description>World hunger - A Billion for a Billion </description> <!-- OPTIONAL -->
-			</video>
-			<video>
-				<site>http://www.youtube.com</site>
-				<title>World Hunger PSA </title>
-				<url>http://www.youtube.com/watch?v=0W2Ic5hV28w</url>
-				<description>World Hunger PSA</description> <!-- OPTIONAL -->
+				<title>Margaret Chan</title>
+				<url>http://www.youtube.com/watch?v=JE4t9vPX1jA</url>
+				<description>Margaret Chan </description> <!-- OPTIONAL -->
 			</video>
 			<social>
-				<site>http://www.facebook.com</site>
-				<title>World Hunger Relief</title>
-				<url>http://www.facebook.com/WorldHungerRelief</url>
-				<description>World Hunger Relief</description> <!-- OPTIONAL -->
-			</social>
-			<social>
-				<site>https://twitter.com</site>
-				<title>World Food Day </title>
-				<url>https://twitter.com/#!/FAOWFD</url>
-				<description>World Food Day</description> <!-- OPTIONAL -->
+				<site>https://twitter.com/</site>
+				<title>World Health Org Twitter</title>
+				<url>https://twitter.com/#!/WHO</url>
+				<description>World Health Org Twitter</description> <!-- OPTIONAL -->
 			</social>
 			<ext>
-				<site>http://www.who.int</site>
+				<site>http://www.who.int/</site>
 				<title>World Health Organization</title>
 				<url>http://www.who.int/en</url>
 				<description>World Health Organization</description> <!-- OPTIONAL -->
 			</ext>
-			<ext>
-				<site>http://www.worldhunger.org/</site>
-				<title>http://www.worldhunger.org/</title>
-				<url>http://www.worldhunger.org/</url>
-				<description>http://www.worldhunger.org/</description> <!-- OPTIONAL -->
-			</ext>
-			<ext>
-				<site>http://www.freedomfromhunger.org/</site>
-				<title>http://www.freedomfromhunger.org/</title>
-				<url>http://www.freedomfromhunger.org/</url>
-				<description>http://www.freedomfromhunger.org/</description> <!-- OPTIONAL -->
-			</ext>
 		</ref>
 		<misc>RESEARCH</misc>
 		<crisis idref="worldhunger"/>
-		<organization idref="WHO"/>
+		<org idref="who"/>
 	</person>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-	<person id="Chan">
-		<name>Margaret Chan</name>
-		<kind>Director-General of the World Health Organization</kind>
-		<location>
-			<city>Hong Kong</city>
-		</location>
-		<image>http://topnews.in/files/margaret-chan1.jpg</image>
-		<image>http://static.guim.co.uk/sys-images/Guardian/About/General/2009/7/15/1247677189175/Margaret-Chan-the-World-H-001.jpg</image>
-		<video>http://www.youtube.com/watch?v=JE4t9vPX1jA</video>
-		<network>https://twitter.com/#!/WHO</network>
-		<link>http://www.who.int/en/</link>
-		<crisisId idref="worldhunger"/>
-		<organizationId idref="WHO"/>
-	</person>
-	<person id="Edan">
+	<person id="edan">
 		<name>Yukio Edano</name>
-		<kind>Minister of Economy, Trade and Industry</kind>
-		<location>
-			<country>Japan</country>
-		</location>
-		<image>http://upload.wikimedia.org/wikipedia/commons/8/8f/Yukio_Edano_Sakado_20100910.JPG</image>
-		<video>http://www.google.com/</video>
-		<network>http://www.google.com/</network>
-		<link>http://www.edano.gr.jp/</link>
-		<crisisId idref="fukushima"/>
-		<organizationId idref="INTRA"/>
+		<info>
+			<type>Minister of Economy</type>
+			<birthdate>
+				<time>5:00 p.m.</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>Ongoing</misc>
+			</birthdate>
+			<nationality>Japanese</nationality>
+			<biography>Minister of Economy, Trade and Industry</biography>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://upload.wikimedia.org</site>
+				<title>Yukio Edano</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/8/8f/Yukio_Edano_Sakado_20100910.JPG</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://i.i.com.com</site>
+				<title>Yukio Edano</title>
+				<url>http://i.i.com.com/cnwk.1d/i/tim/2011/04/14/yukio_edano_112041368_620x350.jpg</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Yukio Edano</title>
+				<url>http://www.youtube.com/embed/RbxbJ-Auvg8</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com/</site>
+				<title>Yukio Edano Facebook</title>
+				<url>http://www.facebook.com/pages/Yukio-Edano/153863848008005</url>
+				<description>Yukio Edano Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.edano.gr.jp/</site>
+				<title>Yukio Edano</title>
+				<url>http://www.edano.gr.jp/</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<crisis idref="fukushima"/>
+		<org idref="intra"/>
 	</person>
-	<person id="Konoe">
+	<person id="konoe">
 		<name>Tadateru Konoe</name>
-		<kind>President of the International Federation of Red Cross and Red Crecent Societies</kind>
-		<location>
-			<country>Japan</country>
-		</location>
-		<image>http://farm3.staticflickr.com/2620/4117211202_41d8b8e89c_o.jpg</image>
-		<video>http://www.google.com/</video>
-		<network>http://www.google.com/</network>
-		<link>http://www.ifrc.org/en/who-we-are/governance/president/</link>
-		<crisisId idref="tohoku"/>
-		<organizationId idref="JRC"/>
+		<info>
+			<type>President of the Japanese Red Cross</type>
+			<birthdate>
+				<time>5:00 p.m.</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>RESEARCH</misc>
+			</birthdate>
+			<nationality>Japanese</nationality>
+			<biography>President of the International Federation of Red Cross and Red Crecent Societies</biography>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>www.flicker.com</site>
+				<title>Tadateru Konoe</title>
+				<url>http://farm3.staticflickr.com/2620/4117211202_41d8b8e89c_o.jpg</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://blogs.redcross.org.uk</site>
+				<title>Tadateru Konoe Handshake</title>
+				<url>http://blogs.redcross.org.uk/wp-content/uploads/2012/06/konoehandshake.jpg</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com/</site>
+				<title>Tadateru Konoe</title>
+				<url>http://www.youtube.com/embed/Ho-GA2Woakk</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>https://www.twitter.cmo</site>
+				<title>Tadateru Konoe Facebook</title>
+				<url>http://twitter.com/Federation/statuses/47344070787469312</url>
+				<description>Tadateru Konoe Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.ifrc.org/</site>
+				<title>Tadateru Konoe</title>
+				<url>http://www.ifrc.org/en/who-we-are/governance/president/</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>President of the International Federation of Red Cross and Red Crecent Societies</misc>
+		<crisis idref="tohoku"/>
+		<org idref="jrc"/>
 	</person>
-	<person id="Assad">
+	<person id="assad">
 		<name>Basshar Al-assad</name>
-		<kind>President of Syria</kind>
-		<location>
-			<city>DamascusM</city>
-			<country>Syria</country>
-		</location>
-		<image>http://upload.wikimedia.org/wikipedia/commons/7/7d/Bashar_al-Assad_%28cropped%29.jpg</image>
-		<video>http://edition.cnn.com/video/?/video/world/2012/01/10/sot-syria-pres-assad-terrorists.cnn</video>
-		<video>http://edition.cnn.com/video/?/video/world/2011/08/22/watson.assad.statement.cnn</video>
-		<network>http://www.facebook.com/Bashar.Al.Assad.page</network>
-		<link>http://en.wikipedia.org/wiki/Bashar_al-Assad</link>
-		<crisisId idref="homs"/>
-		<organizationId idref="FSA"/>
+		<info>
+			<type>Leader/President</type>
+			<birthdate>
+				<time>5:00 p.m.</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>RESEARCH</misc>
+			</birthdate>
+			<nationality>Syria</nationality>
+			<biography>President of Syria</biography>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://en.wikipedia.org//</site>
+				<title>Bashar al-Assad</title>
+				<url>http://en.wikipedia.org/wiki/File:Bashar_al-Assad_%28cropped%29.jpg</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://static.guim.co.uk</site>
+				<title>Bashar al-Assad</title>
+				<url>http://yalebooks.files.wordpress.com/2011/03/bashar-al-assad-picture.jpg</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://edition.cnn.com/</site>
+				<title>Bashar al-Assad</title>
+				<url>http://edition.cnn.com/video/?/video/world/2012/01/10/sot-syria-pres-assad-terrorists.cnn</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://edition.cnn.com/</site>
+				<title>Bashar al-Assad</title>
+				<url>http://edition.cnn.com/video/?/video/world/2011/08/22/watson.assad.statement.cnn</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.cmo</site>
+				<title>Bashar al-Assad Facebook</title>
+				<url>http://www.facebook.com/Bashar.Al.Assad.page</url>
+				<description>Bashar al-Assad Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://en.wikipedia.org</site>
+				<title>Bashar al-Assad</title>
+				<url>http://en.wikipedia.org/wiki/Bashar_al-Assad</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>Damascus, Syria</misc>
+		<crisis idref="homs"/>
+		<org idref="fsa"/>
 	</person>
 </worldCrises>
