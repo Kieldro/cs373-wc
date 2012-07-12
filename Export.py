@@ -49,7 +49,7 @@ a page Element object using the data from the model.
 	"""
 	for x in range(len(pageList)) :
 		SubElement(root, pageType)
-		pageTypeBuildFunction(root[x], pageList[x])		
+		pageTypeBuildFunction(root[len(root) - 1], pageList[x])		
 
 # ---------------
 # buildCrisisPage
@@ -134,9 +134,9 @@ def buildCrisisInfo(crisisElement, crisisInfoModel):
 def buildDate(parentElem, dateModel, title):
 	time = Element(tag=title)
 	SubElement(time, tag="time", text=dateModel.time)
-	SubElement(time, tag="day", text=dateModel.day)
-	SubElement(time, tag="month", text=dateModel.month)
-	SubElement(time, tag="year", text=dateModel.year)
+	SubElement(time, tag="day", text=str(dateModel.day))
+	SubElement(time, tag="month", text=str(dateModel.month))
+	SubElement(time, tag="year", text=str(dateModel.year))
 	SubElement(time, tag="misc", test=dateModel.time_misc)
 	parentElem.append(time)
 
@@ -155,16 +155,16 @@ def buildImpact(parentElem, impactModel):
 	
 def buildHumanImpact(parentElem, hImpactModel):
 	human = Element(tag="human")
-	SubElement(human, tag="deaths", text=hImpactModel.deaths)
-	SubElement(human, tag="displaced", text=hImpactModel.displaced)
-	SubElement(human, tag="injured", text=hImpactModel.injured)
-	SubElement(human, tag="missing", text=hImpactModel.missing)
+	SubElement(human, tag="deaths", text=str(hImpactModel.deaths))
+	SubElement(human, tag="displaced", text=str(hImpactModel.displaced))
+	SubElement(human, tag="injured", text=str(hImpactModel.injured))
+	SubElement(human, tag="missing", text=str(hImpactModel.missing))
 	SubElement(human, tag="misc", test=hImpactModel.himpact_misc)
 	parentElem.append(human)
 
 def buildEconomicImpact(parentElem, eImpactModel):
 	eco = Element(tag="economic")
-	SubElement(eco, tag="amount", text=eImpactModel.amount)
+	SubElement(eco, tag="amount", text=str(eImpactModel.amount))
 	SubElement(eco, tag="currency", text=eImpactModel.currency)
 	SubElement(eco, tag="misc", text=eImpactModel.eimpact_misc)
 	parentElem.append(eco)
