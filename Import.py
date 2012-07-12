@@ -173,7 +173,7 @@ def createPersonInfo(elem):
 
 def createRefLinks(elem) :
 	d = {}
-	d['primary_image'] = createLink('primary_image', elem.find('primaryImage'))
+	d['primaryImage'] = createLink('primaryImage', elem.find('primaryImage'))
 	images = elem.findall('image')
 	image_list = []
 	for image in images :

@@ -97,7 +97,7 @@ class Link(db.Model):
 	title = db.StringProperty()
 	url = db.LinkProperty(required=True)
 	description = db.TextProperty(default=None)
-	link_type = db.StringProperty(choices=["primary_image", "image", "video", "social", "ext"], required=True)
+	link_type = db.StringProperty(choices=["primaryImage", "image", "video", "social", "ext"], required=True)
 
 
 # ---------------
@@ -105,7 +105,7 @@ class Link(db.Model):
 # ---------------
 
 class ReferenceLinks(db.Model):
-	primary_image = db.ReferenceProperty(Link)
+	primaryImage = db.ReferenceProperty(Link)
 	image = db.ListProperty(db.Key, required = True)
 	social = db.ListProperty(db.Key, required = True)
 	video = db.ListProperty(db.Key, required = True)
