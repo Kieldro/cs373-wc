@@ -34,7 +34,7 @@
 		<ul class="entries">
 			{% for person in people_list %}
 				<li>
-					<a href="#">
+					<a href="/entry?name={{ person.name }}">
 						<h1>{{ person.name }}
 							<small> {{person.personinfo.nationality}}</small>
 						</h1>

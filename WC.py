@@ -106,8 +106,15 @@ class ExportPage(BaseHandler):
 		
 class EntryPage(BaseHandler) :
 	def get(self):
-		#TODO: change this to be dynamic later!
-		self.render_template('person_page.html')
+		entry_name = self.request.get('name')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
+						"WHERE name = '%s'" % entry_name)
+		if q.count() != 1 :
+			self.render_template('_base.html')
+		else:
+			person=q.get()
+			name = person.name
+			self.render_template('person_page.html', person=result)
 
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
