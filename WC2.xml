@@ -95,39 +95,173 @@
 		<person idref="Chan"/>
 	</crisis>
 
-
-
 	<crisis id="fukushima">
 		<name>Fukushima Daiichi Nuclear Disaster</name>
-		<kind>Nuclear meltdown and release of radioactive materials</kind>
-		<location>
-			<city>Okuma</city>
-			<state>Fukushima</state>
-			<country>Japan</country>
-		</location>
-		<image>http://upload.wikimedia.org/wikipedia/commons/d/d7/NIT_Combined_Flights_Ground_Measurements_30Mar_03Apr2011_results.jpg</image>
-		<image>http://upload.wikimedia.org/wikipedia/commons/1/16/Fukushima_I_by_Digital_Globe_crop.jpg</image>
-		<video>http://www.youtube.com/watch?v=PqQWpo_AsF8</video>
-		<video>http://www.youtube.com/watch?v=44hv-4C2yXI</video>
-		<video>http://www.youtube.com/watch?v=1rdWyrtX0cU</video>
-		<network>http://www.facebook.com/pages/Japanese-reaction-to-Fukushima-Daiichi-nuclear-disaster/245496545477108</network>
-		<link>http://fukushimaupdate.com/</link>
-		<date>
-			<start>2011-03-11</start>
-		</date>
-		<humanImpact>~573</humanImpact>
-		<economicImpact>unknown</economicImpact>
-		<resourcesNeeded>food</resourcesNeeded>
-		<waysToHelp>Support the cause: <link>http://fukushimaupdate.com/support/</link></waysToHelp>
-		<organizationId idref="JRC"/>
-		<personId idref="Edan"/>
+		<info>
+			<history>RESEARCH ON FUKUSHIMA</history>
+			<help>Support the cause: <link>http://fukushimaupdate.com/support/</link></help>
+			<resources>Money donations and food donations.</resources>
+			<type>Nuclear meltdown and release of radioactive materials</type>
+			<time>
+				<time>3:00 p.m.</time>
+				<day>11</day>
+				<month>3</month>
+				<year>2011</year>
+				<misc>RESEARCH</misc>
+			</time>
+			<loc>
+				<city>Okuma</city>
+				<region>Fukushima</region>
+				<country>Japan</country>
+			</loc>
+			<impact>
+				<human>
+					<deaths>573</deaths>
+					<displaced>-1</displaced>
+					<injured>-1</injured>
+					<missing>-1</missing>
+					<misc>RESEARCH</misc>
+				</human>
+				<economic>
+					<amount>-1</amount>
+					<currency>RESEARCH</currency>
+					<misc>RESEARCH</misc>
+				</economic>
+			</impact>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://upload.wikimedia.org/</site>
+				<title>Fukushima Tsunami Overview</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/d/d7/NIT_Combined_Flights_Ground_Measurements_30Mar_03Apr2011_results.jpg</url>
+				<description>Location of impact</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://upload.wikimedia.org/</site>
+				<title>Aftermath</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/1/16/Fukushima_I_by_Digital_Globe_crop.jpg</url>
+				<description>Destroyed buildings from the tsunami</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>A year at Fukushima </title>
+				<url>http://www.youtube.com/watch?v=PqQWpo_AsF8</url>
+				<description>A year at Fukushima</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Fukushima Nuclear Power Plant </title>
+				<url>http://www.youtube.com/watch?v=44hv-4C2yXI</url>
+				<description>Fukushima Nuclear Power Plant</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Live Fukushima Nuclear Plant Cam</title>
+				<url>http://www.youtube.com/watch?v=1rdWyrtX0cU</url>
+				<description>Live Fukushima Nuclear Plant Cam</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Japanese reaction to Fukushima Daiichi nuclear disaster</title>
+				<url>http://www.facebook.com/pages/Japanese-reaction-to-Fukushima-Daiichi-nuclear-disaster/245496545477108</url>
+				<description>Japanese reaction to Fukushima Daiichi nuclear disaster</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://fukushimaupdate.com/</site>
+				<title>Fukushima Update</title>
+				<url>http://fukushimaupdate.com/</url>
+				<description>Fukushima Update</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<org idref="jrc"/>
+		<person idref="edan"/>
 	</crisis>
+	<!-- HERERERERERRERERLSADF;FDSVB;LKSAFGB;ALFG;LAFHG;LADF;LAFDHG;LASG;LKJHDAFGLKJBVLKJABGKUBRT;QNHGAKGNBA;LRTGN;HGOPN HERE -->
 	<crisis id="tohoku">
 		<name>2011 Tohoku Earthquake and Tsunami</name>
-		<kind>Natural Disaster</kind>
-		<location>
-			<country>Japan</country>
-		</location>
+		<info>
+			<history>RESEARCH ON TOHOKU</history>
+			<help></help>
+			<resources>Money donations and food donations.</resources>
+			<type>Natural Disaster</type>
+			<time>
+				<time>2:46 p.m.</time>
+				<day>11</day>
+				<month>3</month>
+				<year>2011</year>
+				<misc>RESEARCH</misc>
+			</time>
+			<loc>
+				<city>Epicenter near Oshika Peninsula</city>
+				<region>Tohoku</region>
+				<country>Japan</country>
+			</loc>
+			<impact>
+				<human>
+					<deaths>573</deaths>
+					<displaced>-1</displaced>
+					<injured>-1</injured>
+					<missing>-1</missing>
+					<misc>RESEARCH</misc>
+				</human>
+				<economic>
+					<amount>-1</amount>
+					<currency>RESEARCH</currency>
+					<misc>RESEARCH</misc>
+				</economic>
+			</impact>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://upload.wikimedia.org/</site>
+				<title>Fukushima Tsunami Overview</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/d/d7/NIT_Combined_Flights_Ground_Measurements_30Mar_03Apr2011_results.jpg</url>
+				<description>Location of impact</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://upload.wikimedia.org/</site>
+				<title>Aftermath</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/1/16/Fukushima_I_by_Digital_Globe_crop.jpg</url>
+				<description>Destroyed buildings from the tsunami</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>A year at Fukushima </title>
+				<url>http://www.youtube.com/watch?v=PqQWpo_AsF8</url>
+				<description>A year at Fukushima</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Fukushima Nuclear Power Plant </title>
+				<url>http://www.youtube.com/watch?v=44hv-4C2yXI</url>
+				<description>Fukushima Nuclear Power Plant</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Live Fukushima Nuclear Plant Cam</title>
+				<url>http://www.youtube.com/watch?v=1rdWyrtX0cU</url>
+				<description>Live Fukushima Nuclear Plant Cam</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Japanese reaction to Fukushima Daiichi nuclear disaster</title>
+				<url>http://www.facebook.com/pages/Japanese-reaction-to-Fukushima-Daiichi-nuclear-disaster/245496545477108</url>
+				<description>Japanese reaction to Fukushima Daiichi nuclear disaster</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://fukushimaupdate.com/</site>
+				<title>Fukushima Update</title>
+				<url>http://fukushimaupdate.com/</url>
+				<description>Fukushima Update</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<org idref="jrc"/>
+		<person idref="edan"/>
+	</crisis>
+
+	<crisis id="tohoku">
 		<image>http://upload.wikimedia.org/wikipedia/commons/5/5a/Shindomap_2011-03-11_Tohoku_earthquake.png</image>
 		<image>http://upload.wikimedia.org/wikipedia/commons/b/b9/Carried_train_in_Ishinomaki_Line_.JPG</image>
 		<image>http://www.flickr.com/photos/ifrc/5542584560/</image>

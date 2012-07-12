@@ -33,7 +33,7 @@ return the root element of the data tree containing all the data
 		buildCrisisPage(cpage, x)
 		root.append(cpage)
 	for x in orgList :
-		opage = Element(tag='org')
+		opage = Element(tag='organization')
 		buildOrgPage(opage, x)
 		root.append(opage)
 	for x in personList :
@@ -152,7 +152,7 @@ def buildDate(parentElem, dateModel, title):
 	temp = SubElement(time, tag="year")
 	temp.text = str(dateModel.year)
 	temp = SubElement(time, tag="misc")
-	temp.text = str(dateModel.misc)
+	temp.text = str(dateModel.time_misc)
 	parentElem.append(time)
 
 
@@ -210,7 +210,7 @@ def buildEconomicImpact(parentElem, eImpactModel):
 	temp = SubElement(eco, tag="amount")
 	temp.text = str(eImpactModel.amount)
 	temp = SubElement(eco, tag="currency")
-	temp.text = str(eImpactModel.amount)
+	temp.text = str(eImpactModel.currency)
 	temp = SubElement(eco, tag="misc")
 	temp.text = eImpactModel.eimpact_misc
 	parentElem.append(eco)
@@ -225,7 +225,7 @@ def buildOrgInfo(orgElement, orgInfoModel):
 	temp = SubElement(info, tag="type")
 	temp.text = orgInfoModel.otype
 	temp = SubElement(info, tag="history")
-	temp.text = orgInfoModel.otype
+	temp.text = orgInfoModel.history
 	buildContact(info, orgInfoModel.contacts)
 	buildLocation(info, orgInfoModel.location)
 	orgElement.append(info)
@@ -298,7 +298,7 @@ def buildRefs(elem, refs):
 
 def buildExternalRefs(element, model):
 	ref = Element(tag="ref")
-	buildRefs(ref, [model.primary_image.key(),])
+	buildRefs(ref, [model.primaryImage.key()])
 	buildRefs(ref, model.image)
 	buildRefs(ref, model.video)
 	buildRefs(ref, model.social)
@@ -332,3 +332,4 @@ def buildPageRefs(element, refs):
 		temp = Element(tag=ref.rType)
 		temp.attrib["idref"] = ref.sref
 		element.append(temp)
+
