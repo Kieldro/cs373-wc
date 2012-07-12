@@ -103,9 +103,9 @@ def createPerson(elem):
 def createDate(elem) :
 	d = {}
 	d['time'] = elem.findtext('time')
-	d['day'] = int(elem.findtext('day'))
-	d['month'] = int(elem.findtext('month'))
-	d['year'] = int(elem.findtext('year'))
+	d['day'] = elem.findtext('day')
+	d['month'] = elem.findtext('month')
+	d['year'] = elem.findtext('year')
 	d['time_misc'] = elem.findtext('misc')
 	
 	de = Date(**d)
@@ -262,10 +262,10 @@ def createLocationInfo(elem) :
 
 def createHumanImpact(elem) :
 	d = {}
-	d['deaths'] = int(elem.findtext('deaths'))
-	d['displaced'] = int(elem.findtext('displaced'))
-	d['injured'] = int(elem.findtext('injured'))
-	d['missing'] = int(elem.findtext('missing'))
+	d['deaths'] = elem.findtext('deaths')
+	d['displaced'] = elem.findtext('displaced')
+	d['injured'] = elem.findtext('injured')
+	d['missing'] = elem.findtext('missing')
 	d['himpact_misc'] = elem.findtext('misc')
 	
 	hi = HumanImpact(**d)
@@ -279,7 +279,7 @@ def createHumanImpact(elem) :
 
 def createEconomicImpact(elem) :
 	d = {}
-	d['amount'] = int(elem.findtext('amount'))
+	d['amount'] = elem.findtext('amount')
 	d['currency'] = elem.findtext('currency')
 	d['eimpact_misc'] = elem.findtext('misc')
 	
