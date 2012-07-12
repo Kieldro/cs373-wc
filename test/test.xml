@@ -9,8 +9,8 @@
 			<type>Global, Biological</type>
 			<time>
 				<time>Ongoing</time>
-				<day>-1</day>
-				<month>-1</month>
+				<day></day>
+				<month></month>
 				<year>-1</year>
 				<misc>Ongoing</misc>
 			</time>
@@ -185,7 +185,7 @@
 			<birthdate>
 				<time>Ongoing</time>
 				<day>-1</day>
-				<month>-1</month>
+				<month></month>
 				<year>-1</year>
 				<misc>Ongoing</misc>
 			</birthdate>
