@@ -26,30 +26,21 @@ orgList is a list of Organizations model objects
 personList is a list of People model objects
 return the root element of the data tree containing all the data 
 	"""
-	root = Element("worldCrises")	
-	buildPagesofType(root, "crisis", crisisList, buildCrisisPage)
-	buildPagesofType(root, "organization", orgList, buildOrgPage)
-	buildPagesofType(root, "person", personList, buildPersonPage)
+	root = Element("worldCrises")
+	for x in crisisList :
+		cpage = Element(tag='crisis')
+		buildCrisisPage(cpage, x)
+		root.append(cpage)
+	for x in orgList :
+		opage = Element(tag='org')
+		buildOrgPage(opage, x)
+		root.append(opage)
+	for x in personList :
+		ppage = Element(tag='person')
+		buildPersonPage(ppage, x)
+		root.append(ppage)
+
 	return root
-
-# ----------
-# buildPages
-# ----------
-
-def buildPagesofType(root, pageType, pageList, pageTypeBuildFunction) :
-	"""
-Given a root, build all the subElements of a given page type (using the 
-given function: pageTypeBuildFunction) and make them subElements of the
-root.
-root is an ElementTree Element object
-pageType is a string that is the tag to be used for each child element
-pageList is a list of GAE models, all compatible with the function argumetn
-pageTypeBuildFunction is a function that builds up the structure underneath
-a page Element object using the data from the model.
-	"""
-	for x in range(len(pageList)) :
-		SubElement(root, pageType)
-		pageTypeBuildFunction(root[len(root) - 1], pageList[x])		
 
 # ---------------
 # buildCrisisPage
@@ -66,7 +57,7 @@ returns a list of sub-elements to be added in correct order
 	buildInitInfo(crisisElement, crisisModel);
 	buildCrisisInfo(crisisElement, crisisModel.crisisinfo)
 	buildExternalRefs(crisisElement, crisisModel.reflink)
-	SubElement(crisisElement, tag="misc", text=crisisModel.misc)
+	SubElement(crisisElement, tag="misc", Text=crisisModel.misc)
 	buildPageRefs(crisisElement, crisisModel.orgref)
 	buildPageRefs(crisisElement, crisisModel.personref)
 
