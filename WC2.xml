@@ -461,10 +461,10 @@
 		</info>
 		<ref>
 			<primaryImage>
-				<site>http://thegatewaypundit.com/</site>
-				<title>Syrian Army</title>
-				<url>http://thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</url>
-				<description>Syrian Army</description> <!-- OPTIONAL -->
+				<site>http://pressoffice.talkabout.de/uploads/tx_txBildmaterial/ERASE_01.JPG</site>
+				<title>Intra Robot</title>
+				<url>http://pressoffice.talkabout.de/uploads/tx_txBildmaterial/ERASE_01.JPG</url>
+				<description>Intra Robot</description> <!-- OPTIONAL -->
 			</primaryImage>
 			<image>
 				<site>http://i.ytimg.com</site>
@@ -474,9 +474,9 @@
 			</image>
 			<video>
 				<site>http://www.youtube.com</site>
-				<title>Inside the Free Syrian Army </title>
-				<url>http://www.youtube.com/embed/_DSlAOK3Sak</url>
-				<description>Inside the Free Syrian Army</description> <!-- OPTIONAL -->
+				<title>Group Intra Robot </title>
+				<url>http://www.youtube.com/watch?v=u8huW1vBOQg</url>
+				<description>Group Intra Robot</description> <!-- OPTIONAL -->
 			</video>
 			<social>
 				<site>http://www.facebook.com</site>
@@ -494,6 +494,122 @@
 		<misc>Groupe Intra, BP 61, 37420 Avoine</misc>
 		<crisis idref="fukushima"/>
 		<person idref="edan"/>
+	</organization>
+	<organization id="jrc">
+		<name>Japanese Red Cross</name>
+		<info>
+			<type>Relief Organization</type>
+			<history>Founded in 1877 as the Philanthropic Society, by Count Tsunetami Sano, to relieve the injured of the  Satsuma Rebellion. In 1887, the organization changed its name to the Japanese Red Cross Society, officialy recognized by the International Committee of the Red Cross on September 2. Today, they operate 92 hospitals and 79 blood centers throughout Japan.</history>
+			<contact>
+				<phone>+81-3-3438-1311</phone>
+				<email>info@jrc.or.jp</email>
+				<mail>
+					<address>1-1-3 Shiba Daimon</address>
+					<city>Minato-ku</city>
+					<state>Tokyo</state>
+					<country>Japan</country>
+					<zip>00000</zip>
+				</mail>
+			</contact>
+			<loc>
+				<city>Minato-ku</city>
+				<region>Tokyo</region>
+				<country>Japan</country>
+			</loc>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://en.wikipedia.org/</site>
+				<title>Tsunetami Sano</title>
+				<url>http://en.wikipedia.org/wiki/File:Tsunetami_Sano.jpg</url>
+				<description>Tsunetami Sano</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://upload.wikimedia.org/</site>
+				<title>Japanese Red Cross</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/a/ac/Japanese_Red_Cross_near_the_Yalu_River_1904.jpg</url>
+				<description>Japanese Red Cross</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Japan tsunami: the Red Cross response so far </title>
+				<url>http://www.youtube.com/watch?v=tNgDKyznXkI</url>
+				<description>Japan tsunami: the Red Cross response so far </description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Japanese Red Cross Facebook</title>
+				<url>http://www.facebook.com/pages/Japanese-Red-Cross/142705225740666</url>
+				<description>Japanese Red Cross Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.jrc.or.jp/english/index.html</site>
+				<title>Japanese Red Cross Society</title>
+				<url>http://www.jrc.or.jp/english/index.html</url>
+				<description>Japanese Red Cross Society</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH JRC</misc>
+		<crisis idref="tohoku"/>
+		<person idref="konoe"/>
+	</organization>
+	<organization id="fsa">
+		<name>The Free Syrian Army</name>
+		<info>
+			<type>Military organization</type>
+			<history>The Free Syrian Army (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr) is an armed opposition group operating in Syria that has been active during the Syrian uprising.[6] Composed mainly of defected Syrian Armed Forces personnel,[7][8] its formation was announced on 29 July 2011 in a video released on the internet by a uniformed group of deserters from the Syrian military who called upon members of the Syrian army to defect and join them.[9] The leader of the group, who identified himself as Colonel Riad al-Asaad, announced that the Free Syrian Army would work with demonstrators to bring down the system, and declared that all security forces attacking civilians are justified targets.[10][11]Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government.[12][13] The FSA has also claimed that the conflict is not sectarian, that they have in their ranks Alawis who oppose the government, and that there will be no reprisals if it falls.[14] On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement (Arabic: حركة الضباط الأحرار, ħarakat al-ḍubbaṭ al-aħrar) and became the main opposition army group.[6][15][16] By early December, there were an estimated 15,000 to 25,000 defectors from the armed forces according to activist and media sources,[17][18] western intelligence sources estimated greater than 10,000 defectors,[19][20] By the middle of January 2012, the Free Syrian Army reported because of continuing defections a total of 40,000 men in its ranks.[21][22] The actual number of soldiers defecting to the Free Syrian Army is unknown.</history>
+			<contact>
+				<phone>8888888</phone>
+				<email>none@none.com</email>
+				<mail>
+					<address>unkown</address>
+					<city>unkown</city>
+					<state>unkown</state>
+					<country>Syria</country>
+					<zip>00000</zip>
+				</mail>
+			</contact>
+			<loc>
+				<city>unkown</city>
+				<region>unkown</region>
+				<country>Syria</country>
+			</loc>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://troubledkashmir.com/</site>
+				<title>Syrian Army</title>
+				<url>http://troubledkashmir.com/kashmir/wp-content/uploads/2011/12/prt.jpg</url>
+				<description>Syrian Army</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://www.thegatewaypundit.com</site>
+				<title>Syrian Army</title>
+				<url>http://www.thegatewaypundit.com/wp-content/uploads/2012/01/syrian-army.jpg</url>
+				<description>Syrian Army</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Inside the Free Syrian Army </title>
+				<url>http://www.youtube.com/embed/_DSlAOK3Sak</url>
+				<description>Inside the Free Syrian Army</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com</site>
+				<title>Free Syrian Army Facebook</title>
+				<url>http://www.facebook.com/pages/The-Free-Syrian-Army-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%AD%D8%B1/178402408929860</url>
+				<description>Free Syrian Army Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://en.wikipedia.org/</site>
+				<title>Free Syrian Army</title>
+				<url>http://en.wikipedia.org/wiki/Free_Syrian_Army</url>
+				<description>Free Syrian Army</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH ON FSA</misc>
+		<crisis idref="homs"/>
+		<person idref="assad"/>
 	</organization>
 
 <!-- PEOPLE START -->
