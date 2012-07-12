@@ -31,11 +31,17 @@
 	</section>
 	<section id="peopleList">
 		<h2>On File:</h2>
-		<ul>
-			<li>Person 1</li>
-			<li>Person 2</li>
-			<li>Person 3</li>
-			<li>Person 4</li>
+		<ul class="entries">
+			{% for person in people_list %}
+				<li>
+					<a href="#">
+						<h1>{{ person.name }}
+							<small> {{person.personinfo.nationality}}</small>
+						</h1>
+					</a>
+					{{person.personinfo.ptype}}
+				</li>
+			{% endfor %}
 		</ul>
 	</section>
 </div>

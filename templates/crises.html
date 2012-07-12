@@ -31,11 +31,17 @@
 	</section>
 	<section id="crisesList">
 		<h2>On File:</h2>
-		<ul>
-			<li>Crisis 1</li>
-			<li>Crisis 2</li>
-			<li>Crisis 3</li>
-			<li>Crisis 4</li>
+		<ul class="entries">
+			{% for crisis in crises_list %}
+				<li>
+					<a href="#">
+						<h1>{{ crisis.name }}
+							<small> {{crisis.crisisinfo.location.city}}, {{crisis.crisisinfo.location.region}}, {{crisis.crisisinfo.location.country}}</small>
+						</h1>
+					</a>
+					{{crisis.crisisinfo.ctype}}
+				</li>
+			{% endfor %}
 		</ul>
 	</section>
 </div>

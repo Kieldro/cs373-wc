@@ -23,6 +23,12 @@ footer p {
 	list-style-type: none;
 }
 .entries li {
-	
-	background-color: 0;
+	padding: 10px; 0;
+	border-bottom: 1px solid #999;
+}
+.inset {
+	padding-left: 2em;
+}
+.centered {
+	margin: 0 auto 10px;
 }

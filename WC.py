@@ -44,15 +44,24 @@ class AboutPage(BaseHandler):
 		
 class CrisesPage(BaseHandler):
 	def get(self):
-		self.render_template('crises.html')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
+						"WHERE crisisinfo != NULL")
+		results = q.fetch(5)
+		self.render_template('crises.html', crises_list=results)
 		
 class PeoplePage(BaseHandler):
 	def get(self):
-		self.render_template('people.html')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
+						"WHERE personinfo != NULL")
+		results = q.fetch(5)
+		self.render_template('people.html', people_list=results)
 		
 class OrganizationsPage(BaseHandler):
 	def get(self):
-		self.render_template('organizations.html')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
+						"WHERE orginfo != NULL")
+		results = q.fetch(5)
+		self.render_template('organizations.html', orgs_list=results)
 
 class ImportPage(BaseHandler):
 	def post(self):
@@ -88,27 +97,11 @@ class ExportPage(BaseHandler):
 
 	def get(self):
 		self.render_template('export.html')
-"""
-class ImportPage(webapp.RequestHandler):
-	def post(self):
-		xmlfile = self.request.get("data")
-		deleteModels()
-		runImport(xmlfile)
-		try:
-			runImport(xmlfile)
-			self.response.out.write('<meta http-equiv="Refresh" content="1;url=/staticpages/port.html">')
-		except:
-			self.response.out.write("XML file does not conform to the schema.")
-
-	def get(self):
-		print "XML file does not conform to the schema."
 		
-class ExportPage(webapp.RequestHandler):
+class EntryPage(BaseHandler) :
 	def get(self):
-		result = runExport()
-		self.response.headers['Content-Type'] = 'text/xml'
-		self.response.out.write(str(result))
-"""
+		#TODO: change this to be dynamic later!
+		self.render_template('person_page.html')
 
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
@@ -116,7 +109,8 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/people', PeoplePage),
 									  ('/organizations', OrganizationsPage),
 									  ('/import', ImportPage),
-									  ('/export', ExportPage)
+									  ('/export', ExportPage),
+									  ('/entry', EntryPage),
 									  ], debug=True)
 #[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 
