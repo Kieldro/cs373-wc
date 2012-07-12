@@ -509,8 +509,7 @@
 				<misc>Ongoing</misc>
 			</birthdate>
 			<nationality>Hong Kong</nationality>
-			<biography>Director-General of the World Health Organization</biography>	
-			
+			<biography>Director-General of the World Health Organization</biography>
 		</info>
 		<ref>
 			<primaryImage>
@@ -547,5 +546,161 @@
 		<misc>RESEARCH</misc>
 		<crisis idref="worldhunger"/>
 		<org idref="who"/>
+	</person>
+	<person id="edan">
+		<name>Yukio Edano</name>
+		<info>
+			<type>Minister of Economy</type>
+			<birthdate>
+				<time>5:00 p.m.</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>Ongoing</misc>
+			</birthdate>
+			<nationality>Japanese</nationality>
+			<biography>Minister of Economy, Trade and Industry</biography>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://upload.wikimedia.org</site>
+				<title>Yukio Edano</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/8/8f/Yukio_Edano_Sakado_20100910.JPG</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://i.i.com.com</site>
+				<title>Yukio Edano</title>
+				<url>http://i.i.com.com/cnwk.1d/i/tim/2011/04/14/yukio_edano_112041368_620x350.jpg</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com</site>
+				<title>Yukio Edano</title>
+				<url>http://www.youtube.com/embed/RbxbJ-Auvg8</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.com/</site>
+				<title>Yukio Edano Facebook</title>
+				<url>http://www.facebook.com/pages/Yukio-Edano/153863848008005</url>
+				<description>Yukio Edano Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.edano.gr.jp/</site>
+				<title>Yukio Edano</title>
+				<url>http://www.edano.gr.jp/</url>
+				<description>Yukio Edano</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>RESEARCH</misc>
+		<crisis idref="fukushima"/>
+		<org idref="intra"/>
+	</person>
+	<person id="konoe">
+		<name>Tadateru Konoe</name>
+		<info>
+			<type>President of the Japanese Red Cross</type>
+			<birthdate>
+				<time>5:00 p.m.</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>RESEARCH</misc>
+			</birthdate>
+			<nationality>Japanese</nationality>
+			<biography>President of the International Federation of Red Cross and Red Crecent Societies</biography>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>www.flicker.com</site>
+				<title>Tadateru Konoe</title>
+				<url>http://farm3.staticflickr.com/2620/4117211202_41d8b8e89c_o.jpg</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://blogs.redcross.org.uk</site>
+				<title>Tadateru Konoe Handshake</title>
+				<url>http://blogs.redcross.org.uk/wp-content/uploads/2012/06/konoehandshake.jpg</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://www.youtube.com/</site>
+				<title>Tadateru Konoe</title>
+				<url>http://www.youtube.com/embed/Ho-GA2Woakk</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>https://www.twitter.cmo</site>
+				<title>Tadateru Konoe Facebook</title>
+				<url>http://twitter.com/Federation/statuses/47344070787469312</url>
+				<description>Tadateru Konoe Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://www.ifrc.org/</site>
+				<title>Tadateru Konoe</title>
+				<url>http://www.ifrc.org/en/who-we-are/governance/president/</url>
+				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>President of the International Federation of Red Cross and Red Crecent Societies</misc>
+		<crisis idref="tohoku"/>
+		<org idref="jrc"/>
+	</person>
+	<person id="assad">
+		<name>Basshar Al-assad</name>
+		<info>
+			<type>Leader/President</type>
+			<birthdate>
+				<time>5:00 p.m.</time>
+				<day>-1</day>
+				<month>-1</month>
+				<year>-1</year>
+				<misc>RESEARCH</misc>
+			</birthdate>
+			<nationality>Syria</nationality>
+			<biography>President of Syria</biography>
+		</info>
+		<ref>
+			<primaryImage>
+				<site>http://en.wikipedia.org//</site>
+				<title>Bashar al-Assad</title>
+				<url>http://en.wikipedia.org/wiki/File:Bashar_al-Assad_%28cropped%29.jpg</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://static.guim.co.uk</site>
+				<title>Bashar al-Assad</title>
+				<url>http://yalebooks.files.wordpress.com/2011/03/bashar-al-assad-picture.jpg</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</image>
+			<video>
+				<site>http://edition.cnn.com/</site>
+				<title>Bashar al-Assad</title>
+				<url>http://edition.cnn.com/video/?/video/world/2012/01/10/sot-syria-pres-assad-terrorists.cnn</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</video>
+			<video>
+				<site>http://edition.cnn.com/</site>
+				<title>Bashar al-Assad</title>
+				<url>http://edition.cnn.com/video/?/video/world/2011/08/22/watson.assad.statement.cnn</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</video>
+			<social>
+				<site>http://www.facebook.cmo</site>
+				<title>Bashar al-Assad Facebook</title>
+				<url>http://www.facebook.com/Bashar.Al.Assad.page</url>
+				<description>Bashar al-Assad Facebook</description> <!-- OPTIONAL -->
+			</social>
+			<ext>
+				<site>http://en.wikipedia.org</site>
+				<title>Bashar al-Assad</title>
+				<url>http://en.wikipedia.org/wiki/Bashar_al-Assad</url>
+				<description>Bashar al-Assad</description> <!-- OPTIONAL -->
+			</ext>
+		</ref>
+		<misc>Damascus, Syria</misc>
+		<crisis idref="homs"/>
+		<org idref="fsa"/>
 	</person>
 </worldCrises>

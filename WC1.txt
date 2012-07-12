@@ -289,6 +289,7 @@ People:
 	Japan
 -embedded images (e.g. Bing-Flickr, Google): 
 	http://upload.wikimedia.org/wikipedia/commons/8/8f/Yukio_Edano_Sakado_20100910.JPG
+	http://i.i.com.com/cnwk.1d/i/tim/2011/04/14/yukio_edano_112041368_620x350.jpg
 -embedded videos (e.g. Bing-Google, Vimeo)
 	http://www.youtube.com/embed/RbxbJ-Auvg8
 -social networks (e.g. Facebook, Twitter)
@@ -302,7 +303,7 @@ People:
 
 -id:11
 -name
-	Tadateru Konoé
+	Tadateru Konoe
 -kind
 	President of the Japanese Red Cross
 	President of the International Federation of Red Cross and Red Crecent Societies
@@ -310,6 +311,7 @@ People:
 	Japan
 -embedded images (e.g. Bing-Flickr, Google)
 	http://farm3.staticflickr.com/2620/4117211202_41d8b8e89c_o.jpg
+	http://blogs.redcross.org.uk/wp-content/uploads/2012/06/konoehandshake.jpg
 -embedded videos (e.g. Bing-Google, Vimeo)
 	http://www.youtube.com/embed/Ho-GA2Woakk
 -social networks (e.g. Facebook, Twitter)
@@ -330,6 +332,7 @@ People:
 	Damascus, Syria
 -embedded images (e.g. Bing-Flickr, Google)
 	http://en.wikipedia.org/wiki/File:Bashar_al-Assad_%28cropped%29.jpg
+	http://yalebooks.files.wordpress.com/2011/03/bashar-al-assad-picture.jpg
 -embedded videos (e.g. Bing-Google, Vimeo)
 	http://edition.cnn.com/video/?/video/world/2012/01/10/sot-syria-pres-assad-terrorists.cnn
 	http://edition.cnn.com/video/?/video/world/2011/08/22/watson.assad.statement.cnn
