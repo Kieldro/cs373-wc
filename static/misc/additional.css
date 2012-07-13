@@ -37,8 +37,7 @@ footer p {
 	border-bottom: 1px solid #999;
 }
 .entries li:hover {
-	padding-left: 30px;
-	background: whiteSmoke;
+	padding-left: 2em;
 }
 .inset {
 	padding-left: 2em;

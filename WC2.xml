@@ -643,7 +643,7 @@
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Margaret Chan</title>
-				<url>http://www.youtube.com/watch?v=JE4t9vPX1jA</url>
+				<url>http://www.youtube.com/embed/JE4t9vPX1jA</url>
 				<description>Margaret Chan </description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -741,7 +741,7 @@
 				<description>Tadateru Konoe</description> <!-- OPTIONAL -->
 			</image>
 			<video>
-				<site>http://www.youtube.com/</site>
+				<site>http://www.youtube.com</site>
 				<title>Tadateru Konoe</title>
 				<url>http://www.youtube.com/embed/Ho-GA2Woakk</url>
 				<description>Tadateru Konoe</description> <!-- OPTIONAL -->

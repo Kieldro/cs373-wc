@@ -127,13 +127,14 @@ class EntryPage(BaseHandler) :
 			for key in imageKey_list :
 				imgs.append(Link.get(key))
 			
-			extKey_list = references.ext
-			
 			videoKey_list = references.video
+			vids = []
+			for key in videoKey_list:
+				vids.append(Link.get(key))
 			
-			self.render_template('person_page.html', 
-								 person=result, images = imgs, 
-								 social=socs, external = exts )
+			self.render_template('person_page.html', person=result,
+								 images = imgs, social=socs, 
+								 external = exts, videos=vids)
 
 class MockupPage(BaseHandler):
 	def get(self):
