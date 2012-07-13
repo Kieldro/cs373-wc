@@ -26,10 +26,9 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Crises <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
-								<li><a href="#">Crisis 1</a></li>
-								<li><a href="#">Crisis 2</a></li>
-								<li><a href="#">Crisis 3</a></li>
-								<li><a href="#">Crisis 4</a></li>
+								{% for crisis in cNav %}
+									<li><a href="#">{{ crisis.name }}</a></li>
+								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/crises">See All...</a></li>
 							</ul>
@@ -38,10 +37,9 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Organizations <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
-								<li><a href="#">Organization 1</a></li>
-								<li><a href="#">Organization 2</a></li>
-								<li><a href="#">Organization 3</a></li>
-								<li><a href="#">Organization 4</a></li>
+								{% for org in oNav %}
+									<li><a href="#">{{ org.name }}</a></li>
+								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/organizations">See All...</a></li>
 							</ul>
@@ -50,10 +48,9 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#">People <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
-								<li><a href="/mockup">Bashar Al-Assad</a></li>
-								<li><a href="#">Person 2</a></li>
-								<li><a href="#">Person 3</a></li>
-								<li><a href="#">Person 4</a></li>
+								{% for person in pNav %}
+									<li><a href="#">{{ person.name }}</a></li>
+								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/people">See All...</a></li>
 							</ul>
@@ -67,6 +64,7 @@
 								<li><a href="/test">Unit Tests</a></li>
 								<li class="divider"></li>
 								<li><a href="/about">About</a></li>
+								<li><a href="/mockup">Run Mockup Command</a></li>
 							</ul>
 						</li>
 					</ul>

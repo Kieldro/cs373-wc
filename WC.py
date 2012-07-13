@@ -1,5 +1,5 @@
 from google.appengine.ext import webapp
-from google.appengine.ext.db import delete
+from google.appengine.ext.db import delete, Query
 from Models import *
 from google.appengine.ext.webapp.util import run_wsgi_app
 from RunExport import runExport
@@ -32,6 +32,21 @@ def deleteModels() :
 class BaseHandler(webapp.RequestHandler):
 	def render_template(self, filename, **template_args):
 		path = os.path.join(os.path.dirname(__file__), 'templates', filename)
+		c_list=[]
+		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
+			c_list.append(crisis)
+		
+		o_list=[]
+		for org in Organization.gql("ORDER BY last_modified DESC LIMIT 4"):
+			o_list.append(org)
+			
+		p_list=[]
+		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
+			p_list.append(person)
+		
+		template_args['cNav'] = c_list
+		template_args['oNav'] = o_list		
+		template_args['pNav'] = p_list
 		self.response.out.write(template.render(path, template_args))
 	
 class MainPage(BaseHandler):
@@ -138,6 +153,12 @@ class EntryPage(BaseHandler) :
 
 class MockupPage(BaseHandler):
 	def get(self):
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
+						"WHERE name = '%s'" % 'Margaret Chan')
+		e = q.get()
+		if e != None:
+			e.name = 'Maggie C'
+			e.put()
 		self.render_template('mockup.html')
 		
 application = webapp.WSGIApplication([('/', MainPage),
