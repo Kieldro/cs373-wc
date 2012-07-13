@@ -73,16 +73,12 @@ class ImportPage(BaseHandler):
 			#elementtree object after validation
 			elemTree = elementTreeWrapper.getTree()
 		except pyxsval.XsvalError, errstr:
-			self.response.out.write("Validation aborted!")
-			self.render_template('import.html', status='error')
+			s= "Validation aborted! XML does not conform to the schema."
+			self.render_template('import.html', status='error', message=s)
 			return
 		except GenXmlIfError, errstr:
-			self.response.out.write("Parsing aborted!")
-			self.render_template('import.html', status='error')
-			return
-		except:
-			self.response.out.write("XML file does not conform to the schema.")
-			self.render_template('import.html', status='error')
+			s = "Parsing aborted! Could not parse the XML. Check the syntax of your file."
+			self.render_template('import.html', status='error', message=s)
 			return
 
 		deleteModels()
@@ -112,10 +108,37 @@ class EntryPage(BaseHandler) :
 		if q.count() != 1 :
 			self.render_template('_base.html')
 		else:
-			person=q.get()
-			name = person.name
-			self.render_template('person_page.html', person=result)
+			result=q.get()
+		
+			references = result.reflink
+			
+			socialKey_list = references.social
+			socs = []
+			for key in socialKey_list:
+				socs.append(Link.get(key))
+			
+			extKey_list = references.ext
+			exts = []
+			for key in extKey_list:
+				exts.append(Link.get(key))
+			
+			imageKey_list = references.image
+			imgs = []
+			for key in imageKey_list :
+				imgs.append(Link.get(key))
+			
+			extKey_list = references.ext
+			
+			videoKey_list = references.video
+			
+			self.render_template('person_page.html', 
+								 person=result, images = imgs, 
+								 social=socs, external = exts )
 
+class MockupPage(BaseHandler):
+	def get(self):
+		self.render_template('mockup.html')
+		
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
 									  ('/crises', CrisesPage),
@@ -124,6 +147,7 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/import', ImportPage),
 									  ('/export', ExportPage),
 									  ('/entry', EntryPage),
+									  ('/mockup', MockupPage),
 									  ], debug=True)
 #[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 

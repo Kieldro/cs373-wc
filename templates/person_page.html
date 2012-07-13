@@ -12,8 +12,8 @@
 				<div class="span4">
 					<div style="text-align:center">
 						<div style="display:inline-block">
-							<a class="thumbnail" href="#">
-								<img src="http://placehold.it/300x400"/>
+							<a class="thumbnail" href="{{ person.reflink.primaryImage.url }}">
+								<img src="{{ person.reflink.primaryImage.url }}"/>
 							</a>
 						</div>
 					</div>
@@ -24,57 +24,45 @@
 								<td>{{ person.personinfo.birthdate.month }}, {{person.personinfo.birthdate.day}}, {{ person.personinfo.birthdate.year}}</td>
 							</tr>
 							<tr>
-								<td><strong>Location</strong></td>
-								<td>Damascus, Syria</td>
+								<td><strong>Nationality</strong></td>
+								<td>{{person.personinfo.nationality}}</td>
 							</tr>
 							<tr>
 								<td><strong>Social Networks</strong></td>
-								<td>Facebook<br/>Twitter</td>
+								<td>
+									{% for s in social %}
+										<a href="{{ s.url }}">{{ s.site }}</a>
+										<br/>
+									{% endfor %}
+								</td>
 							</tr>
 							<tr>
 								<td><strong>External Links</strong></td>
-								<td>www.site.com</td>
+								<td>
+									{% for e in external %}
+										<a href="{{ e.url }}">{{ e.description }}</a>
+									{% endfor %}
+								</td>
 							</tr>
 						<tbody>
 					</table>
-					<!--<hgroup>
-						<h2>Born</h2>
-						<h4 class="inset">11-11-111</h4>
-					</hgroup>
-					<hgroup>
-						<h2>Location</h2>
-						<h4 class="inset">Damascus, Syria<h4>
-					</group>-->
 				</div>
 				<div class="span8">
 					<h1>Biography</h1>
 					<p>
-						asdfasdfasdf
+						{{ person.personinfo.biography }}
 					</p>
 					<section id="images">
 						<h1>Images</h1>
 						<p>
 							<ul class="thumbnails">
+								{% for image in images %}
 								<li class="span2">
-									<a data-toggle="modal" href="#thumbModal1" class="thumbnail">
-										<img src="http://placehold.it/260x180"/>
+									<a class="thumbnail" href="{{ image.url }}">
+										<img src="{{ image.url }}"/>
 									</a>
 								</li>
-								<li class="span2">
-									<a href="#" class="thumbnail">
-										<img src="http://placehold.it/260x180"/>
-									</a>
-								</li>
-								<li class="span2">
-									<a href="#" class="thumbnail">
-										<img src="http://placehold.it/260x180"/>
-									</a>
-								</li>
-								<li class="span2">
-									<a href="#" class="thumbnail">
-										<img src="http://placehold.it/260x180"/>
-									</a>
-								</li>
+								{% endfor %}
 							</ul>
 						</p>
 					</section>

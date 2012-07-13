@@ -30,16 +30,16 @@
 		</ul>
 	</section>
 	<section id="OrganizationsList">
-		<h1>On File:</h1>
+		<h1>All Entries</h1>
 		<ul class="entries">
 			{% for org in orgs_list %}
 				<li>
 					<a href="#">
 						<h1>{{ org.name }}
-							<small> {{org.orginfo.location.city}}, {{org.orginfo.location.region}}, {{org.orginfo.location.country}}</small>
+							<small> {{org.orginfo.otype}}</small>
 						</h1>
+					<span>{{org.orginfo.location.city}}, {{org.orginfo.location.region}}, {{org.orginfo.location.country}}</span>
 					</a>
-					{{org.orginfo.otype}}
 				</li>
 			{% endfor %}
 		</ul>

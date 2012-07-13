@@ -30,16 +30,16 @@
 		</ul>
 	</section>
 	<section id="peopleList">
-		<h2>On File:</h2>
+		<h2>All Entries</h2>
 		<ul class="entries">
 			{% for person in people_list %}
 				<li>
 					<a href="/entry?name={{ person.name }}">
 						<h1>{{ person.name }}
-							<small> {{person.personinfo.nationality}}</small>
+							<small> {{person.personinfo.ptype}}</small>
 						</h1>
+						<span>{{person.personinfo.nationality}}</span>
 					</a>
-					{{person.personinfo.ptype}}
 				</li>
 			{% endfor %}
 		</ul>
