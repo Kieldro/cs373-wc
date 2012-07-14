@@ -7,13 +7,16 @@ header h1 {
 header small {
 	font-size: 30px;
 }
-
+/*body {
+	background-image:url('paper-flower.gif');
+	background-repeat:repeat;
+}*/
 .typeahead  {
 	z-index: 2000;
 }
 
 section {
-	padding-top: 60px;
+	padding-top: 2em;
 }
 
 footer p {
@@ -22,7 +25,23 @@ footer p {
 .entries {
 	list-style-type: none;
 }
+.entries a {
+	text-decoration: none;
+	display:block;
+}
+.entries span {
+	color: #333;
+}
 .entries li {
-	
-	background-color: 0;
+	padding: 10px; 0;
+	border-bottom: 1px solid #999;
+}
+.entries li:hover {
+	padding-left: 2em;
+}
+.inset {
+	padding-left: 2em;
+}
+.centered {
+	margin: 0 auto 10px;
 }
