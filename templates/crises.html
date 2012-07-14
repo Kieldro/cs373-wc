@@ -34,7 +34,7 @@
 		<ul class="entries">
 			{% for crisis in crises_list %}
 				<li>
-					<a href="#">
+					<a href="/entry?name={{ crisis.name }}">
 						<h1>{{ crisis.name }}
 							<small> {{crisis.crisisinfo.location.city}}, {{crisis.crisisinfo.location.region}}, {{crisis.crisisinfo.location.country}}</small>
 						</h1>

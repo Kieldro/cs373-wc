@@ -1,0 +1,112 @@
+{% extends "_base.html" %}
+{% block head %}<title>Data</title>{% endblock %}
+{% block body %}
+	<div class="container">
+		<header>
+			<h1>World Hunger
+				<small> Global, Biological</small>
+			</h1>
+		</header>
+		<section>
+			<div class="row">
+				<div class="span5">
+					<div style="text-align:center">
+						<div style="display:inline-block">
+							<a class="thumbnail" href="#">
+								<img src="http://placehold.it/500x300"/>
+							</a>
+						</div>
+					</div>
+					<table class="table table-striped table-bordered">
+						<tbody>
+							<tr id="birthday">
+								<td><strong>Date</strong></td>
+								<td>11/11/1111</td>
+							</tr>
+							<tr>
+								<td><strong>Location</strong></td>
+								<td>asdfasdf</td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>Human Impact</strong></td>
+							</tr>
+							<tr>
+								<td>Deaths</td>
+								<td>867</td>
+							</tr>
+							<tr>
+								<td>Displaced</td>
+								<td>5309</td>
+							</tr>
+							<tr>
+								<td>Injured</td>
+								<td>678</td>
+							</tr>
+							<tr>
+								<td>Missing</td>
+								<td>999</td>
+							</tr>
+							<tr>
+								<td>Miscellaneous</td>
+								<td>8212, etc.</td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>Economic Impact</strong></td>
+							</tr>
+							<tr>
+								<td>Cost</td>
+								<td>1000000 Dollars</td>
+							</tr>
+							<tr>
+								<td>Miscellaneous</td>
+								<td>Blah, blah, blah</td>
+							</tr>
+						<tbody>
+					</table>
+				</div>
+				<div class="span7">
+					<h1>Summary</h1>
+					<p>
+						asdfasfasdf
+					</p>
+					<h1>How to Help</h1>
+					<p>
+						You can help by giving us lots of money.
+					</p>
+					<h2>Resources Needed</h2>
+					<p>
+						Money.
+					</p>
+					<section id="images">
+						<h1>Images</h1>
+						<p>
+							<ul class="thumbnails">
+								{% for image in images %}
+								<li class="span2">
+									<a class="thumbnail" href="{{ image.url }}">
+										<img src="{{ image.url }}"/>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</p>
+					</section>
+					<h1>Videos</h1>
+					<p>
+						<ul class="unstyled">
+							{% for video in videos %}
+							<li>
+								{% ifequal video.site 'http://www.youtube.com' %}
+									<iframe width="560" height="315" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+								{% else %}
+									<a href="{{ video.url }}">{{ video.description }}</a> at {{ video.site }}
+								{% endifequal %}
+							</li>	
+							{% endfor %}
+						</ul>
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}

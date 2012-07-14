@@ -147,9 +147,17 @@ class EntryPage(BaseHandler) :
 			for key in videoKey_list:
 				vids.append(Link.get(key))
 			
-			self.render_template('person_page.html', person=result,
-								 images = imgs, social=socs, 
-								 external = exts, videos=vids)
+			class_string = result.class_name()
+			if class_string == 'Crisis':
+				self.render_template('crisis_page.html')
+				
+			elif class_string == 'Person':
+				self.render_template('person_page.html', person=result,
+									 images = imgs, social=socs, 
+									 external = exts, videos=vids)
+									 
+			else :	#Should never reach here, but just in case...
+				self.render_template('_base.html')
 
 class MockupPage(BaseHandler):
 	def get(self):

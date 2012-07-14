@@ -27,7 +27,7 @@
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
 								{% for crisis in cNav %}
-									<li><a href="#">{{ crisis.name }}</a></li>
+									<li><a href="/entry?name={{ crisis.name }}">{{ crisis.name }}</a></li>
 								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/crises">See All...</a></li>
@@ -38,7 +38,7 @@
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
 								{% for org in oNav %}
-									<li><a href="#">{{ org.name }}</a></li>
+									<li><a href="/entry?name={{ org.name }}">{{ org.name }}</a></li>
 								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/organizations">See All...</a></li>
@@ -49,7 +49,7 @@
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
 								{% for person in pNav %}
-									<li><a href="#">{{ person.name }}</a></li>
+									<li><a href="/entry?name={{ person.name }}">{{ person.name }}</a></li>
 								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/people">See All...</a></li>
