@@ -30,12 +30,19 @@
 		</ul>
 	</section>
 	<section id="peopleList">
-		<h2>On File:</h2>
-		<ul>
-			<li>Person 1</li>
-			<li>Person 2</li>
-			<li>Person 3</li>
-			<li>Person 4</li>
+		<h2>All Entries</h2>
+		<ul class="entries">
+			{% for person in people_list %}
+				<li>
+					<a href="/entry?name={{ person.name }}">
+						<h1>{{ person.name }}
+							<small> {{person.personinfo.ptype}}</small>
+						</h1>
+						<span>{{person.personinfo.nationality}}</span>
+						<span class="pull-right">Last Modified:{{ person.last_modified|date:" M jS, Y; H:i:s" }}</span> <!--Remove this later-->
+					</a>
+				</li>
+			{% endfor %}
 		</ul>
 	</section>
 </div>

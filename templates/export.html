@@ -4,15 +4,19 @@
 <div class="container">
 	<header>
 		<h1>Export<small> Data from the database</small></h1>
-	<header>
+	</header>
 	<section>
+		<h1>How to Export</h1>
 		<div class="row">
-			<div class="span12">
-				<form action="/export" method="post">
-					<p>Click to Export!<br/>
-						<input type="submit" value="Export"/>
-					</P>
-				</form>
+			<div class="span6">
+				<p>Click the 'Export Data' button to recieve all the data in our database, in xml form.</p>
+			</div>
+			<div class="span6">
+				<div class="well">
+					<form action="/export" method="post">
+							<input class="btn btn-primary btn-large" type="submit" value="Export Data"/>
+					</form>
+				</div>
 			</div>
 		</div>
 	</section>

@@ -30,16 +30,19 @@
 		</ul>
 	</section>
 	<section id="OrganizationsList">
-		<h1>On File:</h1>
+		<h1>All Entries</h1>
 		<ul class="entries">
-			<li><h2>Organization 1</h2></li>
-			<li>Organization 2</li>
-			<li>Organization 3</li>
-			<li>Organization 4</li>
+			{% for org in orgs_list %}
+				<li>
+					<a href="#">
+						<h1>{{ org.name }}
+							<small> {{org.orginfo.otype}}</small>
+						</h1>
+					<span>{{org.orginfo.location.city}}, {{org.orginfo.location.region}}, {{org.orginfo.location.country}}</span>
+					</a>
+				</li>
+			{% endfor %}
 		</ul>
 	</section>
-	<h1>H1 Header</h1>
-	<h2>H2 Header</h2>
-	<h3>H3 Header</h3>
 </div>
 {% endblock %}

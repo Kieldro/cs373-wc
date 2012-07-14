@@ -9,7 +9,7 @@ from google.appengine.ext.db import polymodel
 # ---------------
 
 class WorldCrisisPage(polymodel.PolyModel):
-	pass
+	last_modified = db.DateTimeProperty(auto_now=True) #Remove if doesn't work!
 
 
 # ---------------

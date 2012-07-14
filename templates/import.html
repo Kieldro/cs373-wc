@@ -29,13 +29,13 @@
 					{% ifequal status "success" %}
 						<div class="alert alert-block alert-success">
 						<h4>Success!</h4>
-						Import completed! xml accepted.
+						{{ message }}
 						</div>
 					{% endifequal %}
 					{% ifequal status "error" %}
 						<div class="alert alert-block alert-error">
 						<h4>Error!</h4>
-						Import error! xml rejected!
+						{{ message }}
 						</div>
 					{% endifequal %}
 				{% else %}
