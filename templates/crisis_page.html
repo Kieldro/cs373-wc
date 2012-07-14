@@ -3,8 +3,8 @@
 {% block body %}
 	<div class="container">
 		<header>
-			<h1>World Hunger
-				<small> Global, Biological</small>
+			<h1>{{ crisis.name }}
+				<small> {{ crisis.crisisinfo.ctype }}</small>
 			</h1>
 		</header>
 		<section>
@@ -12,8 +12,8 @@
 				<div class="span5">
 					<div style="text-align:center">
 						<div style="display:inline-block">
-							<a class="thumbnail" href="#">
-								<img src="http://placehold.it/500x300"/>
+							<a class="thumbnail" href="{{ crisis.reflink.primaryImage.url }}">
+								<img src="{{ crisis.reflink.primaryImage.url }}"/>
 							</a>
 						</div>
 					</div>
@@ -21,76 +21,113 @@
 						<tbody>
 							<tr id="birthday">
 								<td><strong>Date</strong></td>
-								<td>11/11/1111</td>
+								<td>{{ crisis.crisisinfo.date.month }}/{{ crisis.crisisinfo.date.day}}/{{ crisis.crisisinfo.date.year }}</td>
 							</tr>
 							<tr>
 								<td><strong>Location</strong></td>
-								<td>asdfasdf</td>
+								<td>{{ crisis.crisisinfo.location.city }}, {{ crisis.crisisinfo.location.country }}, {{ crisis.crisisinfo.location.country }} </td>
 							</tr>
 							<tr>
 								<td colspan="2"><strong>Human Impact</strong></td>
 							</tr>
 							<tr>
 								<td>Deaths</td>
-								<td>867</td>
+								<td>{{ crisis.crisisinfo.impact.human_impact.deaths }}</td>
 							</tr>
 							<tr>
 								<td>Displaced</td>
-								<td>5309</td>
+								<td>{{ crisis.crisisinfo.impact.human_impact.displaced }}</td>
 							</tr>
 							<tr>
 								<td>Injured</td>
-								<td>678</td>
+								<td>{{ crisis.crisisinfo.impact.human_impact.injured }}</td>
 							</tr>
 							<tr>
 								<td>Missing</td>
-								<td>999</td>
+								<td>{{ crisis.crisisinfo.impact.human_impact.missing }}</td>
 							</tr>
 							<tr>
 								<td>Miscellaneous</td>
-								<td>8212, etc.</td>
+								<td>{{ crisis.crisisinfo.impact.human_impact.himpact_misc }}</td>
 							</tr>
 							<tr>
 								<td colspan="2"><strong>Economic Impact</strong></td>
 							</tr>
 							<tr>
 								<td>Cost</td>
-								<td>1000000 Dollars</td>
+								<td>{{ crisis.crisisinfo.impact.eco_impact.amount }} {{ crisis.crisisinfo.impact.eco_impact.currency }}</td>
 							</tr>
 							<tr>
 								<td>Miscellaneous</td>
-								<td>Blah, blah, blah</td>
+								<td>{{ crisis.crisisinfo.impact.eco_impact.eimpact_misc }}</td>
 							</tr>
-						<tbody>
+							<tr>
+								<td><strong>Social Media</strong></td>
+								<td>
+									{% for s in social %}
+										<a href="{{ s.url }}">{{ s.site }}</a>
+										<br/>
+									{% endfor %}
+								</td>
+							</tr>
+							<tr>
+								<td><strong>External Links</strong></td>
+								<td>
+									{% for e in external %}
+										<a href="{{ e.url }}">{{ e.description }}</a>
+									{% endfor %}
+								</td>
+							</tr>
+						</tbody>
 					</table>
+					<div class="pull-left">
+						<h4>Related Organizations</h4>
+						<ul>
+							{% for reference in orefs %}
+							<li>
+								<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="pull-right">
+						<h4>Related People</h4>
+						<ul>
+							{% for reference in prefs %}
+							<li>
+								<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 				<div class="span7">
 					<h1>Summary</h1>
 					<p>
-						asdfasfasdf
+						{{ crisis.crisisinfo.history }}
 					</p>
-					<h1>How to Help</h1>
+					<h2>How to Help</h2>
 					<p>
-						You can help by giving us lots of money.
+						{{ crisis.crisisinfo.helps }}
 					</p>
 					<h2>Resources Needed</h2>
 					<p>
-						Money.
+						{{ crisis.crisisinfo.helps }}
 					</p>
-					<section id="images">
-						<h1>Images</h1>
-						<p>
-							<ul class="thumbnails">
-								{% for image in images %}
-								<li class="span2">
-									<a class="thumbnail" href="{{ image.url }}">
-										<img src="{{ image.url }}"/>
-									</a>
-								</li>
-								{% endfor %}
-							</ul>
-						</p>
-					</section>
+					<br/>
+					<h1>Images</h1>
+					<p>
+						<ul class="thumbnails">
+							{% for image in images %}
+							<li class="span2">
+								<a class="thumbnail" href="{{ image.url }}">
+									<img src="{{ image.url }}"/>
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</p>
+					<br/>
 					<h1>Videos</h1>
 					<p>
 						<ul class="unstyled">

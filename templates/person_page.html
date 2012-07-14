@@ -44,28 +44,48 @@
 									{% endfor %}
 								</td>
 							</tr>
-						<tbody>
+						</tbody>
 					</table>
+					<div class="pull-left">
+						<h4>Related Organizations</h4>
+						<ul>
+							{% for reference in orefs %}
+							<li>
+								<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="pull-right">
+						<h4>Related Crises</h4>
+						<ul>
+							{% for reference in crefs %}
+							<li>
+								<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 				<div class="span8">
 					<h1>Biography</h1>
 					<p>
 						{{ person.personinfo.biography }}
 					</p>
-					<section id="images">
-						<h1>Images</h1>
-						<p>
-							<ul class="thumbnails">
-								{% for image in images %}
-								<li class="span2">
-									<a class="thumbnail" href="{{ image.url }}">
-										<img src="{{ image.url }}"/>
-									</a>
-								</li>
-								{% endfor %}
-							</ul>
-						</p>
-					</section>
+					<hr/>
+					<h1>Images</h1>
+					<p>
+						<ul class="thumbnails">
+							{% for image in images %}
+							<li class="span2">
+								<a class="thumbnail" href="{{ image.url }}">
+									<img src="{{ image.url }}"/>
+								</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</p>
+					<hr/>
 					<h1>Videos</h1>
 					<p>
 						<ul class="unstyled">

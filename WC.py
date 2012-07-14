@@ -32,6 +32,10 @@ def deleteModels() :
 class BaseHandler(webapp.RequestHandler):
 	def render_template(self, filename, **template_args):
 		path = os.path.join(os.path.dirname(__file__), 'templates', filename)
+		
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage ")
+		page_names = ', '.join(['"%s"'%x.name for x in q])
+		
 		c_list=[]
 		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
 			c_list.append(crisis)
@@ -44,6 +48,7 @@ class BaseHandler(webapp.RequestHandler):
 		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
 			p_list.append(person)
 		
+		template_args['entries'] = page_names
 		template_args['cNav'] = c_list
 		template_args['oNav'] = o_list		
 		template_args['pNav'] = p_list
@@ -124,7 +129,8 @@ class EntryPage(BaseHandler) :
 			self.render_template('_base.html')
 		else:
 			result=q.get()
-		
+			
+			# Obtaining external reference links common to all pages #
 			references = result.reflink
 			
 			socialKey_list = references.social
@@ -149,12 +155,40 @@ class EntryPage(BaseHandler) :
 			
 			class_string = result.class_name()
 			if class_string == 'Crisis':
-				self.render_template('crisis_page.html')
+				o_refs = []
+				for key in result.orgref:
+					o_refs.append(Reference.get(key))
+				
+				p_refs = []
+				for key in result.personref:
+					p_refs.append(Reference.get(key))
+				
+				self.render_template('crisis_page.html', crisis=result,
+									 images=imgs, social=socs,
+									 external=exts, videos=vids,
+									 orefs=o_refs, prefs=p_refs)
+			elif class_string == 'Organization':
+				c_refs = []
+				for key in result.crisisref:
+					c_refs.append(Reference.get(key))
+				
+				p_refs = []
+				for key in result.personref:
+					p_refs.append(Reference.get(key))
 				
 			elif class_string == 'Person':
+				c_refs = []
+				for key in result.crisisref:
+					c_refs.append(Reference.get(key))
+				
+				o_refs = []
+				for key in result.orgref:
+					o_refs.append(Reference.get(key))
+					
 				self.render_template('person_page.html', person=result,
-									 images = imgs, social=socs, 
-									 external = exts, videos=vids)
+									 images=imgs, social=socs, 
+									 external=exts, videos=vids,
+									 orefs=o_refs, crefs=c_refs)
 									 
 			else :	#Should never reach here, but just in case...
 				self.render_template('_base.html')
