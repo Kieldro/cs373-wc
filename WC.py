@@ -36,6 +36,7 @@ class BaseHandler(webapp.RequestHandler):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage ")
 		page_names = ', '.join(['"%s"'%x.name for x in q])
 		
+		# Queries for the four most recently updated entries for each type
 		c_list=[]
 		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
 			c_list.append(crisis)
@@ -153,12 +154,12 @@ class EntryPage(BaseHandler) :
 			for key in videoKey_list:
 				vids.append(Link.get(key))
 			
+			# Page specific Stuff
 			class_string = result.class_name()
 			if class_string == 'Crisis':
 				o_refs = []
 				for key in result.orgref:
 					o_refs.append(Reference.get(key))
-				
 				p_refs = []
 				for key in result.personref:
 					p_refs.append(Reference.get(key))
@@ -167,20 +168,24 @@ class EntryPage(BaseHandler) :
 									 images=imgs, social=socs,
 									 external=exts, videos=vids,
 									 orefs=o_refs, prefs=p_refs)
+									 
 			elif class_string == 'Organization':
 				c_refs = []
 				for key in result.crisisref:
 					c_refs.append(Reference.get(key))
-				
 				p_refs = []
 				for key in result.personref:
 					p_refs.append(Reference.get(key))
+				
+				self.render_template('organization_page.html', org=result,
+									 images=imgs, social=socs, 
+									 external=exts, videos=vids,
+									 crefs=c_refs, prefs=p_refs)
 				
 			elif class_string == 'Person':
 				c_refs = []
 				for key in result.crisisref:
 					c_refs.append(Reference.get(key))
-				
 				o_refs = []
 				for key in result.orgref:
 					o_refs.append(Reference.get(key))
