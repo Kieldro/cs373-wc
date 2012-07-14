@@ -197,7 +197,7 @@ def buildHumanImpact(parentElem, hImpactModel):
 	temp = SubElement(human, tag="missing")
 	temp.text = str(hImpactModel.missing)
 	temp = SubElement(human, tag="misc")
-	temp.test = hImpactModel.himpact_misc
+	temp.text = hImpactModel.himpact_misc
 	parentElem.append(human)
 
 
