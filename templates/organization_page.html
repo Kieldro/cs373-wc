@@ -46,8 +46,7 @@
 								<td><strong>Social Networks</strong></td>
 								<td>
 									{% for s in social %}
-										<a href="{{ s.url }}">{{ s.site }}</a>
-										<br/>
+										<a href="{{ s.url }}">{{ s.site }}</a><br/>
 									{% endfor %}
 								</td>
 							</tr>
@@ -55,7 +54,7 @@
 								<td><strong>External Links</strong></td>
 								<td>
 									{% for e in external %}
-										<a href="{{ e.url }}">{{ e.description }}</a>
+										<a href="{{ e.url }}">{{ e.description }}</a><br/>
 									{% endfor %}
 								</td>
 							</tr>
