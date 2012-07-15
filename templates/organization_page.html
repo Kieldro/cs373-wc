@@ -10,13 +10,9 @@
 		<section>
 			<div class="row">
 				<div class="span4">
-					<div style="text-align:center">
-						<div style="display:inline-block">
-							<a class="thumbnail" href="{{ org.reflink.primaryImage.url }}">
-								<img src="{{ org.reflink.primaryImage.url }}"/>
-							</a>
-						</div>
-					</div>
+					<a class="thumbnail" href="{{ org.reflink.primaryImage.url }}">
+						<img src="{{ org.reflink.primaryImage.url }}"/>
+					</a>
 					<table class="table table-striped table-bordered">
 						<tbody>
 							<tr>
@@ -46,8 +42,7 @@
 								<td><strong>Social Networks</strong></td>
 								<td>
 									{% for s in social %}
-										<a href="{{ s.url }}">{{ s.site }}</a>
-										<br/>
+										<a href="{{ s.url }}">{{ s.site }}</a><br/>
 									{% endfor %}
 								</td>
 							</tr>
@@ -55,7 +50,7 @@
 								<td><strong>External Links</strong></td>
 								<td>
 									{% for e in external %}
-										<a href="{{ e.url }}">{{ e.description }}</a>
+										<a href="{{ e.url }}">{{ e.description }}</a><br/>
 									{% endfor %}
 								</td>
 							</tr>

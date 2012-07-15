@@ -42,6 +42,25 @@ footer p {
 .inset {
 	padding-left: 2em;
 }
-.centered {
-	margin: 0 auto 10px;
+.centered-outer {
+	text-align: center;
+}
+.centered-inner {
+	display: inline-block;
+}
+div.fileinputs {
+	position: relative;
+}
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+div.file {
+	position: relative;
+	opacity: 0;
+    -moz-opacity: 0;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	z-index: 2;
 }

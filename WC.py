@@ -12,6 +12,9 @@ import os
 import StringIO
 
 def deleteModels() :
+	"""
+	This function deletes all entries in the datastore.
+	"""
 	delete(HumanImpact.all(keys_only=True))
 	delete(EconomicImpact.all(keys_only=True))
 	delete(Date.all(keys_only=True))
@@ -31,6 +34,12 @@ def deleteModels() :
 
 class BaseHandler(webapp.RequestHandler):
 	def render_template(self, filename, **template_args):
+		"""
+		Class that handles the handling of pages. Wherever 'webapp.RequestHandler' is used, use 'BaseHandler' instead.
+		self is self-explanitory.
+		filename is the filename of the Django template to render.
+		**template_args is all the values to pass to the template.
+		"""
 		path = os.path.join(os.path.dirname(__file__), 'templates', filename)
 		
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage ")
@@ -56,14 +65,23 @@ class BaseHandler(webapp.RequestHandler):
 		self.response.out.write(template.render(path, template_args))
 	
 class MainPage(BaseHandler):
+	"""
+	Class that handles the index page.
+	"""
 	def get(self):
 		self.render_template('index.html')
 		
 class AboutPage(BaseHandler):
+	"""
+	Class that handles the About Page.
+	"""
 	def get(self):
 		self.render_template('about.html')
 		
 class CrisesPage(BaseHandler):
+	"""
+	Class that handles the Crisis listing page.
+	"""
 	def get(self):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE crisisinfo != NULL")
@@ -71,6 +89,9 @@ class CrisesPage(BaseHandler):
 		self.render_template('crises.html', crises_list=results)
 		
 class PeoplePage(BaseHandler):
+	"""
+	Class that handles the People listing page.
+	"""
 	def get(self):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE personinfo != NULL")
@@ -78,6 +99,9 @@ class PeoplePage(BaseHandler):
 		self.render_template('people.html', people_list=results)
 		
 class OrganizationsPage(BaseHandler):
+	"""
+	Class that handles the Organizations listing page.
+	"""
 	def get(self):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE orginfo != NULL")
@@ -85,6 +109,11 @@ class OrganizationsPage(BaseHandler):
 		self.render_template('organizations.html', orgs_list=results)
 
 class ImportPage(BaseHandler):
+	"""
+	Class that handles the Import page. 
+	On GET, the page is generated.
+	On POST, the xml given by the user is validated. If it passes, it is added to the models.
+	"""
 	def post(self):
 		xmlfile = self.request.get("data")
 		xmlschema = getSchemaString()
@@ -113,6 +142,9 @@ class ImportPage(BaseHandler):
 		self.render_template('import.html')
 		
 class ExportPage(BaseHandler):
+	"""
+	Class that handles the Export page.
+	"""
 	def post(self):
 		result = runExport()
 		self.response.headers['Content-Type'] = 'text/xml'
@@ -122,6 +154,9 @@ class ExportPage(BaseHandler):
 		self.render_template('export.html')
 		
 class EntryPage(BaseHandler) :
+	"""
+	Class that handles rendering an entry in the datastore.
+	"""
 	def get(self):
 		entry_name = self.request.get('name')
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
@@ -131,7 +166,7 @@ class EntryPage(BaseHandler) :
 		else:
 			result=q.get()
 			
-			# Obtaining external reference links common to all pages #
+			# -Obtaining external reference links common to all pages- #
 			references = result.reflink
 			
 			socialKey_list = references.social
@@ -154,7 +189,7 @@ class EntryPage(BaseHandler) :
 			for key in videoKey_list:
 				vids.append(Link.get(key))
 			
-			# Page specific Stuff
+			# ----Page specific Stuff----#
 			class_string = result.class_name()
 			if class_string == 'Crisis':
 				o_refs = []
@@ -218,7 +253,6 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/entry', EntryPage),
 									  ('/mockup', MockupPage),
 									  ], debug=True)
-#[('/', MainPage), ('/xml/export', ExportPage),('/xml/import', ImportPage)], debug=True)
 
 def main():
 	run_wsgi_app(application)

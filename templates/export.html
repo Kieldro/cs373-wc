@@ -3,19 +3,24 @@
 {% block body %}
 <div class="container">
 	<header>
-		<h1>Export<small> Data from the database</small></h1>
+		<h1>Export <small>Data from the database</small></h1>
 	</header>
 	<section>
 		<h1>How to Export</h1>
 		<div class="row">
-			<div class="span6">
-				<p>Click the 'Export Data' button to recieve all the data in our database, in xml form.</p>
+			<div class="span8">
+				<p>
+					Click the 'Export Data' button to recieve all the data in our database, in xml form.
+					It'll be output directly to your browser. If you want it in file format, you'll have to copy/paste. Sorry.
+				</p>
 			</div>
-			<div class="span6">
-				<div class="well">
-					<form action="/export" method="post">
-							<input class="btn btn-primary btn-large" type="submit" value="Export Data"/>
-					</form>
+			<div class="span4">
+				<div class="well centered-outer">
+					<div class="centered-inner>
+						<form action="/export" method="post">
+								<input class="btn btn-primary btn-large" type="submit" value="Export Data"/>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
