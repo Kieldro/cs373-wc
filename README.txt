@@ -48,6 +48,7 @@ Member Point Adjustment:	NA	<only if you're leader>
 
 Comments:
 UML diagram link: http://www.gliffy.com/pubdoc/3716424/L.png
+technical report google doc link: https://docs.google.com/document/d/1El9z6Oz3C8BRXFNfO1kWHEPpxlpYz8lUTqz06gtYTZg/edit
 
 
 --------------------
