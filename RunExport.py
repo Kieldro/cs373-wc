@@ -14,18 +14,21 @@ def runExport():
 	crisisList = []
 	orgList = []
 	personList = []
-
+	tempList = []
 	crises = Crisis.all()
-	for c in crises:
-		crisisList.append(c)
+	sorted_crises = sorted(crises, key=lambda crisis : crisis.ID)
+	for x in sorted_crises:
+		crisisList.append(x)
 
 	organizations = Organization.all()
-	for o in organizations:
-		orgList.append(o)
+	sorted_orgs = sorted(organizations, key=lambda crisis : crisis.ID)
+	for x in sorted_orgs:
+		orgList.append(x)
 
 	people = Person.all()
-	for p in people:
-		personList.append(p)
+	sorted_people = sorted(people, key=lambda crisis : crisis.ID)
+	for x in sorted_people:
+		personList.append(x)
 
 	ans = buildTree(crisisList, orgList, personList)
 	tree = ElementTree(ans)
