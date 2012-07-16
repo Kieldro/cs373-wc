@@ -6,8 +6,8 @@ source="WC.py"
 
 # multicomment cannot have leading spaces
 
-export PYTHONPATH=~/Documents/cs373/google_appengine/:	\
-					~/Documents/cs373/google_appengine/lib/webob_1_1_1/
+export PYTHONPATH=~/cs373/WCAppspot/google_appengine/:	\
+					~/cs373/WCAppspot/google_appengine/lib/webob_1_1_1/
 echo RUNNING PYDOC...;	pydoc -w ./
 mv *.html pydoc/
 <<MULTICOMMENT
