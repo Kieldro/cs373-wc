@@ -1,16 +1,20 @@
 # file variables
 source="WC.py"
 
-dev_appserver.py .
+#dev_appserver.py .
 
-<<MULTICOMMENT
+
 # multicomment cannot have leading spaces
-echo RUNNING PYDOC...;	pydoc -w ./$source
 
+export PYTHONPATH=~/Documents/cs373/google_appengine/:	\
+					~/Documents/cs373/google_appengine/lib/webob_1_1_1/
+echo RUNNING PYDOC...;	pydoc -w ./
+mv *.html pydoc/
+<<MULTICOMMENT
 echo GENERATING COMMIT LOG...;	git log > WC2.log
 
 echo ZIPPING FILES...
-zip WC2 README.txt *.html *.py app.yaml WC2.log TestWC2.out test/TestWC2.py \
+zip WC2 README.txt pydoc/ *.py app.yaml WC2.log TestWC2.out test/TestWC2.py \
 		WC2.pdf UML.svg WC2.xml
 
 turnin --submit hychyc07 cs373pj4 WC2.zip
