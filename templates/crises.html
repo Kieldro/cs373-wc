@@ -7,26 +7,13 @@
 	</header>
 	<section id="featuredCrises">
 		<ul class="thumbnails">
+			{% for crisis in crisis_list %}
 			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
+				<a href="/entry?name={{ crisis.name }}" class="thumbnail">
+					<img src="{{ crisis.reflink.primaryImage }}" alt="">
 				</a>
 			</li>
-			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
-				</a>
-			</li>
-			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
-				</a>
-			</li>
-			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
-				</a>
-			</li>
+			{% endfor %}
 		</ul>
 	</section>
 	<section id="crisesList">

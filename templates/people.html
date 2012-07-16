@@ -7,26 +7,13 @@
 	</header>
 	<section id="featuredPeople">
 		<ul class="thumbnails">
+			{% for person in people_list %}
 			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
+				<a href="/entry?name={{ person.name }}" class="thumbnail">
+					<img src="{{ person.reflink.primaryImage }}" alt="">
 				</a>
 			</li>
-			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
-				</a>
-			</li>
-			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
-				</a>
-			</li>
-			<li class="span3">
-				<a href="#" class="thumbnail">
-					<img src="http://placehold.it/260x180" alt="">
-				</a>
-			</li>
+			{% endfor %}
 		</ul>
 	</section>
 	<section id="peopleList">
