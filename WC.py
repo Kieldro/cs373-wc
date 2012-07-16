@@ -7,6 +7,7 @@ from RunImport import runImport, getSchemaString
 from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
+from random import shuffle
 
 import os
 import StringIO
@@ -69,7 +70,15 @@ class MainPage(BaseHandler):
 	Class that handles the index page.
 	"""
 	def get(self):
-		self.render_template('index.html')
+		imagelist = []
+		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
+			imagelist.append(crisis.reflink.primaryImage)
+		for org in Organization.gql("ORDER BY last_modified DESC LIMIT 4"):
+			imagelist.append(org.reflink.primaryImage)
+		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
+			imagelist.append(person.reflink.primaryImage)
+		shuffle(imagelist)
+		self.render_template('index.html', images=imagelist[0:4])
 		
 class AboutPage(BaseHandler):
 	"""
@@ -234,6 +243,9 @@ class EntryPage(BaseHandler) :
 				self.render_template('_base.html')
 
 class SearchPage(BaseHandler) :
+	"""
+	Class that handles searching and the displaying of search results.
+	"""
 	def get(self) :
 		name = self.request.get('name')
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage WHERE name = '%s'" % name)

@@ -2,67 +2,45 @@
 {% block body %}
 <div class="container">
 	<div class="row">
-		<div class="span8 offset2">
-			<div id="myCarousel" class="carousel slide">
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="http://placehold.it/770x343" alt="alt 1"/>
-						<div class="carousel-caption">
-							<h4>First Image</h4>
-							<p>This is a thing!</p>
-						</div>
-					</div>
-					<div class="item">
-						<img src="http://placehold.it/770x343" alt="alt 2"/>
-						<div class="carousel-caption">
-							<h4>Second Image</h4>
-							<p>This is bad!</p>
-						</div>
-					</div>
-				</div>
-				<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-				<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-			</div>
-		</div>
+		<ul class="thumbnails">
+			{% for image in images %}
+			<li class="span3">
+				<a class="thumbnail" href="#">
+					<img src="{{ image.url }}"/>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
 	</div>
 
 	<div class="row">
 		<div class="span4">
 			<h2>Crises</h2>
-			<p>Bad things are happening around the world! Please help us!</p>
+			<p>All around the world, for one reason or another, people are suffering. Learn what's happening and how to help.</p>
+			<a class="btn" href="/crises">View Crises</a>
 		</div>
 		<div class="span4">
 			<h2>Organizations</h2>
-			<p>Together, anything is possible! Take a look at these groups!</p>
+			<p>Together, anything is possible. Take a closer look at the organizations involved with various crises.</p>
+			<a class="btn" href="/organizations">View Organizations</a>
 		</div>
 		<div class="span4" >
 			<h2>People</h2>
-			<p>The individuals who serve and inspire humanity. They have something to say!</p>
+			<p>Though it may not seem like it, one person <em>can</em> make an impact on the world. Take a look at the people changing the world.</p>
+			<a class="btn" href="/people">View People</a>
 		</div>
 	</div>
+	<br/>
+	<br/>
 	<hr/>
 	<div class="row">
 		<div class="span12">
-			<div style="width: 360px; margin: 10px auto 0;">
-				<blockquote >
-					<p>If you wanna make the world a better place<br/>Take a look at yourself, and then make a change</p>
-					<small>Michael Jackson</small>
-				</blockquote>
-			</div>
-			<p style="text-align: center;">
-				<button class="btn">Donate!</button>
-			</p>
-		</div>
-	</div>
-	<hr/>
-	<footer>
-		<div class="row">
-			<div class="span12">
+			<footer>
 				<p class="pull-right">Special thanks to Twitter Bootstrap</p>
 				<p>Made by <em>All The Single Ladies</em>:</p>
 				<p>Robert Reed, Ian Buitrago, Ross Shwarts, Fayz Rahman, Jacob Wilke</p>
-			</div>
+			</footer>	
 		</div>
-	<footer>
+	</div>
 </div>
 {% endblock %}
