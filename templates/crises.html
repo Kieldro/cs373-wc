@@ -10,7 +10,7 @@
 			{% for crisis in crisis_list %}
 			<li class="span3">
 				<a href="/entry?name={{ crisis.name }}" class="thumbnail">
-					<img src="{{ crisis.reflink.primaryImage }}" alt="">
+					<img src="{{ crisis.reflink.primaryImage.url }}" alt="">
 				</a>
 			</li>
 			{% endfor %}

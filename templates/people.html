@@ -10,7 +10,7 @@
 			{% for person in people_list %}
 			<li class="span3">
 				<a href="/entry?name={{ person.name }}" class="thumbnail">
-					<img src="{{ person.reflink.primaryImage }}" alt="">
+					<img src="{{ person.reflink.primaryImage.url }}" alt="">
 				</a>
 			</li>
 			{% endfor %}
