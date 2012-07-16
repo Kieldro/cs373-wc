@@ -64,12 +64,11 @@
 								<li><a href="/test">Unit Tests</a></li>
 								<li class="divider"></li>
 								<li><a href="/about">About</a></li>
-								<li><a href="/mockup">Run Mockup Command</a></li>
 							</ul>
 						</li>
 					</ul>
-					<form method="get" class="navbar-search" autocomplete="off">
-						<input type="text" class="span3 search-query" name="search" placeholder="Search for..." data-provide="typeahead" data-items="4" data-source='[{{ entries }}]'>
+					<form action="/search" method="get" class="navbar-search" autocomplete="off">
+						<input type="text" class="span3 search-query" name="name" placeholder="Search for..." data-provide="typeahead" data-items="4" data-source='[{{ entries }}]'>
 					</form>
 				</div>
 			</div>

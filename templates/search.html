@@ -1,0 +1,32 @@
+{% extends "_base.html" %}
+{% block head %}<title>About the Project</title>{% endblock %}
+{% block body %}
+<div class="container">
+	<header>
+		<h1>Search</h1>
+	</header>
+	<section>
+		<h1>Results for <small>{{ term }}<small></h1>
+		{% if results %}
+		<ol class="entries">
+			{% for result in results %}
+			<li>
+				<a href="/entry?name={{ result.name }}">
+					<h1>{{ result.name }}
+						<small>{{ result.class }}</small>
+					</h1>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+			<br/>
+			<h4>
+				Sorry! No results were found!<br/>
+				Search has only basic functionality at the moment, 
+				so again sometime in the next two weeks!
+			</h4>
+		{% endif %}
+	</section>
+</div>
+{% endblock %}
