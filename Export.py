@@ -19,9 +19,9 @@ from google.appengine.ext.db import Property
 
 def buildTree(crisisList, orgList, personList):
 	"""
-This method takes in three lists of models, and returns the data stored
+This method takes in three lists of World Crisis Page models, and returns the data stored
 in them into an ElementTree object that represents a well-formed xml 
-document that validates according to the xml schema stored in WC1.xsd.
+document that validates according to the xml schema stored in WC2.xsd.
 crisisList is a list of Crisis model objects
 orgList is a list of Organizations model objects
 personList is a list of People model objects
@@ -50,11 +50,10 @@ return the root element of the data tree containing all the data
 
 def buildCrisisPage(crisisElement, crisisModel) :
 	"""
-Build a crisis page using the data from the model. Note: this method just
-generates the sub-elements
+Build a crisis page using the data from the Crisismodel,
+including all referred to models of other types.
 crisisElement is a Element that represents a crisis page
 crisisModel is a model object that represents a crisis model
-returns a list of sub-elements to be added in correct order
 	"""
 	buildInitInfo(crisisElement, crisisModel);
 	buildCrisisInfo(crisisElement, crisisModel.crisisinfo)
@@ -71,11 +70,10 @@ returns a list of sub-elements to be added in correct order
 
 def buildOrgPage(orgElement, orgModel) :
 	"""
-Build a org page using the data from the model. Note: this method just
-generates the sub-elements
-orgElement is a Element that represents a org page
-orgModel is a model object that represents a org model
-returns a list of sub-elements to be added in correct order
+Build a organization page using the data from the organization model,
+including all referred to models of other types.
+orgElement is a Element that represents a organization page
+orgModel is a model object that represents a organization model
 	"""
 	buildInitInfo(orgElement, orgModel);
 	buildOrgInfo(orgElement, orgModel.orginfo)
@@ -92,11 +90,10 @@ returns a list of sub-elements to be added in correct order
 
 def buildPersonPage(personElement, personModel) :
 	"""
-Build a person page using the data from the model. Note: this method just
-generates the sub-elements
+Build a person page using the data from the personmodel,
+including all referred to models of other types.
 personElement is a Element that represents a person page
 personModel is a model object that represents a person model
-returns a list of sub-elements to be added in correct order
 	"""
 	buildInitInfo(personElement, personModel)
 	buildPersonInfo(personElement, personModel.personinfo)
@@ -112,6 +109,11 @@ returns a list of sub-elements to be added in correct order
 # -------------
 
 def buildInitInfo(element, model):	
+	"""
+Add common data to the elelment from the model provided.
+element is a Element that represents a person page
+model is a model object that represents a person model
+	"""
 	element.attrib["id"] =  model.ID
 	temp = SubElement(element, tag="name")
 	temp.text = model.name
@@ -122,6 +124,12 @@ def buildInitInfo(element, model):
 # ---------------
 
 def buildCrisisInfo(crisisElement, crisisInfoModel):
+	"""
+Build a crisisinfo element tree using the data from the crisismodel,
+including all referred to models of other types.
+crisisElement is a Element that represents a crisis
+crisisModel is a model object that represents a crsis model
+	"""
 	info = Element(tag="info")
 	temp = SubElement(info, tag="history")
 	temp.text = crisisInfoModel.history
@@ -142,6 +150,13 @@ def buildCrisisInfo(crisisElement, crisisInfoModel):
 # ---------------
 
 def buildDate(parentElem, dateModel, title):
+	"""
+Build a dateelement tree using the data from the dateModell,
+title is a string, containing the tag name of the outer element
+to be created.
+parentElement is a Element 
+dateModel is a model object that represents a date
+	"""
 	time = Element(tag=title)
 	temp = SubElement(time, tag="time")
 	temp.text = dateModel.time
@@ -161,6 +176,11 @@ def buildDate(parentElem, dateModel, title):
 # ---------------
 
 def buildLocation(parentElem, locationModel):
+	"""
+Build a location element tree using the data from the locationModel,
+parentElement is a Element 
+ocation Model is a model object that represents a location
+	"""
 	loc = Element(tag="loc")
 	temp = SubElement(loc, tag="city")
 	temp.text = locationModel.city
@@ -176,6 +196,12 @@ def buildLocation(parentElem, locationModel):
 # ---------------
 
 def buildImpact(parentElem, impactModel):
+	"""
+Build an impact element tree using the data from the impactModel,
+including all of the information in the child models
+parentElement is a Element 
+impactModel is a model object that represents an impact
+	"""
 	impact = Element(tag="impact")
 	buildHumanImpact(impact, impactModel.human_impact)
 	buildEconomicImpact(impact, impactModel.eco_impact)
@@ -187,6 +213,11 @@ def buildImpact(parentElem, impactModel):
 # ---------------
 
 def buildHumanImpact(parentElem, hImpactModel):
+	"""
+Build a human impact element tree using the data from the hImpactMnodel,
+parentElement is a Element 
+hImpact Model is a model object that represents a human Imapct
+	"""
 	human = Element(tag="human")
 	temp = SubElement(human, tag="deaths")
 	temp.text = str(hImpactModel.deaths)
@@ -206,6 +237,11 @@ def buildHumanImpact(parentElem, hImpactModel):
 # ---------------
 
 def buildEconomicImpact(parentElem, eImpactModel):
+	"""
+Build an economic impact element tree using the data from the eImpactMnodel,
+parentElement is a Element 
+eImpact Model is a model object that represents the economic Imapct
+	"""
 	eco = Element(tag="economic")
 	temp = SubElement(eco, tag="amount")
 	temp.text = str(eImpactModel.amount)
@@ -221,6 +257,12 @@ def buildEconomicImpact(parentElem, eImpactModel):
 # ---------------
 
 def buildOrgInfo(orgElement, orgInfoModel):
+	"""
+Build a orginfo element tree using the data from the orgmodel,
+including all referred to models of other types.
+orgElement is a Element that represents a org
+orginfoModel is a model object that represents a orginfo model
+	"""
 	info = Element(tag="info")
 	temp = SubElement(info, tag="type")
 	temp.text = orgInfoModel.otype
@@ -236,6 +278,12 @@ def buildOrgInfo(orgElement, orgInfoModel):
 # ---------------
 
 def buildContact(parentElem, contactModel):
+	"""
+Build a contact element tree using the data from the ,
+including all referred to models of other types.
+parentElem is a Element
+contactModel is a model object that represents a contact
+	"""
 	contact = Element(tag="contact")	
 	temp = SubElement(contact, tag="phone")
 	temp.text = contactModel.phone
@@ -250,6 +298,11 @@ def buildContact(parentElem, contactModel):
 # ---------------
 
 def buildAddress(parentElem, addressModel):
+	"""
+Build a address element tree using the data from the addressModel,
+parentElem is an Element 
+addressModel is a model object that represents the address
+	"""
 	mail = Element(tag="mail")	
 	temp = SubElement(mail, tag="address")
 	temp.text = addressModel.address
@@ -262,13 +315,19 @@ def buildAddress(parentElem, addressModel):
 	temp = SubElement(mail, tag="zip")
 	temp.text = addressModel.zipcode
 	parentElem.append(mail)
-
+	
 
 # ---------------
 # buildPersonInfo
 # ---------------
 
 def buildPersonInfo(personElement, personModel):
+	"""
+Build a personinfo element tree using the data from the personmodel,
+including all referred to models of other types.
+personElement is a Element that represents a person
+personModel is a model object that represents a person model
+	"""
 	info = Element(tag="info")
 	temp = SubElement(info, tag="type")	
 	temp.text = personModel.ptype
@@ -285,6 +344,11 @@ def buildPersonInfo(personElement, personModel):
 # ---------------
 
 def buildRefs(elem, refs):
+	"""
+Build a refs elements using the data from the refs
+elem is an Element 
+refs is a list of model objects that represents the external references
+	"""
 	for ref in refs:
 		ref = db.get(ref)
 		temp = Element(tag=ref.link_type)
@@ -297,6 +361,12 @@ def buildRefs(elem, refs):
 # ---------------
 
 def buildExternalRefs(element, model):
+	"""
+Build a personinfo element tree using the data from the personmodel,
+including all referred to models of other types.
+personElement is a Element that represents a person
+personModel is a model object that represents a person model
+	"""
 	ref = Element(tag="ref")
 	buildRefs(ref, [model.primaryImage.key()])
 	buildRefs(ref, model.image)
@@ -311,6 +381,14 @@ def buildExternalRefs(element, model):
 # ---------------
 
 def buildLink(element, site, title, url, description):
+	"""
+Build a link element tree using the data provided,
+element is a Element that represents the parent
+site is a string
+title is a string
+url is a string
+description is a string, can be null
+	"""
 	temp = SubElement(element, tag="site")
 	temp.text = site
 	temp = SubElement(element, tag="title")
@@ -327,6 +405,11 @@ def buildLink(element, site, title, url, description):
 # ---------------
 
 def buildPageRefs(element, refs):
+	"""
+Build a refs elements using the data from the refs
+element is an Element 
+refs is a list of model objects that represents the internal references
+	"""
 	for ref in refs:
 		ref = db.get(ref)
 		temp = Element(tag=ref.rType)
