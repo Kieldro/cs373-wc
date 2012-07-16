@@ -70,15 +70,15 @@ class MainPage(BaseHandler):
 	Class that handles the index page.
 	"""
 	def get(self):
-		imagelist = []
+		toplist = []
 		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
-			imagelist.append(crisis.reflink.primaryImage)
+			toplist.append(crisis)
 		for org in Organization.gql("ORDER BY last_modified DESC LIMIT 4"):
-			imagelist.append(org.reflink.primaryImage)
+			toplist.append(org)
 		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
-			imagelist.append(person.reflink.primaryImage)
-		shuffle(imagelist)
-		self.render_template('index.html', images=imagelist[0:4])
+			toplist.append(person)
+		shuffle(toplist)
+		self.render_template('index.html', topimgs=toplist[0:4])
 		
 class AboutPage(BaseHandler):
 	"""
