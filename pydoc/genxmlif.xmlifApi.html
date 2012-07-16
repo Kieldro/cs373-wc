@@ -1,0 +1,575 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module genxmlif.xmlifApi</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="genxmlif.html"><font color="#ffffff">genxmlif</font></a>.xmlifApi</strong></big></big> (version 0.9.0, 08. August 2008)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/genxmlif/xmlifApi.py">/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/genxmlif/xmlifApi.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;genxmlif,&nbsp;Release&nbsp;0.9.0<br>
+#&nbsp;file:&nbsp;xmlifapi.py<br>
+#<br>
+#&nbsp;API&nbsp;(interface)&nbsp;classes&nbsp;for&nbsp;generic&nbsp;interface&nbsp;package<br>
+#<br>
+#&nbsp;history:<br>
+#&nbsp;2007-06-29&nbsp;rl&nbsp;&nbsp;&nbsp;created,&nbsp;classes&nbsp;extracted&nbsp;from&nbsp;xmlifbase.py<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe.&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved.<br>
+#<br>
+#&nbsp;--------------------------------------------------------------------<br>
+#&nbsp;The&nbsp;generic&nbsp;XML&nbsp;interface&nbsp;is<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe<br>
+#<br>
+#&nbsp;By&nbsp;obtaining,&nbsp;using,&nbsp;and/or&nbsp;copying&nbsp;this&nbsp;software&nbsp;and/or&nbsp;its<br>
+#&nbsp;associated&nbsp;documentation,&nbsp;you&nbsp;agree&nbsp;that&nbsp;you&nbsp;have&nbsp;read,&nbsp;understood,<br>
+#&nbsp;and&nbsp;will&nbsp;comply&nbsp;with&nbsp;the&nbsp;following&nbsp;terms&nbsp;and&nbsp;conditions:<br>
+#<br>
+#&nbsp;Permission&nbsp;to&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;and&nbsp;distribute&nbsp;this&nbsp;software&nbsp;and<br>
+#&nbsp;its&nbsp;associated&nbsp;documentation&nbsp;for&nbsp;any&nbsp;purpose&nbsp;and&nbsp;without&nbsp;fee&nbsp;is<br>
+#&nbsp;hereby&nbsp;granted,&nbsp;provided&nbsp;that&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice&nbsp;appears&nbsp;in<br>
+#&nbsp;all&nbsp;copies,&nbsp;and&nbsp;that&nbsp;both&nbsp;that&nbsp;copyright&nbsp;notice&nbsp;and&nbsp;this&nbsp;permission<br>
+#&nbsp;notice&nbsp;appear&nbsp;in&nbsp;supporting&nbsp;documentation,&nbsp;and&nbsp;that&nbsp;the&nbsp;name&nbsp;of<br>
+#&nbsp;the&nbsp;author&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;advertising&nbsp;or&nbsp;publicity<br>
+#&nbsp;pertaining&nbsp;to&nbsp;distribution&nbsp;of&nbsp;the&nbsp;software&nbsp;without&nbsp;specific,&nbsp;written<br>
+#&nbsp;prior&nbsp;permission.<br>
+#<br>
+#&nbsp;THE&nbsp;AUTHOR&nbsp;DISCLAIMS&nbsp;ALL&nbsp;WARRANTIES&nbsp;WITH&nbsp;REGARD<br>
+#&nbsp;TO&nbsp;THIS&nbsp;SOFTWARE,&nbsp;INCLUDING&nbsp;ALL&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANT-<br>
+#&nbsp;ABILITY&nbsp;AND&nbsp;FITNESS.&nbsp;&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;AUTHOR<br>
+#&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;SPECIAL,&nbsp;INDIRECT&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;OR&nbsp;ANY<br>
+#&nbsp;DAMAGES&nbsp;WHATSOEVER&nbsp;RESULTING&nbsp;FROM&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA&nbsp;OR&nbsp;PROFITS,<br>
+#&nbsp;WHETHER&nbsp;IN&nbsp;AN&nbsp;ACTION&nbsp;OF&nbsp;CONTRACT,&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHER&nbsp;TORTIOUS<br>
+#&nbsp;ACTION,&nbsp;ARISING&nbsp;OUT&nbsp;OF&nbsp;OR&nbsp;IN&nbsp;CONNECTION&nbsp;WITH&nbsp;THE&nbsp;USE&nbsp;OR&nbsp;PERFORMANCE<br>
+#&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE.<br>
+#&nbsp;--------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifApi.html#XmlElementWrapper">XmlElementWrapper</a>
+</font></dt><dt><font face="helvetica, arial"><a href="genxmlif.xmlifApi.html#XmlInterfaceBase">XmlInterfaceBase</a>
+</font></dt><dt><font face="helvetica, arial"><a href="genxmlif.xmlifApi.html#XmlTreeWrapper">XmlTreeWrapper</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XmlElementWrapper">class <strong>XmlElementWrapper</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>XML&nbsp;element&nbsp;wrapper&nbsp;API.<br>
+&nbsp;<br>
+Contains&nbsp;a&nbsp;XML&nbsp;element&nbsp;node<br>
+All&nbsp;not&nbsp;implemented&nbsp;methods&nbsp;have&nbsp;to&nbsp;be&nbsp;overloaded&nbsp;by&nbsp;the&nbsp;derived&nbsp;class!!<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XmlElementWrapper-__getitem__"><strong>__getitem__</strong></a>(self, tupleOrAttrName)</dt><dd><tt>Attributes&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node&nbsp;can&nbsp;be&nbsp;accessed&nbsp;via&nbsp;key&nbsp;operator.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;name&nbsp;of&nbsp;the&nbsp;attribute&nbsp;(tuple&nbsp;of&nbsp;namespace&nbsp;and&nbsp;attributeName&nbsp;or&nbsp;only&nbsp;attributeName)<br>
+Returns&nbsp;the&nbsp;attribute&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-__init__"><strong>__init__</strong></a>(self, element, treeWrapper, curNs<font color="#909090">=[]</font>, initAttrSeq<font color="#909090">=1</font>)</dt><dd><tt>Constructor&nbsp;of&nbsp;wrapper&nbsp;class&nbsp;<a href="#XmlElementWrapper">XmlElementWrapper</a>.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;element:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XML&nbsp;element&nbsp;node&nbsp;which&nbsp;is&nbsp;wrapped&nbsp;by&nbsp;this&nbsp;object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;treeWrapper:&nbsp;&nbsp;&nbsp;XML&nbsp;tree&nbsp;wrapper&nbsp;class&nbsp;the&nbsp;current&nbsp;element&nbsp;belongs&nbsp;to<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespaces&nbsp;for&nbsp;scope&nbsp;of&nbsp;this&nbsp;element</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-__setitem__"><strong>__setitem__</strong></a>(self, tupleOrAttrName, attributeValue)</dt><dd><tt>Attributes&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node&nbsp;can&nbsp;be&nbsp;accessed&nbsp;via&nbsp;key&nbsp;operator.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;name&nbsp;of&nbsp;the&nbsp;attribute&nbsp;(tuple&nbsp;of&nbsp;namespace&nbsp;and&nbsp;attributeName&nbsp;or&nbsp;only&nbsp;attributeName)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributeValue:&nbsp;&nbsp;attribute&nbsp;value&nbsp;to&nbsp;be&nbsp;set</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;textual&nbsp;representation&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-appendChild"><strong>appendChild</strong></a>(self, tupleOrLocalNameOrElement, attributeDict<font color="#909090">={}</font>)</dt><dd><tt>Append&nbsp;an&nbsp;element&nbsp;node&nbsp;to&nbsp;the&nbsp;children&nbsp;of&nbsp;the&nbsp;current&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrLocalNameOrElement:&nbsp;(namespace,&nbsp;localName)&nbsp;or&nbsp;tagName&nbsp;or&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;new&nbsp;child<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributeDict:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;dictionary&nbsp;containing&nbsp;the&nbsp;attributes&nbsp;of&nbsp;the&nbsp;new&nbsp;child&nbsp;(optional)<br>
+If&nbsp;not&nbsp;an&nbsp;ElementWrapper&nbsp;object&nbsp;is&nbsp;given,&nbsp;a&nbsp;new&nbsp;ElementWrapper&nbsp;object&nbsp;is&nbsp;created&nbsp;with&nbsp;tupleOrLocalName<br>
+Returns&nbsp;the&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;new&nbsp;child.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-clearNodeCache"><strong>clearNodeCache</strong></a>(self)</dt><dd><tt>Clear&nbsp;all&nbsp;caches&nbsp;used&nbsp;by&nbsp;this&nbsp;element&nbsp;wrapper&nbsp;which&nbsp;contains&nbsp;element&nbsp;wrapper&nbsp;references.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-cloneNode"><strong>cloneNode</strong></a>(self, deep, cloneCallback<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;wrapper.<br>
+The&nbsp;reference&nbsp;to&nbsp;the&nbsp;parent&nbsp;node&nbsp;is&nbsp;set&nbsp;to&nbsp;None!</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getAbsUrl"><strong>getAbsUrl</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;absolute&nbsp;URL&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;belongs&nbsp;to.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;absolute&nbsp;URL&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;belongs&nbsp;to.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getAttribute"><strong>getAttribute</strong></a>(self, tupleOrAttrName)</dt><dd><tt>Retrieve&nbsp;an&nbsp;attribute&nbsp;value&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used<br>
+Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;specified&nbsp;attribute.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getAttributeDict"><strong>getAttributeDict</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;a&nbsp;dictionary&nbsp;containing&nbsp;all&nbsp;attributes&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;dictionary&nbsp;(copy)&nbsp;containing&nbsp;all&nbsp;attributes&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getAttributeList"><strong>getAttributeList</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;a&nbsp;list&nbsp;containing&nbsp;all&nbsp;attributes&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;in&nbsp;the&nbsp;sequence&nbsp;specified&nbsp;in&nbsp;the&nbsp;input&nbsp;XML&nbsp;file.<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;(copy)&nbsp;containing&nbsp;all&nbsp;attributes&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node<br>
+in&nbsp;the&nbsp;sequence&nbsp;specified&nbsp;in&nbsp;the&nbsp;input&nbsp;XML&nbsp;file&nbsp;(TODO:&nbsp;does&nbsp;currently&nbsp;not&nbsp;work&nbsp;for&nbsp;4DOM/pyXML&nbsp;interface).</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getAttributeOrDefault"><strong>getAttributeOrDefault</strong></a>(self, tupleOrAttrName, defaultValue)</dt><dd><tt>Retrieve&nbsp;an&nbsp;attribute&nbsp;value&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;or&nbsp;the&nbsp;given&nbsp;default&nbsp;value&nbsp;if&nbsp;the&nbsp;attribute&nbsp;doesn't&nbsp;exist.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used<br>
+Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;specified&nbsp;attribute&nbsp;or&nbsp;the&nbsp;given&nbsp;default&nbsp;value&nbsp;if&nbsp;the&nbsp;attribute&nbsp;doesn't&nbsp;exist.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getBaseUrl"><strong>getBaseUrl</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;base&nbsp;URL&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;belongs&nbsp;to.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;base&nbsp;URL&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;belongs&nbsp;to.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getChildren"><strong>getChildren</strong></a>(self, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;objects&nbsp;of&nbsp;the&nbsp;children&nbsp;element&nbsp;nodes.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;children&nbsp;with&nbsp;this&nbsp;tag&nbsp;name&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;children)<br>
+Returns&nbsp;all&nbsp;children&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getChildrenNS"><strong>getChildrenNS</strong></a>(self, namespaceURI, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;objects&nbsp;of&nbsp;the&nbsp;children&nbsp;element&nbsp;nodes&nbsp;using&nbsp;a&nbsp;namespace.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;namespaceURI:&nbsp;the&nbsp;namespace&nbsp;URI&nbsp;of&nbsp;the&nbsp;children&nbsp;or&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;&nbsp;&nbsp;&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;children&nbsp;with&nbsp;this&nbsp;localName&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;children)<br>
+Returns&nbsp;all&nbsp;children&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'namespaceURI'&nbsp;and&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getChildrenWithKey"><strong>getChildrenWithKey</strong></a>(self, tagFilter<font color="#909090">=None</font>, keyAttr<font color="#909090">=None</font>, keyValue<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;objects&nbsp;of&nbsp;the&nbsp;children&nbsp;element&nbsp;nodes.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;children&nbsp;with&nbsp;this&nbsp;tag&nbsp;name&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;children)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;keyAttr:&nbsp;&nbsp;&nbsp;name&nbsp;of&nbsp;the&nbsp;key&nbsp;attribute<br>
+&nbsp;&nbsp;&nbsp;&nbsp;keyValue:&nbsp;&nbsp;value&nbsp;of&nbsp;the&nbsp;key<br>
+Returns&nbsp;all&nbsp;children&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getCurrentNamespaces"><strong>getCurrentNamespaces</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;namespace&nbsp;prefixes&nbsp;visible&nbsp;for&nbsp;the&nbsp;current&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;namespace&nbsp;prefixes&nbsp;visible&nbsp;for&nbsp;the&nbsp;current&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getElementValue"><strong>getElementValue</strong></a>(self, ignoreEmtpyStringFragments<font color="#909090">=0</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;as&nbsp;string.<br>
+The&nbsp;content&nbsp;of&nbsp;multiple&nbsp;text&nbsp;nodes&nbsp;/&nbsp;CDATA&nbsp;nodes&nbsp;are&nbsp;concatenated&nbsp;to&nbsp;one&nbsp;string.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ignoreEmtpyStringFragments:&nbsp;&nbsp;&nbsp;if&nbsp;1,&nbsp;text&nbsp;nodes&nbsp;containing&nbsp;only&nbsp;whitespaces&nbsp;are&nbsp;ignored</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getElementValueFragments"><strong>getElementValueFragments</strong></a>(self, ignoreEmtpyStringFragments<font color="#909090">=0</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;as&nbsp;value&nbsp;fragment&nbsp;list.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;as&nbsp;list&nbsp;of&nbsp;string&nbsp;fragments.<br>
+Each&nbsp;list&nbsp;element&nbsp;represents&nbsp;one&nbsp;text&nbsp;nodes&nbsp;/&nbsp;CDATA&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ignoreEmtpyStringFragments:&nbsp;&nbsp;&nbsp;if&nbsp;1,&nbsp;text&nbsp;nodes&nbsp;containing&nbsp;only&nbsp;whitespaces&nbsp;are&nbsp;ignored<br>
+&nbsp;<br>
+Method&nbsp;has&nbsp;to&nbsp;be&nbsp;implemented&nbsp;by&nbsp;derived&nbsp;classes!</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getElementsByTagName"><strong>getElementsByTagName</strong></a>(self, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;all&nbsp;descendant&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;current&nbsp;node&nbsp;whose&nbsp;tag&nbsp;name&nbsp;match&nbsp;'tagFilter'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;children&nbsp;with&nbsp;this&nbsp;tag&nbsp;name&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;descendants)<br>
+Returns&nbsp;all&nbsp;descendants&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getElementsByTagNameNS"><strong>getElementsByTagNameNS</strong></a>(self, namespaceURI, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;all&nbsp;descendant&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;current&nbsp;node&nbsp;whose&nbsp;tag&nbsp;name&nbsp;match&nbsp;'namespaceURI'&nbsp;and&nbsp;'tagFilter'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;namespaceURI:&nbsp;the&nbsp;namespace&nbsp;URI&nbsp;of&nbsp;the&nbsp;descendants&nbsp;or&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;&nbsp;&nbsp;&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;descendants&nbsp;with&nbsp;this&nbsp;localName&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;descendants)<br>
+Returns&nbsp;all&nbsp;descendants&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'namespaceURI'&nbsp;and&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getEndLineNumber"><strong>getEndLineNumber</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;end&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;end&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;in&nbsp;the&nbsp;XML&nbsp;file</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getFilePath"><strong>getFilePath</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;file&nbsp;path&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;belongs&nbsp;to.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;file&nbsp;path&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;belongs&nbsp;to.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getFirstChild"><strong>getFirstChild</strong></a>(self, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;objects&nbsp;of&nbsp;the&nbsp;first&nbsp;child&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;first&nbsp;child&nbsp;with&nbsp;this&nbsp;tag&nbsp;name&nbsp;('*'&nbsp;or&nbsp;None:&nbsp;no&nbsp;filter)<br>
+Returns&nbsp;the&nbsp;first&nbsp;child&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'tagFilter'<br>
+or&nbsp;None&nbsp;if&nbsp;no&nbsp;suitable&nbsp;child&nbsp;element&nbsp;was&nbsp;found</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getFirstChildNS"><strong>getFirstChildNS</strong></a>(self, namespaceURI, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;objects&nbsp;of&nbsp;the&nbsp;first&nbsp;child&nbsp;element&nbsp;node&nbsp;using&nbsp;a&nbsp;namespace.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;namespaceURI:&nbsp;the&nbsp;namespace&nbsp;URI&nbsp;of&nbsp;the&nbsp;children&nbsp;or&nbsp;None<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;&nbsp;&nbsp;&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;first&nbsp;child&nbsp;with&nbsp;this&nbsp;localName&nbsp;('*'&nbsp;or&nbsp;None:&nbsp;no&nbsp;filter)<br>
+Returns&nbsp;the&nbsp;first&nbsp;child&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'namespaceURI'&nbsp;and&nbsp;'tagFilter'<br>
+or&nbsp;None&nbsp;if&nbsp;no&nbsp;suitable&nbsp;child&nbsp;element&nbsp;was&nbsp;found</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getFirstChildWithKey"><strong>getFirstChildWithKey</strong></a>(self, tagFilter<font color="#909090">=None</font>, keyAttr<font color="#909090">=None</font>, keyValue<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;objects&nbsp;of&nbsp;the&nbsp;children&nbsp;element&nbsp;nodes.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;children&nbsp;with&nbsp;this&nbsp;tag&nbsp;name&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;children)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;keyAttr:&nbsp;&nbsp;&nbsp;name&nbsp;of&nbsp;the&nbsp;key&nbsp;attribute<br>
+&nbsp;&nbsp;&nbsp;&nbsp;keyValue:&nbsp;&nbsp;value&nbsp;of&nbsp;the&nbsp;key<br>
+Returns&nbsp;all&nbsp;children&nbsp;of&nbsp;this&nbsp;element&nbsp;node&nbsp;which&nbsp;match&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getIterator"><strong>getIterator</strong></a>(self, tagFilter<font color="#909090">=None</font>)</dt><dd><tt>Creates&nbsp;a&nbsp;tree&nbsp;iterator.&nbsp;&nbsp;The&nbsp;iterator&nbsp;loops&nbsp;over&nbsp;this&nbsp;element<br>
+&nbsp;&nbsp;&nbsp;and&nbsp;all&nbsp;subelements,&nbsp;in&nbsp;document&nbsp;order,&nbsp;and&nbsp;returns&nbsp;all&nbsp;elements<br>
+&nbsp;&nbsp;&nbsp;whose&nbsp;tag&nbsp;name&nbsp;match&nbsp;'tagFilter'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tagFilter:&nbsp;retrieve&nbsp;only&nbsp;the&nbsp;children&nbsp;with&nbsp;this&nbsp;tag&nbsp;name&nbsp;('*'&nbsp;or&nbsp;None&nbsp;returns&nbsp;all&nbsp;descendants)<br>
+Returns&nbsp;all&nbsp;element&nbsp;nodes&nbsp;which&nbsp;match&nbsp;'tagFilter'&nbsp;(list)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getLocalName"><strong>getLocalName</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;local&nbsp;name&nbsp;(without&nbsp;namespace)&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;local&nbsp;name&nbsp;(without&nbsp;namespace)&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getLocation"><strong>getLocation</strong></a>(self, end<font color="#909090">=0</font>, fullpath<font color="#909090">=0</font>)</dt><dd><tt>Retrieve&nbsp;a&nbsp;string&nbsp;containing&nbsp;file&nbsp;name&nbsp;and&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;end:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;if&nbsp;end&nbsp;line&nbsp;number&nbsp;shall&nbsp;be&nbsp;shown,&nbsp;0&nbsp;for&nbsp;start&nbsp;line&nbsp;number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fullpath:&nbsp;1&nbsp;if&nbsp;the&nbsp;full&nbsp;path&nbsp;of&nbsp;the&nbsp;XML&nbsp;file&nbsp;shall&nbsp;be&nbsp;shown,&nbsp;0&nbsp;for&nbsp;only&nbsp;the&nbsp;file&nbsp;name<br>
+Returns&nbsp;a&nbsp;string&nbsp;containing&nbsp;file&nbsp;name&nbsp;and&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+(e.g.&nbsp;to&nbsp;be&nbsp;used&nbsp;for&nbsp;traces&nbsp;or&nbsp;error&nbsp;messages)</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getNamespace"><strong>getNamespace</strong></a>(self, qName)</dt><dd><tt>Retrieve&nbsp;namespace&nbsp;for&nbsp;a&nbsp;qName&nbsp;'prefix:localName'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qName:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qName&nbsp;'prefix:localName'<br>
+Returns&nbsp;the&nbsp;corresponding&nbsp;namespace&nbsp;for&nbsp;the&nbsp;prefix&nbsp;of&nbsp;'qName'.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getNamespaceURI"><strong>getNamespaceURI</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;namespace&nbsp;URI&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;namespace&nbsp;URI&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node&nbsp;(None&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used).</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getNsName"><strong>getNsName</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;a&nbsp;tuple&nbsp;(namespace,&nbsp;localName)&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;tuple&nbsp;(namespace,&nbsp;localName)&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node&nbsp;(namespace&nbsp;is&nbsp;None&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used).</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getNsPrefix"><strong>getNsPrefix</strong></a>(self, nsLocalName)</dt><dd><tt>Retrieve&nbsp;prefix&nbsp;for&nbsp;a&nbsp;tuple&nbsp;'(namespace,&nbsp;localName)'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nsLocalName:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;localName)'<br>
+Returns&nbsp;the&nbsp;corresponding&nbsp;prefix&nbsp;for&nbsp;the&nbsp;namespace&nbsp;of&nbsp;'nsLocalName'.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getParentNode"><strong>getParentNode</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;parent&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;parent&nbsp;element&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getPrefix"><strong>getPrefix</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;namespace&nbsp;prefix&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;namespace&nbsp;prefix&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node&nbsp;(None&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used).</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getQName"><strong>getQName</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;a&nbsp;string&nbsp;prefix&nbsp;and&nbsp;localName&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;a&nbsp;string&nbsp;"prefix:localName"&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getQNameAttribute"><strong>getQNameAttribute</strong></a>(self, tupleOrAttrName)</dt><dd><tt>Retrieve&nbsp;a&nbsp;QName&nbsp;attribute&nbsp;value&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used<br>
+Returns&nbsp;the&nbsp;value&nbsp;of&nbsp;the&nbsp;specified&nbsp;QName&nbsp;attribute&nbsp;as&nbsp;tuple&nbsp;(namespace,&nbsp;localName),<br>
+i.e.&nbsp;the&nbsp;prefix&nbsp;is&nbsp;converted&nbsp;into&nbsp;the&nbsp;corresponding&nbsp;namespace&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getStartLineNumber"><strong>getStartLineNumber</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;start&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;start&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;in&nbsp;the&nbsp;XML&nbsp;file</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getTagName"><strong>getTagName</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;(complete)&nbsp;tag&nbsp;name&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;(complete)&nbsp;tag&nbsp;name&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getXPath"><strong>getXPath</strong></a>(self, xPath, namespaceRef<font color="#909090">=None</font>, useDefaultNs<font color="#909090">=1</font>, attrIgnoreList<font color="#909090">=[]</font>)</dt><dd><tt>Retrieve&nbsp;node&nbsp;list&nbsp;or&nbsp;attribute&nbsp;list&nbsp;for&nbsp;specified&nbsp;XPath<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xPath:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;containing&nbsp;xPath&nbsp;specification<br>
+&nbsp;&nbsp;&nbsp;&nbsp;namespaceRef:&nbsp;&nbsp;&nbsp;&nbsp;scope&nbsp;for&nbsp;namespaces&nbsp;(default&nbsp;is&nbsp;own&nbsp;element&nbsp;node)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;useDefaultNs:&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;if&nbsp;default&nbsp;namespace&nbsp;shall&nbsp;be&nbsp;used&nbsp;if&nbsp;no&nbsp;prefix&nbsp;is&nbsp;available<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attrIgnoreList:&nbsp;&nbsp;list&nbsp;of&nbsp;attributes&nbsp;to&nbsp;be&nbsp;ignored&nbsp;if&nbsp;wildcard&nbsp;is&nbsp;specified&nbsp;for&nbsp;attributes<br>
+&nbsp;<br>
+Returns&nbsp;all&nbsp;nodes&nbsp;which&nbsp;match&nbsp;xPath&nbsp;specification&nbsp;or<br>
+list&nbsp;of&nbsp;attribute&nbsp;values&nbsp;if&nbsp;xPath&nbsp;specifies&nbsp;an&nbsp;attribute</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-getXPathList"><strong>getXPathList</strong></a>(self, xPath, namespaceRef<font color="#909090">=None</font>, useDefaultNs<font color="#909090">=1</font>, attrIgnoreList<font color="#909090">=[]</font>)</dt><dd><tt>Retrieve&nbsp;node&nbsp;list&nbsp;or&nbsp;attribute&nbsp;list&nbsp;for&nbsp;specified&nbsp;XPath<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;xPath:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;containing&nbsp;xPath&nbsp;specification<br>
+&nbsp;&nbsp;&nbsp;&nbsp;namespaceRef:&nbsp;&nbsp;&nbsp;&nbsp;scope&nbsp;for&nbsp;namespaces&nbsp;(default&nbsp;is&nbsp;own&nbsp;element&nbsp;node)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;useDefaultNs:&nbsp;&nbsp;&nbsp;&nbsp;1,&nbsp;if&nbsp;default&nbsp;namespace&nbsp;shall&nbsp;be&nbsp;used&nbsp;if&nbsp;no&nbsp;prefix&nbsp;is&nbsp;available<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attrIgnoreList:&nbsp;&nbsp;list&nbsp;of&nbsp;attributes&nbsp;to&nbsp;be&nbsp;ignored&nbsp;if&nbsp;wildcard&nbsp;is&nbsp;specified&nbsp;for&nbsp;attributes<br>
+&nbsp;<br>
+Returns&nbsp;tuple&nbsp;(completeChildList,&nbsp;attrNodeList,&nbsp;attrNsNameFirst).<br>
+completeChildList:&nbsp;contains&nbsp;all&nbsp;child&nbsp;node&nbsp;which&nbsp;match&nbsp;xPath&nbsp;specification&nbsp;or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;attribute&nbsp;values&nbsp;if&nbsp;xPath&nbsp;specifies&nbsp;an&nbsp;attribute<br>
+attrNodeList:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains&nbsp;all&nbsp;child&nbsp;nodes&nbsp;where&nbsp;the&nbsp;specified&nbsp;attribute&nbsp;was&nbsp;found<br>
+attrNsNameFirst:&nbsp;&nbsp;&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;first&nbsp;attribute&nbsp;which&nbsp;was&nbsp;found<br>
+TODO:&nbsp;Re-design&nbsp;namespace&nbsp;and&nbsp;attribute&nbsp;handling&nbsp;of&nbsp;this&nbsp;method</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-hasAttribute"><strong>hasAttribute</strong></a>(self, tupleOrAttrName)</dt><dd><tt>Checks&nbsp;if&nbsp;the&nbsp;requested&nbsp;attribute&nbsp;exist&nbsp;for&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Returns&nbsp;1&nbsp;if&nbsp;the&nbsp;attribute&nbsp;exists,&nbsp;otherwise&nbsp;0.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-insertBefore"><strong>insertBefore</strong></a>(self, tupleOrLocalNameOrElement, refChild, attributeDict<font color="#909090">={}</font>)</dt><dd><tt>Insert&nbsp;an&nbsp;child&nbsp;element&nbsp;node&nbsp;before&nbsp;the&nbsp;given&nbsp;reference&nbsp;child&nbsp;of&nbsp;the&nbsp;current&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrLocalNameOrElement:&nbsp;(namespace,&nbsp;localName)&nbsp;or&nbsp;tagName&nbsp;or&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;new&nbsp;child<br>
+&nbsp;&nbsp;&nbsp;&nbsp;refChild:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference&nbsp;child&nbsp;ElementWrapper&nbsp;object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributeDict:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;dictionary&nbsp;containing&nbsp;the&nbsp;attributes&nbsp;of&nbsp;the&nbsp;new&nbsp;child&nbsp;(optional)<br>
+If&nbsp;not&nbsp;an&nbsp;ElementWrapper&nbsp;object&nbsp;is&nbsp;given,&nbsp;a&nbsp;new&nbsp;ElementWrapper&nbsp;object&nbsp;is&nbsp;created&nbsp;with&nbsp;tupleOrLocalName<br>
+Returns&nbsp;the&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;new&nbsp;child.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-insertSubtree"><strong>insertSubtree</strong></a>(self, refChildWrapper, subTreeWrapper, insertSubTreeRootNode<font color="#909090">=1</font>)</dt><dd><tt>Insert&nbsp;the&nbsp;given&nbsp;subtree&nbsp;before&nbsp;'refChildWrapper'&nbsp;('refChildWrapper'&nbsp;is&nbsp;not&nbsp;removed!)<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;refChildWrapper:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference&nbsp;child&nbsp;ElementWrapper&nbsp;object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;subTreeWrapper:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subtree&nbsp;wrapper&nbsp;object&nbsp;which&nbsp;contains&nbsp;the&nbsp;subtree&nbsp;to&nbsp;be&nbsp;inserted<br>
+&nbsp;&nbsp;&nbsp;&nbsp;insertSubTreeRootNode:&nbsp;if&nbsp;1,&nbsp;root&nbsp;node&nbsp;of&nbsp;subtree&nbsp;is&nbsp;inserted&nbsp;into&nbsp;parent&nbsp;tree,&nbsp;otherwise&nbsp;not</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-isUsedByExternalCache"><strong>isUsedByExternalCache</strong></a>(self)</dt><dd><tt>Check&nbsp;if&nbsp;this&nbsp;node&nbsp;is&nbsp;used&nbsp;by&nbsp;an&nbsp;external&nbsp;cache.<br>
+unlink&nbsp;commands&nbsp;are&nbsp;ignored&nbsp;if&nbsp;used&nbsp;by&nbsp;an&nbsp;external&nbsp;cache</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-nsName2QName"><strong>nsName2QName</strong></a>(self, nsLocalName)</dt><dd><tt>Convert&nbsp;a&nbsp;tuple&nbsp;'(namespace,&nbsp;localName)'&nbsp;to&nbsp;a&nbsp;string&nbsp;'prefix:localName'<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nsLocalName:&nbsp;&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;localName)'&nbsp;to&nbsp;be&nbsp;converted<br>
+Returns&nbsp;the&nbsp;corresponding&nbsp;string&nbsp;'prefix:localName'&nbsp;for&nbsp;'nsLocalName'.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-printNode"><strong>printNode</strong></a>(self, indent<font color="#909090">=''</font>, deep<font color="#909090">=0</font>, prettyPrint<font color="#909090">=0</font>, attrMaxLengthDict<font color="#909090">={}</font>, printElementValue<font color="#909090">=1</font>, encoding<font color="#909090">=None</font>)</dt><dd><tt>Retrieve&nbsp;the&nbsp;textual&nbsp;representation&nbsp;of&nbsp;the&nbsp;contained&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;indent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indentation&nbsp;to&nbsp;be&nbsp;used&nbsp;for&nbsp;string&nbsp;representation<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;or&nbsp;1:&nbsp;controls&nbsp;if&nbsp;the&nbsp;child&nbsp;element&nbsp;nodes&nbsp;are&nbsp;also&nbsp;printed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prettyPrint:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aligns&nbsp;the&nbsp;columns&nbsp;of&nbsp;the&nbsp;attributes&nbsp;of&nbsp;childNodes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attrMaxLengthDict:&nbsp;&nbsp;dictionary&nbsp;containing&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;attribute&nbsp;values&nbsp;(used&nbsp;for&nbsp;prettyprint)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;printElementValue:&nbsp;&nbsp;0&nbsp;or&nbsp;1:&nbsp;controls&nbsp;if&nbsp;the&nbsp;element&nbsp;value&nbsp;is&nbsp;printed<br>
+Returns&nbsp;the&nbsp;string&nbsp;representation</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-processWsAttribute"><strong>processWsAttribute</strong></a>(self, tupleOrAttrName, wsAction)</dt><dd><tt>Process&nbsp;white&nbsp;space&nbsp;action&nbsp;for&nbsp;the&nbsp;specified&nbsp;attribute&nbsp;according&nbsp;to&nbsp;requested&nbsp;'wsAction'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wsAction:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'collapse':&nbsp;&nbsp;substitute&nbsp;multiple&nbsp;whitespace&nbsp;characters&nbsp;by&nbsp;a&nbsp;single&nbsp;'&nbsp;'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'replace':&nbsp;&nbsp;&nbsp;substitute&nbsp;each&nbsp;whitespace&nbsp;characters&nbsp;by&nbsp;a&nbsp;single&nbsp;'&nbsp;'</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-processWsElementValue"><strong>processWsElementValue</strong></a>(self, wsAction)</dt><dd><tt>Process&nbsp;white&nbsp;space&nbsp;action&nbsp;for&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node&nbsp;according&nbsp;to&nbsp;requested&nbsp;'wsAction'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wsAction:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'collapse':&nbsp;&nbsp;substitute&nbsp;multiple&nbsp;whitespace&nbsp;characters&nbsp;by&nbsp;a&nbsp;single&nbsp;'&nbsp;'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'replace':&nbsp;&nbsp;&nbsp;substitute&nbsp;each&nbsp;whitespace&nbsp;characters&nbsp;by&nbsp;a&nbsp;single&nbsp;'&nbsp;'</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-qName2NsName"><strong>qName2NsName</strong></a>(self, qName, useDefaultNs)</dt><dd><tt>Convert&nbsp;a&nbsp;qName&nbsp;'prefix:localName'&nbsp;to&nbsp;a&nbsp;tuple&nbsp;'(namespace,&nbsp;localName)'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qName:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;qName&nbsp;to&nbsp;be&nbsp;converted<br>
+&nbsp;&nbsp;&nbsp;&nbsp;useDefaultNs:&nbsp;&nbsp;1&nbsp;if&nbsp;default&nbsp;namespace&nbsp;shall&nbsp;be&nbsp;used<br>
+Returns&nbsp;the&nbsp;corresponding&nbsp;tuple&nbsp;'(namespace,&nbsp;localName)'&nbsp;for&nbsp;'qName'.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-removeAttribute"><strong>removeAttribute</strong></a>(self, tupleOrAttrName)</dt><dd><tt>Removes&nbsp;an&nbsp;attribute&nbsp;from&nbsp;the&nbsp;current&nbsp;element&nbsp;node.&nbsp;<br>
+No&nbsp;exception&nbsp;is&nbsp;raised&nbsp;if&nbsp;there&nbsp;is&nbsp;no&nbsp;matching&nbsp;attribute.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-removeChild"><strong>removeChild</strong></a>(self, childElementWrapper)</dt><dd><tt>Remove&nbsp;the&nbsp;given&nbsp;child&nbsp;element&nbsp;node&nbsp;from&nbsp;the&nbsp;children&nbsp;of&nbsp;the&nbsp;current&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;childElementWrapper:&nbsp;&nbsp;ElementWrapper&nbsp;object&nbsp;to&nbsp;be&nbsp;removed</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-replaceChildBySubtree"><strong>replaceChildBySubtree</strong></a>(self, childElementWrapper, subTreeWrapper, insertSubTreeRootNode<font color="#909090">=1</font>)</dt><dd><tt>Replace&nbsp;child&nbsp;element&nbsp;node&nbsp;by&nbsp;XML&nbsp;subtree&nbsp;(e.g.&nbsp;expanding&nbsp;included&nbsp;XML&nbsp;files)<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;childElementWrapper:&nbsp;&nbsp;&nbsp;ElementWrapper&nbsp;object&nbsp;to&nbsp;be&nbsp;replaced<br>
+&nbsp;&nbsp;&nbsp;&nbsp;subTreeWrapper:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XML&nbsp;subtree&nbsp;wrapper&nbsp;object&nbsp;to&nbsp;&nbsp;be&nbsp;inserted<br>
+&nbsp;&nbsp;&nbsp;&nbsp;insertSubTreeRootNode:&nbsp;if&nbsp;1,&nbsp;root&nbsp;node&nbsp;of&nbsp;subtree&nbsp;is&nbsp;inserted&nbsp;into&nbsp;parent&nbsp;tree,&nbsp;otherwise&nbsp;not</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-setAttribute"><strong>setAttribute</strong></a>(self, tupleOrAttrName, attributeValue)</dt><dd><tt>Sets&nbsp;an&nbsp;attribute&nbsp;value&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.&nbsp;<br>
+If&nbsp;the&nbsp;attribute&nbsp;does&nbsp;not&nbsp;yet&nbsp;exist,&nbsp;it&nbsp;will&nbsp;be&nbsp;created.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributeValue:&nbsp;&nbsp;&nbsp;attribute&nbsp;value&nbsp;to&nbsp;be&nbsp;set</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-setAttributeDefault"><strong>setAttributeDefault</strong></a>(self, tupleOrAttrName, defaultValue)</dt><dd><tt>Create&nbsp;attribute&nbsp;and&nbsp;set&nbsp;value&nbsp;to&nbsp;default&nbsp;if&nbsp;it&nbsp;does&nbsp;not&nbsp;yet&nbsp;exist&nbsp;for&nbsp;the&nbsp;current&nbsp;element&nbsp;node.&nbsp;<br>
+If&nbsp;the&nbsp;attribute&nbsp;is&nbsp;already&nbsp;existing&nbsp;nothing&nbsp;is&nbsp;done.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrAttrName:&nbsp;&nbsp;tuple&nbsp;'(namespace,&nbsp;attributeName)'&nbsp;or&nbsp;'attributeName'&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used<br>
+&nbsp;&nbsp;&nbsp;&nbsp;defaultValue:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;attribute&nbsp;value&nbsp;to&nbsp;be&nbsp;set</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-setElementValue"><strong>setElementValue</strong></a>(self, elementValue)</dt><dd><tt>Set&nbsp;the&nbsp;content&nbsp;of&nbsp;the&nbsp;current&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elementValue:&nbsp;&nbsp;&nbsp;string&nbsp;containing&nbsp;the&nbsp;new&nbsp;element&nbsp;value<br>
+If&nbsp;multiple&nbsp;text&nbsp;nodes&nbsp;/&nbsp;CDATA&nbsp;nodes&nbsp;are&nbsp;existing,&nbsp;'elementValue'&nbsp;is&nbsp;set&nbsp;<br>
+for&nbsp;the&nbsp;first&nbsp;text&nbsp;node&nbsp;/&nbsp;CDATA&nbsp;node.&nbsp;All&nbsp;other&nbsp;text&nbsp;nodes&nbsp;/CDATA&nbsp;nodes&nbsp;are&nbsp;set&nbsp;to&nbsp;''.</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-setExternalCacheUsage"><strong>setExternalCacheUsage</strong></a>(self, used, deep<font color="#909090">=1</font>)</dt><dd><tt>Set&nbsp;external&nbsp;cache&nbsp;usage&nbsp;for&nbsp;this&nbsp;node&nbsp;and&nbsp;its&nbsp;children<br>
+unlink&nbsp;commands&nbsp;are&nbsp;ignored&nbsp;if&nbsp;used&nbsp;by&nbsp;an&nbsp;external&nbsp;cache<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;or&nbsp;1&nbsp;(used&nbsp;by&nbsp;external&nbsp;cache)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deep:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;or&nbsp;1:&nbsp;controls&nbsp;if&nbsp;the&nbsp;child&nbsp;elements&nbsp;are&nbsp;also&nbsp;marked&nbsp;as&nbsp;used&nbsp;by&nbsp;external&nbsp;cache</tt></dd></dl>
+
+<dl><dt><a name="XmlElementWrapper-unlink"><strong>unlink</strong></a>(self)</dt><dd><tt>Break&nbsp;circular&nbsp;references&nbsp;of&nbsp;this&nbsp;element&nbsp;and&nbsp;its&nbsp;children.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XmlInterfaceBase">class <strong>XmlInterfaceBase</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>XML&nbsp;interface&nbsp;base&nbsp;class.<br>
+&nbsp;<br>
+All&nbsp;not&nbsp;implemented&nbsp;methods&nbsp;have&nbsp;to&nbsp;be&nbsp;overloaded&nbsp;by&nbsp;the&nbsp;derived&nbsp;class!!<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XmlInterfaceBase-__init__"><strong>__init__</strong></a>(self, verbose, useCaching, processXInclude)</dt><dd><tt>Constructor&nbsp;of&nbsp;class&nbsp;<a href="#XmlInterfaceBase">XmlInterfaceBase</a>.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'verbose':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;or&nbsp;1:&nbsp;controls&nbsp;verbose&nbsp;print&nbsp;output&nbsp;for&nbsp;module&nbsp;genxmlif<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'useCaching':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;or&nbsp;1:&nbsp;controls&nbsp;usage&nbsp;of&nbsp;caching&nbsp;for&nbsp;module&nbsp;genxmlif<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'processXInclude':&nbsp;0&nbsp;or&nbsp;1:&nbsp;controls&nbsp;XInclude&nbsp;processing&nbsp;during&nbsp;parsing</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceBase-createXmlTree"><strong>createXmlTree</strong></a>(self, namespace, xmlRootTagName, attributeDict<font color="#909090">={}</font>, publicId<font color="#909090">=None</font>, systemId<font color="#909090">=None</font>)</dt><dd><tt>Create&nbsp;a&nbsp;new&nbsp;XML&nbsp;TreeWrapper&nbsp;object&nbsp;(wrapper&nbsp;for&nbsp;DOM&nbsp;document&nbsp;or&nbsp;elementtree).<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'namespace':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not&nbsp;yet&nbsp;handled&nbsp;(for&nbsp;future&nbsp;use)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'xmlRootTagName':&nbsp;specifies&nbsp;the&nbsp;tag&nbsp;name&nbsp;of&nbsp;the&nbsp;root&nbsp;element<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'attributeDict':&nbsp;&nbsp;contains&nbsp;the&nbsp;attributes&nbsp;of&nbsp;the&nbsp;root&nbsp;node&nbsp;(optional)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'publicId':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forwarded&nbsp;to&nbsp;contained&nbsp;DOM&nbsp;tree&nbsp;(unused&nbsp;for&nbsp;elementtree)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'systemId':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;forwarded&nbsp;to&nbsp;contained&nbsp;DOM&nbsp;tree&nbsp;(unused&nbsp;for&nbsp;elementtree)<br>
+Returns&nbsp;the&nbsp;created&nbsp;XML&nbsp;tree&nbsp;wrapper&nbsp;object.<br>
+Method&nbsp;has&nbsp;to&nbsp;be&nbsp;implemented&nbsp;by&nbsp;derived&nbsp;classes!</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceBase-getXmlIfType"><strong>getXmlIfType</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;type&nbsp;of&nbsp;the&nbsp;XML&nbsp;interface.</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceBase-parse"><strong>parse</strong></a>(self, filePath, baseUrl<font color="#909090">=''</font>, ownerDoc<font color="#909090">=None</font>)</dt><dd><tt>Call&nbsp;the&nbsp;XML&nbsp;parser&nbsp;for&nbsp;'file'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'filePath':&nbsp;a&nbsp;file&nbsp;path&nbsp;or&nbsp;an&nbsp;URI<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'baseUrl':&nbsp;&nbsp;if&nbsp;specified,&nbsp;it&nbsp;is&nbsp;used&nbsp;e.g.&nbsp;as&nbsp;base&nbsp;path&nbsp;for&nbsp;schema&nbsp;files&nbsp;referenced&nbsp;inside&nbsp;the&nbsp;XML&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'ownerDoc':&nbsp;only&nbsp;used&nbsp;in&nbsp;case&nbsp;of&nbsp;4DOM&nbsp;(forwarded&nbsp;to&nbsp;4DOM&nbsp;parser).&nbsp;<br>
+Returns&nbsp;the&nbsp;respective&nbsp;XML&nbsp;tree&nbsp;wrapper&nbsp;object&nbsp;for&nbsp;the&nbsp;parsed&nbsp;XML&nbsp;file.<br>
+Method&nbsp;has&nbsp;to&nbsp;be&nbsp;implemented&nbsp;by&nbsp;derived&nbsp;classes!</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceBase-parseString"><strong>parseString</strong></a>(self, text, baseUrl<font color="#909090">=''</font>, ownerDoc<font color="#909090">=None</font>)</dt><dd><tt>Call&nbsp;the&nbsp;XML&nbsp;parser&nbsp;for&nbsp;'text'.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'text':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains&nbsp;the&nbsp;XML&nbsp;string&nbsp;to&nbsp;be&nbsp;parsed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'baseUrl':&nbsp;&nbsp;if&nbsp;specified,&nbsp;it&nbsp;is&nbsp;used&nbsp;e.g.&nbsp;as&nbsp;base&nbsp;path&nbsp;for&nbsp;schema&nbsp;files&nbsp;referenced&nbsp;inside&nbsp;the&nbsp;XML&nbsp;string.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'ownerDoc':&nbsp;only&nbsp;used&nbsp;in&nbsp;case&nbsp;of&nbsp;4DOM&nbsp;(forwarded&nbsp;to&nbsp;4DOM&nbsp;parser).&nbsp;<br>
+Returns&nbsp;the&nbsp;respective&nbsp;XML&nbsp;tree&nbsp;wrapper&nbsp;object&nbsp;for&nbsp;the&nbsp;parsed&nbsp;XML&nbsp;'text'&nbsp;string.<br>
+Method&nbsp;has&nbsp;to&nbsp;be&nbsp;implemented&nbsp;by&nbsp;derived&nbsp;classes!</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceBase-setElementWrapperClass"><strong>setElementWrapperClass</strong></a>(self, elementWrapperClass)</dt><dd><tt>Set&nbsp;the&nbsp;element&nbsp;wrapper&nbsp;classes&nbsp;which&nbsp;shall&nbsp;be&nbsp;used&nbsp;by&nbsp;this&nbsp;interface.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elementWrapperClass:&nbsp;&nbsp;element&nbsp;wrapper&nbsp;class</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceBase-setTreeWrapperClass"><strong>setTreeWrapperClass</strong></a>(self, treeWrapperClass)</dt><dd><tt>Set&nbsp;the&nbsp;tree&nbsp;wrapper&nbsp;class&nbsp;which&nbsp;shall&nbsp;be&nbsp;used&nbsp;by&nbsp;this&nbsp;interface.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;treeWrapperClass:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tree&nbsp;wrapper&nbsp;class</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XmlTreeWrapper">class <strong>XmlTreeWrapper</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>XML&nbsp;tree&nbsp;wrapper&nbsp;API.<br>
+&nbsp;<br>
+Contains&nbsp;a&nbsp;DOM&nbsp;tree&nbsp;or&nbsp;an&nbsp;elementtree&nbsp;(depending&nbsp;on&nbsp;used&nbsp;XML&nbsp;parser)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XmlTreeWrapper-__init__"><strong>__init__</strong></a>(self, xmlIf, tree, useCaching)</dt><dd><tt>Constructor&nbsp;of&nbsp;wrapper&nbsp;class&nbsp;<a href="#XmlTreeWrapper">XmlTreeWrapper</a>.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'xmlIf':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;XML&nbsp;interface&nbsp;class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'tree':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DOM&nbsp;tree&nbsp;or&nbsp;elementtree&nbsp;which&nbsp;is&nbsp;wrapped&nbsp;by&nbsp;this&nbsp;object<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'useCaching':&nbsp;1&nbsp;if&nbsp;caching&nbsp;shall&nbsp;be&nbsp;used&nbsp;inside&nbsp;genxmlif,&nbsp;otherwise&nbsp;0</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;contained&nbsp;XML&nbsp;tree.</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-cloneTree"><strong>cloneTree</strong></a>(self)</dt><dd><tt>Creates&nbsp;a&nbsp;copy&nbsp;of&nbsp;a&nbsp;whole&nbsp;XML&nbsp;DOM&nbsp;tree.</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-createElement"><strong>createElement</strong></a>(self, tupleOrLocalName, attributeDict<font color="#909090">=None</font>, curNs<font color="#909090">=[]</font>)</dt><dd><tt>Create&nbsp;an&nbsp;ElementWrapper&nbsp;object.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tupleOrLocalName:&nbsp;tag&nbsp;name&nbsp;of&nbsp;element&nbsp;node&nbsp;to&nbsp;be&nbsp;created&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(tuple&nbsp;of&nbsp;namespace&nbsp;and&nbsp;localName&nbsp;or&nbsp;only&nbsp;localName&nbsp;if&nbsp;no&nbsp;namespace&nbsp;is&nbsp;used)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributeDict:&nbsp;&nbsp;&nbsp;&nbsp;attributes&nbsp;for&nbsp;this&nbsp;elements<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespaces&nbsp;for&nbsp;scope&nbsp;of&nbsp;this&nbsp;element<br>
+Returns&nbsp;an&nbsp;ElementWrapper&nbsp;object&nbsp;containing&nbsp;the&nbsp;created&nbsp;element&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-getRootNode"><strong>getRootNode</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;wrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;root&nbsp;element&nbsp;of&nbsp;the&nbsp;contained&nbsp;XML&nbsp;tree.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;ElementWrapper&nbsp;object&nbsp;of&nbsp;the&nbsp;root&nbsp;element.</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-getTree"><strong>getTree</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;contained&nbsp;XML&nbsp;tree.<br>
+&nbsp;<br>
+Returns&nbsp;the&nbsp;contained&nbsp;XML&nbsp;tree&nbsp;object&nbsp;(internal&nbsp;DOM&nbsp;tree&nbsp;wrapper&nbsp;or&nbsp;elementtree).</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-printTree"><strong>printTree</strong></a>(self, prettyPrint<font color="#909090">=0</font>, printElementValue<font color="#909090">=1</font>, encoding<font color="#909090">=None</font>)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;contained&nbsp;XML&nbsp;tree.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'prettyPrint':&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aligns&nbsp;the&nbsp;columns&nbsp;of&nbsp;the&nbsp;attributes&nbsp;of&nbsp;childNodes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'printElementValue':&nbsp;&nbsp;controls&nbsp;if&nbsp;the&nbsp;lement&nbsp;values&nbsp;are&nbsp;printed&nbsp;or&nbsp;not.<br>
+Returns&nbsp;a&nbsp;string&nbsp;with&nbsp;the&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;whole&nbsp;XML&nbsp;tree.</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-setExternalCacheUsage"><strong>setExternalCacheUsage</strong></a>(self, used)</dt><dd><tt>Set&nbsp;external&nbsp;cache&nbsp;usage&nbsp;for&nbsp;the&nbsp;whole&nbsp;tree<br>
+unlink&nbsp;commands&nbsp;are&nbsp;ignored&nbsp;if&nbsp;used&nbsp;by&nbsp;an&nbsp;external&nbsp;cache<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;or&nbsp;1&nbsp;(used&nbsp;by&nbsp;external&nbsp;cache)</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-unlink"><strong>unlink</strong></a>(self)</dt><dd><tt>Break&nbsp;circular&nbsp;references&nbsp;of&nbsp;the&nbsp;complete&nbsp;XML&nbsp;tree.<br>
+&nbsp;<br>
+To&nbsp;be&nbsp;called&nbsp;if&nbsp;the&nbsp;XML&nbsp;tree&nbsp;is&nbsp;not&nbsp;longer&nbsp;used&nbsp;=&gt;&nbsp;garbage&nbsp;collection!</tt></dd></dl>
+
+<dl><dt><a name="XmlTreeWrapper-useCaching"><strong>useCaching</strong></a>(self)</dt><dd><tt>Return&nbsp;1&nbsp;if&nbsp;caching&nbsp;should&nbsp;be&nbsp;used&nbsp;for&nbsp;the&nbsp;contained&nbsp;XML&nbsp;tree.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>EMPTY_NAMESPACE</strong> = None<br>
+<strong>EMPTY_PREFIX</strong> = None<br>
+<strong>StringTypes</strong> = (&lt;type 'str'&gt;, &lt;type 'unicode'&gt;)<br>
+<strong>__author__</strong> = 'Roland Leuthe &lt;roland@leuthe-net.de&gt;'<br>
+<strong>__date__</strong> = '08. August 2008'<br>
+<strong>__version__</strong> = '0.9.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Roland&nbsp;Leuthe&nbsp;&lt;roland@leuthe-net.de&gt;</td></tr></table>
+</body></html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Import</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Import</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/Import.py">/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/Import.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="google.appengine.ext.db.html">google.appengine.ext.db</a><br>
+</td><td width="25%" valign=top><a href="google.appengine.ext.db.polymodel.html">google.appengine.ext.db.polymodel</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-buildModels"><strong>buildModels</strong></a>(tree)</dt><dd><tt>take&nbsp;in&nbsp;an&nbsp;element&nbsp;tree&nbsp;object&nbsp;that&nbsp;contains&nbsp;an&nbsp;eml&nbsp;file<br>
+create&nbsp;and&nbsp;store&nbsp;the&nbsp;models&nbsp;in&nbsp;the&nbsp;data&nbsp;store&nbsp;and&nbsp;returns&nbsp;<br>
+lists&nbsp;of&nbsp;the&nbsp;page&nbsp;opjects<br>
+tree&nbsp;is&nbsp;an&nbsp;ElementTree&nbsp;object<br>
+return&nbsp;3&nbsp;lists&nbsp;of&nbsp;WorldCrisisPage&nbsp;objects</tt></dd></dl>
+ <dl><dt><a name="-buildReferences"><strong>buildReferences</strong></a>(cList, oList, pList)</dt><dd><tt>build&nbsp;references&nbsp;to&nbsp;each&nbsp;object&nbsp;using&nbsp;the&nbsp;keys&nbsp;provided&nbsp;by&nbsp;the&nbsp;<br>
+datastore.<br>
+cList&nbsp;a&nbsp;list&nbsp;of&nbsp;crisis&nbsp;objects<br>
+oList&nbsp;a&nbsp;list&nbsp;of&nbsp;org&nbsp;objects<br>
+pList&nbsp;a&nbsp;list&nbsp;of&nbsp;person&nbsp;objects</tt></dd></dl>
+ <dl><dt><a name="-createContacts"><strong>createContacts</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;contact&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;contact&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createCrisis"><strong>createCrisis</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;crisis&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models,&nbsp;<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;Crisis&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createCrisisInfo"><strong>createCrisisInfo</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;CrisisInfo&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;CrisisInfo&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createDate"><strong>createDate</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;Date&nbsp;model,&nbsp;and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;Date&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createEconomicImpact"><strong>createEconomicImpact</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;EconomicImpact&nbsp;model,&nbsp;and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;EconomicImpact&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createFullAddress"><strong>createFullAddress</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;FullAddress&nbsp;model,&nbsp;and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;FullAddress&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createHumanImpact"><strong>createHumanImpact</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;HumanImpact&nbsp;model,&nbsp;and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;HumanImpact&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createImpact"><strong>createImpact</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;Impact&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;Impact&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createLink"><strong>createLink</strong></a>(etype, elem)</dt><dd><tt>create&nbsp;a&nbsp;Link&nbsp;model,&nbsp;and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+etype&nbsp;is&nbsp;a&nbsp;string&nbsp;representation&nbsp;of&nbsp;the&nbsp;type&nbsp;of&nbsp;the&nbsp;link<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;Link&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createLocationInfo"><strong>createLocationInfo</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;Location&nbsp;model,&nbsp;and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;Location&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createOrgInfo"><strong>createOrgInfo</strong></a>(elem)</dt></dl>
+ <dl><dt><a name="-createOrganization"><strong>createOrganization</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;organization&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models,&nbsp;<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;organization&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createPerson"><strong>createPerson</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;person&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models,&nbsp;<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;person&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createPersonInfo"><strong>createPersonInfo</strong></a>(elem)</dt><dd><tt>create&nbsp;a&nbsp;PersonInfo&nbsp;model,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;PersonInfo&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createRefLinks"><strong>createRefLinks</strong></a>(elem)</dt><dd><tt>create&nbsp;all&nbsp;the&nbsp;reference&nbsp;models&nbsp;for&nbsp;a&nbsp;single&nbsp;info&nbsp;instance,&nbsp;including&nbsp;references&nbsp;to&nbsp;all&nbsp;child&nbsp;models<br>
+and&nbsp;put&nbsp;it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+ <dl><dt><a name="-createReferences"><strong>createReferences</strong></a>(itype, elem)</dt><dd><tt>create&nbsp;Reference&nbsp;models,&nbsp;of&nbsp;a&nbsp;given&nbsp;itype&nbsp;and&nbsp;put&nbsp;them&nbsp;in&nbsp;<br>
+it&nbsp;in&nbsp;the&nbsp;datastore.<br>
+itype&nbsp;a&nbsp;string&nbsp;representing&nbsp;of&nbsp;the&nbsp;thing&nbsp;a&nbsp;reference&nbsp;to<br>
+elem&nbsp;an&nbsp;ElementTree&nbsp;ElementTree<br>
+return&nbsp;a&nbsp;key&nbsp;to&nbsp;the&nbsp;EconomicImpact&nbsp;in&nbsp;the&nbsp;datastore</tt></dd></dl>
+</td></tr></table>
+</body></html>

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module minixsv.pyxsval</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="minixsv.html"><font color="#ffffff">minixsv</font></a>.pyxsval</strong></big></big> (version 0.9.0, 08. August 2008)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/minixsv/pyxsval.py">/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/minixsv/pyxsval.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;minixsv,&nbsp;Release&nbsp;0.9.0<br>
+#&nbsp;file:&nbsp;pyxsval.py<br>
+#<br>
+#&nbsp;API&nbsp;for&nbsp;XML&nbsp;schema&nbsp;validator<br>
+#<br>
+#&nbsp;history:<br>
+#&nbsp;2004-09-09&nbsp;rl&nbsp;&nbsp;&nbsp;created<br>
+#&nbsp;2004-09-29&nbsp;rl&nbsp;&nbsp;&nbsp;adapted&nbsp;to&nbsp;re-designed&nbsp;XML&nbsp;interface&nbsp;classes,<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ErrorHandler&nbsp;separated,&nbsp;URL&nbsp;processing&nbsp;added,&nbsp;some&nbsp;bugs&nbsp;fixed<br>
+#&nbsp;2004-10-07&nbsp;rl&nbsp;&nbsp;&nbsp;Validator&nbsp;classes&nbsp;extracted&nbsp;into&nbsp;separate&nbsp;files<br>
+#&nbsp;2004-10-12&nbsp;rl&nbsp;&nbsp;&nbsp;API&nbsp;re-worked,&nbsp;XML&nbsp;text&nbsp;processing&nbsp;added<br>
+#&nbsp;2007-05-15&nbsp;rl&nbsp;&nbsp;&nbsp;Handling&nbsp;of&nbsp;several&nbsp;schema&nbsp;files&nbsp;added,<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;schema&nbsp;references&nbsp;in&nbsp;the&nbsp;input&nbsp;file&nbsp;have&nbsp;now&nbsp;priority&nbsp;(always&nbsp;used&nbsp;if&nbsp;available!)<br>
+#&nbsp;2008-08-01&nbsp;rl&nbsp;&nbsp;&nbsp;New&nbsp;optional&nbsp;parameter&nbsp;'useCaching=1'&nbsp;and&nbsp;'processXInclude=1'&nbsp;to&nbsp;<a href="#XsValidator">XsValidator</a>&nbsp;class&nbsp;added<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2004-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe.&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved.<br>
+#<br>
+#&nbsp;--------------------------------------------------------------------<br>
+#&nbsp;The&nbsp;minixsv&nbsp;XML&nbsp;schema&nbsp;validator&nbsp;is<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2004-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe<br>
+#<br>
+#&nbsp;By&nbsp;obtaining,&nbsp;using,&nbsp;and/or&nbsp;copying&nbsp;this&nbsp;software&nbsp;and/or&nbsp;its<br>
+#&nbsp;associated&nbsp;documentation,&nbsp;you&nbsp;agree&nbsp;that&nbsp;you&nbsp;have&nbsp;read,&nbsp;understood,<br>
+#&nbsp;and&nbsp;will&nbsp;comply&nbsp;with&nbsp;the&nbsp;following&nbsp;terms&nbsp;and&nbsp;conditions:<br>
+#<br>
+#&nbsp;Permission&nbsp;to&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;and&nbsp;distribute&nbsp;this&nbsp;software&nbsp;and<br>
+#&nbsp;its&nbsp;associated&nbsp;documentation&nbsp;for&nbsp;any&nbsp;purpose&nbsp;and&nbsp;without&nbsp;fee&nbsp;is<br>
+#&nbsp;hereby&nbsp;granted,&nbsp;provided&nbsp;that&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice&nbsp;appears&nbsp;in<br>
+#&nbsp;all&nbsp;copies,&nbsp;and&nbsp;that&nbsp;both&nbsp;that&nbsp;copyright&nbsp;notice&nbsp;and&nbsp;this&nbsp;permission<br>
+#&nbsp;notice&nbsp;appear&nbsp;in&nbsp;supporting&nbsp;documentation,&nbsp;and&nbsp;that&nbsp;the&nbsp;name&nbsp;of<br>
+#&nbsp;the&nbsp;author&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;advertising&nbsp;or&nbsp;publicity<br>
+#&nbsp;pertaining&nbsp;to&nbsp;distribution&nbsp;of&nbsp;the&nbsp;software&nbsp;without&nbsp;specific,&nbsp;written<br>
+#&nbsp;prior&nbsp;permission.<br>
+#<br>
+#&nbsp;THE&nbsp;AUTHOR&nbsp;DISCLAIMS&nbsp;ALL&nbsp;WARRANTIES&nbsp;WITH&nbsp;REGARD<br>
+#&nbsp;TO&nbsp;THIS&nbsp;SOFTWARE,&nbsp;INCLUDING&nbsp;ALL&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANT-<br>
+#&nbsp;ABILITY&nbsp;AND&nbsp;FITNESS.&nbsp;&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;AUTHOR<br>
+#&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;SPECIAL,&nbsp;INDIRECT&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;OR&nbsp;ANY<br>
+#&nbsp;DAMAGES&nbsp;WHATSOEVER&nbsp;RESULTING&nbsp;FROM&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA&nbsp;OR&nbsp;PROFITS,<br>
+#&nbsp;WHETHER&nbsp;IN&nbsp;AN&nbsp;ACTION&nbsp;OF&nbsp;CONTRACT,&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHER&nbsp;TORTIOUS<br>
+#&nbsp;ACTION,&nbsp;ARISING&nbsp;OUT&nbsp;OF&nbsp;OR&nbsp;IN&nbsp;CONNECTION&nbsp;WITH&nbsp;THE&nbsp;USE&nbsp;OR&nbsp;PERFORMANCE<br>
+#&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE.<br>
+#&nbsp;--------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="genxmlif.html">genxmlif</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+</td><td width="25%" valign=top><a href="minixsv.xsvalErrorHandler.html">minixsv.xsvalErrorHandler</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="minixsv.pyxsval.html#XsValidator">XsValidator</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XsValidator">class <strong>XsValidator</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>########################################<br>
+#&nbsp;XML&nbsp;schema&nbsp;validator&nbsp;class<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XsValidator-__init__"><strong>__init__</strong></a>(self, xmlIfClass<font color="#909090">='XMLIF_MINIDOM'</font>, elementWrapperClass<font color="#909090">=&lt;class minixsv.xsvalXmlIf.XsvXmlElementWrapper&gt;</font>, warningProc<font color="#909090">=0</font>, errorLimit<font color="#909090">=20</font>, verbose<font color="#909090">=0</font>, useCaching<font color="#909090">=1</font>, processXInclude<font color="#909090">=1</font>)</dt></dl>
+
+<dl><dt><a name="XsValidator-getVersion"><strong>getVersion</strong></a>(self)</dt><dd><tt>########################################<br>
+#&nbsp;retrieve&nbsp;current&nbsp;version</tt></dd></dl>
+
+<dl><dt><a name="XsValidator-parse"><strong>parse</strong></a>(self, file, baseUrl<font color="#909090">=''</font>, ownerDoc<font color="#909090">=None</font>)</dt><dd><tt>########################################<br>
+#&nbsp;parse&nbsp;XML&nbsp;file<br>
+#&nbsp;'file'&nbsp;may&nbsp;be&nbsp;a&nbsp;filepath&nbsp;or&nbsp;an&nbsp;URI</tt></dd></dl>
+
+<dl><dt><a name="XsValidator-parseString"><strong>parseString</strong></a>(self, text, baseUrl<font color="#909090">=''</font>)</dt><dd><tt>########################################<br>
+#&nbsp;parse&nbsp;text&nbsp;string&nbsp;containing&nbsp;XML</tt></dd></dl>
+
+<dl><dt><a name="XsValidator-validateXmlInput"><strong>validateXmlInput</strong></a>(self, xmlInputFile, inputTreeWrapper, xsdFile<font color="#909090">=None</font>, validateSchema<font color="#909090">=0</font>)</dt><dd><tt>########################################<br>
+#&nbsp;validate&nbsp;XML&nbsp;input</tt></dd></dl>
+
+<dl><dt><a name="XsValidator-validateXmlInputString"><strong>validateXmlInputString</strong></a>(self, inputTreeWrapper, xsdText<font color="#909090">=None</font>, validateSchema<font color="#909090">=0</font>)</dt><dd><tt>########################################<br>
+#&nbsp;validate&nbsp;XML&nbsp;input</tt></dd></dl>
+
+<dl><dt><a name="XsValidator-validateXmlSchema"><strong>validateXmlSchema</strong></a>(self, xsdFile, xsdTreeWrapper)</dt><dd><tt>########################################<br>
+#&nbsp;validate&nbsp;XML&nbsp;schema&nbsp;separately</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-addUserSpecXmlIfClass"><strong>addUserSpecXmlIfClass</strong></a>(xmlIfKey, factory)</dt><dd><tt>########################################<br>
+#&nbsp;access&nbsp;function&nbsp;for&nbsp;adding&nbsp;a&nbsp;user&nbsp;specific&nbsp;XML&nbsp;interface&nbsp;class</tt></dd></dl>
+ <dl><dt><a name="-parseAndValidate"><strong>parseAndValidate</strong></a>(inputFile, xsdFile<font color="#909090">=None</font>, **kw)</dt><dd><tt>########################################<br>
+#&nbsp;convenience&nbsp;function&nbsp;for&nbsp;validating<br>
+#&nbsp;1.&nbsp;XML&nbsp;schema&nbsp;file<br>
+#&nbsp;2.&nbsp;XML&nbsp;input&nbsp;file<br>
+#&nbsp;If&nbsp;xsdFile&nbsp;is&nbsp;specified,&nbsp;it&nbsp;will&nbsp;ONLY&nbsp;be&nbsp;used&nbsp;for&nbsp;validation&nbsp;if&nbsp;no&nbsp;schema&nbsp;file&nbsp;<br>
+#&nbsp;is&nbsp;specified&nbsp;in&nbsp;the&nbsp;input&nbsp;file<br>
+#&nbsp;If&nbsp;xsdFile=None,&nbsp;the&nbsp;schemaLocation&nbsp;attribute&nbsp;is&nbsp;expected&nbsp;in&nbsp;the&nbsp;root&nbsp;tag&nbsp;of&nbsp;the&nbsp;XML&nbsp;input&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-parseAndValidateString"><strong>parseAndValidateString</strong></a>(inputText, xsdText<font color="#909090">=None</font>, **kw)</dt><dd><tt>########################################<br>
+#&nbsp;convenience&nbsp;function&nbsp;for&nbsp;validating<br>
+#&nbsp;1.&nbsp;text&nbsp;string&nbsp;containing&nbsp;the&nbsp;XML&nbsp;schema<br>
+#&nbsp;2.&nbsp;text&nbsp;string&nbsp;containing&nbsp;the&nbsp;XML&nbsp;input<br>
+#&nbsp;If&nbsp;xsdText&nbsp;is&nbsp;given,&nbsp;it&nbsp;will&nbsp;ONLY&nbsp;be&nbsp;used&nbsp;for&nbsp;validation&nbsp;if&nbsp;no&nbsp;schema&nbsp;file<br>
+#&nbsp;is&nbsp;specified&nbsp;in&nbsp;the&nbsp;input&nbsp;text<br>
+#&nbsp;If&nbsp;xsdText=None,&nbsp;the&nbsp;schemaLocation&nbsp;attribute&nbsp;is&nbsp;expected&nbsp;in&nbsp;the&nbsp;root&nbsp;tag&nbsp;of&nbsp;the&nbsp;XML&nbsp;input</tt></dd></dl>
+ <dl><dt><a name="-parseAndValidateXmlInput"><strong>parseAndValidateXmlInput</strong></a>(inputFile, xsdFile<font color="#909090">=None</font>, validateSchema<font color="#909090">=0</font>, **kw)</dt><dd><tt>########################################<br>
+#&nbsp;factory&nbsp;for&nbsp;validating<br>
+#&nbsp;1.&nbsp;XML&nbsp;schema&nbsp;file&nbsp;(only&nbsp;if&nbsp;validateSchema=1)<br>
+#&nbsp;2.&nbsp;XML&nbsp;input&nbsp;file<br>
+#&nbsp;If&nbsp;xsdFile&nbsp;is&nbsp;specified,&nbsp;it&nbsp;will&nbsp;ONLY&nbsp;be&nbsp;used&nbsp;for&nbsp;validation&nbsp;if&nbsp;no&nbsp;schema&nbsp;file&nbsp;<br>
+#&nbsp;is&nbsp;specified&nbsp;in&nbsp;the&nbsp;input&nbsp;file<br>
+#&nbsp;If&nbsp;xsdFile=None,&nbsp;the&nbsp;schemaLocation&nbsp;attribute&nbsp;is&nbsp;expected&nbsp;in&nbsp;the&nbsp;root&nbsp;tag&nbsp;of&nbsp;the&nbsp;XML&nbsp;input&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-parseAndValidateXmlInputString"><strong>parseAndValidateXmlInputString</strong></a>(inputText, xsdText<font color="#909090">=None</font>, baseUrl<font color="#909090">=''</font>, validateSchema<font color="#909090">=0</font>, **kw)</dt><dd><tt>########################################<br>
+#&nbsp;factory&nbsp;for&nbsp;validating<br>
+#&nbsp;1.&nbsp;text&nbsp;string&nbsp;containing&nbsp;the&nbsp;XML&nbsp;schema&nbsp;(only&nbsp;if&nbsp;validateSchema=1)<br>
+#&nbsp;2.&nbsp;text&nbsp;string&nbsp;containing&nbsp;the&nbsp;XML&nbsp;input<br>
+#&nbsp;If&nbsp;xsdText&nbsp;is&nbsp;given,&nbsp;it&nbsp;will&nbsp;ONLY&nbsp;be&nbsp;used&nbsp;for&nbsp;validation&nbsp;if&nbsp;no&nbsp;schema&nbsp;file<br>
+#&nbsp;is&nbsp;specified&nbsp;in&nbsp;the&nbsp;input&nbsp;text<br>
+#&nbsp;If&nbsp;xsdText=None,&nbsp;the&nbsp;schemaLocation&nbsp;attribute&nbsp;is&nbsp;expected&nbsp;in&nbsp;the&nbsp;root&nbsp;tag&nbsp;of&nbsp;the&nbsp;XML&nbsp;input</tt></dd></dl>
+ <dl><dt><a name="-parseAndValidateXmlSchema"><strong>parseAndValidateXmlSchema</strong></a>(xsdFile, **kw)</dt><dd><tt>########################################<br>
+#&nbsp;factory&nbsp;for&nbsp;validating&nbsp;only&nbsp;given&nbsp;XML&nbsp;schema&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-parseAndValidateXmlSchemaString"><strong>parseAndValidateXmlSchemaString</strong></a>(xsdText, **kw)</dt><dd><tt>########################################<br>
+#&nbsp;factory&nbsp;for&nbsp;validating&nbsp;only&nbsp;given&nbsp;XML&nbsp;schema&nbsp;file</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['addUserSpecXmlIfClass', 'parseAndValidate', 'parseAndValidateString', 'parseAndValidateXmlInput', 'parseAndValidateXmlInputString', 'parseAndValidateXmlSchema', 'parseAndValidateXmlSchemaString', 'XsValidator']<br>
+<strong>__author__</strong> = 'Roland Leuthe &lt;roland@leuthe-net.de&gt;'<br>
+<strong>__date__</strong> = '08. August 2008'<br>
+<strong>__version__</strong> = '0.9.0'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Roland&nbsp;Leuthe&nbsp;&lt;roland@leuthe-net.de&gt;</td></tr></table>
+</body></html>
