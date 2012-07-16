@@ -34,7 +34,7 @@
 		<ul class="entries">
 			{% for org in orgs_list %}
 				<li>
-					<a href="#">
+					<a href="/entry?name={{ org.name }}">
 						<h1>{{ org.name }}
 							<small> {{org.orginfo.otype}}</small>
 						</h1>

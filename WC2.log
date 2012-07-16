@@ -1,0 +1,1324 @@
+commit 22a707e44f65d531ceeaa869c7f2b8bf025c805b
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 15 20:05:49 2012 -0500
+
+    Adds place holder file.
+
+commit af346006acb60b52f0b059bdf2fd73f8a3109b44
+Merge: 4f11e95 a876fe9
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 15 16:39:56 2012 -0700
+
+    Merge pull request #99 from fnrahman/master
+    
+    Fixed Import error
+
+commit a876fe9593333a63b3594f0423eea43e19f6b228
+Merge: 67da134 4f11e95
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 15 18:38:08 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 67da1340aab38aac1a99987caf47654a9968e607
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 15 18:36:56 2012 -0500
+
+    Fixed import issue.
+
+commit 4f11e95d7e7e8d96365a0e34fa4e04e231c76912
+Merge: cf4e8e8 33bd5f9
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 15 18:05:48 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit cf4e8e8cf8181d7e0d44958b6af44f7807be53c2
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 15 18:05:42 2012 -0500
+
+    added report link to readme.
+
+commit 33bd5f904de566c1e98bc715a609a9e606b3c2c7
+Merge: cb644d9 b72d60d
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 15 15:39:19 2012 -0700
+
+    Merge pull request #98 from fnrahman/master
+    
+    Some minor fixes, comments
+
+commit b72d60d4ae40ec1b60972aa22d521d897553c6a8
+Merge: 4155e43 cb644d9
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 15 17:36:42 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit cb644d9a8b6c0397682ffd169ef8d49d71688f11
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sun Jul 15 17:21:58 2012 -0500
+
+    Added comments to these files
+
+commit 4155e437b6f6f27fdc40ba552f6d85e6df0b98e7
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 15 17:16:56 2012 -0500
+
+    Entry pages now consistent across browsers
+
+commit 21b9887839de7a6a6be0bb61580699f341d83199
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 15 14:49:04 2012 -0500
+
+    outline added in report.
+
+commit f0f52b7d6a0b43a2c55785e75ee231b5c48aa4db
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sat Jul 14 01:23:25 2012 -0500
+
+    Minor touch-ups on some pages
+
+commit 07ff92e0b6af5611f6d812a040304f5cdab9b886
+Merge: 8cfc55c 16f5ed0
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 13 21:54:16 2012 -0700
+
+    Merge pull request #97 from fnrahman/master
+    
+    All Entry Pages Done, Plus Searchbar Autocomplete
+
+commit 16f5ed04a6aa6fc1ac7b9d5db7782009d1df5c41
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 13 23:49:48 2012 -0500
+
+    Organization Entry Page Done
+
+commit 719559a24dfa5ada53b2023a78c0eec2c9ce3918
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 13 23:17:00 2012 -0500
+
+    Basic Crisis Entry Page , Searchbar Autotype done
+
+commit b535a70fa4b9c7a35657bfec7e7733743247292f
+Merge: 44b43a6 8cfc55c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 13 20:29:17 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 8cfc55c465b00dc91b3d0ff348e0f5ab368e66cd
+Merge: a68bf44 aa91c75
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Fri Jul 13 18:28:14 2012 -0700
+
+    Merge pull request #96 from robby35us/master
+    
+    Got a working test suite up. Deleted old test files.
+
+commit aa91c7569bfe54cf72b06459d8a6a4105813e98d
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jul 13 20:26:52 2012 -0500
+
+    Finished main tests. May add more later.
+
+commit 44b43a6cd25a5849fe73e3dcb3ce23b2ff8891e3
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 13 20:01:00 2012 -0500
+
+    Refined navbar, started on entry pages for crises
+
+commit a68bf441ebf2753c6ebd57fe397c10289034d13d
+Merge: 5edf8c4 9427dc0
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Fri Jul 13 16:02:32 2012 -0700
+
+    Merge pull request #95 from robby35us/master
+    
+    Have 15 tests that run and pass!!!!!
+
+commit 9427dc03f2fdb5f81e0561642a19ae029fc0b02e
+Merge: df9592d 5edf8c4
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jul 13 17:59:06 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit df9592dcae5e19f3e1a22d0f8f46d30d4b03685a
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jul 13 17:58:15 2012 -0500
+
+    Have 15 test running, made 1 slight change to Export.py
+
+commit 1ede5a6acc904470533b9134a4091c982f7b6638
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 13 13:50:50 2012 -0500
+
+    Implemented last_modified
+    
+    last_modified field added to models.
+    People page now displays each entry's last_modified date and time.
+    Navbar now lists the 4 most recently modified entries for each type.
+
+commit 5edf8c46a3b0962d1e2007c44e8287f6440cf7fe
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 13 09:08:32 2012 -0500
+
+    report progress.
+
+commit 54f79624964cd7e0f4a14b06a41993263a4cbe31
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jul 12 20:26:51 2012 -0500
+
+    Personpage supports Youtube, xml edited to comply
+
+commit 9bcf8715506d098ac0b4f7b1ea432424934a8358
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jul 12 19:16:15 2012 -0500
+
+    Adjusted category pages; more work on entry page
+
+commit 46700595c8519d4fcd0df225cfe97ec4be7fba9f
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Thu Jul 12 18:05:15 2012 -0500
+
+    Began to write test, but mostly made xml snippets to test
+
+commit 5662d2a525d4b0174379c849f2a5f8f3eb7e67ba
+Merge: c448f83 629047c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jul 12 15:24:23 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit c448f83e09bb8746f6b44dd2bbc707b1df31972c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jul 12 15:23:16 2012 -0500
+
+    Initial work for entrypage data hookup
+
+commit 629047c0865866216f3d8fe5c190044e596c875b
+Merge: 7c98c38 d76cf53
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 13:22:35 2012 -0700
+
+    Merge pull request #94 from jwilke/master
+    
+    first draft of xml finished, validates and contains our 12 entities.
+
+commit d76cf538a3c886bbf1cc7c3d247110f26c7af6f1
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 15:22:02 2012 -0500
+
+    first draft of xml finished, validates and contains our 12 entities.
+
+commit 57f5ef75afc20585b1cf34b774e30ddca29d6090
+Author: Jake Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 14:35:56 2012 -0500
+
+    more xml done
+
+commit 7c98c38c7e90ad168f3a62d29676b58bce60717f
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Thu Jul 12 14:25:02 2012 -0500
+
+    Started making xml strings for testing
+
+commit 90766ef7ed6eb0c3cbf94c39538710263d60bd92
+Merge: 9c6cbf4 b9404d7
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jul 12 14:19:37 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 9c6cbf4077f039f6a03325569dd58514b9f1454a
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jul 12 14:17:14 2012 -0500
+
+    Updated templates, added entry mockup.
+
+commit 9be38a3905e9cfbfd77b52ecfceb83f42c745496
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 12:47:05 2012 -0500
+
+    progress on the xml
+
+commit b9404d77e68c2fd4630d514dc3893dc55ab23a56
+Merge: 6ccddca 3d4ac3f
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 08:51:19 2012 -0700
+
+    Merge pull request #93 from jwilke/master
+    
+    Tweaks around the board.
+
+commit 3d4ac3f82c71c6c4eb024ddba0f7d8b4157b6d6c
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 10:50:10 2012 -0500
+
+    tweaked models, there are no longer integerproperties for any of the members. Import/Export working to the best of our knowledge.  Corrected WC to not continue executing the runImport if validation fails. #92
+
+commit 6ccddcab307c404e2ba6f1aea918af0326d7e8b3
+Merge: 674c951 81a140d
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 08:03:21 2012 -0700
+
+    Merge pull request #90 from jwilke/master
+    
+    cleaned up repo
+
+commit 81a140d0eaaba60847228fc476cd9eea0c66de12
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 10:02:29 2012 -0500
+
+    cleaning up repo
+
+commit 674c9514c3cfb848522401c7288f0530dcd5d190
+Merge: 8e6ab22 da6b99f
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 07:39:04 2012 -0700
+
+    Merge pull request #89 from jwilke/master
+    
+    Import/export working.
+
+commit da6b99f2abc1cf14a5aece2afa19f5cd80a271f6
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 09:37:12 2012 -0500
+
+    Import/Export working, produces perfect diff.  Needs testing though.
+
+commit df83fddbab9fa80dbb6e1f2e796f44d168fc0be8
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 08:52:34 2012 -0500
+
+    untracked files
+
+commit 31f3540d7040448c72094a139c334bc56c8552ed
+Merge: 1b8eb61 8e6ab22
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 08:51:56 2012 -0500
+
+    fixing
+
+commit 1b8eb61383033fe2701a550ba4c3c23bc4031c92
+Merge: 3e4245c 0b21ef3
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 12 08:50:04 2012 -0500
+
+    fixing export
+
+commit 8e6ab22ba371d512f2e1dde968558240a66a5bc1
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Thu Jul 12 08:46:58 2012 -0500
+
+    "Fixed" Export and removed "required" attribute from string and text properties in Models.py
+
+commit 949ec80d3cc67a645b5fd8a663e3ed8470366ec7
+Author: unknown <marcie@marcie-PC.(none)>
+Date:   Wed Jul 11 19:24:56 2012 -0700
+
+    Made some more changes to Export.py, but export page doesn't work
+
+commit 44dbcd3122f5e4b72c8a82e5cc74277439608782
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jul 11 20:15:38 2012 -0500
+
+    Made slight changes to Export, but may have fixed the big problem
+
+commit 0b21ef30ccf7a9ea7bf77b4769d3c3470330264e
+Merge: cd9b79c 7385975
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Wed Jul 11 13:34:50 2012 -0700
+
+    Merge pull request #88 from fnrahman/master
+    
+    Merging More front-end stuff
+
+commit 73859757d45929f389d2fb1789881d75250f488c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Wed Jul 11 15:29:33 2012 -0500
+
+    Fixing Export--still in progress
+
+commit 76b8c05296f1d1075f66ed60a45961a8b9c97cf9
+Merge: 34ac75d cd9b79c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Wed Jul 11 14:39:00 2012 -0500
+
+    Merged files from main
+
+commit 34ac75dcc5a2bc9f850d02910dd6d226655843de
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Wed Jul 11 13:08:26 2012 -0500
+
+    Touching up of the pages and navigation.
+
+commit 3e4245cd88b1e12c40f98c2a7a7721edd77528a6
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Wed Jul 11 12:52:10 2012 -0500
+
+    export broken, fix it.  don't use wc2.xml, it's in progress
+
+commit cd9b79c5ff5925d8220bbe974c67d0ff46303d37
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jul 11 12:14:42 2012 -0500
+
+    Merging to main Repo
+
+commit 7fd9b97e98bf25d0b41d1b1eb78a722b763468b3
+Merge: 586ff33 2ee66e9
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jul 11 12:10:58 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit 586ff332eae7e7daca9d590b9b75b3e4cfd04486
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jul 11 12:09:52 2012 -0500
+
+    Rewrote export, restored models
+
+commit 2ee66e97e3906020b742799b578997be118f84e6
+Merge: 0e060c8 588ea5d
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Wed Jul 11 06:00:36 2012 -0700
+
+    Merge pull request #86 from jwilke/master
+    
+    validator installed.
+
+commit 588ea5d89ca492bebe596684d1dc47fda89b99f0
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Wed Jul 11 07:58:58 2012 -0500
+
+    validation implemented
+
+commit 0e060c8f8aa4fc7918d2cd7facaf515bfaffec29
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 10 22:01:19 2012 -0500
+
+    wrote a unit test.
+
+commit 91df534d648f1013baeeb06f5d4599f394f16b5a
+Merge: d880bd2 5bbb2c0
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 10 20:29:10 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit d880bd201819dec07020e8f5195e813891f59704
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 10 20:29:07 2012 -0500
+
+    writing report.
+
+commit 5bbb2c0bfc27428aaf1c41bda58d806d9f42fec3
+Merge: 1c1ae7d caaa0a0
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Tue Jul 10 16:44:02 2012 -0700
+
+    Merge pull request #85 from fnrahman/master
+    
+    Added the front end!
+
+commit caaa0a0f5e9760e5634fa61e504a60df953a7b81
+Merge: 967bfc1 1c1ae7d
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jul 10 18:41:18 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 967bfc1c60929b9e06e3fae717eaad7ceadbab10
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jul 10 18:35:17 2012 -0500
+
+    Import Page Added. Still needs to be finished.
+
+commit 1c1ae7da46ac502f12d8341be4ce381c5b061b27
+Merge: 5458c6b 6690b28
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 10 16:10:43 2012 -0700
+
+    Merge pull request #84 from jwilke/master
+    
+    import and models updated
+
+commit 6690b28a85cd487162d4d2daef38ff14a2e1ca10
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 10 18:09:51 2012 -0500
+
+    import and models updated.
+
+commit 7f1250a8bce9abff408a127340748b3ef255262d
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jul 10 17:13:20 2012 -0500
+
+    GOT FRONT END WORKING
+    
+    I got the front end working!
+
+commit 45cd34f026cfe4bf1452676b5c4a6f64a8f9e30b
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jul 10 16:57:59 2012 -0500
+
+    Added Static stuff for UI
+    
+    Added Bootstrap, JQuery, etc. for UI
+
+commit b0b33bcde58f3b62058f485d79a9cd2a7ae33c46
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jul 10 16:55:51 2012 -0500
+
+    Added Django Templates
+    
+    Added templates under 'templates' folder
+
+commit 5458c6b2ed2ad6bdcfc9fca424688c5dce0b7c52
+Merge: 913ba89 94baa65
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 10 14:31:12 2012 -0700
+
+    Merge pull request #83 from jwilke/master
+    
+    first version of new import
+
+commit 94baa65b3b949e0b9a465a55fdc5dc343f122746
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 10 16:30:18 2012 -0500
+
+    working version of import
+
+commit 913ba89f747b1cca8de07f5c510739d5ae004591
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jul 9 18:34:07 2012 -0500
+
+    Completed update of models and import, but still needs testing
+
+commit 6320a07830f76d7a7c15128c747b6ee5247de94d
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jul 9 12:42:23 2012 -0500
+
+    Redid models to conform to UML design
+
+commit 439531de9b9b0e210c0c7dee93514ffbc9bbc10e
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jul 7 01:48:41 2012 -0500
+
+    Made small edits to Models.py. Started revamping Export.py to match Schema
+
+commit 425b1fba632850702720bfb603bc6268177b4f16
+Merge: 9b1287e dc6e3ab
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jul 6 23:49:55 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit 9b1287eafd63c67efdc618d80322ee5587952698
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jul 6 23:48:59 2012 -0500
+
+    Divided up the model data into smaller chunks that are easier to manage.
+
+commit dc6e3ab1cd49d4ddc334bfd138a3ddce80fc0b37
+Author: Ian <kieldro@gmail.com>
+Date:   Fri Jul 6 22:48:50 2012 -0500
+
+    Update master
+
+commit 99a868b4f6c18393d396739b9cc831376ae2a1b1
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 6 15:55:59 2012 -0500
+
+    Added UML and PDF. Renamed unit test py file to adhere naming requirements. Also updated build file.
+
+commit d1d3c4c4777e7024cdda1e1eb24de7ab3fee5f5a
+Merge: 2984c3c 29d433d
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 6 15:23:12 2012 -0500
+
+    fixed indentationa and removed redundant files. Link to UML diagram in README.
+
+commit 2984c3ce8bd50ffcdc3270e7a5b2442dab9ed79b
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 6 14:09:12 2012 -0500
+
+    Fixed Ross_s info in readme.
+
+commit 29d433d651793b7d7e63eddc9abc39f3d01418ec
+Merge: a7cdf97 1f2630f
+Author: Ian <kieldro@gmail.com>
+Date:   Fri Jul 6 11:58:50 2012 -0700
+
+    Merge pull request #82 from jwilke/master
+    
+    Created WC2.xsd WC2.xml and updated Models.py
+
+commit 1f2630f3331cf98960132ee88d2fdf9d6c0274f3
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Fri Jul 6 12:43:27 2012 -0500
+
+    created WC2.xml WC2.xsd and updated Models.py
+
+commit a7cdf97a3d5ba9ddd14ba2c5d5c63a6e285c79c3
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Thu Jul 5 22:52:25 2012 -0500
+
+    .gitignore update.
+
+commit 9fa82d39114e028355af37d3ede93c8aa588bacb
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Thu Jul 5 18:58:40 2012 -0500
+
+    technical report started.
+
+commit a5856abe9e844d0a6ed00f5cdfd5a4f86fc0cbbb
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 19:32:06 2012 -0500
+
+    added id/idref to program
+
+commit 413390f2c184eca86a22da782fe4742f4a61d70c
+Merge: e6e2d85 79f8ef7
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 16:08:08 2012 -0700
+
+    Merge pull request #81 from jwilke/master
+    
+    lots of fixes to import and export
+
+commit 79f8ef7afb2e16e264c541c54ee08cea93939976
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 18:07:29 2012 -0500
+
+    lots of updates
+
+commit e6e2d85c0eb53b03a80c56cad8c86bc3ab2f7fcb
+Merge: 8aadf04 1b62f04
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 14:45:11 2012 -0700
+
+    Merge pull request #80 from grsshwarts/master
+    
+    finished and added TestExport.py to tests folder and deleted extra files
+
+commit 1b62f04a82a2aaffe7acd260cad16f4ac642562e
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 16:43:00 2012 -0500
+
+    finished TestExport.py
+
+commit 8aadf043b5de33451094474a45ee2e7da0ba34b9
+Merge: 1922325 c215ec7
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 13:22:59 2012 -0700
+
+    Merge pull request #79 from jwilke/master
+    
+    removed export2
+
+commit c215ec730b5191cad3c5f79630dae72b17c53fa4
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 15:22:09 2012 -0500
+
+    removed Export_2.py
+
+commit 1922325dc3e264ed7d14b25e5a2d00b168d80c0b
+Merge: 0301ec7 d2b4ea2
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 13:17:02 2012 -0700
+
+    Merge pull request #78 from grsshwarts/master
+    
+    Fixed Export to include subtags for location and date
+
+commit d2b4ea27d7b082e21333434ee836233d94fd8214
+Merge: 1b4c11b 0301ec7
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 15:14:38 2012 -0500
+
+    changed export to include sub tags for location and date
+
+commit 0301ec7785a3e552dca811ba193f973c549a3ebc
+Merge: 1d6f30e 60d44d5
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 00:52:50 2012 -0700
+
+    Merge pull request #68 from jwilke/master
+    
+    Added all files from app engine
+
+commit 60d44d5e98f3fb32f33015052a5107320a2ce6e6
+Merge: 91e9ec8 1d6f30e
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 02:51:35 2012 -0500
+
+    MERGEgit merge upstream mastergit merge upstream master
+
+commit 91e9ec8652fcb26ff258b33731be660462faa0e8
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 02:39:44 2012 -0500
+
+    Import Export Done - validator
+
+commit 67a34cb7fca4251dd23cf43ad7d9fc941990dda5
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 2 02:33:16 2012 -0500
+
+    import/export almost done, needs validation and redirect on import
+
+commit 1b4c11bcdd9e932003cc123d91a679c38c2bbcd7
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 00:57:30 2012 -0500
+
+    added Export 2
+
+commit 61a43bb3440bd6689ad08aedd3bda41021feb3d1
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 00:34:15 2012 -0500
+
+    changed Export.py
+
+commit 1d6f30eaac5264c56c6927604e4e00dac039c763
+Merge: b273222 bc3d086
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Sun Jul 1 22:14:45 2012 -0700
+
+    Merge pull request #65 from grsshwarts/master
+    
+    Fixed Export
+
+commit bc3d0869f6f137499ed1dc7dd8b5c88e0c8f70d5
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 2 00:13:35 2012 -0500
+
+    Fixed Export
+
+commit b273222aabffe24ee33ab836f0facfe8823e625e
+Merge: d879087 1987c58
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 20:55:27 2012 -0700
+
+    Merge pull request #64 from jwilke/master
+    
+    export done
+
+commit 1987c584e75bb41fd9899b285fafced0801fda80
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 22:54:39 2012 -0500
+
+    export done, many changes across the board
+
+commit d87908796e22123ef2dcf47ccd8dc45fbee337ce
+Merge: c2f796a dfc5bb7
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 20:43:16 2012 -0700
+
+    Merge pull request #63 from fnrahman/master
+    
+    Moved Test files
+
+commit dfc5bb719650a3057f7547eddf8b4f2e4e1ad1ee
+Merge: 98e690f c2f796a
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 22:42:21 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 98e690f7fcd7b309a7888960380f354ce1cbd8ac
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 22:40:35 2012 -0500
+
+    Moved TestImport to test file.
+
+commit cfac6092be50cbbd45a50c498b6ce6cc5e84ba6e
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 22:27:16 2012 -0500
+
+    Removed debugging prints, enabled instance models.
+
+commit c2f796ac3fc754b586a8543106faf982efed2151
+Merge: db3e617 3d6ce2a
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 19:46:32 2012 -0700
+
+    Merge pull request #62 from jwilke/master
+    
+    splash page quickfixes
+
+commit 3d6ce2aa81978b05037bc30bfc2d6b22c4c15202
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 21:44:57 2012 -0500
+
+    gaeunit test quickfix
+
+commit a5c1e366a301e846beffaa5277d313ad9cda730c
+Merge: f2028f3 db3e617
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 21:44:09 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit db3e6178586bc60f40bb6eccbb68abb8d852f381
+Merge: ba758d7 155647a
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Sun Jul 1 19:41:37 2012 -0700
+
+    Merge pull request #61 from grsshwarts/master
+    
+    wrote RunExport.py #60
+
+commit 155647a402189613bd93b7bc70d416d59eed557b
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sun Jul 1 21:38:20 2012 -0500
+
+    done with RunExport.py
+
+commit f2028f3fe7cc9900c89b634a88f369b62f28637d
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 21:33:11 2012 -0500
+
+    fixed splash
+
+commit 516043cf8a547ca142c72452cb7c045b353d1798
+Merge: 26cd646 ba758d7
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 21:27:44 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit ba758d7ce72f966764e113faca5b7d8dac360674
+Merge: 609dab6 fc0f546
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 1 21:27:04 2012 -0500
+
+    added /test URL.
+
+commit 609dab6f7afd9d3758b6f9397f43ad055920c228
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 1 21:26:13 2012 -0500
+
+    gaeunit framework up.
+
+commit 26cd646fbbe9ff63df6ba700f623baaf439a7e4f
+Merge: f0aaa19 fc0f546
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 21:23:45 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit f0aaa195f07a47953befb1668e03cdb0ac7c92f9
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 21:22:50 2012 -0500
+
+    Testing TestImport.py
+
+commit fc0f5468a9379a3466a5592f16d9256a2212a5a7
+Merge: f6d566c 951d867
+Author: Ian <kieldro@gmail.com>
+Date:   Sun Jul 1 19:21:36 2012 -0700
+
+    Merge pull request #59 from grsshwarts/master
+    
+    Here is the finished RunImport.py #41
+
+commit 951d867197933aa18690b0d855491cb4ef4e7703
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sun Jul 1 21:19:31 2012 -0500
+
+    RunImport.py done #45
+
+commit f6d566ce18be1f5f3f56b4b0a989e8b1e66da849
+Merge: 9dda2f5 5837ec8
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Sun Jul 1 18:21:00 2012 -0700
+
+    Merge pull request #56 from robby35us/master
+    
+    I have a test file for you to try in the gaeunit suite.
+
+commit 5837ec8d55f95fbac4f656ba76e95b32f5f81542
+Merge: dd499d6 9dda2f5
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sun Jul 1 20:19:53 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit dd499d6ed4644b5c5fbc6893b542fe91bfdc9743
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sun Jul 1 20:19:34 2012 -0500
+
+    Updating Export.py
+
+commit 9dda2f5843a9394c7c03cdab9a1363bfce182370
+Merge: ae36692 538440a
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 17:35:43 2012 -0700
+
+    Merge pull request #54 from jwilke/master
+    
+    updated the import/export interface
+
+commit 538440adff4499c7a0b3f434438b62e4cf75b7e8
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jul 1 19:34:10 2012 -0500
+
+    updated the wc.py script, changed design of the import/export html page. #29
+
+commit ae366927982b8fc0c0287b9972637fb71416039b
+Merge: 8b57c6c 31e3c6c
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 17:26:54 2012 -0700
+
+    Merge pull request #53 from fnrahman/master
+    
+    Import.py and TestImport.py
+
+commit 31e3c6c96063ae1f23856835ab9a59dd54dcddf6
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 19:25:08 2012 -0500
+
+    Import tests added
+
+commit b912d6796ae0f38b3f8aa7502913d8612109fa41
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 18:15:37 2012 -0500
+
+    First run of import
+
+commit 9511a475285b106e8a9fb6e322cfe7757b9000dd
+Merge: 50fa349 8b57c6c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 18:13:23 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+    
+    Conflicts:
+    	Import.py
+
+commit 50fa3493c3e4b2c8f2f0a72a0ca458e199723065
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 1 17:26:57 2012 -0500
+
+    Finished first version of Import.py
+
+commit 8b57c6c748c9143c41ca5fdceb8817e4ecb7d37a
+Merge: 678f75c c16df02
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 21:48:30 2012 -0700
+
+    Merge pull request #52 from robby35us/master
+    
+    Renamed and added files
+
+commit c16df026c4a2b30ed04b2c37215f955e020fcf9d
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 23:00:19 2012 -0500
+
+    Added files that need to be written by various team memembers
+
+commit d5fe29e43e265cd394dc7b300a1e1536a967efcc
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 22:54:53 2012 -0500
+
+    changed names of website files/directory
+
+commit aadc09b7da02efdf054eb4946d0c9107e52f9ef9
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 22:31:05 2012 -0500
+
+    updated files to match project requirements and deleted unnecisary files from the repo
+
+commit 40eb6aa570823a337c2baa5163615c71c5f9693d
+Merge: e869eb0 678f75c
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 22:22:33 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit e869eb03cd99fd0558739d320ed1cb3ac001c6c5
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 22:22:07 2012 -0500
+
+    Updated Export.py to conform to the schema. And added comments. #42 #51
+
+commit 678f75c0fe838e0e72bcf20ddd6904b23fb6d94b
+Merge: 928e541 520fb1c
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 20:20:45 2012 -0700
+
+    Merge pull request #50 from jwilke/master
+    
+    all static html done.
+
+commit 951924db5c2420f7588509a7ba0e08fa833d99ed
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 18:56:06 2012 -0500
+
+    Updated data models to have better form. Got it to run-ish on the gae, but not sure what it does.
+
+commit dd740b68571433827275f2551595382144ee0a05
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jun 29 17:06:08 2012 -0500
+
+    importXML is now Import.py. Added TODO list.
+
+commit 520fb1c637340ba4f3cc62238f04a7cb982dc408
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Fri Jun 29 16:19:12 2012 -0500
+
+    Finished all research and connected all links on static html files. all up-to-date versions of html are on appspot. #28 #13 #22 #23
+
+commit 928e541085ca06929aa9597ca24aeee116b5207b
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Fri Jun 29 16:02:25 2012 -0500
+
+    Updated WC1.txt
+
+commit 94e2229ff5f2707d0d8949403be8b129c97a2c42
+Merge: 69e8384 ed2eff3
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 00:34:00 2012 -0500
+
+    Merge branch 'keo' of http://github.com/Kieldro/cs373-wc
+
+commit ed2eff31bf0ec8b365daaec00f02076aa58541c9
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Fri Jun 29 00:23:42 2012 -0500
+
+    Updated dataModels.py to take full advantage of the data specification allowed by the schema.
+
+commit a833651dc450b667ff319c8aab6f3ff2a82b9024
+Merge: 1f9f6a7 4607a97
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Thu Jun 28 20:56:48 2012 -0700
+
+    Merge pull request #43 from fnrahman/master
+    
+    Finalized Schema and Validated XML
+
+commit 1f9f6a79484ce4da3fb2482e1dca0cbd8e204804
+Merge: 89ab76d 69e8384
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Thu Jun 28 20:55:55 2012 -0700
+
+    Merge pull request #36 from robby35us/master
+    
+    I wrote an export tree builder file!
+
+commit 4607a976a7b2b9f0ff8184129a4940a8a4298bd5
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jun 28 22:10:14 2012 -0500
+
+    Mostly finalized schema and xml
+
+commit 2f9c3e60584faf8a546c0852f3d382a569528507
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jun 28 21:30:17 2012 -0500
+
+    Added Date to schema.
+
+commit ce5d5f404af0a65594ef2e66e7856093fe0c91c0
+Merge: 35b597c 89ab76d
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jun 28 20:58:38 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+    Updated files from main repo.
+
+commit b7e4b2c6556fa73dc6f944ffde88d784897df768
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Thu Jun 28 20:35:42 2012 -0500
+
+    revisions to dataModels.
+
+commit 35b597ca70f4b4d78a1ba6e298b14c887b8861d4
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Thu Jun 28 19:00:18 2012 -0500
+
+    Initial work on importing XML files.
+
+commit 89ab76d6c3cf4a25d0b121839b84584ceaba181e
+Merge: 830b776 2ac05c7
+Author: Ian <kieldro@gmail.com>
+Date:   Thu Jun 28 07:17:44 2012 -0700
+
+    Merge pull request #33 from jwilke/master
+    
+    For Ian
+
+commit 69e838483940fbcab5fc8671f3f8e7a14e028c76
+Merge: d92c39a 830b776
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Thu Jun 28 01:08:01 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit d92c39adea759de5beba20693f396016932fd5ac
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Thu Jun 28 01:06:31 2012 -0500
+
+    Made a pass at writing an export file. Needs RunExport.py and tests to be written. #34
+
+commit 2ac05c7a5da4cfbb9117dddaee922d53d664eaa1
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Wed Jun 27 22:27:43 2012 -0500
+
+    added python file, warning: needs renaming before submission.
+
+commit 0c381f83b6a11321541b6002393e1dbdf8de4ddd
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Wed Jun 27 22:21:56 2012 -0500
+
+    added the .yaml to the repo
+
+commit 1ad8f9b7811af68d67609eae1ea84be747a9e038
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Wed Jun 27 19:55:53 2012 -0500
+
+    learning db.Models API.
+
+commit 830b776d2cbd8a0c384f89025c94127d79f98065
+Author: Ian <kieldro@gmail.com>
+Date:   Wed Jun 27 19:38:46 2012 -0500
+
+    Fixed 2 errors. I foolishly merged this pull request without testing it first. Make sure all pull requests are error free.
+
+commit 0e1ed7dd1af4451bb2e6349a2618aacc73f63de4
+Merge: 9a54f9b 1526308
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Wed Jun 27 19:29:37 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc into keo
+
+commit 1526308dfc3ba511b34c82541cc6d2c4c2ae1ac4
+Merge: 02d95fe d1e250b
+Author: Ian <kieldro@gmail.com>
+Date:   Wed Jun 27 17:29:05 2012 -0700
+
+    Merge pull request #32 from robby35us/master
+    
+    I have the updated WC1.xml
+
+commit d1e250b7d3fedc25a9ab9a8d3b19ca56f6e26172
+Merge: c2d22f5 02d95fe
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Wed Jun 27 18:57:46 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit 9a54f9b9d9c43b32a3a2d879db1bdd68752a8892
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Wed Jun 27 15:19:46 2012 -0500
+
+    added a sample GQL query.
+
+commit a2e2e935476b5d338f9eb08fbc86f99c3b86ebf7
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Wed Jun 27 14:55:37 2012 -0500
+
+    Adding template datamodels file.
+
+commit 706473a32f23a2f87fcbd9548aa890873cd21c69
+Merge: 2b4eddf 02d95fe
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Wed Jun 27 12:45:05 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 02d95fec161ed373150bf96e2fdf6b416e43bb14
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Wed Jun 27 12:40:11 2012 -0500
+
+    README conforms to the posted readme format.
+
+commit c2d22f562a21d8998a51c101d2cae7a96afc5c37
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Wed Jun 27 00:18:40 2012 -0500
+
+    All data entered. Issue #18 done...for now.
+
+commit 59fddcc43b4223b1766df32d8e5c60863b15cf8f
+Author: Ian <kieldro@gmail.com>
+Date:   Tue Jun 26 21:30:08 2012 -0500
+
+    added GAE URL
+
+commit 2b4eddfd6acefa9743361f5388c2a4e7d28fbc07
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jun 26 20:52:06 2012 -0500
+
+    all html files created and hosted on appspot #6 #7 #8 #22
+
+commit 9d92803c5f80fdc2410f86706533bef52ab2c393
+Merge: 7c65241 d00ecd0
+Author: robby35us <callmeelasinthe@gmail.com>
+Date:   Tue Jun 26 15:36:35 2012 -0700
+
+    Merge pull request #21 from robby35us/master
+    
+    I made many changes!!!!
+
+commit d00ecd05aad7d2f176a6125b694938cb8555dbb5
+Author: robert Reed <callmeelasinthe@gmail.com>
+Date:   Tue Jun 26 17:25:19 2012 -0500
+
+    Wrote initial schema #3, validated initial instance #19, edited group file structure #20.
+
+commit 455dba24a123a58d5fe0f709610172b3bd81cfaa
+Merge: 4547ba2 7c65241
+Author: robert Reed <callmeelasinthe@gmail.com>
+Date:   Tue Jun 26 16:46:42 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit 525868a337235126ee3170a1bbb17a4015dda2bc
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jun 26 13:14:51 2012 -0500
+
+    In the process of creating the XML instance.
+
+commit 8a9133733f8329036ddb7c30c1f898f974cff7d1
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Tue Jun 26 12:38:37 2012 -0500
+
+    Created xml schema. First version!
+
+commit 7c6524143216880af10ff8d57ecbddfccc324be0
+Merge: 9137183 d14364c
+Author: Ian <kieldro@gmail.com>
+Date:   Mon Jun 25 14:43:14 2012 -0700
+
+    Merge pull request #16 from jwilke/master
+    
+    Finished people xml and html files #8
+
+commit d14364c3d6240ec0d6b315e4b32d1aa464080f9f
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jun 25 14:05:43 2012 -0500
+
+    Revised People HTML pages with locaiton. #8
+
+commit 4547ba2d19793e033b95e341c199d75a82e7231c
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jun 25 12:56:19 2012 -0500
+
+    Added 1 html file.
+
+commit 70c79f9e526f72b8acf99f2496d51ea3af71f618
+Merge: df7bf02 9137183
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jun 25 12:52:50 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit df7bf02ecf0ae47278651e522cb0074ccb8fff75
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jun 25 12:51:37 2012 -0500
+
+    Created WorldHunger.html
+
+commit 913718362a561a0f647f67f3fd0ffc24efe165d8
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 25 09:38:40 2012 -0500
+
+    Fukushima.html and hello.xml added.
+
+commit cd730eddfd26696050b32dbae061257937af936f
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jun 25 09:18:58 2012 -0500
+
+    Updated organization template, renamed WHO.html. #7  Set up template for crises in WorldHunger.html #6
+
+commit d20314ce2c92bc85f2ede29373396f4be695b6e1
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jun 24 18:25:38 2012 -0500
+
+    fixed readme
+
+commit ffc13079a2183a5f1f8d5e54064a1adf833a840f
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jun 24 18:22:16 2012 -0500
+
+    finished first version of 4 static people html pages. #8
+
+commit bb92e0aa25cfddb6bb231479a2318f99ca143951
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jun 24 18:18:08 2012 -0500
+
+    Added HTML file for Yukio Edano.
+
+commit 77205803913cb06fbb4a046794a80b682cc35b44
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jun 24 18:08:34 2012 -0500
+
+    HTML file for Margaret Chan.
+
+commit 82095307bfabf776e5184c865ee09fc739af55c2
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Sun Jun 24 17:45:34 2012 -0500
+
+    finished people.xml #8
+
+commit cfe32fc5323b257af27dea0b9b36ce02fc600dc4
+Merge: 1674c12 300767a
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Sun Jun 24 14:03:19 2012 -0700
+
+    Merge pull request #14 from grsshwarts/master
+    
+    formatted research.txt
+
+commit 300767a3b4d821e6d27e3816f619a88365e5f5a1
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sun Jun 24 16:02:33 2012 -0500
+
+    formatted research.txt
+
+commit 1674c12af87c29c2d46c9dc0550b544f15ec283b
+Merge: c60fb26 46e2b17
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Sun Jun 24 13:10:25 2012 -0700
+
+    Merge pull request #13 from grsshwarts/master
+    
+    all research done
+
+commit 46e2b170975586c10a40e2df144d0ba8a3eb4349
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sun Jun 24 14:43:43 2012 -0500
+
+    all 4 research
+
+commit 28bd63397ab9d1e5a00da393e6bfe9d09d4d8b78
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sun Jun 24 14:30:42 2012 -0500
+
+    first 3 research sets, waiting on the last one
+
+commit c60fb2627cf40e4b7123f0af685994f9fd22da49
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sat Jun 23 15:56:50 2012 -0500
+
+    fixed README typos.
+
+commit 70facbcdcf57cde8dda25cdd1eed8738caca7ee3
+Merge: 48e3235 31a2ba3
+Author: Ian <kieldro@gmail.com>
+Date:   Sat Jun 23 13:36:32 2012 -0700
+
+    Merge pull request #9 from robby35us/master
+    
+    README.txt updated to include moregroup info
+
+commit 31a2ba39011c982cb03d7a6f3f7499db570e821b
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Sat Jun 23 13:42:09 2012 -0500
+
+    Sample push, testing fork model
+
+commit 48e3235372818ec987a4a14f2f25df58734b66ee
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Wed Jun 20 10:06:25 2012 -0500
+
+    First commit.

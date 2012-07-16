@@ -1,0 +1,67 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Export</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Export</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/Export.py">/v/filer4b/v38q001/keo/Documents/cs373/cs373-wc/Export.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="google.appengine.ext.db.html">google.appengine.ext.db</a><br>
+</td><td width="25%" valign=top><a href="google.appengine.ext.db.polymodel.html">google.appengine.ext.db.polymodel</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-buildAddress"><strong>buildAddress</strong></a>(parentElem, addressModel)</dt></dl>
+ <dl><dt><a name="-buildContact"><strong>buildContact</strong></a>(parentElem, contactModel)</dt></dl>
+ <dl><dt><a name="-buildCrisisInfo"><strong>buildCrisisInfo</strong></a>(crisisElement, crisisInfoModel)</dt></dl>
+ <dl><dt><a name="-buildCrisisPage"><strong>buildCrisisPage</strong></a>(crisisElement, crisisModel)</dt><dd><tt>Build&nbsp;a&nbsp;crisis&nbsp;page&nbsp;using&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;model.&nbsp;Note:&nbsp;this&nbsp;method&nbsp;just<br>
+generates&nbsp;the&nbsp;sub-elements<br>
+crisisElement&nbsp;is&nbsp;a&nbsp;Element&nbsp;that&nbsp;represents&nbsp;a&nbsp;crisis&nbsp;page<br>
+crisisModel&nbsp;is&nbsp;a&nbsp;model&nbsp;object&nbsp;that&nbsp;represents&nbsp;a&nbsp;crisis&nbsp;model<br>
+returns&nbsp;a&nbsp;list&nbsp;of&nbsp;sub-elements&nbsp;to&nbsp;be&nbsp;added&nbsp;in&nbsp;correct&nbsp;order</tt></dd></dl>
+ <dl><dt><a name="-buildDate"><strong>buildDate</strong></a>(parentElem, dateModel, title)</dt></dl>
+ <dl><dt><a name="-buildEconomicImpact"><strong>buildEconomicImpact</strong></a>(parentElem, eImpactModel)</dt></dl>
+ <dl><dt><a name="-buildExternalRefs"><strong>buildExternalRefs</strong></a>(element, model)</dt></dl>
+ <dl><dt><a name="-buildHumanImpact"><strong>buildHumanImpact</strong></a>(parentElem, hImpactModel)</dt></dl>
+ <dl><dt><a name="-buildImpact"><strong>buildImpact</strong></a>(parentElem, impactModel)</dt></dl>
+ <dl><dt><a name="-buildInitInfo"><strong>buildInitInfo</strong></a>(element, model)</dt></dl>
+ <dl><dt><a name="-buildLink"><strong>buildLink</strong></a>(element, site, title, url, description)</dt></dl>
+ <dl><dt><a name="-buildLocation"><strong>buildLocation</strong></a>(parentElem, locationModel)</dt></dl>
+ <dl><dt><a name="-buildOrgInfo"><strong>buildOrgInfo</strong></a>(orgElement, orgInfoModel)</dt></dl>
+ <dl><dt><a name="-buildOrgPage"><strong>buildOrgPage</strong></a>(orgElement, orgModel)</dt><dd><tt>Build&nbsp;a&nbsp;org&nbsp;page&nbsp;using&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;model.&nbsp;Note:&nbsp;this&nbsp;method&nbsp;just<br>
+generates&nbsp;the&nbsp;sub-elements<br>
+orgElement&nbsp;is&nbsp;a&nbsp;Element&nbsp;that&nbsp;represents&nbsp;a&nbsp;org&nbsp;page<br>
+orgModel&nbsp;is&nbsp;a&nbsp;model&nbsp;object&nbsp;that&nbsp;represents&nbsp;a&nbsp;org&nbsp;model<br>
+returns&nbsp;a&nbsp;list&nbsp;of&nbsp;sub-elements&nbsp;to&nbsp;be&nbsp;added&nbsp;in&nbsp;correct&nbsp;order</tt></dd></dl>
+ <dl><dt><a name="-buildPageRefs"><strong>buildPageRefs</strong></a>(element, refs)</dt></dl>
+ <dl><dt><a name="-buildPersonInfo"><strong>buildPersonInfo</strong></a>(personElement, personModel)</dt></dl>
+ <dl><dt><a name="-buildPersonPage"><strong>buildPersonPage</strong></a>(personElement, personModel)</dt><dd><tt>Build&nbsp;a&nbsp;person&nbsp;page&nbsp;using&nbsp;the&nbsp;data&nbsp;from&nbsp;the&nbsp;model.&nbsp;Note:&nbsp;this&nbsp;method&nbsp;just<br>
+generates&nbsp;the&nbsp;sub-elements<br>
+personElement&nbsp;is&nbsp;a&nbsp;Element&nbsp;that&nbsp;represents&nbsp;a&nbsp;person&nbsp;page<br>
+personModel&nbsp;is&nbsp;a&nbsp;model&nbsp;object&nbsp;that&nbsp;represents&nbsp;a&nbsp;person&nbsp;model<br>
+returns&nbsp;a&nbsp;list&nbsp;of&nbsp;sub-elements&nbsp;to&nbsp;be&nbsp;added&nbsp;in&nbsp;correct&nbsp;order</tt></dd></dl>
+ <dl><dt><a name="-buildRefs"><strong>buildRefs</strong></a>(elem, refs)</dt></dl>
+ <dl><dt><a name="-buildTree"><strong>buildTree</strong></a>(crisisList, orgList, personList)</dt><dd><tt>This&nbsp;method&nbsp;takes&nbsp;in&nbsp;three&nbsp;lists&nbsp;of&nbsp;models,&nbsp;and&nbsp;returns&nbsp;the&nbsp;data&nbsp;stored<br>
+in&nbsp;them&nbsp;into&nbsp;an&nbsp;ElementTree&nbsp;object&nbsp;that&nbsp;represents&nbsp;a&nbsp;well-formed&nbsp;xml&nbsp;<br>
+document&nbsp;that&nbsp;validates&nbsp;according&nbsp;to&nbsp;the&nbsp;xml&nbsp;schema&nbsp;stored&nbsp;in&nbsp;WC1.xsd.<br>
+crisisList&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;Crisis&nbsp;model&nbsp;objects<br>
+orgList&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;Organizations&nbsp;model&nbsp;objects<br>
+personList&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;People&nbsp;model&nbsp;objects<br>
+return&nbsp;the&nbsp;root&nbsp;element&nbsp;of&nbsp;the&nbsp;data&nbsp;tree&nbsp;containing&nbsp;all&nbsp;the&nbsp;data</tt></dd></dl>
+</td></tr></table>
+</body></html>

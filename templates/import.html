@@ -19,7 +19,10 @@
 			<div class="span4">
 				<div class="well">
 					<form action="/import" enctype="multipart/form-data" method="post">
-						<input type="file" name="data" /><br/>
+						<div class="fileinputs">
+							<input type="file" name="data" />
+						</div>
+						<br/>
 						<input class="pull-right" type="submit" value="Import" />
 					</form>
 				</div>
@@ -29,7 +32,7 @@
 					{% ifequal status "success" %}
 						<div class="alert alert-block alert-success">
 						<h4>Success!</h4>
-						{{ message }}
+							Your XML has validated, and is now a part of the database!
 						</div>
 					{% endifequal %}
 					{% ifequal status "error" %}

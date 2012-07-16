@@ -50,13 +50,13 @@
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>World hunger - A Billion for a Billion </title>
-				<url>http://www.youtube.com/watch?v=6jSBW0BOPqM</url>
+				<url>http://www.youtube.com/embed/6jSBW0BOPqM</url>
 				<description>World hunger - A Billion for a Billion </description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>World Hunger PSA </title>
-				<url>http://www.youtube.com/watch?v=0W2Ic5hV28w</url>
+				<url>http://www.youtube.com/embed/0W2Ic5hV28w</url>
 				<description>World Hunger PSA</description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -145,19 +145,19 @@
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>A year at Fukushima </title>
-				<url>http://www.youtube.com/watch?v=PqQWpo_AsF8</url>
+				<url>http://www.youtube.com/embed/PqQWpo_AsF8</url>
 				<description>A year at Fukushima</description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Fukushima Nuclear Power Plant </title>
-				<url>http://www.youtube.com/watch?v=44hv-4C2yXI</url>
+				<url>http://www.youtube.com/embed/44hv-4C2yXI</url>
 				<description>Fukushima Nuclear Power Plant</description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Live Fukushima Nuclear Plant Cam</title>
-				<url>http://www.youtube.com/watch?v=1rdWyrtX0cU</url>
+				<url>http://www.youtube.com/embed/1rdWyrtX0cU</url>
 				<description>Live Fukushima Nuclear Plant Cam</description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -208,6 +208,7 @@
 					<amount>25000000000000</amount>
 					<currency>Yen</currency>
 					<misc>Reconstruction needed for over a million buildings. Reactor Meltdown at the Fukushima Daiichi Nuclear Power Plant. Costs of damage possibly exceeding 25 trillion Yen ($300 billion)</misc>
+
 				</economic>
 			</impact>
 		</info>
@@ -239,19 +240,19 @@
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Record of the initial response to the East Japan Great Earthquake </title>
-				<url>http://www.youtube.com/watch?v=6ZJ3-tbkhA4</url>
+				<url>http://www.youtube.com/embed/6ZJ3-tbkhA4</url>
 				<description>Record of the initial response to the East Japan Great Earthquake </description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Japan earthquake and tsunami: one year</title>
-				<url>http://www.youtube.com/watch?v=oriVz1xE3wQ</url>
+				<url>http://www.youtube.com/embed/oriVz1xE3wQ</url>
 				<description>Japan earthquake and tsunami</description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Japan tsunami: the Red Cross response so far</title>
-				<url>http://www.youtube.com/watch?v=tNgDKyznXkI</url>
+				<url>http://www.youtube.com/embed/tNgDKyznXkI</url>
 				<description>Japan tsunami: the Red Cross response so far</description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -405,13 +406,13 @@
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Immunization Message </title>
-				<url>http://www.youtube.com/watch?v=GWtTQhWwdac</url>
+				<url>http://www.youtube.com/embed/GWtTQhWwdac</url>
 				<description>Immunization Message</description> <!-- OPTIONAL -->
 			</video>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Every blood donor is a hero </title>
-				<url>http://www.youtube.com/watch?v=Af0gk_kiGac</url>
+				<url>http://www.youtube.com/embed/Af0gk_kiGac</url>
 				<description>Every blood donor is a hero </description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -475,7 +476,7 @@
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Group Intra Robot </title>
-				<url>http://www.youtube.com/watch?v=u8huW1vBOQg</url>
+				<url>http://www.youtube.com/embed/u8huW1vBOQg</url>
 				<description>Group Intra Robot</description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -519,21 +520,21 @@
 		</info>
 		<ref>
 			<primaryImage>
-				<site>http://en.wikipedia.org/</site>
-				<title>Tsunetami Sano</title>
-				<url>http://en.wikipedia.org/wiki/File:Tsunetami_Sano.jpg</url>
-				<description>Tsunetami Sano</description> <!-- OPTIONAL -->
-			</primaryImage>
-			<image>
 				<site>http://upload.wikimedia.org/</site>
 				<title>Japanese Red Cross</title>
 				<url>http://upload.wikimedia.org/wikipedia/commons/a/ac/Japanese_Red_Cross_near_the_Yalu_River_1904.jpg</url>
 				<description>Japanese Red Cross</description> <!-- OPTIONAL -->
+			</primaryImage>
+			<image>
+				<site>http://en.wikipedia.org/</site>
+				<title>Tsunetami Sano</title>
+				<url>http://upload.wikimedia.org/wikipedia/commons/2/2d/Tsunetami_Sano.jpg</url>
+				<description>Tsunetami Sano</description> <!-- OPTIONAL -->
 			</image>
 			<video>
 				<site>http://www.youtube.com</site>
 				<title>Japan tsunami: the Red Cross response so far </title>
-				<url>http://www.youtube.com/watch?v=tNgDKyznXkI</url>
+				<url>http://www.youtube.com/embed/tNgDKyznXkI</url>
 				<description>Japan tsunami: the Red Cross response so far </description> <!-- OPTIONAL -->
 			</video>
 			<social>
@@ -557,7 +558,7 @@
 		<name>The Free Syrian Army</name>
 		<info>
 			<type>Military organization</type>
-			<history>The Free Syrian Army (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr) is an armed opposition group operating in Syria that has been active during the Syrian uprising.[6] Composed mainly of defected Syrian Armed Forces personnel,[7][8] its formation was announced on 29 July 2011 in a video released on the internet by a uniformed group of deserters from the Syrian military who called upon members of the Syrian army to defect and join them.[9] The leader of the group, who identified himself as Colonel Riad al-Asaad, announced that the Free Syrian Army would work with demonstrators to bring down the system, and declared that all security forces attacking civilians are justified targets.[10][11]Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government.[12][13] The FSA has also claimed that the conflict is not sectarian, that they have in their ranks Alawis who oppose the government, and that there will be no reprisals if it falls.[14] On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement (Arabic: حركة الضباط الأحرار, ħarakat al-ḍubbaṭ al-aħrar) and became the main opposition army group.[6][15][16] By early December, there were an estimated 15,000 to 25,000 defectors from the armed forces according to activist and media sources,[17][18] western intelligence sources estimated greater than 10,000 defectors,[19][20] By the middle of January 2012, the Free Syrian Army reported because of continuing defections a total of 40,000 men in its ranks.[21][22] The actual number of soldiers defecting to the Free Syrian Army is unknown.</history>
+			<history>The Free Syrian Army (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr) is an armed opposition group operating in Syria that has been active during the Syrian uprising. Composed mainly of defected Syrian Armed Forces personnel, its formation was announced on 29 July 2011 in a video released on the internet by a uniformed group of deserters from the Syrian military who called upon members of the Syrian army to defect and join them. The leader of the group, who identified himself as Colonel Riad al-Asaad, announced that the Free Syrian Army would work with demonstrators to bring down the system, and declared that all security forces attacking civilians are justified targets.  Riad al-Asaad has stated that the Free Syrian Army (FSA) has no political goals except the removal from Syria of president Bashar Assad's government.  The FSA has also claimed that the conflict is not sectarian, that they have in their ranks Alawis who oppose the government, and that there will be no reprisals if it falls. On 23 September 2011, the Free Syrian Army merged with the Free Officers Movement (Arabic: حركة الضباط الأحرار, ħarakat al-ḍubbaṭ al-aħrar) and became the main opposition army group.  By early December, there were an estimated 15,000 to 25,000 defectors from the armed forces according to activist and media sources, western intelligence sources estimated greater than 10,000 defectors, By the middle of January 2012, the Free Syrian Army reported because of continuing defections a total of 40,000 men in its ranks. The actual number of soldiers defecting to the Free Syrian Army is unknown.</history>
 			<contact>
 				<phone>8888888</phone>
 				<email>none@none.com</email>
