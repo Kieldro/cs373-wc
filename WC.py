@@ -233,16 +233,17 @@ class EntryPage(BaseHandler) :
 			else :	#Should never reach here, but just in case...
 				self.render_template('_base.html')
 
-class MockupPage(BaseHandler):
-	def get(self):
-		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
-						"WHERE name = '%s'" % 'Margaret Chan')
-		e = q.get()
-		if e != None:
-			e.name = 'Maggie C'
-			e.put()
-		self.render_template('mockup.html')
-		
+class SearchPage(BaseHandler) :
+	def get(self) :
+		name = self.request.get('name')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage WHERE name = '%s'" % name)
+		if q.count() > 0 :
+			r = q
+		else :
+			r = []
+		# q is iterable by itself, no need to call .fetch if default arguments are okay
+		self.render_template('search.html', term=name, results=r)
+
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
 									  ('/crises', CrisesPage),
@@ -251,7 +252,7 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/import', ImportPage),
 									  ('/export', ExportPage),
 									  ('/entry', EntryPage),
-									  ('/mockup', MockupPage),
+									  ('/search', SearchPage),
 									  ], debug=True)
 
 def main():
