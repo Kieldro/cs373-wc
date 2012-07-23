@@ -8,7 +8,7 @@ from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
 from random import shuffle
-from SearchFeature import createIndex, search
+from SearchFeature import createIndex, searchForString, deleteDocs
 
 import os
 import StringIO
@@ -144,15 +144,22 @@ class ImportPage(BaseHandler):
 		deleteModels()
 		try:
 			runImport(xmlfile)
-			self.render_template('import.html', status='success')
 		except:
 			self.render_template('import.html', status='error')
+			return
 
+		try:
+			deleteDocs()
+		except Exception, e:
+			self.render_template('import.html', status='error', message="DELETE DOCS "+e.args)
+			
+			
+			
 		try:
 			createIndex()
 			self.render_template('import.html', status='success', message="Everything's OKAY!")
-		except:
-			self.render_template('import.html', status='error', message="You don goofed")
+		except Exception, e:
+			self.render_template('import.html', status='error', message=e.args)
 
 
 
@@ -258,8 +265,10 @@ class SearchPage(BaseHandler) :
 	"""
 	def get(self) :
 		name = self.request.get('name')
-		r = search(name)
-
+		r = []
+		for result in searchForString(name):
+			r.append(result.fields[0].value)
+			
 		self.render_template('search.html', term=name, results=r)
 
 		"""q = db.GqlQuery("SELECT * FROM WorldCrisisPage WHERE name = '%s'" % name)

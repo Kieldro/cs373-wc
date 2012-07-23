@@ -1,5 +1,5 @@
 from google.appengine.api import search
-from google.appengine.ext.db import Query
+from google.appengine.ext import db
 
 def createDocument(name, paragraph ):
     return search.Document(
@@ -8,30 +8,38 @@ def createDocument(name, paragraph ):
 
 def createIndex():
 	q = db.GqlQuery("SELECT * FROM WorldCrisisPage")
-	results = q.fetch()
 
 	index = search.Index(name='index',
                      consistency=search.Index.PER_DOCUMENT_CONSISTENT)
 
 
-	for page in results:
+	for page in q:
 		
 		if (page.class_name() == 'Crisis'):
 			content = page.crisisinfo.history + page.crisisinfo.helps + page.crisisinfo.resources
 		elif (page.class_name() == 'Organization'):
 			content = page.orginfo.history
-		else (page.class_name() == 'Person'):
+		else :
 			content = page.personinfo.biography
 		
-		index.add(CreateDocument(page.name, content))
+		index.add(createDocument(page.name, content))
+
+def deleteDocs() :
+	doc_index = search.Index('index')
 	
-def search(search_string):
+	while True:
+		document_ids = [document.doc_id for document in doc_index.list_documents(ids_only=True)]
+		if not document_ids:
+			break
+		doc_index.remove(document_ids)
+		
+def searchForString(search_string):
 	options = search.QueryOptions(limit = 10)  # the number of results to return)
 	q = search.Query(search_string, options)
 
 	index = search.Index(name = 'index')
 
-	results = index.search(query)
+	results = index.search(q)
 
 	return results
 
