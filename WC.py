@@ -8,6 +8,7 @@ from minixsv import pyxsval
 from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
 from random import shuffle
+from SearchFeature import createIndex, search
 
 import os
 import StringIO
@@ -146,6 +147,15 @@ class ImportPage(BaseHandler):
 			self.render_template('import.html', status='success')
 		except:
 			self.render_template('import.html', status='error')
+
+		try:
+			createIndex()
+			self.render_template('import.html', status='success', message="Everything's OKAY!")
+		except:
+			self.render_template('import.html', status='error', message="You don goofed")
+
+
+
 	
 	def get(self):
 		self.render_template('import.html')
@@ -248,13 +258,18 @@ class SearchPage(BaseHandler) :
 	"""
 	def get(self) :
 		name = self.request.get('name')
-		q = db.GqlQuery("SELECT * FROM WorldCrisisPage WHERE name = '%s'" % name)
+		r = search(name)
+
+		self.render_template('search.html', term=name, results=r)
+
+		"""q = db.GqlQuery("SELECT * FROM WorldCrisisPage WHERE name = '%s'" % name)
 		if q.count() > 0 :
 			r = q
 		else :
 			r = []
 		# q is iterable by itself, no need to call .fetch if default arguments are okay
 		self.render_template('search.html', term=name, results=r)
+"""
 
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
