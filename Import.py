@@ -18,19 +18,34 @@ def buildModels(tree) :
 	root = tree.getroot()
 	cri_list = root.findall('crisis')
 	org_list = root.findall('organization')
-	per_list= root.findall('person')
-	
+	per_list = root.findall('person')
+
+	cridatastore = Crisis.all()
 	cList = []
 	for crisis in cri_list :
-		cList.append(createCrisis(crisis))
+		for existingcri in cridatastore :
+			if existingcri.ID == crisis.attrib['id'] :
+				break
+		else :
+			cList.append(createCrisis(crisis))
 	
+	orgdatastore = Organization.all()
 	oList = []
 	for org in org_list :
+		for existingorg in orgdatastore :
+			if existingorg.ID == org.attrib['id'] :
+				break
+		else :
 			oList.append(createOrganization(org))
 	
+	perdatastore = Person.all()
 	pList= []
 	for person in per_list :
-		pList.append(createPerson(person))
+		for existingper in perdatastore :
+			if existingper.ID == person.attrib['id'] :
+				break
+		else :
+			pList.append(createPerson(person))
 
 	buildReferences(cList, oList, pList)
 	

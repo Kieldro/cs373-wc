@@ -1,0 +1,1266 @@
+<worldCrises>
+        <crisis id="hiv_aids">
+            <name>AIDS/HIV</name>
+			<info>
+				<history>Human immunodeficiency virus infection / Acquired immunodeficiency syndrome (HIV/AIDS) is a disease of the human immune system caused by the human immunodeficiency virus (HIV). The illness interferes with the immune system, making people with AIDS much more likely to get infections, including opportunistic infections and tumors that do not usually affect people with working immune systems. This susceptibility increases as the disease worsens.
+
+HIV is transmitted primarily via sexual intercourse (including oral sex and anal sex), contaminated blood transfusions and hypodermic needles, and from mother to child during pregnancy, delivery, or breastfeeding. Some bodily fluids, like saliva or tears, do not transmit HIV. Prevention of HIV infection, primarily through safe sex and needle-exchange programs, is a key strategy to control the disease. There is no known cure for or vaccine; however, antiretroviral treatment can slow the course of the disease and may lead to a near-normal life expectancy. While antiretroviral treatment reduces the risk of death and complications from the disease, these medications are expensive and may be associated with side effects of their own.
+
+HIV/AIDS is a major health problem in many parts of the world, and is considered a pandemi, which is a disease outbreak which is present over a large area and is actively spreading. As of 2010, approximately 34 million people have HIV globally. Of these, approximately 16.8 million are women and 3.4 million are less than 15 years old. HIV/AIDS resulted in about 1.8 million deaths in 2010, down from 3.1 million in 2001. Since AIDS was first recognized in 1981, it has led to nearly 30 million deaths (as of 2009).
+
+Genetic research indicates that HIV originated in West-central Africa during the early twentieth century. AIDS was first recognized by the Centers for Disease Control and Prevention (CDC) in 1981 and its cause, HIV, identified in the early 1980s.</history>
+				<help>Money donations, Awareness campaigns, Volunteering</help>
+				<resources>Money donations, Health care workers</resources>
+				<type>Epidemic</type>
+				<time>
+					<time></time>
+					<day>1</day>
+					<month>1</month>
+					<year>2010</year>
+					<misc></misc>
+				</time>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>Sub-Saharan Africa</country>
+				</loc>
+				<impact>
+					<human>
+						<deaths>22900000</deaths>
+						<displaced>0</displaced>
+						<injured>0</injured>
+						<missing>0</missing>
+						<misc></misc>
+					</human>
+					<economic>
+						<amount>13000000</amount>
+						<currency>dollars</currency>
+						<misc></misc>
+					</economic>
+				</impact>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Woman affected by AIDS</title>
+					<url>http://africanheritageculturalcenter.org/wp-content/uploads/2010/06/AIDS-Epidemic-in-Africa.jpg </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Girl living with HIV and her Mother in Law in Malawi</title>
+					<url>http://www.avert.org/apps/media_gallery/files/images/350/a-girl-living-with-hiv-and-her-mother-in-malawi-web.jpg </url>
+					<description></description>
+				 </image>
+				<image>
+					<site></site>
+					<title>AIDS Victim</title>
+					<url>http://www.usnews.com/usnews/photography/aids/graphics/aids1.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Man With AIDS</title>
+					<url>http://cdn.eurweb.com/wp-content/uploads/2011/04/AIDS.jpeg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>AIDS</title>
+					<url>http://scrapetv.com/News/News%20Pages/Health/images-2/aids-victim.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>HIV AIDS in Africa </title>
+					<url>http://www.youtube.com/embed/7gk4xZMVSW8</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>HIV AIDS in Africa </title>
+					<url>http://www.youtube.com/embed/P91nIGt1axs</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>HIV AIDS in Africa </title>
+					<url>http://www.youtube.com/embed/sRxDRzZxDbI</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>HIV AIDS in Africa </title>
+					<url>http://www.youtube.com/embed/kc0_Rh6f6dw</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Twitter concerning HIV/AIDS Africa</title>
+					<url>https://twitter.com/#!/hivaidsafrica </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>HIV/AIDS in Africa</title>
+					<url>http://www.avert.org/</url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <org idref="doctors_without_borders"/>
+            <org idref="american_red_cross"/>
+            <person idref="bill_gates"/>
+        </crisis>
+    
+        <crisis id="hurricane_katrina">
+            <name>Hurricane Katrina</name>
+            <info>
+				<history>Hurricane Katrina was the deadliest and most destructive Atlantic hurricane of the 2005 Atlantic hurricane season. It is the costliest natural disaster, as well as one of the five deadliest hurricanes, in the history of the United States. Among recorded Atlantic hurricanes, it was the sixth strongest overall. At least 1,836 people died in the actual hurricane and in the subsequent floods, making it the deadliest U.S. hurricane since the 1928 Okeechobee hurricane; total property damage was estimated at $81 billion (2005 USD), nearly triple the damage wrought by Hurricane Andrew in 1992.
+
+Hurricane Katrina formed over the Bahamas on August 23, 2005 and crossed southern Florida as a moderate Category 1 hurricane, causing some deaths and flooding there before strengthening rapidly in the Gulf of Mexico. The storm weakened before making its second landfall as a Category 3 storm on the morning of Monday, August 29 in southeast Louisiana. It caused severe destruction along the Gulf coast from central Florida to Texas, much of it due to the storm surge. The most significant number of deaths occurred in New Orleans, Louisiana, which flooded as the levee system catastrophically failed, in many cases hours after the storm had moved inland. Eventually 80% of the city and large tracts of neighboring parishes became flooded, and the floodwaters lingered for weeks. However, the worst property damage occurred in coastal areas, such as all Mississippi beachfront towns, which were flooded over 90% in hours, as boats and casino barges rammed buildings, pushing cars and houses inland, with waters reaching 6&#45;12 miles (10&#45;19 km) from the beach.
+
+The hurricane surge protection failures in New Orleans are considered the worst civil engineering disaster in U.S history and prompted a lawsuit against the US Army Corps of Engineers (USACE), the designers and builders of the levee system as mandated by the Flood Control Act of 1965. Responsibility for the failures and flooding was laid squarely on the Army Corps in January 2008 by Judge Stanwood Duval, US District Court, but the federal agency could not be held financially liable due to sovereign immunity in the Flood Control Act of 1928. There was also an investigation of the responses from federal, state and local governments, resulting in the resignation of Federal Emergency Management Agency (FEMA) director Michael D. Brown, and of New Orleans Police Department (NOPD) Superintendent Eddie Compass.
+
+Several agencies including the United States Coast Guard (USCG), National Hurricane Center (NHC), and National Weather Service (NWS) were commended for their actions. They provided accurate hurricane weather tracking forecasts with sufficient lead time. Unfortunately, even the most insistent appeals from national, state and local public officials to residents to evacuate before the storm did not warn that the levees could breach and fail.</history>
+				<help>Housing offers, Money donations, Awareness campaigns</help>
+				<resources>Assistance workers, Damage control personnel</resources>
+				<type>Natural Disaster</type>
+				<time>
+					<time></time>
+					<day>28</day>
+					<month>08</month>
+					<year>2005</year>
+					<misc></misc>
+				</time>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>Central Gulf Coast states</country>
+				</loc>
+				<impact>
+					<human>
+						<deaths>1800</deaths>
+						<displaced>0</displaced>
+						<injured>0</injured>
+						<missing>0</missing>
+						<misc></misc>
+					</human>
+					<economic>
+						<amount>81200000000</amount>
+						<currency>dollars</currency>
+						<misc></misc>
+					</economic>
+				</impact>
+            </info>
+				<ref>
+					<primaryImage>
+						<site></site>
+						<title>A freeway overpass in New Orleans practically underwater due to flooding.</title>
+						<url>http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/KatrinaNewOrleansFlooded_edit2.jpg/456px-KatrinaNewOrleansFlooded_edit2.jpg</url>
+						<description></description>
+					</primaryImage>
+					<image>
+						<site></site>
+						<title>Path of Hurricane Katrina with relative speeds at selected points</title>
+						<url>http://www.ncdc.noaa.gov/img/climate/research/2005/katrina/katrina.gif  </url>
+						<description></description>
+					</image>
+					<image>
+						<site></site>
+						<title>New Orleans Flooded from Katrina</title>
+						<url>http://archive.broadwaycares.org/images/news/hurricane-katrina.jpg</url>
+						<description></description>
+					</image>
+					<image>
+						<site></site>
+						<title>Hurricane Katrina Before Landfall</title>
+						<url>http://www.katrina.noaa.gov/images/katrina-08-28-2005.jpg</url>
+						<description></description>
+					</image>
+					<image>
+						<site></site>
+						<title>Hurricane Katrina Aftermath</title>
+						<url>http://0.tqn.com/i/ga/0/NYT_katrina_womanrubble-resized.jpg</url>
+						<description></description>
+					</image>
+					<video>
+						<site></site>
+						<title>Hurricane Katrina: Extreme Video</title>
+						<url>http://www.youtube.com/embed/s76Qn7bpCsQ</url>
+						<description></description>
+					</video>
+					<video>
+						<site></site>
+						<title>Hurricane Katrina</title>
+						<url>http://www.youtube.com/embed/pvoEiBnpCc8</url>
+						<description></description>
+					</video>
+					<video>
+						<site></site>
+						<title>Hurricane Katrina Historic Storm Surge Video - Gulfport, Mississippi </title>
+						<url>http://www.youtube.com/embed/-Kou0HBpX4A</url>
+						<description></description>
+					</video>
+					<video>
+						<site></site>
+						<title>Hurricane Katrina</title>
+						<url>http://www.youtube.com/embed/IblL_rXpdu8</url>
+						<description></description>
+					</video>
+					<social>
+						<site></site>
+						<title> Facebook page concerning Hurricane Katrina</title>
+						<url>http://www.facebook.com/pages/Hurricane-Katrina/109481212402991  </url>
+						<description></description>
+					</social>
+					<ext>
+						<site></site>
+						<title>National Oceanic and Atmospheric Administration</title>
+						<url>http://www.ncdc.noaa.gov/special-reports/katrina.html </url>
+						<description></description>
+					</ext>
+				</ref>
+				<misc></misc>
+            <org idref="fema"/>
+            <person idref="george_w_bush"/>
+        </crisis>
+        
+  
+        <crisis id="darfur_conflict">
+            <name>War in Darfur</name>
+            <info>
+				<history>The Darfur Conflict was a guerrilla conflict or civil war centered on the Darfur region of Sudan. It began in February 2003 when the Sudan Liberation Movement/Army (SLM/A) and Justice and Equality Movement (JEM) groups in Darfur took up arms, accusing the Sudanese government of oppressing non-Arab Sudanese in favor of Sudanese Arabs. It is also known as the Darfur Genocide.
+
+One side of the conflict was composed mainly of the official Sudanese military and police, and the Janjaweed, a Sudanese militia group recruited mostly from the Arabized indigenous Africans and few Arab Bedouin of the northern Rizeigat; the majority of other Arab groups in Darfur remain uninvolved in the conflict. The other combatants are made up of rebel groups, notably the SLM/A and the JEM, recruited primarily from the non-Arab Muslim Fur, Zaghawa, and Masalit ethnic groups. Although the Sudanese government publicly denies that it supports the Janjaweed, it has been providing financial assistance and weapons to the militia and has been organizing joint attacks targeting civilians.
+
+There are various estimates on the number of human casualties which range from around less than 10,000. To several hundred thousand dead, from either direct combat or starvation and disease inflicted by the conflict. There have also been mass displacements and coercive migrations, forcing millions into refugee camps or over the border and creating a large humanitarian crisis and is regarded by many as a genocide.
+
+The Sudanese government and the JEM signed a ceasefire agreement in February, 2010, with a tentative agreement to pursue further peace. The JEM has the most to gain from the talks and could see semi-autonomy much like South Sudan. However, talks have been disrupted by accusations that the Sudanese army launched raids and air strikes against a village, violating the February agreement. The JEM, the largest rebel group in Darfur, has said they will boycott further negotiations.</history>
+				<help>Money donations, Awareness campaigns</help>
+				<resources>Political intervention, Peace efforts</resources>
+				<type>Rebellion</type>
+				<time>
+					<time/>
+					<day>1</day>
+					<month>2</month>
+					<year>2003</year>
+					<misc></misc>
+				</time>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>Sudan</country>
+				</loc>
+				<impact>
+					<human>
+						<deaths>300000</deaths>
+						<displaced>0</displaced>
+						<injured>0</injured>
+						<missing>0</missing>
+						<misc></misc>
+					</human>
+					<economic>
+						<amount>24000000000</amount>
+						<currency>dollars</currency>
+						<misc></misc>
+					</economic>
+				</impact>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Darfur Child with AK-47</title>
+					<url>http://www.diplomatie.gouv.fr/en/IMG/jpg/58w1.jpg</url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Innocent bystanders in the conflict of Darfur</title>
+					<url>http://www.care.org/photos/_full/darfur_reuters_full.jpg </url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Bird's eye view of a region in Darfur</title>
+					<url>http://www.eoearth.org/files/116901_117000/116967/600px-Conflict_to_peacebuilding_case_study_1.jpg </url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Darfur Man with Machine Gun</title>
+					<url>http://www.mtholyoke.edu/~banfi22c/classweb/dw1/images/banfield/civil-war-in-sudan-971940,property=poster.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Darfur Child</title>
+					<url>http://2.bp.blogspot.com/-4b87OTvUPdI/TzQoXTpKLvI/AAAAAAAAAgo/z9DyOwMcBSc/s1600/Darfur2.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Darfur in 10 Minutes: An Overview of the Conflict in Sudan</title>
+					<url>http://www.youtube.com/embed/USLDoIiFzzg</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Conflict in Darfur</title>
+					<url>http://www.youtube.com/embed/XXbqtKD87vM</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>War in Darfur</title>
+					<url>http://www.youtube.com/embed/R9QBQ2_64F4</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>End the War in Darfur</title>
+					<url>http://www.youtube.com/embed/-tKvuRZSdmc</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Twitter concerning saving Darfur</title>
+					<url>https://twitter.com/#!/SaveDarfur</url>
+					<description></description>
+				</social>
+				<social>
+					<site></site>
+					<title>Facebook concerning saving Darfur</title>
+					<url>http://www.facebook.com/savedarfurcoalition </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>Wikipedia Acticle</title>
+					<url>http://en.wikipedia.org/wiki/darfur_conflict  </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <org idref="american_red_cross"/>
+            <person idref="george_clooney"/>
+        </crisis>
+  
+        <crisis id="egyptian_revolution_of_2011">
+            <name>Egyptian Revolution of 2011</name>
+            <info>
+			<history>The 2011 Egyptian revolution took place following a popular uprising that began on Tuesday, 25 January 2011. The uprising was mainly a campaign of non-violent civil resistance, which featured a series of demonstrations, marches, acts of civil disobedience, and labour strikes. Millions of protesters from a variety of socio-economic and religious backgrounds demanded the overthrow of the regime of Egyptian President Hosni Mubarak. Despite being predominantly peaceful in nature, the revolution was not without violent clashes between security forces and protesters, with at least 846 people killed and 6,000 injured. The uprising took place in Cairo, Alexandria, and in other cities in Egypt, following the Tunisian revolution that resulted in the overthrow of the long-time Tunisian president. On 11 February, following weeks of determined popular protest and pressure, Mubarak resigned from office.
+            Grievances of Egyptian protesters were focused on legal and political issues including police brutality, state of emergency laws, lack of free elections and freedom of speech, uncontrollable corruption, and economic issues including high unemployment, food price inflation, and low minimum wages. The primary demands from protest organizers were the end of the Hosni Mubarak regime and the end of emergency law; freedom, justice, a responsive non-military government, and a say in the management of Egypt's resources. Strikes by labour unions added to the pressure on government officials.
+            During the uprising the capital city of Cairo was described as "a war zone," and the port city of Suez was the scene of frequent violent clashes. The government imposed a curfew that protesters defied and that the police and military did not enforce. The presence of Egypt's Central Security Forces police, loyal to Mubarak, was gradually replaced by largely restrained military troops. In the absence of police, there was looting by gangs that opposition sources said were instigated by plainclothes police officers. In response, watch groups were organised by civilians to protect neighbourhood.
+            International response to the protests was initially mixed, though most called for peaceful actions on both sides and moves toward reform. Most Western governments expressed concern about the situation. Many governments issued travel advisories and made attempts to evacuate their citizens from the country. The Egyptian Revolution, along with Tunisian events, has influenced demonstrations in other Arab countries including Yemen, Bahrain, Jordan, Syria and Libya.</history>
+			<help>Money donations, Awareness campaigns</help>
+			<resources>Political intervention, Relief for the innocent</resources>
+			<type>Protest</type>
+			<time>
+					<time></time>
+					<day>1</day>
+					<month>1</month>
+					<year>2011</year>
+					<misc></misc>
+				</time>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>Egypt</country>
+				</loc>
+				<impact>
+					<human>
+						<deaths>840</deaths>
+						<displaced>0</displaced>
+						<injured>0</injured>
+						<missing>0</missing>
+						<misc></misc>
+					</human>
+					<economic>
+						<amount>3500000000</amount>
+						<currency>dollars</currency>
+						<misc></misc>
+					</economic>
+				</impact>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Riot police and protesters</title>
+					<url>http://truthseeds.files.wordpress.com/2011/02/egyptian_clash_with_riot_police___01-25-11_ftndy5y8_0008-embedded-prod_affiliate-156.jpg  </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Bird's eye shot of peaceful protesters in unison</title>
+					<url>http://blogs.aljazeera.net/sites/default/files/imagecache/FeaturedImagePost/images/people.jpg  </url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Crowd in Egyptian Revolution</title>
+					<url>http://www.kerryguy.com/inspirational-journey/images/stories/egypt-revolution-2011.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Egyptian Revolution Protestors and Tank</title>
+					<url>http://www.kawther.info/wpr/wp-content/uploads/egypt-revolution17.jpg?9d7bd4</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Egyptian Protest</title>
+					<url>http://thinkpress.files.wordpress.com/2011/02/8febapphoto.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>The Truth Behind The Egyptian Revolution 2011. Protesters Singing. World MUST MUST Watch! </title>
+					<url>http://www.youtube.com/embed/gPhj5XnPjaU</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Egyptian Revolution 2011 COMPLETE. World MUST MUST watch this. Freedom for All! </title>
+					<url>http://www.youtube.com/embed/-HGfFyqJMrk</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Egyptian Revolution 2011- 18 Days in 10 Minutes</title>
+					<url>http://www.youtube.com/embed/1b98V9PxXqo</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Egyptian revolution 2011</title>
+					<url>http://www.youtube.com/embed/jxvBDTYiM2g</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Facebook regarding Egyptian Revolution</title>
+					<url>http://www.facebook.com/egyptianrevolution25 </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>CNN Coverage</title>
+					<url>http://inthearena.blogs.cnn.com/2011/05/13/el-katatney-protests-continue-egypts-revolution-has-cost-3-5b-so-far-and-we%E2%80%99re-beginning-to-lose-sight-of-the-big-picture/</url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+		<org idref="muslim_brotherhood"/>
+		<person idref="mohammed_morsi"/>
+        </crisis>
+		
+        <organization id="doctors_without_borders">
+            <name>Doctors Without Borders</name>
+            <info>
+				<type>Humanitarian</type>
+				<history>Doctors Without Borders, also know by its original French name Medecins Sans Frontieres, is a secular humanitarian-aid non-governmental organization best known for its projects in war-torn regions and developing countries facing endemic diseases. Its headquarters are in Geneva, Switzerland. The organization is known in most of the world by its French name or simply as MSF, but in Canada and the United States the name Doctors Without Borders is commonly used. In 2007 over 26,000, mostly local, doctors, nurses and other medical professionals, logistical experts, water and sanitation engineers and administrators provided medical aid in over 60 countries. Private donors provide about 80% of the organization's funding, while governmental and corporate donations provide the rest, giving MSF an annual budget of approximately US$400 million.
+
+Medecins Sans Frontieres was created in 1971 by a small group of French doctors and journalists in the aftermath of the Biafra secession, who believed that all people have the right to medical care regardless of race, religion, creed or political affiliation, and that the needs of these people outweigh respect for national borders.
+
+Core documents outlining MSF's principles are the Charter and the Chantilly Principles, along with the later La Mancha Agreement, which in Rules, Section 2 addresses governance. MSF has an associative structure, where operational decisions are made, largely independently, by the 5 operational centres (Amsterdam, Barcelona-Athens, Brussels, Geneva and Paris). Common policies on core issues are coordinated by the International Council, in which each of the 19 sections (national offices) is represented. The International Council meets in Geneva, Switzerland, where the International Office, which coordinates international activities common to the operational centres, is also based.
+
+The organization actively provides health care and medical training to populations in about 70 countries, and frequently insists on political responsibility in conflict zones such as Chechnya and Kosovo. Only once in its history, during the 1994 genocide in Rwanda, has the organisation called for military intervention. In order to be able to speak and act freely, MSF remains independent of any political, religious or economic powers. The majority of MSF activities are paid for with private donations.
+
+MSF received the 1999 Nobel Peace Prize in recognition of its members' continuous effort to provide medical care in acute crises, as well as raising international awareness of potential humanitarian disasters. Dr. James Orbinski, who was the president of the organization at the time, accepted the prize on behalf of MSF. Prior to this, MSF also received the 1996 Seoul Peace Prize. The current president of MSF is Dr. Unni Karunakara.
+
+MSF should not be confused with Medecins du Monde (Doctors of the World, in English). The latter organization was formed in part by members of the former organization, but it is an entirely independent non-governmental organization with no links to MSF today.</history>
+				<contact>
+					<phone>212-679-6800</phone>
+					<email></email>
+					<mail>
+						<address>333 7th Avenue, 2nd Floor</address>
+						<city>New York</city>
+						<state></state>
+						<country>USA</country>
+						<zip></zip>
+					</mail>
+				</contact>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>Worldwide</country>
+				</loc>
+			</info>
+			
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Doctors Without Borders logo</title>
+					<url>http://travelmass.files.wordpress.com/2011/02/10597895-doctors-without-borders-mdecins-sans-frontires-msf.png </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Doctors Without Borders Man</title>
+					<url>http://multiculturalcookingnetwork.files.wordpress.com/2010/04/doctorswithoutborders.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Doctors Without Borders Woman with Child</title>
+					<url>http://lasaraallen.com/wp-content/uploads/2011/03/doctors_without_borders.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Performing Checkup</title>
+					<url>http://static.ddmcdn.com/gif/doctors-without-borders-1.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Treatment</title>
+					<url>http://web.mit.edu/msfweek/Images/hand%20operation.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Living in Emergency: Stories of Doctors Without Borders (MSF) </title>
+					<url>http://www.youtube.com/embed/gcb8tAaGjWw</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>About Doctors Without Borders/ Medecins Sans Frontieres </title>
+					<url>http://www.youtube.com/embed/73zMcdGfXGE</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Doctors Without Borders in Africa </title>
+					<url>http://www.youtube.com/embed/c3VwKNvPtok</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>About Doctors Without Borders/ Medecins Sans Frontieres </title>
+					<url>http://www.youtube.com/embed/iy7sbagRV-A</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Twitter USA</title>
+					<url>https://twitter.com/#!/MSF_USA</url>
+					<description></description>
+				</social>
+				<social>
+					<site></site>
+					<title>Twitter Canada</title>
+					<url>https://twitter.com/#!/MSF_canada</url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>Doctors without Borders</title>
+					<url>http://www.doctorswithoutborders.org </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="hiv_aids"/>
+            <crisis idref="darfur_conflict"/>
+            <person idref="george_clooney"/>
+
+        </organization>
+ 
+        <organization id="american_red_cross">
+            <name>The American Red Cross</name>
+			<info>
+            <type>Humanitarian</type>
+			<history>The American Red Cross (ARC), also known as the American National Red Cross, is a volunteer-led, humanitarian organization that provides emergency assistance, disaster relief and education inside the United States. It is the designated U.S. affiliate of the International Federation of Red Cross and Red Crescent Societies.
+
+Today, in addition to domestic disaster relief, the American Red Cross offers services in five other areas: community services that help the needy; communications services and comfort for military members and their family members; the collection, processing and distribution of blood and blood products; educational programs on preparedness, health, and safety; and international relief and development programs.
+
+Issued a corporate charter by the United States Congress under Title 36 of the United States Code, Section 3001, the American National Red Cross is governed by volunteers and supported by community donations, income from health and safety training and products, and income from blood products. The American Red Cross is headquartered in Washington, D.C.. The Chairman of the Board of Governors, serving her second three-year term, is Bonnie McElveen-Hunter. The current President and Chief Executive Officer is Gail J. McGovern.</history>
+			<contact>
+				<phone>1-800-733-27677</phone>
+				<email></email>
+				<mail>
+					<address></address>
+					<city></city>
+					<state></state>
+					<country></country>
+					<zip></zip>
+				</mail>
+			</contact>
+			<loc>
+				<city></city>
+				<region></region>
+				<country>United States</country>
+			</loc>
+		</info>
+			
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>American Red Cross logo</title>
+					<url>http://bethelbuzznews.files.wordpress.com/2011/12/red-cross.jpg </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Red Cross Volunteers</title>
+					<url>http://redcross.pmhclients.com/images/uploads/new_volunteers_thumb.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>More Volunteers</title>
+					<url>http://blog.nj.com/somersetreporter_impact/2009/07/large_pix-0716RedCrossSV1.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Red Cross in Africa</title>
+					<url>http://www.icrc.org/eng/assets/images/photos/2010/central-african-rep-cf-e-00320.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Red Cross Helicopter</title>
+					<url>http://www.key.aero/central/images/news/2530.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Clara Barton: The Beginnings of the American Red Cross</title>
+					<url>http://www.youtube.com/embed/7k0D01ODDFA</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>American Red Cross- Clara Barton-Beaufort,SC 1893</title>
+					<url>http://www.youtube.com/embed/4pqIWDE47iU</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Volunteer Orientation 1: History I </title>
+					<url>http://www.youtube.com/embed/J_2JYsKVwBU</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>How does the American Red Cross respond to international disasters?</title>
+					<url>http://www.youtube.com/embed/xRcEKX50nqo</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Red Cross Volunteer Blog</title>
+					<url>http://blog.redcross.org/ </url>
+					<description></description>
+				</social>
+				<social>
+					<site></site>
+					<title>Official Twitter of American Red Cross</title>
+					<url>https://twitter.com/#!/RedCross </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>The American Red Cross</title>
+					<url>http://www.redcross.org/ </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="darfur_conflict"/>
+            <person idref="bill_gates"/>
+
+        </organization>
+
+        <organization id="fema">
+            <name>Federal Emergency Management Agency (FEMA)</name>
+            <info>
+				<type>Government Agency</type>
+				<history>The Federal Emergency Management Agency (FEMA) is an agency of the United States Department of Homeland Security, initially created by Presidential Reorganization Plan No. 3 of 1978 and implemented by two Executive Orders. On 1 April 1979. The primary purpose of FEMA is to coordinate the response to a disaster that has occurred in the United States and that overwhelms the resources of local and state authorities. The governor of the state in which the disaster occurs must declare a state of emergency and formally request from the president that FEMA and the federal government respond to the disaster. FEMA also provides these services for territories of the United States, such as Puerto Rico. The only exception is when an emergency and/or disaster occurs on federal property or to a federal asset, for example, the 1995 bombing of the Alfred P. Murrah Federal Building in Oklahoma City, Oklahoma, or the Space Shuttle Columbia in the 2003 return-flight disaster.
+
+While on-the-ground support of disaster recovery efforts is a major part of FEMA's charter, the agency provides state and local governments with experts in specialized fields and funding for rebuilding efforts and relief funds for infrastructure by directing individuals to access low interest loans, in conjunction with the Small Business Administration. In addition to this, FEMA provides funds for training of response personnel throughout the United States and its territories as part of the agency's preparedness effort.</history>
+				<contact>
+					<phone>1-800-621-3362</phone>
+					<email></email>
+					<mail>
+						<address>P.O. Box 10055</address>
+						<city>Hyattsville</city>
+						<state>MD</state>
+						<country>United States</country>
+						<zip></zip>
+					</mail>
+				</contact>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>United States</country>
+				</loc>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>FEMA logo</title>
+					<url>http://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/US-FEMA-Pre2003Seal.svg/200px-US-FEMA-Pre2003Seal.svg.png </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>FEMA meeting in progress</title>
+					<url>http://cdn.virtualthreat.com/wp-content/uploads/2012/06/FEMA-Sponsored-Cyber-Attack-Simulation-on-Critical-US-Infrastructure.jpg?9d7bd4 </url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>FEMA Trailers</title>
+					<url>http://www.westaustinmarketplace.com/wp-content/uploads/2011/10/Fema-trailer1.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>FEMA Representative</title>
+					<url>http://ionenewsone.files.wordpress.com/2011/12/59770_fema_katrina-cropped-proto-custom_2.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>FEMA Trailerpark</title>
+					<url>http://1.bp.blogspot.com/-6cev1nL3qEE/Tz1oBrHsfGI/AAAAAAAAKg0/_N4vBYF049A/s400/fema.jpg</url>
+					<description></description>
+				</image>
+					<video>
+						<site></site>
+						<title>National Severe Weather Week Heroic Stories </title>
+						<url>http://www.youtube.com/embed/2aXOY2ef5oo</url>
+						<description></description>
+					</video>
+				<video>
+					<site></site>
+					<title>Alabama Recovery 6 Months Later</title>
+					<url>http://www.youtube.com/embed/NELkkpwweP4</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>FEMA's Response to Hurricane Katrina </title>
+					<url>http://www.youtube.com/embed/UXLXjys9EgM</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>FEMA Trailers from Hurricane Katrina </title>
+					<url>http://www.youtube.com/embed/5VAGKyrlNCs</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Twitter FEMA</title>
+					<url>https://twitter.com/#!/fema</url>
+					<description></description>
+				</social>
+				<social>
+					<site></site>
+					<title>Facebook FEMA</title>
+					<url>http://www.facebook.com/FEMA </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>Official FEMA Website</title>
+					<url> http://fema.gov</url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="hurricane_katrina"/>
+            <person idref="george_w_bush"/>
+        </organization>
+  
+  
+  
+  
+  
+        <organization id="muslim_brotherhood">
+            <name>Muslim Brotherhood</name>
+			<info>
+				<type>Political</type>
+				<history>The Society of the Muslim Brothers is the world's most influential and one of the largest Islamist movements, and is the largest political opposition organization in many Arab states. Founded in Egypt in 1928 as a Pan-Islamic, religious, political, and social movement by the Islamic scholar and schoolteacher Hassan al-Banna, by the end of World War II the MB had an estimated two million members. Its ideas had gained supporters throughout the Arab world and influenced other Islamist groups with its "model of political activism combined with Islamic charity work". Its most famous slogan, used worldwide, is "Islam is the solution."
+
+The Brotherhood's stated goal is to instill the Qur'an and Sunnah as the "sole reference point for ...ordering the life of the Muslim family, individual, community ... and state". The movement officially opposes violent means to achieve its goals, although it at one time encompassed a paramilitary wing and its members were involved in massacres, bombings and assassinations of political opponents; notably Egyptian Prime Minister Mahmoud an-Nukrashi Pasha and the movement's own founder Hassan al-Banna. The movement has been criticized by al-Qaeda for its support for democratic elections rather than armed jihad.
+
+The Muslim Brotherhood started off as a religious social organization, preaching Islam, teaching the illiterate, setting up hospitals and even launching commercial enterprises. As it continued to rise in influence, starting in 1936, it began to oppose British rule in Egypt. Many Egyptian nationalists accuse the MB of violent killings during this period. After the Arab defeat in the First Arab-Israeli war, the Egyptian government dissolved the organisation and arrested its members. It supported the Egyptian Revolution of 1952, but after an attempted assassination of Egypt's president it was once again banned and repressed. The MB has been suppressed in other countries as well, most notably in Syria in 1982 during the Hama massacre.
+
+The MB is financed by contributions from its members, who are required to allocate a portion of their income to the movement. Some of these contributions are from members who work in Saudi Arabia and other oil-rich countries.</history>
+				<contact>
+					<phone></phone>
+					<email>http://www.ikhwanweb.com/contact.php</email>
+					<mail>
+						<address></address>
+						<city></city>
+						<state></state>
+						<country></country>
+						<zip></zip>
+					</mail>
+				</contact>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>Egypt</country>
+				</loc>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Muslim Brotherhood's logo</title>
+					<url>http://lostconcrete.com/muslimbrotherhood.png</url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Muslim Brotherhood Members</title>
+					<url>http://www.israellycool.com/wordpress/wp-content/uploads/Mideast-Egypt-Muslim-Brotherhood-JPEG-2.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Muslim Brotherhood Man</title>
+					<url>http://littlegreenfootballs.com/weblog/pictures/20061210AlAzharMB01.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Muslim Brotherhood Meeting</title>
+					<url>http://viviansalama.files.wordpress.com/2007/06/dsc02644.jpg?w=1606&amp;h=1728</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Muslim Brotherhood Egypt</title>
+					<url>http://garydavidstratton.com/wp-content/uploads/2011/02/muslim-brotherhood-members.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Muslim Brotherhood's Rise in Egypt: Dore Gold on Fox News</title>
+					<url>http://www.youtube.com/embed/FyYcj8FIdlI</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Unrest in Egypt: Who is the Muslim Brotherhood? </title>
+					<url>http://www.youtube.com/embed/pbV7h8XL-Og</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>The Other Revolution in Egypt: An Interview With Mohammed Abbas of the Muslim Brotherhood </title>
+					<url>http://www.youtube.com/embed/KVlhjHfGiFs</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Focus: The Muslim Brotherhood and the Egyptian Uprising</title>
+					<url>http://www.youtube.com/embed/cpwKfC9OrXs</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>English Twitter</title>
+					<url>https://twitter.com/#!/ikhwan </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>ikhwan website</title>
+					<url>http://www.ikhwanweb.com/ </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="egyptian_revolution_of_2011"/>
+            <person idref="mohammed_morsi"/>
+        </organization>
+		
+		
+        <person id="george_w_bush">
+            <name>George W. Bush</name>
+            <info>
+				<type>Former U.S. President</type>
+				<birthdate>
+					<time></time>
+					<day>06</day>
+					<month>07</month>
+					<year>1946</year>
+					<misc></misc>
+				</birthdate>
+				<nationality>American</nationality>
+				<biography>George Walker Bush (born July 6, 1946) is an American politician and businessman who was the 43rd President of the United States from 2001 to 2009 and the 46th Governor of Texas from 1995 to 2000. The eldest son of Barbara Bush and George H. W. Bush, he was born in New Haven, Connecticut. After graduating from Yale University in 1968 and Harvard Business School in 1975, Bush worked in oil businesses. He married Laura Welch in 1977 and ran unsuccessfully for the House of Representatives shortly thereafter. He later co-owned the Texas Rangers baseball team before defeating Ann Richards in the 1994 Texas gubernatorial election. In a close and controversial election, Bush was elected president in 2000, becoming the fourth president to be elected despite receiving less popular votes nationwide than his opponent. Bush is the second president to have been the son of a former president. He is also the brother of Jeb Bush, former Governor of Florida.
+
+Eight months into Bush's first term as president, the September 11, 2001 terrorist attacks occurred. In response, Bush announced the War on Terror, an international military campaign which included the war in Afghanistan launched in 2001 and the war in Iraq launched in 2003. In addition to national security issues, Bush also promoted policies on the economy, health care, education, and social security reform. He signed into law broad tax cuts, the PATRIOT Act, the No Child Left Behind Act, the Partial-Birth Abortion Ban Act, and Medicare prescription drug benefits for seniors. His tenure saw national debates on immigration, Social Security, electronic surveillance, and enhanced interrogation techniques. His administration also withdrew the U.S. from the Kyoto Protocol on global warming.
+
+Bush successfully ran for re-election against Democratic Senator John Kerry in 2004, in another relatively close election. After his re-election, Bush received increasingly heated criticism from across the political spectrum. In 2005, the Bush Administration dealt with widespread criticism over its handling of Hurricane Katrina. Following this and other controversies, as well as the growing unpopularity of the Iraq War, Democrats won control of Congress in the 2006 elections. In December 2007, the United States entered its longest post&#45;World War II recession, prompting the Bush Administration to enact multiple economic programs intended to preserve the country's financial system. Though Bush was popular in the U.S. for much of his first term, his popularity declined sharply during his second term. He was a highly controversial figure internationally, with public protests occurring even during visits to close allies, such as the United Kingdom.
+
+After leaving office, Bush returned to Texas and purchased a home in a suburban area of Dallas. He is currently a public speaker and has written a book about his life entitled Decision Points.</biography>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Close up of George Bush</title>
+					<url>http://raoulpop.files.wordpress.com/2008/10/george-w-bush-41.jpeg </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>George Bush Oval Office</title>
+					<url>http://bdnpull.bangorpublishing.netdna-cdn.com/wp-content/uploads/2012/05/president-george-w-bush.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>George Bush Talk</title>
+					<url>http://blog.chron.com/txpotomac/files/2011/05/George_W_Bush.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>George Bush Speech</title>
+					<url>http://2.bp.blogspot.com/-Uzt-NHCMauE/T1x2uuIcLDI/AAAAAAAABEU/l-2HG5Z3NQ0/s1600/george-w-bush-speech.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>George Bush at Podium</title>
+					<url>http://www.jlcauvin.com/wp-content/uploads/2009/05/gallery-president-george-001.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>President George W. Bush Inaugural Address</title>
+					<url>http://www.youtube.com/embed/rXzgMdj5urs</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>George Bush Apology for Katrina</title>
+					<url>http://www.youtube.com/embed/k8az4CfEDpw</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>President Bush Warns Of Hurricane Katrina </title>
+					<url>http://www.youtube.com/embed/17hjO8vfigg</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Bush response to Kanye for Katrina</title>
+					<url>http://www.youtube.com/embed/ClGv2kiV770</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Facebook concerning George W. Bush</title>
+					<url>https://www.facebook.com/georgewbush </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>Wikipedia Article concerning George W. Bush</title>
+					<url>http://en.wikipedia.org/wiki/George_W._Bush </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+			<crisis idref="hurricane_katrina"/>
+            <org idref="fema"/>
+        </person>
+
+        <person id="george_clooney">
+            <name>George Clooney</name>
+			<info>
+				<type>Actor/Activist</type>
+				<birthdate>
+					<time></time>
+					<day>06</day>
+					<month>05</month>
+					<year>1961</year>
+					<misc></misc>
+				</birthdate>
+				<nationality>American</nationality>
+			<biography>George Timothy Clooney (born May 6, 1961) is an American actor, film director, producer, and screenwriter. For his work as an actor, he has received three Golden Globe Awards and an Academy Award. Clooney is also noted for his political activism, and has served as one of the United Nations Messengers of Peace since January 31, 2008.
+
+Though he made his acting debut on television in 1978, Clooney gained fame and recognition by portraying Dr. Douglas "Doug" Ross on the long-running medical drama ER from 1994 to 1999. While working on ER, he started attracting a variety of leading roles in films including Batman &amp; Robin (1997) and Out of Sight (1998), in which he first teamed with long-term collaborator Steven Soderbergh. 1999 saw the release of Three Kings, a well-received war satire set during the Gulf War featuring Clooney in another lead role. In 2001, Clooney's fame widened with the release of his biggest commercial success, Ocean's Eleven, the first of a profitable film trilogy, a remake of the film from 1960 with the members of The Rat Pack with Frank Sinatra as Danny Ocean. He made his directorial debut a year later with the 2002 biographical thriller Confessions of a Dangerous Mind, and has since directed Good Night, and Good Luck (2005), Leatherheads (2008), and The Ides of March (2011). He won an Academy Award for Best Supporting Actor for his work in the Middle East thriller Syriana (2005) and subsequently fetched Best Actor nominations for such films as Michael Clayton (2007), Up in the Air (2009) and The Descendants (2011).
+
+Clooney's humanitarian work includes his advocacy of finding a resolution for the Darfur conflict, raising funds for the 2010 Haiti earthquake, 2004 Tsunami, and 9/11 victims, and creating documentaries such as Sand and Sorrow to raise awareness about international crises. He is also a member of the Council on Foreign Relations.</biography>
+		</info>
+		<ref>
+            <primaryImage>
+				<site></site>
+				<title>George Clooney</title>
+				<url>http://www.clevelandleader.com/files/clooney-un.jpg</url>
+				<description></description>
+            </primaryImage>
+			<image>
+				<site></site>
+				<title>George Clooney shaking hands with enlisted soldiers</title>
+				<url>http://wwwimage.cbsnews.com/CBS_Production_News/603/721/noco_clooney_13108_480x360.jpg </url>
+				<description></description>
+			</image>
+			<image>
+				<site></site>
+				<title>George Clooney with residents in Sudan</title>
+				<url>http://media.treehugger.com/assets/images/2011/10/georgedarfur.jpg </url>
+				<description></description>
+			</image>
+			<image>
+				<site></site>
+				<title>George Clooney raising awareness for the conflict in Darfur</title>
+                <url>http://1.bp.blogspot.com/_2Gm2p6xDm5I/TS1qy2Wf04I/AAAAAAAABXc/pgRRrN_5P1o/s1600/clooney_save_darfur.jpg</url>
+				<description></description>
+			</image>
+			<image>
+				<site></site>
+				<title>George Clooney in Darfur</title>
+				<url>http://img2.timeinc.net/people/i/2008/startracks/080211/george_clooney2.jpg</url>
+				<description></description>
+			</image>
+            <video>
+				<site></site>
+				<title>10 Questions for George Clooney</title>
+                <url>http://www.youtube.com/embed/Hty9p4AHPZA</url>
+				<description></description>
+            </video>
+            <video>
+				<site></site>
+				<title>George Clooney's video diary from Sudan and Chad - Part 1 </title>
+                <url>http://www.youtube.com/embed/eFVlHsaq5yg</url>
+				<description></description>
+            </video>
+            <video>
+				<site></site>
+				<title>George Clooney Witnesses War Crimes in Sudan's Nuba Mountains </title>
+                <url>http://www.youtube.com/embed/p89OuPODBMM</url>
+				<description></description>
+            </video>
+            <video>
+				<site></site>
+				<title>George Clooney's Mission to bring Peace to Sudan : Prevent a Second Darfur ! </title>
+                <url>http://www.youtube.com/embed/SfRyEQoJcE0</url>
+				<description></description>
+            </video>
+            <social>
+				<site></site>
+				<title>Facebook concerning George Clooney</title>
+                <url>http://www.facebook.com/pages/George-Clooney/106055702758671 </url>
+				<description></description>
+            </social>
+            <ext>
+				<site></site>
+				<title>Wikipedia Article concerning George Clooney</title>
+                <url>http://en.wikipedia.org/wiki/George_Clooney </url>
+				<description></description>
+            </ext>
+		</ref>
+			<misc></misc>
+            <crisis idref="darfur_conflict"/>
+            <org idref="doctors_without_borders"/>
+        </person>
+
+        <person id="mohammed_morsi">
+            <name>Mohammed Morsi</name>
+            <info>
+				<type>President of Egypt</type>
+				<birthdate>
+					<time></time>
+					<day>20</day>
+					<month>08</month>
+					<year>1951</year>
+					<misc></misc>
+				</birthdate>
+			<nationality>Egypt</nationality>
+            <biography>Muhammad Morsi Isa al-Ayyat is an Egyptian politician who was elected President of Egypt in June 2012.
+
+Morsi was a Member of Parliament in the People's Assembly of Egypt from 2000 to 2005 and a leading figure in the Muslim Brotherhood. He became Chairman of the Freedom and Justice Party (FJP), a political party, when it was founded by the Muslim Brotherhood in the wake of the 2011 Egyptian revolution. He stood as the FJP's candidate for the May–June 2012 presidential election.
+
+On 24 June 2012, the election commission announced that Morsi won Egypt's presidential runoff against Ahmed Shafiq, the last prime minister under deposed leader Hosni Mubarak. According to official results, Morsi took 51.7 percent of the vote while Shafiq received 48.3. Morsi resigned from his position as the head of the FJP after his victory was announced.</biography>
+		</info>
+		<ref>
+            <primaryImage>
+				<site></site>
+				<title>Mohammed Morsi during an interview</title>
+                <url>http://www.thejc.com/files/imagecache/body_landscape/mohammed-morsi.jpg </url>
+				<description></description>
+            </primaryImage>
+            <image>
+				<site></site>
+				<title>Mohammed Morsi at Podium</title>
+                <url>http://www.csmonitor.com/var/ezflow_site/storage/images/media/content/2012/0624/0624-mohammed-morsi-egypt/12945622-1-eng-US/0624-mohammed-Morsi-egypt_full_600.jpg</url>
+				<description></description>
+            </image>
+            <image>
+				<site></site>
+				<title>Mohammed Morsi Speech</title>
+                <url>http://static.guim.co.uk/sys-images/Guardian/About/General/2012/5/21/1337617499794/Mohamed-Morsi-008.jpg</url>
+				<description></description>
+            </image>
+            <image>
+				<site></site>
+				<title>Man Kisses Mohammed Morsi Poster</title>
+                <url>http://www.rawstory.com/rs/wp-content/uploads/2012/06/Kissing-Mohamed-Morsi-via-AFP.jpg</url>
+				<description></description>
+            </image>
+            <image>
+				<site></site>
+				<title>Woman with Mohammed Morsi Poster</title>
+                <url>http://wa2.cdn.3news.co.nz/3news/AM/2012/6/26/259114/morsi-800.jpg?width=460</url>
+				<description></description>
+            </image>
+            <video>
+				<site></site>
+				<title>Egypt's President-elect, Mohammed Morsi - Our Capital Shall Be Jerusalem, Allah Willing</title>
+                <url>http://www.youtube.com/embed/9Zka-gk6vXo</url>
+				<description></description>
+            </video>
+            <video>
+				<site></site>
+				<title>Who is Mohamed Morsi?</title>
+                <url>http://www.youtube.com/embed/Fkzaj7K85nE</url>
+				<description></description>
+            </video>
+            <video>
+				<site></site>
+				<title>Egypt's President-elect, Mohamed Morsi. </title>
+                <url>http://www.youtube.com/embed/K9d_P58qMx4</url>
+				<description></description>
+            </video>
+            <video>
+				<site></site>
+				<title>Breaking News: Mohamed Morsi elected Egypt's president</title>
+                <url>http://www.youtube.com/embed/CgvBq3kZyO8</url>
+				<description></description>
+            </video>
+            <social>
+				<site></site>
+				<title>Facebook note regarding Mohammed Morsi</title>
+                <url>http://www.facebook.com/permalink.php?id=198288303622142&amp;story_fbid=212540795530226 </url>
+				<description></description>
+            </social>
+            <ext>
+				<site></site>
+                <title>Wikipedia Article</title>
+                <url>http://en.wikipedia.org/wiki/Mohamed_Morsi </url>
+				<description></description>
+            </ext>
+		</ref>
+		<misc></misc>
+		<crisis idref="egyptian_revolution_of_2011"/>
+		<org idref="muslim_brotherhood"/>
+	</person>
+
+        <person id="bill_gates">
+            <name>Bill Gates</name>
+			<info>
+				<type>Philanthropist/Entrepreneur</type>
+				<birthdate>
+					<time></time>
+					<day>28</day>
+					<month>08</month>
+					<year>1955</year>
+					<misc></misc>
+				</birthdate>
+				<nationality>American</nationality>
+				<biography>William Henry "Bill" Gates III (born October 28, 1955) is an American business magnate, computer programmer and philanthropist. Gates is the former chief executive and current chairman of Microsoft, the world’s largest personal-computer software company he co-founded with Paul Allen. He is consistently ranked among the world's wealthiest people and was the wealthiest overall from 1995 to 2009, excluding 2008, when he was ranked third; in 2011 he was the wealthiest American and the second wealthiest person. During his career at Microsoft, Gates held the positions of CEO and chief software architect, and remains the largest individual shareholder, with 6.4 percent of the common stock. He has also authored or co-authored several books.
+
+Gates is one of the best-known entrepreneurs of the personal computer revolution. Gates has been criticized for his business tactics, which have been considered anti-competitive, an opinion which has in some cases been upheld by the courts. In the later stages of his career, Gates has pursued a number of philanthropic endeavors, donating large amounts of money to various charitable organizations and scientific research programs through the Bill &amp; Melinda Gates Foundation, established in 2000.
+
+Gates stepped down as chief executive officer of Microsoft in January 2000. He remained as chairman and created the position of chief software architect. In June 2006, Gates announced that he would be transitioning from full-time work at Microsoft to part-time work, and full-time work at the Bill &amp; Melinda Gates Foundation. He gradually transferred his duties to Ray Ozzie, chief software architect, and Craig Mundie, chief research and strategy officer. Gates's last full-time day at Microsoft was June 27, 2008. He remains at Microsoft as non-executive chairman.</biography>
+		</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Close up of Bill Gates</title>
+					<url>http://blog.seattletimes.nwsource.com/techtracks/Bill%20Gates.jpg</url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Bill Gates Close Up</title>
+					<url>http://www.biography.com/imported/images/Biography/Images/Profiles/G/Bill-Gates-9307520-1-402.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Bill Gates Speech</title>
+					<url>http://colleenrich.com/wp-content/uploads/2012/03/Bill-Gates-Microsoft.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Bill Gates at Desk</title>
+					<url>http://i.cnn.net/money/2006/03/30/news/newsmakers/gates_howiwork_fortune/bill_gates_400.jpg</url>
+					<description></description>
+				</image> 
+				<image>
+					<site></site>
+					<title>Bill Gates at Podium</title>
+					<url>http://trendsupdates.com/wp-content/uploads/2009/01/bill-gates.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Bill Gates and Former US President Clinton on AIDS</title>
+					<url>http://www.youtube.com/embed/khiF5CU3z6M</url>
+				</video>
+				<video>
+					<site></site>
+					<title>Bill Gates Provides Funding to HIV and AIDS Victims! </title>
+					<url>http://www.youtube.com/embed/VsyZCk9keXU\</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>AIDS 2012: Turning the Tide Together (short version) </title>
+					<url>http://www.youtube.com/embed/ikcnZSDSnJ8</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Bill Gates and Bill Clinton talk about AIDS</title>
+					<url>http://www.youtube.com/embed/qdcUnEBEuCM</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Facebook concerning Bill Gates</title>
+					<url>http://www.facebook.com/BillGates </url>
+					<description></description>
+				</social>
+				<social>
+					<site></site>
+					<title>Twitter concerning Bill Gates</title>
+					<url>http://twitter.com/#!/BillGates/ </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>Wikipedia article about Bill Gates</title>
+					<url>http://en.wikipedia.org/wiki/Bill_Gates </url>
+					<description></description>
+					
+				</ext>
+				<ext>
+					<site></site>
+					<title>Gates Foundation Website</title>
+					<url>http://www.gatesfoundation.org/hivaids/pages/default.aspx  </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+			<crisis idref="hiv_aids"/>
+            <org idref="american_red_cross"/>
+        </person>
+</worldCrises> 
