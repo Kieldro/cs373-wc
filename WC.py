@@ -144,7 +144,10 @@ class ImportPage(BaseHandler):
 			self.render_template('import.html', status='error', message=s)
 			return
 
-		deleteModels()
+		merge = self.request.get("mergebox")
+		if (merge != "merge") :
+			deleteModels()
+
 		try:
 			runImport(xmlfile)
 		except:
