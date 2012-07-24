@@ -196,12 +196,13 @@ socialLink2 = """<social><site>TestSocial2</site><title>World Health Organizatio
 
 socialLink3 = """<social><site>TestSocial3</site><title>World Health Organization</title><url>http://www.who.int/en</url></social>"""
 
-
 extLink1 = """<ext><site>TestSite1</site><title>World Health Organization</title><url>http://www.who.int/en</url><description>World Health Organization</description></ext>"""
 			
 extLink2 = """<ext><site>TestSite2</site><title>World Health Organization</title><url>http://www.google.com/</url><description>World Health Organization</description></ext>"""
 
 extLink3 = """<ext><site>TestSite3</site><title>World Health Organization</title><url>http://www.who.int/en</url></ext>"""
+
+extLink4 = """<ext><site>TestSite4</site><title>Ian and Jake's temp test</title><url> http://www.who.int/en </url></ext>"""
 
 
 cDate1 = timeOpen + dateMid1 + misc1 + timeClose
@@ -591,6 +592,23 @@ class TestWC2(unittest.TestCase):
 		buildLink(elem, model.site, model.title, model.url, model.description)
 		rootstring = tostring(root)
 		elemstring = tostring(elem)
+		self.assert_(rootstring == elemstring)
+
+
+	def test_link6(self):
+		root = fromstring(extLink4)
+		model = createLink('ext', root)
+		elem = Element('ext')
+		buildLink(elem, model.site, model.title, model.url, model.description)
+		rootstring = tostring(root)
+		elemstring = tostring(elem)
+
+		root2 = fromstring(elemstring)
+		model2 = createLink('ext', root2)
+		elem2 = Element('ext')
+		buildLink(elem2, model2.site, model2.title, model2.url, model2.description)
+		rootstring = tostring(root2)
+		elemstring = tostring(elem2)
 		self.assert_(rootstring == elemstring)
 
 # ------------	

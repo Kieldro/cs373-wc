@@ -161,6 +161,50 @@ class ImportPage(BaseHandler):
 		except Exception, e:
 			self.render_template('import.html', status='error', message=e.args)
 
+class MergeImportPage(BaseHandler):
+	"""
+	Class that handles the Import page. 
+	On GET, the page is generated.
+	On POST, the xml given by the user is validated. If it passes, it is added to the models.
+	"""
+	def post(self):
+		xmlfile = self.request.get("data")
+		xmlschema = getSchemaString()
+		try:
+			# call validator
+			elementTreeWrapper = pyxsval.parseAndValidateXmlInputString (xmlfile, xsdText=str(xmlschema), verbose=0)
+			#elementtree object after validation
+			elemTree = elementTreeWrapper.getTree()
+		except pyxsval.XsvalError, errstr:
+			s= "Validation aborted! XML does not conform to the schema."
+			self.render_template('import.html', status='error', message=s)
+			return
+		except GenXmlIfError, errstr:
+			s = "Parsing aborted! Could not parse the XML. Check the syntax of your file."
+			self.render_template('import.html', status='error', message=s)
+			return
+
+		#testforduplicates
+		runImport(xmlfile)
+		"""try:
+			runImport(xmlfile)
+		except:
+			self.render_template('import.html', status='error')
+			return"""
+
+		try:
+			deleteDocs()
+		except Exception, e:
+			self.render_template('import.html', status='error', message="DELETE DOCS "+e.args)
+			
+			
+			
+		try:
+			createIndex()
+			self.render_template('import.html', status='success', message="Everything's OKAY!")
+		except Exception, e:
+			self.render_template('import.html', status='error', message=e.args)
+
 
 
 	

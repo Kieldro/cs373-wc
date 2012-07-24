@@ -269,7 +269,8 @@ def createLink(etype, elem) :
 	d = {}
 	d['site'] = elem.findtext('site')
 	d['title'] = elem.findtext('title')
-	d['url'] = elem.findtext('url')
+	s = elem.findtext('url')
+	d['url'] = s.strip()
 	desc = elem.findtext('description')
 	if(desc) :
 		d['description'] = desc
