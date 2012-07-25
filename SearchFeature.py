@@ -34,8 +34,11 @@ def deleteDocs() :
 		doc_index.remove(document_ids)
 		
 def searchForString(search_string):
-	options = search.QueryOptions(limit = 10)  # the number of results to return)
-	q = search.Query(search_string, options)
+	options = search.QueryOptions(
+		limit = 10, 					# the number of results to return)
+		returned_fields=['name'],
+		snippeted_fields=['content'])  # AT THE MOMENT, SNIPPETS ONLY WORK ON PRODUCTION APPSERVER!
+	q = search.Query(query_string=search_string, options=options)
 
 	index = search.Index(name = 'index')
 

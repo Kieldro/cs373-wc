@@ -41,26 +41,7 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="pull-left">
-						<h4>Related Organizations</h4>
-						<ul>
-							{% for reference in orefs %}
-							<li>
-								<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
-							</li>
-							{% endfor %}
-						</ul>
-					</div>
-					<div class="pull-right">
-						<h4>Related Crises</h4>
-						<ul>
-							{% for reference in crefs %}
-							<li>
-								<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
-							</li>
-							{% endfor %}
-						</ul>
-					</div>
+					
 				</div>
 				<div class="span8">
 					<h1>Biography</h1>
@@ -87,7 +68,7 @@
 							{% for video in videos %}
 							<li>
 								{% ifequal video.site 'http://www.youtube.com' %}
-									<iframe width="560" height="315" src="{{ video.url }}" frameborder="0" allowfullscreen></iframe>
+									<iframe width="560" height="315" src="{{ video.url }}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
 								{% else %}
 									<a href="{{ video.url }}">{{ video.description }}</a> at {{ video.site }}
 								{% endifequal %}
@@ -95,6 +76,41 @@
 							{% endfor %}
 						</ul>
 					</p>
+				</div>
+			</div>
+		</section>
+		<section>
+			<hr/>
+			<div class="row">
+				<div class="span6">
+					<div class="pull-left">
+						<h2>Related Organizations</h2>
+						<ul class="unstyled">
+							{% for reference in orefs %}
+							<li>
+								<h3>
+									&lt;
+									<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
+								</h3>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="span6">
+					<div class="pull-right">
+						<h2>Related Crises</h2>
+						<ul class="unstyled">
+							{% for reference in crefs %}
+							<li>
+								<h3>
+									<a href="/entry?name={{ reference.ref.name }}">{{ reference.ref.name }}</a>
+									&gt;
+								</h3>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</section>

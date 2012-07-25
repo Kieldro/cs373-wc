@@ -1,31 +1,49 @@
 {% extends "_base.html" %}
-{% block head %}<title>About the Project</title>{% endblock %}
+{% block head %}<title>Search</title>{% endblock %}
 {% block body %}
 <div class="container">
 	<header>
 		<h1>Search</h1>
-	</header>
+	</header>	
 	<section>
-		<h1>Results for <small>{{ term }}<small></h1>
-		{% if results %}
-		<ol class="entries">
-			{% for result in results %}
-			<li>
-				<a href="/entry?name={{ result }}">
-					<h1>{{ result }}
-					</h1>
-				</a>
-			</li>
-			{% endfor %}
-		</ul>
-		{% else %}
-			<br/>
-			<h4>
-				Sorry! No results were found!<br/>
-				Search has only basic functionality at the moment, 
-				so again sometime in the next two weeks!
-			</h4>
-		{% endif %}
+		<div class="row">
+			<div class="span12">
+				<form class="well form-inline" style="text-align: center;">
+					<button type="submit" class="btn btn-primary">Search</button>
+					<input type="text" name="terms"> 
+					<label>by</label>
+					<select name="type">
+						<option value="k">Keywords</option>
+						<option value="e">Exact Match</option>
+					</select>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<h1>Results for <small>{{ term }}<small></h1>
+				{% if results %}
+				<ol class="entries">
+					{% for result in results %}
+					<li>
+						<a href="/entry?name={{ result.fields.0.value }}">
+							<h1>{{ result.fields.0.value }}
+							</h1>
+						</a>
+						<p>{{ result.expressions.0}}</p>
+					</li>
+					{% endfor %}
+				</ul>
+				{% else %}
+					<br/>
+					<h4>
+						Sorry! No results were found!
+						Search has only basic functionality at the moment, 
+						so again sometime in the next two weeks!
+					</h4>
+				{% endif %}
+			</div>
+		</div>
 	</section>
 </div>
 {% endblock %}
