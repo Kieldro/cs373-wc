@@ -38,6 +38,7 @@ def searchForString(search_string):
 		limit = 10, 					# the number of results to return)
 		returned_fields=['name'],
 		snippeted_fields=['content'])  # AT THE MOMENT, SNIPPETS ONLY WORK ON PRODUCTION APPSERVER!
+
 	q = search.Query(query_string=search_string, options=options)
 
 	index = search.Index(name = 'index')

@@ -5,7 +5,7 @@
 	<header>
 		<h1>Search</h1>
 	</header>	
-	<section>
+	<section> 
 		<div class="row">
 			<div class="span12">
 				<form class="well form-inline" style="text-align: center;">
@@ -23,7 +23,7 @@
 			<div class="span12">
 				<h1>Results for <small>{{ term }}<small></h1>
 				{% if results %}
-				<ol class="entries">
+				<ul class="entries">
 					{% for result in results %}
 					<li>
 						<a href="/entry?name={{ result.fields.0.value }}">
@@ -41,6 +41,20 @@
 						Search has only basic functionality at the moment, 
 						so again sometime in the next two weeks!
 					</h4>
+				{% endif %}
+				{% if results2 %}
+				<h1>ORs</h1> 
+				<ul class="orentries">
+					{% for result in results2 %}
+					<li>
+						<a href="/entry?name={{ result.fields.0.value }}">
+							<h1>{{ result.fields.0.value }}
+							</h1>
+						</a>
+						<p>{{ result.expressions.0}}</p>
+					</li>
+					{% endfor %}
+				</ul>
 				{% endif %}
 			</div>
 		</div>
