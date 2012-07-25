@@ -263,9 +263,10 @@ class SearchPage(BaseHandler) :
 	"""
 	def get(self) :
 		name = self.request.get('name')
-		r = []
+		"""r = []
 		for result in searchForString(name):
-			r.append(result.fields[0].value)
+			r.append(result.fields[0].value)"""
+		r = searchForString(name)
 			
 		self.render_template('search.html', term=name, results=r)
 
