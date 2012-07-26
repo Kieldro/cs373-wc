@@ -541,6 +541,52 @@ class TestWC2(unittest.TestCase):
 		rootstring = tostring(root)
 		elemstring = tostring(elem[0])
 		self.assert_(rootstring == elemstring)
+
+# ------------------
+# test_merge_history
+# ------------------
+	def test_merge_history1(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag)
+
+	def test_merge_history2(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		root = fromstring(orgtag2)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag2)
+
+	def test_merge_history3(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		root = fromstring(orgtag2)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag2)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag2)
+
+# ---------------
+# test_merge_refs
+# ---------------
+
+	def test_merge_refs1(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		root = fromstring(orgtag2)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) == num_images)
+
+	def test_merge_refs2(self) :
+		root = fromstring(orgtag2)
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		root = fromstring(orgtag)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) > num_images)
+
 		
 # Test strings
 headOpen = """<worldCrises>"""
@@ -792,3 +838,169 @@ person1 = personOpen3 + name2 + pInfo1 + refs2 + misc3 + crisisRef1 + orgRef2 + 
 person2 = personOpen2 + name1 + pInfo3 + refs4 + misc2 + crisisRef1 + crisisRef2 + orgRef2 + orgRef3 + personClose
 person3 = personOpen1 + name3 + pInfo2 + refs3 + misc2 + crisisRef3 + orgRef1 + personClose
 person4 = personOpen1 + name2 + pInfo1 + refs1 + misc1 + crisisRef1 + crisisRef2 + crisisRef3 + orgRef2 + orgRef3 + orgRef1 + personClose
+
+historytag = """The American Red Cross (ARC), also known as the American National Red Cross, is a volunteer-led, humanitarian organization that provides emergency assistance, disaster relief and education inside the United States. It is the designated U.S. affiliate of the International Federation of Red Cross and Red Crescent Societies."""
+orgtag = """<organization id="american_red_cross">
+            <name>The American Red Cross</name>
+			<info>
+	            <type>Humanitarian</type>
+				<history>The American Red Cross (ARC), also known as the American National Red Cross, is a volunteer-led, humanitarian organization that provides emergency assistance, disaster relief and education inside the United States. It is the designated U.S. affiliate of the International Federation of Red Cross and Red Crescent Societies.</history>
+				<contact>
+					<phone>1-800-733-27677</phone>
+					<email></email>
+					<mail>
+						<address></address>
+						<city></city>
+						<state></state>
+						<country></country>
+						<zip></zip>
+					</mail>
+				</contact>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>United States</country>
+				</loc>
+			</info>
+			
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>American Red Cross logo</title>
+					<url>http://bethelbuzznews.files.wordpress.com/2011/12/red-cross.jpg </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Red Cross Volunteers</title>
+					<url>http://redcross.pmhclients.com/images/uploads/new_volunteers_thumb.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>More Volunteers</title>
+					<url>http://blog.nj.com/somersetreporter_impact/2009/07/large_pix-0716RedCrossSV1.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Red Cross in Africa</title>
+					<url>http://www.icrc.org/eng/assets/images/photos/2010/central-african-rep-cf-e-00320.jpg</url>
+					<description></description>
+				</image>
+				<image>
+					<site></site>
+					<title>Red Cross Helicopter</title>
+					<url>http://www.key.aero/central/images/news/2530.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Clara Barton: The Beginnings of the American Red Cross</title>
+					<url>http://www.youtube.com/embed/7k0D01ODDFA</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>American Red Cross- Clara Barton-Beaufort,SC 1893</title>
+					<url>http://www.youtube.com/embed/4pqIWDE47iU</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>Volunteer Orientation 1: History I </title>
+					<url>http://www.youtube.com/embed/J_2JYsKVwBU</url>
+					<description></description>
+				</video>
+				<video>
+					<site></site>
+					<title>How does the American Red Cross respond to international disasters?</title>
+					<url>http://www.youtube.com/embed/xRcEKX50nqo</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Red Cross Volunteer Blog</title>
+					<url>http://blog.redcross.org/ </url>
+					<description></description>
+				</social>
+				<social>
+					<site></site>
+					<title>Official Twitter of American Red Cross</title>
+					<url>https://twitter.com/#!/RedCross </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>The American Red Cross</title>
+					<url>http://www.redcross.org/ </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="hiv_aids"/>
+            <person idref="george_w_bush"/>
+
+        </organization>"""
+
+historytag2 = historytag + " CAT ME"
+orgtag2 = """<organization id="american_red_cross">
+            <name>The American Red Cross</name>
+			<info>
+	            <type>Humanitarian</type>
+				<history>CAT ME</history>
+				<contact>
+					<phone>1-800-733-27677</phone>
+					<email></email>
+					<mail>
+						<address></address>
+						<city></city>
+						<state></state>
+						<country></country>
+						<zip></zip>
+					</mail>
+				</contact>
+				<loc>
+					<city></city>
+					<region></region>
+					<country>United States</country>
+				</loc>
+			</info>
+			
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>American Red Cross logo</title>
+					<url>http://bethelbuzznews.files.wordpress.com/2011/12/red-cross.jpg </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Red Cross Volunteers</title>
+					<url>http://redcross.pmhclients.com/images/uploads/new_volunteers_thumb.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Clara Barton: The Beginnings of the American Red Cross</title>
+					<url>http://www.youtube.com/embed/7k0D01ODDFA</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Red Cross Volunteer Blog</title>
+					<url>http://blog.redcross.org/ </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>The American Red Cross</title>
+					<url>http://www.redcross.org/ </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="hiv_aids"/>
+            <person idref="george_w_bush"/>
+
+        </organization>"""

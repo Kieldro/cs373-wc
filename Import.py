@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """This module builds the models from the constructed tree."""
 from Models import *
+from google.appengine.ext.db import delete
 from xml.etree.ElementTree import Element, SubElement
 
 # ------------------
@@ -20,9 +21,9 @@ def buildModels(tree) :
 	org_list = root.findall('organization')
 	per_list = root.findall('person')
 
-	cList = generateList(cTreeList, Crisis.all(), createCrisis)
-	oList = generateList(org_list, Organization.all(), createOrganization)
-	pList= generateList(per_list, Person.all(), createPerson)
+	cList = generateList(cTreeList, Crisis.all(), createCrisis, mergeCrisis)
+	oList = generateList(org_list, Organization.all(), createOrganization, mergeOrganization)
+	pList= generateList(per_list, Person.all(), createPerson, mergePerson)
 
 	buildReferences(cList, oList, pList)
 	#mergeRefs(cList, oList, pList)
@@ -33,13 +34,14 @@ def buildModels(tree) :
 # generateList
 # ------------------
 
-def generateList(treeList, dataList, createModel):
+def generateList(treeList, dataList, createModel, mergeModels):
 	"""Return list of built models."""
 	modelList = []
 	
 	for tree in treeList :
 		for existing in dataList :
 			if existing.ID == tree.attrib['id'] :
+				mergeModels(tree, existing)
 				break
 		else :
 			modelList.append(createModel(tree))
@@ -513,37 +515,45 @@ def buildReferences(cList, oList, pList) :
 					oref_elem.put()
 					break
 
-def moveRefers(wc) :
-	return -1
 
-def compareOrganization(c1, c2) :
-	return False
-
-def comparePerson(c1, c2) :
-	return False
-
-def compareCrises(c1, c2) :
-	return False
 
 def mergeOrganization(source, dest) :
-	return 0
+	"""dest is the object in the datastore
+	   source is the element in the ElementTree
+	   """
+
+	orginfo = source.find('info')
+	history = orginfo.findtext('history')
+	estring = str(dest.orginfo.history)
+	if history not in estring:
+		dest.orginfo.history = dest.orginfo.history + " " + history
+
+	mergeRefs(source, dest)
 
 def mergePerson(source, dest) :
-	return 0
+	pass
 
 def mergeCrisis(source, dest) :
-	return 0
+	pass
 
-def deleteOrganization(source, dest) :
-	return 0
+def mergeRefs(source, dest) :
+	refs = source.find('ref')
+	primaryImage = refs.find('primaryImage')
+	epi = dest.reflink.primaryImage
+	epi.site = primaryImage.findtext('site')
+	epi.title = primaryImage.findtext('title')
+	epi.url = primaryImage.findtext('url').strip()
+	epi.description = primaryImage.findtext('description')
 
-def deletePerson(source, dest) :
-	return 0
+	image_list = refs.findall('image')
+	eimagelist = dest.reflink.image
+	if len(image_list) > len(eimagelist) :
+		delete(eimagelist)
+		for image in image_list :
+			eimagelist.append(createLink("image", image))
 
-def deleteCrisis(source, dest) :
-	return 0
 
-def mergeRefs(cList, oList, pList) :
+"""def mergeRefs(cList, oList, pList) :
 	cridata = Crisis.all()
 	orgdata = Organization.all()
 	perdata = Person.all()
@@ -577,4 +587,4 @@ def mergeRefs(cList, oList, pList) :
 		#update idrefs to crisis to refer's idref.
 		mergeCrisis(crisis, crisis.refer)
 		#delete
-		deleteCrisis(crisis)
+		deleteCrisis(crisis)"""

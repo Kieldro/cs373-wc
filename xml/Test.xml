@@ -110,25 +110,25 @@
         <organization id="american_red_cross">
             <name>The American Red Cross</name>
 			<info>
-            <type>Humanitarian</type>
-			<history>The American Red Cross (ARC), also known as the American National Red Cross, is a volunteer-led, humanitarian organization that provides emergency assistance, disaster relief and education inside the United States. It is the designated U.S. affiliate of the International Federation of Red Cross and Red Crescent Societies.</history>
-			<contact>
-				<phone>1-800-733-27677</phone>
-				<email></email>
-				<mail>
-					<address></address>
+	            <type>Humanitarian</type>
+				<history>The American Red Cross (ARC), also known as the American National Red Cross, is a volunteer-led, humanitarian organization that provides emergency assistance, disaster relief and education inside the United States. It is the designated U.S. affiliate of the International Federation of Red Cross and Red Crescent Societies.</history>
+				<contact>
+					<phone>1-800-733-27677</phone>
+					<email></email>
+					<mail>
+						<address></address>
+						<city></city>
+						<state></state>
+						<country></country>
+						<zip></zip>
+					</mail>
+				</contact>
+				<loc>
 					<city></city>
-					<state></state>
-					<country></country>
-					<zip></zip>
-				</mail>
-			</contact>
-			<loc>
-				<city></city>
-				<region></region>
-				<country>United States</country>
-			</loc>
-		</info>
+					<region></region>
+					<country>United States</country>
+				</loc>
+			</info>
 			
 			<ref>
 				<primaryImage>
