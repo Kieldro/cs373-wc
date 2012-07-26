@@ -524,11 +524,11 @@ def mergeOrganization(source, dest) :
 
 	orginfo = source.find('info')
 	history = orginfo.findtext('history')
-	estring = str(dest.orginfo.history)
+	estring = unicode(dest.orginfo.history)
 	if history not in estring:
 		dest.orginfo.history = dest.orginfo.history + " " + history
 
-	mergeRefs(source, dest)
+	mergeLinks(source, dest)
 
 def mergePerson(source, dest) :
 	pass
@@ -536,7 +536,7 @@ def mergePerson(source, dest) :
 def mergeCrisis(source, dest) :
 	pass
 
-def mergeRefs(source, dest) :
+def mergeLinks(source, dest) :
 	refs = source.find('ref')
 	primaryImage = refs.find('primaryImage')
 	epi = dest.reflink.primaryImage
@@ -544,15 +544,18 @@ def mergeRefs(source, dest) :
 	epi.title = primaryImage.findtext('title')
 	epi.url = primaryImage.findtext('url').strip()
 	epi.description = primaryImage.findtext('description')
+	
+	mergeRefs(refs.findall('image'), dest.reflink.image, 'image')
+	mergeRefs(refs.findall('video'), dest.reflink.video, 'video')
+	mergeRefs(refs.findall('social'), dest.reflink.social, 'social')
+	mergeRefs(refs.findall('ext'), dest.reflink.ext, 'ext')
 
-	image_list = refs.findall('image')
-	eimagelist = dest.reflink.image
-	if len(image_list) > len(eimagelist) :
-		delete(eimagelist)
-		for image in image_list :
-			eimagelist.append(createLink("image", image))
-
-
+def mergeRefs(nList, eList, eType) :
+	if len(nList) > len(eList) :
+		delete(eList)
+		for elem in nList :
+			eList.append(createLink(eType, elem))
+	
 """def mergeRefs(cList, oList, pList) :
 	cridata = Crisis.all()
 	orgdata = Organization.all()

@@ -575,17 +575,40 @@ class TestWC2(unittest.TestCase):
 		root = fromstring(orgtag)
 		model = createOrganization(root)
 		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		num_social = len(model.reflink.social)
+		num_ext = len(model.reflink.ext)
 		root = fromstring(orgtag2)
 		mergeOrganization(root, model)
 		self.assert_(len(model.reflink.image) == num_images)
+		self.assert_(len(model.reflink.video) == num_video)
+		self.assert_(len(model.reflink.social) == num_social)
+		self.assert_(len(model.reflink.ext) == num_ext)
 
 	def test_merge_refs2(self) :
 		root = fromstring(orgtag2)
 		model = createOrganization(root)
 		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
 		root = fromstring(orgtag)
 		mergeOrganization(root, model)
 		self.assert_(len(model.reflink.image) > num_images)
+		self.assert_(len(model.reflink.video) > num_video)
+
+	def test_merge_refs3(self) :
+		root = fromstring(orgtag2)
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		root = fromstring(orgtag)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) > num_images)
+		self.assert_(len(model.reflink.video) > num_video)
+		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) == num_images)
+		self.assert_(len(model.reflink.video) == num_video)
 
 		
 # Test strings
@@ -653,7 +676,7 @@ bdayClose = """</birthdate>"""
 	
 bio1 = """<biography></biography>"""
 bio2 = """<biography/>"""
-bio3 = """<biography>Apart from her work in music, Knowles has also ventured into acting and designing clothes and perfumes. She made her acting debut in the musical film Carmen: A Hip Hopera (2001), prior to appearing in major films, including Austin Powers in Goldmember (2002), Dreamgirls (2006), which earned her two Golden Globe nominations, Cadillac Records (2008) and Obsessed (2009). In 2005, Knowles and her mother introduced their familys fashion line, House of Deron, and in 2010, she released her first perfume, Heat. She has endorsed brands including, LOral, Pepsi, Tommy Hilfiger, Nintendo and Vizio. In 2010, Knowles was ranked first on Forbes list of the 100 Most Powerful and Influential Musicians in the World,[4] and second on its list of the 100 Most Powerful and Influential Celebrities in the World.[5] In 2012, she was named Worl's Most Beautiful Woman by People magazine.
+bio3 = """<biography>Apart from (Arabic: الجيش السوري الحر, al-jayš as-suri al-ħurr), Knowles has also ventured into acting and designing clothes and perfumes. She made her acting debut in the musical film Carmen: A Hip Hopera (2001), prior to appearing in major films, including Austin Powers in Goldmember (2002), Dreamgirls (2006), which earned her two Golden Globe nominations, Cadillac Records (2008) and Obsessed (2009). In 2005, Knowles and her mother introduced their familys fashion line, House of Deron, and in 2010, she released her first perfume, Heat. She has endorsed brands including, LOral, Pepsi, Tommy Hilfiger, Nintendo and Vizio. In 2010, Knowles was ranked first on Forbes list of the 100 Most Powerful and Influential Musicians in the World,[4] and second on its list of the 100 Most Powerful and Influential Celebrities in the World.[5] In 2012, she was named Worl's Most Beautiful Woman by People magazine.
 Knowles work has earned her numerous awards and accolades, including 16 Grammy Awards, 11 MTV Video Music Awards, three American Music Awards, a Billboard Millennium Award, and a star on the Hollywood Walk of Fame with Destinys Child. In 2009, Billboard named her the Top Radio Songs Artist of the 2000s decade,[6] and ranked her as the 4th overall Artist of the Decade (and as the First Female Artist of that period).[7] The Recording Industry Association of America (RIAA), also recognized Knowles as the Top Certified Artist of the 2000s.[8][9] In the US, Knowles has sold over 11.2 million albums as of May 2010,[10] and more than 30.4 million digital singles as of January 2012.[11] She has sold 75 million records worldwide, making her one of the best-selling music artists of all time.[12] Knowles appeared on VHSs 2010 list of the 100 Greatest Artists of All Time,[13] and ranked third on their 100 Greatest Women in Music list in 2012.[14] In April 2008, Knowles married American rapper Jay-Z, and gave birth to their first child, Blue Ivy Carter, in January 2012.</biography>"""
 	
 nat1 = """<nationality></nationality>"""
