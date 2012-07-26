@@ -48,7 +48,8 @@ def buildModels(tree) :
 			pList.append(createPerson(person))
 
 	buildReferences(cList, oList, pList)
-	
+	#mergeRefs(cList, oList, pList)
+
 	return cList, oList, pList
 	
 	
@@ -519,3 +520,68 @@ def buildReferences(cList, oList, pList) :
 					oref_elem.put()
 					break
 
+def moveRefers(wc) :
+	return -1
+
+def compareOrganization(c1, c2) :
+	return False
+
+def comparePerson(c1, c2) :
+	return False
+
+def compareCrises(c1, c2) :
+	return False
+
+def mergeOrganization(source, dest) :
+	return 0
+
+def mergePerson(source, dest) :
+	return 0
+
+def mergeCrisis(source, dest) :
+	return 0
+
+def deleteOrganization(source, dest) :
+	return 0
+
+def deletePerson(source, dest) :
+	return 0
+
+def deleteCrisis(source, dest) :
+	return 0
+
+def mergeRefs(cList, oList, pList) :
+	cridata = Crisis.all()
+	orgdata = Organization.all()
+	perdata = Person.all()
+
+
+	for crisis in cList :
+		for ecri in cridata :
+			if crisis.key() == ecri.key() :
+				continue
+			if compareCrises(crisis, ecri) :
+				crisis.refer = ecri
+
+	for person in pList :
+		for eper in perdata :
+			if person.key() == eper.key() :
+				continue
+			if comparePerson(person, eper) :
+				person.refer = eper
+
+	for org in oList :
+		for eorg in orgdata :
+			if org.key() == eorg.key() :
+				continue
+			if compareOrganization(org, eorg) :
+				org.refer = eorg
+
+
+	for crisis in cList :
+		if crisis.refer == None :
+			continue
+		#update idrefs to crisis to refer's idref.
+		mergeCrisis(crisis, crisis.refer)
+		#delete
+		deleteCrisis(crisis)

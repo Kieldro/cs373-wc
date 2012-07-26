@@ -169,6 +169,7 @@ class Organization(WorldCrisisPage):
 	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
 	crisisref = db.ListProperty(db.Key, required = True)
 	personref = db.ListProperty(db.Key, required = True)
+	refer = db.ReferenceProperty(WorldCrisisPage, default=None)
 	
 
 # ---------------
@@ -183,6 +184,7 @@ class Crisis(WorldCrisisPage):
 	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
 	personref = db.ListProperty(db.Key, required = True)
 	orgref = db.ListProperty(db.Key, required = True)
+	refer = db.ReferenceProperty(WorldCrisisPage, default=None)
 	
 
 # ---------------
@@ -197,3 +199,4 @@ class Person(WorldCrisisPage):
 	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
 	crisisref = db.ListProperty(db.Key, required = True)
 	orgref = db.ListProperty(db.Key, required = True)
+	refer = db.ReferenceProperty(WorldCrisisPage, default=None)
