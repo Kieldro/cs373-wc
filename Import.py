@@ -1,68 +1,61 @@
 # -*- coding: utf-8 -*-
+"""This module builds the models from the constructed tree."""
 from Models import *
 from xml.etree.ElementTree import Element, SubElement
-	
-	
+
 # ------------------
 # buildModels
 # ------------------
 
 def buildModels(tree) :
 	"""
-	take in an element tree object that contains an eml file
+	Take in an element tree object that contains an xml file
 	create and store the models in the data store and returns 
 	lists of the page opjects
 	tree is an ElementTree object
-	return 3 lists of WorldCrisisPage objects
+	return 3 lists of WorldCrisisPage objects.
 	"""
 	root = tree.getroot()
-	cri_list = root.findall('crisis')
+	cTreeList = root.findall('crisis')
 	org_list = root.findall('organization')
 	per_list = root.findall('person')
 
-	cridatastore = Crisis.all()
-	cList = []
-	for crisis in cri_list :
-		for existingcri in cridatastore :
-			if existingcri.ID == crisis.attrib['id'] :
-				break
-		else :
-			cList.append(createCrisis(crisis))
-	
-	orgdatastore = Organization.all()
-	oList = []
-	for org in org_list :
-		for existingorg in orgdatastore :
-			if existingorg.ID == org.attrib['id'] :
-				break
-		else :
-			oList.append(createOrganization(org))
-	
-	perdatastore = Person.all()
-	pList= []
-	for person in per_list :
-		for existingper in perdatastore :
-			if existingper.ID == person.attrib['id'] :
-				break
-		else :
-			pList.append(createPerson(person))
+	cList = generateList(cTreeList, Crisis.all(), createCrisis)
+	oList = generateList(org_list, Organization.all(), createOrganization)
+	pList= generateList(per_list, Person.all(), createPerson)
 
 	buildReferences(cList, oList, pList)
 	#mergeRefs(cList, oList, pList)
 
 	return cList, oList, pList
+
+# ------------------
+# generateList
+# ------------------
+
+def generateList(treeList, dataList, createModel):
+	"""Return list of built models."""
+	modelList = []
 	
+	for tree in treeList :
+		for existing in dataList :
+			if existing.ID == tree.attrib['id'] :
+				break
+		else :
+			modelList.append(createModel(tree))
 	
+	return modelList
+
 # ------------------
 # createCrisis
 # ------------------
 
 def createCrisis(elem):
 	"""
-	create a crisis model, including references to all child models, 
+	Create a crisis model, including references to all child models, 
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the Crisis in the datastore
+	return a key to the Crisis in the datastore.
 	"""
 	d = {}
 	d['ID'] = elem.attrib['id']
@@ -87,10 +80,10 @@ def createCrisis(elem):
 
 def createOrganization(elem):
 	"""
-	create a organization model, including references to all child models, 
+	Create a organization model, including references to all child models, 
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the organization in the datastore
+	return a key to the organization in the datastore.
 	"""
 	d = {}
 	d['ID'] = elem.attrib['id']
@@ -115,10 +108,10 @@ def createOrganization(elem):
 
 def createPerson(elem):
 	"""
-	create a person model, including references to all child models, 
+	Create a person model, including references to all child models, 
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the person in the datastore
+	return a key to the person in the datastore.
 	"""
 	d = {}
 	d['ID'] = elem.attrib['id']
@@ -143,9 +136,9 @@ def createPerson(elem):
 
 def createDate(elem) :
 	"""
-	create a Date model, and put it in the datastore.
+	Create a Date model, and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the Date in the datastore
+	return a key to the Date in the datastore.
 	"""
 	d = {}
 	d['time'] = elem.findtext('time')
@@ -165,10 +158,10 @@ def createDate(elem) :
 
 def createCrisisInfo(elem):
 	"""
-	create a CrisisInfo model, including references to all child models
+	Create a CrisisInfo model, including references to all child models
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the CrisisInfo in the datastore
+	return a key to the CrisisInfo in the datastore.
 	"""
 	d = {}
 	d['history'] = elem.findtext('history')
@@ -189,10 +182,10 @@ def createCrisisInfo(elem):
 # createOrgInfo
 # ------------------
 	"""
-	create a OrgInfo model, including references to all child models
+	Create a OrgInfo model, including references to all child models
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the OrgInfo in the datastore
+	return a key to the OrgInfo in the datastore.
 	"""
 def createOrgInfo(elem):
 	d = {}
@@ -213,10 +206,10 @@ def createOrgInfo(elem):
 
 def createPersonInfo(elem):
 	"""
-	create a PersonInfo model, including references to all child models
+	Create a PersonInfo model, including references to all child models
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the PersonInfo in the datastore
+	return a key to the PersonInfo in the datastore.
 	"""
 	d = {}
 	d['biography'] = elem.findtext('biography')
@@ -235,10 +228,10 @@ def createPersonInfo(elem):
 
 def createRefLinks(elem) :
 	"""
-	create all the reference models for a single info instance, including references to all child models
+	Create all the reference models for a single info instance, including references to all child models
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the  in the datastore
+	return a key to the  in the datastore.
 	"""
 	d = {}
 	d['primaryImage'] = createLink('primaryImage', elem.find('primaryImage'))
@@ -277,10 +270,10 @@ def createRefLinks(elem) :
 
 def createLink(etype, elem) :
 	"""
-	create a Link model, and put it in the datastore.
+	Create a Link model, and put it in the datastore.
 	etype is a string representation of the type of the link
 	elem an ElementTree ElementTree
-	return a key to the Link in the datastore
+	return a key to the Link in the datastore.
 	"""
 	d = {}
 	d['site'] = elem.findtext('site')
@@ -303,11 +296,11 @@ def createLink(etype, elem) :
 
 def createReferences(itype, elem) :
 	"""
-	create Reference models, of a given itype and put them in 
+	Create Reference models, of a given itype and put them in 
 	it in the datastore.
 	itype a string representing of the thing a reference to
 	elem an ElementTree ElementTree
-	return a key to the EconomicImpact in the datastore
+	return a key to the EconomicImpact in the datastore.
 	"""
 	d = {}
 	refs = elem.findall(itype)
@@ -329,9 +322,9 @@ def createReferences(itype, elem) :
 
 def createLocationInfo(elem) :
 	"""
-	create a Location model, and put it in the datastore.
+	Create a Location model, and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the Location in the datastore
+	return a key to the Location in the datastore.
 	"""
 	d = {}
 	d['city'] = elem.findtext('city')
@@ -349,9 +342,9 @@ def createLocationInfo(elem) :
 
 def createHumanImpact(elem) :
 	"""
-	create a HumanImpact model, and put it in the datastore.
+	Create a HumanImpact model, and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the HumanImpact in the datastore
+	return a key to the HumanImpact in the datastore.
 	"""
 	d = {}
 	d['deaths'] = elem.findtext('deaths')
@@ -371,9 +364,9 @@ def createHumanImpact(elem) :
 
 def createEconomicImpact(elem) :
 	"""
-	create a EconomicImpact model, and put it in the datastore.
+	Create a EconomicImpact model, and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the EconomicImpact in the datastore
+	return a key to the EconomicImpact in the datastore.
 	"""
 	d = {}
 	d['amount'] = elem.findtext('amount')
@@ -391,10 +384,10 @@ def createEconomicImpact(elem) :
 
 def createImpact(elem) :
 	"""
-	create a Impact model, including references to all child models
+	Create a Impact model, including references to all child models
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the Impact in the datastore
+	return a key to the Impact in the datastore.
 	"""
 	d = {}
 	d['human_impact'] = createHumanImpact(elem.find('human'))
@@ -411,9 +404,9 @@ def createImpact(elem) :
 
 def createFullAddress(elem) :
 	"""
-	create a FullAddress model, and put it in the datastore.
+	Create a FullAddress model, and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the FullAddress in the datastore
+	return a key to the FullAddress in the datastore.
 	"""
 	d = {}
 	d['address'] = elem.findtext('address')
@@ -433,10 +426,10 @@ def createFullAddress(elem) :
 
 def createContacts(elem) :
 	"""
-	create a contact model, including references to all child models
+	Create a contact model, including references to all child models
 	and put it in the datastore.
 	elem an ElementTree ElementTree
-	return a key to the contact in the datastore
+	return a key to the contact in the datastore.
 	"""
 	d = {}
 	d['phone'] = elem.findtext('phone')
@@ -454,7 +447,7 @@ def createContacts(elem) :
 
 def buildReferences(cList, oList, pList) :
 	"""
-	build references to each object using the keys provided by the 
+	Build references to each object using the keys provided by the 
 	datastore.
 	cList a list of crisis objects
 	oList a list of org objects

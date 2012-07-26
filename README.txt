@@ -2,14 +2,14 @@ Course Name: CS373
 Unique: 91055
 Team Name: All the Single Ladies
 
-First Name:					Ian
-Last Name:					Buitrago
-EID:						ib
-E-mail:						kieldro@gmail.com
+First Name:					Jake
+Last Name:					Wilke
+EID:						jlw3599
+E-mail:						jake.wilke@gmail.com
 Estimated number of hours:	30
-Actual    number of hours:	40
+Actual    number of hours:	30
 
-Turnin CS Username:		rshwarts
+Turnin CS Username:		jake
 GitHub ID:				Kieldro
 GitHub Repository Name:	cs373-wc
 Google App Engine URL:	jwilke-cs373-wc.appspot.com
@@ -25,10 +25,10 @@ Member E-mail:				fayz.rahman@utexas.edu
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
-Member First Name:			Jake
-Member Last Name:			Wilke
-Member EID:					jlw3599
-Member E-mail:				jake.wilke@gmail.com
+Member First Name:			Ian
+Member Last Name:			Buitrago
+Member EID:					ib
+Member E-mail:				kieldro@gmail.com
 Member Rating:				Excellent
 Member Point Adjustment:	NA	<only if you're leader>
 
@@ -36,7 +36,7 @@ Member First Name:			George
 Member Last Name:			Shwarts
 Member EID:					grs626
 Member E-mail:				grsshwarts@utexas.edu
-Member Rating:				Excellent
+Member Rating:				Satisfactory
 Member Point Adjustment:	NA	<only if you're leader>
 
 Member First Name:			Robert

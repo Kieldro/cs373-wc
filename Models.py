@@ -17,6 +17,9 @@ class WorldCrisisPage(polymodel.PolyModel):
 # ---------------
 
 class HumanImpact(db.Model):
+	
+	"""Define attributes of HumanImpact."""
+	
 	deaths = db.StringProperty(required=True)
 	displaced = db.StringProperty(required=True)
 	injured = db.StringProperty(required=True)

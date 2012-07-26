@@ -131,6 +131,8 @@ class ImportPage(BaseHandler):
 	def post(self):
 		xmlfile = self.request.get("data")
 		xmlschema = getSchemaString()
+		
+		# validate XML instance
 		try:
 			# call validator
 			elementTreeWrapper = pyxsval.parseAndValidateXmlInputString (xmlfile, xsdText=str(xmlschema), verbose=0)

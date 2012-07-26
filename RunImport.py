@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from xml.etree.ElementTree import Element, SubElement, parse
 from Import import buildModels
-from Models import *
 import StringIO
-
 import sys, operator
 
 def runImport(filestring):
@@ -11,16 +9,13 @@ def runImport(filestring):
 	imports the contents of the xml string passed to it into the 
 	datasotre. 
 	filestring is a string that contains an xml instance
-"""
+	"""
 	xmlstring = StringIO.StringIO(filestring)
 	tree = parse(xmlstring)
 	buildModels(tree)
 	
-
 def getSchemaString():
-	"""
-	return a string representation of the xml schema file
-	"""
+	"""Return a string representation of the xml schema file."""
 	return """<?xml version="1.0"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 

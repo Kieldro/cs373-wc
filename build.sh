@@ -5,7 +5,6 @@ dev_appserver.py .
 
 
 # multicomment cannot have leading spaces
-
 <<MULTICOMMENT
 export PYTHONPATH=~/cs373/WCAppspot/google_appengine/:	\
 					~/cs373/WCAppspot/google_appengine/lib/webob_1_1_1/
