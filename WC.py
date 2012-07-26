@@ -11,6 +11,7 @@ from random import shuffle
 from SearchFeature import createIndex, searchForString, deleteDocs
 
 import os
+import re
 import StringIO
 
 def deleteModels() :
@@ -148,11 +149,11 @@ class ImportPage(BaseHandler):
 		if (merge != "merge") :
 			deleteModels()
 
-		try:
-			runImport(xmlfile)
-		except:
-			self.render_template('import.html', status='error')
-			return
+		#try:
+		runImport(xmlfile)
+		#except Exception, e:
+		#	self.render_template('import.html', status='error', message=e.args)
+		#	return
 
 		try:
 			deleteDocs()
@@ -263,20 +264,19 @@ class SearchPage(BaseHandler) :
 	"""
 	def get(self) :
 		name = self.request.get('name')
-		r = []
-		for result in searchForString(name):
-			r.append(result.fields[0].value)
+		mode = self.request.get('type')
+		if (mode == 'e'):
+			r = searchForString(name)
+		else:
+			r = searchForString(re.sub(" ", " AND ", name))
+			s = searchForString(re.sub(" ", " OR ", name))
 			
-		self.render_template('search.html', term=name, results=r)
 
-		"""q = db.GqlQuery("SELECT * FROM WorldCrisisPage WHERE name = '%s'" % name)
-		if q.count() > 0 :
-			r = q
-		else :
-			r = []
-		# q is iterable by itself, no need to call .fetch if default arguments are okay
-		self.render_template('search.html', term=name, results=r)
-"""
+		x = set(r)
+		y = set(s)
+		y = y - x
+
+		self.render_template('search.html', term=name, results=x, results2=y)
 
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
