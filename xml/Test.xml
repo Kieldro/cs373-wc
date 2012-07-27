@@ -133,7 +133,7 @@
         </organization>
 		
         <person id="dubya">
-            <name>George W. Bush</name>
+            <name>George Bush</name>
             <info>
 				<type>Former U.S. President</type>
 				<birthdate>
@@ -148,16 +148,16 @@
 			</info>
 			<ref>
 				<primaryImage>
-					<site></site>
+					<site>http://raoulpop.files.wordpress.com</site>
 					<title>Close up of George Bush</title>
 					<url>http://raoulpop.files.wordpress.com/2008/10/george-w-bush-41.jpeg </url>
-					<description></description>
+					<description>http://raoulpop.files.wordpress.com</description>
 				</primaryImage>
 				<image>
-					<site></site>
+					<site>http://bdnpull.bangorpublishing.netdna-cdn.com</site>
 					<title>George Bush Oval Office</title>
 					<url>http://bdnpull.bangorpublishing.netdna-cdn.com/wp-content/uploads/2012/05/president-george-w-bush.jpg</url>
-					<description></description>
+					<description>http://bdnpull.bangorpublishing.netdna-cdn.com</description>
 				</image>
 				<video>
 					<site>http://www.youtube.com</site>
@@ -166,16 +166,16 @@
 					<description>asdqwd</description>
 				</video>
 				<social>
-					<site></site>
+					<site>https://www.facebook.com</site>
 					<title>Facebook concerning George W. Bush</title>
 					<url>https://www.facebook.com/georgewbush </url>
-					<description></description>
+					<description>https://www.facebook.com</description>
 				</social>
 				<social>
-					<site></site>
+					<site>https://www.facebook.com</site>
 					<title>Facebook concerning George W. Bush</title>
 					<url>https://www.facebook.com/USSGeorgeHWBush </url>
-					<description></description>
+					<description>https://www.facebook.com</description>
 				</social>
 				<ext>
 					<site></site>

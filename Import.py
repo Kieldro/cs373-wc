@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """This module builds the models from the constructed tree."""
 from Models import *
-from google.appengine.ext.db import delete
+from google.appengine.ext.db import delete, get
 from xml.etree.ElementTree import Element, SubElement
 
 # ------------------
@@ -25,7 +25,7 @@ def buildModels(tree) :
 	oList = generateList(org_list, Organization.all(), createOrganization, mergeOrganization, root)
 	pList= generateList(per_list, Person.all(), createPerson, mergePerson, root)
 
-	buildReferences(cList, oList, pList)
+	buildReferences(Crisis.all(), Organization.all(), Person.all())
 	#mergeRefs(cList, oList, pList)
 
 	return cList, oList, pList
@@ -40,10 +40,9 @@ def generateList(treeList, dataList, createModel, mergeModels, treeRoot):
 	
 	for tree in treeList :
 		for existing in dataList :
-			if existing.name.lower() == tree.findtext('name').lower() or existing.ID == tree.attrib['id'] :
-				if existing.ID != tree.attrib['id'] :
-					mergeModels(tree, existing)
-					break
+			if existing.ID == tree.attrib['id'] :
+				mergeModels(tree, existing)
+				break
 		else :
 			modelList.append(createModel(tree))
 	
@@ -317,6 +316,26 @@ def createReferences(itype, elem) :
 		ref_list.append(r.key())
 
 	return ref_list
+
+# ------------------
+# createReferences
+# ------------------
+
+def createSingleReference(itype, ref) :
+	"""
+	Create a single Reference model, of a given itype and put it in 
+	it in the datastore.
+	itype a string representing of the thing a reference to
+	elem an ElementTree ElementTree
+	return a key to the reference in the datastore.
+	"""
+	d = {}
+	d['sref'] = ref.attrib['idref']
+	d['rType'] = itype
+	r = Reference(**d)
+	r.put()
+
+	return r
 		
 	
 # ------------------
@@ -522,6 +541,7 @@ def mergeOrganization(source, dest) :
 	"""dest is the object in the datastore
 	   source is the element in the ElementTree
 	   """
+	dest.name = source.findtext('name')
 
 	orginfo = source.find('info')
 	history = orginfo.findtext('history')
@@ -529,13 +549,27 @@ def mergeOrganization(source, dest) :
 	if history not in estring:
 		dest.orginfo.history = dest.orginfo.history + " " + history
 
+	#otype = 
+
+	misc = source.findtext('misc')
+	estring = unicode(dest.misc)
+	if misc not in estring:
+		dest.misc = dest.misc + " " + misc
+
+
+	mergeIDREFS(source, dest)
 	mergeLinks(source, dest)
+	dest.put()
 
 def mergePerson(source, dest) :
-	pass
+	dest.name = source.findtext('name')
+	mergeIDREFS(source, dest)
+	mergeLinks(source, dest)
+	dest.put()
 
 def mergeCrisis(source, dest) :
-	pass
+	dest.name = source.findtext('name')
+	mergeLinks(source, dest)
 
 def mergeLinks(source, dest) :
 	refs = source.find('ref')
@@ -545,14 +579,28 @@ def mergeLinks(source, dest) :
 	epi.title = primaryImage.findtext('title')
 	epi.url = primaryImage.findtext('url').strip()
 	epi.description = primaryImage.findtext('description')
+	dest.reflink.primaryImage.put()
 	
 	mergeRefs(refs.findall('image'), dest.reflink.image, 'image')
 	mergeRefs(refs.findall('video'), dest.reflink.video, 'video')
 	mergeRefs(refs.findall('social'), dest.reflink.social, 'social')
 	mergeRefs(refs.findall('ext'), dest.reflink.ext, 'ext')
+	dest.reflink.put()
 
 def mergeRefs(nList, eList, eType) :
-	if len(nList) > len(eList) :
-		delete(eList)
+	if len(nList) >= len(eList) :
+		eList = []
 		for elem in nList :
-			eList.append(createLink(eType, elem))
+			eList.append(createLink(eType, elem).key())
+
+def mergeIDREFS(source, dest) :
+	idList = source.findall('crisis')
+
+	for i in idList :
+		for j in dest.crisisref:
+			elem = get(j)
+			if i.attrib['idref'] == elem.sref :
+				break
+		else :
+			#add i to dest
+			dest.crisisref.append(createSingleReference("crisis", i).key())

@@ -148,16 +148,16 @@
 			</info>
 			<ref>
 				<primaryImage>
-					<site></site>
+					<site>http://www.endevil.com/</site>
 					<title>W</title>
 					<url>http://www.endevil.com/images/George_Bush.jpg</url>
-					<description></description>
+					<description>sadf</description>
 				</primaryImage>
 				<image>
-					<site></site>
+					<site>http://bdnpull.bangorpublishing.netdna-cdn.com</site>
 					<title>George Bush Oval Office</title>
 					<url>http://bdnpull.bangorpublishing.netdna-cdn.com/wp-content/uploads/2012/05/president-george-w-bush.jpg</url>
-					<description></description>
+					<description>http://en.wikipedia.org</description>
 				</image>
 				<video>
 					<site>http://www.youtube.com</site>
@@ -172,16 +172,16 @@
 					<description>bloops</description>
 				</video>
 				<social>
-					<site></site>
-					<title>Facebook concerning George W. Bush</title>
+					<site>http://www.facebook.com</site>
+					<title>Facebook concerningaaa George W. Bush</title>
 					<url>http://www.facebook.com/georgewbush </url>
-					<description></description>
+					<description>http://en.facebook.org</description>
 				</social>
 				<ext>
-					<site></site>
+					<site>http://en.wikipedia.org</site>
 					<title>Wikipedia Article concerning el Diablo</title>
 					<url>http://en.wikipedia.org/wiki/Satan </url>
-					<description></description>
+					<description>http://en.wikipedia.org</description>
 				</ext>
 			</ref>
 			<misc></misc>
