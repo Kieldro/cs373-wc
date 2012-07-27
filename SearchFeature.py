@@ -1,12 +1,13 @@
 from google.appengine.api import search
 from google.appengine.ext import db
 
-def createDocument(name, paragraph ):
+def createDocument(name, paragraph, type ):
     return search.Document(
         fields=[search.TextField(name = 'name', value = name),
-                search.TextField(name = 'content', value = paragraph)])
+                search.TextField(name = 'content', value = paragraph),
+				search.TextField(name = 'type', value = type)])
 
-def createIndex():
+def createIndex() :
 	q = db.GqlQuery("SELECT * FROM WorldCrisisPage")
 
 	index = search.Index(name='index',
@@ -14,15 +15,20 @@ def createIndex():
 
 
 	for page in q:
-		
+
 		if (page.class_name() == 'Crisis'):
 			content = page.crisisinfo.history + page.crisisinfo.helps + page.crisisinfo.resources
+			type = page.crisisinfo.ctype
 		elif (page.class_name() == 'Organization'):
 			content = page.orginfo.history
-		else :
+			type = page.orginfo.otype
+		elif (page.class_name() == 'Person' ):
 			content = page.personinfo.biography
+			type = page.personinfo.ptype
+		else :
+			raise Exception
 		
-		index.add(createDocument(page.name, content))
+		index.add(createDocument(page.name, content, type))
 
 def deleteDocs() :
 	doc_index = search.Index('index')
