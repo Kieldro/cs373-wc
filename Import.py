@@ -21,9 +21,9 @@ def buildModels(tree) :
 	org_list = root.findall('organization')
 	per_list = root.findall('person')
 
-	cList = generateList(cTreeList, Crisis.all(), createCrisis, mergeCrisis)
-	oList = generateList(org_list, Organization.all(), createOrganization, mergeOrganization)
-	pList= generateList(per_list, Person.all(), createPerson, mergePerson)
+	cList = generateList(cTreeList, Crisis.all(), createCrisis, mergeCrisis, root)
+	oList = generateList(org_list, Organization.all(), createOrganization, mergeOrganization, root)
+	pList= generateList(per_list, Person.all(), createPerson, mergePerson, root)
 
 	buildReferences(cList, oList, pList)
 	#mergeRefs(cList, oList, pList)
@@ -34,15 +34,37 @@ def buildModels(tree) :
 # generateList
 # ------------------
 
-def generateList(treeList, dataList, createModel, mergeModels):
+def generateList(treeList, dataList, createModel, mergeModels, treeRoot):
 	"""Return list of built models."""
 	modelList = []
 	
 	for tree in treeList :
 		for existing in dataList :
-			if existing.ID == tree.attrib['id'] :
-				mergeModels(tree, existing)
-				break
+			if existing.name.lower() == tree.findtext('name').lower() or existing.ID == tree.attrib['id'] :
+					if existing.ID != tree.attrib['id'] :
+						updateList = tree.findall('crisis')
+						updateList.append(tree.findall('org'))
+						updateList.append(tree.findall('person'))
+
+						eList = treeRoot.findall('crisis')
+						eList.append(treeRoot.findall('organization'))
+						eList.append(treeRoot.findall('person'))
+
+						for elem in eList :
+							for update in updateList :
+								if elem.attrib['id'] == update.attrib['idref'] :
+									tagList = update.findall('crisis')
+									tagList.append(update.findall('org'))
+									tagList.append(update.findall('person'))
+									for tag in tagList :
+										if tag.attrib['idref'] == tree.attrib['id'] :
+											tag.attrib['idref'] = existing.ID
+											break
+
+
+						#updateIDREFS(treeRoot, tree.attrib['id'], existing.ID)
+					mergeModels(tree, existing)
+					break
 		else :
 			modelList.append(createModel(tree))
 	
