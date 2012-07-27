@@ -7,7 +7,88 @@ from xml.etree.ElementTree import Element, SubElement, parse, fromstring, tostri
 import StringIO
 from sys import stderr
 
-class TestWC2(unittest.TestCase):
+class TestWC3(unittest.TestCase):
+	
+# ------------------
+# test_merge_history
+# ------------------
+	def test_merge_history1(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag)
+
+	def test_merge_history2(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		root = fromstring(orgtag2)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag2)
+
+	def test_merge_history3(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		root = fromstring(orgtag2)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag2)
+		mergeOrganization(root, model)
+		self.assert_(model.orginfo.history == historytag2)
+
+# ---------------
+# test_merge_refs
+# ---------------
+
+	def test_merge_refs1(self) :
+		root = fromstring(orgtag)
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		num_social = len(model.reflink.social)
+		num_ext = len(model.reflink.ext)
+		root = fromstring(orgtag2)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) == num_images)
+		self.assert_(len(model.reflink.video) == num_video)
+		self.assert_(len(model.reflink.social) == num_social)
+		self.assert_(len(model.reflink.ext) == num_ext)
+
+	def test_merge_refs2(self) :
+		root = fromstring(orgtag2)
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		root = fromstring(orgtag)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) > num_images)
+		self.assert_(len(model.reflink.video) > num_video)
+
+	def test_merge_refs3(self) :
+		root = fromstring(orgtag2)
+		print >>stderr, type(root)
+		print >>stderr, type([])
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		root = fromstring(orgtag)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) > num_images)
+		self.assert_(len(model.reflink.video) > num_video)
+		num_images = len(model.reflink.image)
+		num_video = len(model.reflink.video)
+		mergeOrganization(root, model)
+		self.assert_(len(model.reflink.image) == num_images)
+		self.assert_(len(model.reflink.video) == num_video)
+	
+	'''def test_update_ids1(self) :
+		tree = fromstring(orgtag2)		# Element tree
+		root = tree.getroot()			# root of tree
+		personTrees = root.findall('person')
+		
+		
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		self.assert_(len(model.reflink.video) > num_video)
+'''
 # -----------
 # test_person
 # -----------
@@ -543,86 +624,6 @@ class TestWC2(unittest.TestCase):
 		elemstring = tostring(elem[0])
 		self.assert_(rootstring == elemstring)
 
-# ------------------
-# test_merge_history
-# ------------------
-	def test_merge_history1(self) :
-		root = fromstring(orgtag)
-		model = createOrganization(root)
-		mergeOrganization(root, model)
-		self.assert_(model.orginfo.history == historytag)
-
-	def test_merge_history2(self) :
-		root = fromstring(orgtag)
-		model = createOrganization(root)
-		root = fromstring(orgtag2)
-		mergeOrganization(root, model)
-		self.assert_(model.orginfo.history == historytag2)
-
-	def test_merge_history3(self) :
-		root = fromstring(orgtag)
-		model = createOrganization(root)
-		root = fromstring(orgtag2)
-		mergeOrganization(root, model)
-		self.assert_(model.orginfo.history == historytag2)
-		mergeOrganization(root, model)
-		self.assert_(model.orginfo.history == historytag2)
-
-# ---------------
-# test_merge_refs
-# ---------------
-
-	def test_merge_refs1(self) :
-		root = fromstring(orgtag)
-		model = createOrganization(root)
-		num_images = len(model.reflink.image)
-		num_video = len(model.reflink.video)
-		num_social = len(model.reflink.social)
-		num_ext = len(model.reflink.ext)
-		root = fromstring(orgtag2)
-		mergeOrganization(root, model)
-		self.assert_(len(model.reflink.image) == num_images)
-		self.assert_(len(model.reflink.video) == num_video)
-		self.assert_(len(model.reflink.social) == num_social)
-		self.assert_(len(model.reflink.ext) == num_ext)
-
-	def test_merge_refs2(self) :
-		root = fromstring(orgtag2)
-		model = createOrganization(root)
-		num_images = len(model.reflink.image)
-		num_video = len(model.reflink.video)
-		root = fromstring(orgtag)
-		mergeOrganization(root, model)
-		self.assert_(len(model.reflink.image) > num_images)
-		self.assert_(len(model.reflink.video) > num_video)
-
-	def test_merge_refs3(self) :
-		root = fromstring(orgtag2)
-		print >>stderr, type(root)
-		print >>stderr, type([])
-		model = createOrganization(root)
-		num_images = len(model.reflink.image)
-		num_video = len(model.reflink.video)
-		root = fromstring(orgtag)
-		mergeOrganization(root, model)
-		self.assert_(len(model.reflink.image) > num_images)
-		self.assert_(len(model.reflink.video) > num_video)
-		num_images = len(model.reflink.image)
-		num_video = len(model.reflink.video)
-		mergeOrganization(root, model)
-		self.assert_(len(model.reflink.image) == num_images)
-		self.assert_(len(model.reflink.video) == num_video)
-	
-	'''def test_update_ids1(self) :
-		tree = fromstring(orgtag2)		# Element tree
-		root = tree.getroot()			# root of tree
-		personTrees = root.findall('person')
-		
-		
-		model = createOrganization(root)
-		num_images = len(model.reflink.image)
-		self.assert_(len(model.reflink.video) > num_video)
-'''
 		
 # Test strings
 headOpen = """<worldCrises>"""

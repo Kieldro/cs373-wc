@@ -9,15 +9,12 @@ from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
 from random import shuffle
 from SearchFeature import createIndex, searchForString, deleteDocs
-
 import os
 import re
 import StringIO
 
 def deleteModels() :
-	"""
-	This function deletes all entries in the datastore.
-	"""
+	"""This function deletes all entries in the datastore."""
 	delete(HumanImpact.all(keys_only=True))
 	delete(EconomicImpact.all(keys_only=True))
 	delete(Date.all(keys_only=True))
@@ -68,9 +65,7 @@ class BaseHandler(webapp.RequestHandler):
 		self.response.out.write(template.render(path, template_args))
 	
 class MainPage(BaseHandler):
-	"""
-	Class that handles the index page.
-	"""
+	"""Class that handles the index page."""
 	def get(self):
 		toplist = []
 		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
@@ -83,40 +78,32 @@ class MainPage(BaseHandler):
 		self.render_template('index.html', topimgs=toplist[0:4])
 		
 class AboutPage(BaseHandler):
-	"""
-	Class that handles the About Page.
-	"""
+	"""Class that handles the About Page."""
 	def get(self):
 		self.render_template('about.html')
 		
 class CrisesPage(BaseHandler):
-	"""
-	Class that handles the Crisis listing page.
-	"""
+	"""Class that handles the Crisis listing page."""
 	def get(self):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE crisisinfo != NULL")
-		results = q.fetch(5)
+		results = q.fetch(None)
 		self.render_template('crises.html', crises_list=results)
 		
 class PeoplePage(BaseHandler):
-	"""
-	Class that handles the People listing page.
-	"""
+	"""Class that handles the People listing page."""
 	def get(self):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE personinfo != NULL")
-		results = q.fetch(5)
+		results = q.fetch(None)
 		self.render_template('people.html', people_list=results)
 		
 class OrganizationsPage(BaseHandler):
-	"""
-	Class that handles the Organizations listing page.
-	"""
+	"""Class that handles the Organizations listing page."""
 	def get(self):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE orginfo != NULL")
-		results = q.fetch(5)
+		results = q.fetch(None)
 		self.render_template('organizations.html', orgs_list=results)
 
 class ImportPage(BaseHandler):
@@ -169,9 +156,7 @@ class ImportPage(BaseHandler):
 			self.render_template('import.html', status='error', message=e.args)
 		
 class ExportPage(BaseHandler):
-	"""
-	Class that handles the Export page.
-	"""
+	"""Class that handles the Export page."""
 	def post(self):
 		result = runExport()
 		self.response.headers['Content-Type'] = 'text/xml'
@@ -181,9 +166,7 @@ class ExportPage(BaseHandler):
 		self.render_template('export.html')
 		
 class EntryPage(BaseHandler) :
-	"""
-	Class that handles rendering an entry in the datastore.
-	"""
+	"""Class that handles rendering an entry in the datastore."""
 	def get(self):
 		entry_name = self.request.get('name')
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
@@ -261,9 +244,7 @@ class EntryPage(BaseHandler) :
 				self.render_template('_base.html')
 
 class SearchPage(BaseHandler) :
-	"""
-	Class that handles searching and the displaying of search results.
-	"""
+	"""Class that handles searching and the displaying of search results."""
 	def get(self) :
 		name = self.request.get('name')
 		mode = self.request.get('type')

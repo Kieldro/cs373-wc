@@ -41,28 +41,7 @@ def generateList(treeList, dataList, createModel, mergeModels, treeRoot):
 	for tree in treeList :
 		for existing in dataList :
 			if existing.name.lower() == tree.findtext('name').lower() or existing.ID == tree.attrib['id'] :
-					if existing.ID != tree.attrib['id'] :
-						updateList = tree.findall('crisis')
-						updateList.append(tree.findall('org'))
-						updateList.append(tree.findall('person'))
-
-						eList = treeRoot.findall('crisis')
-						eList.append(treeRoot.findall('organization'))
-						eList.append(treeRoot.findall('person'))
-
-						for elem in eList :
-							for update in updateList :
-								if elem.attrib['id'] == update.attrib['idref'] :
-									tagList = update.findall('crisis')
-									tagList.append(update.findall('org'))
-									tagList.append(update.findall('person'))
-									for tag in tagList :
-										if tag.attrib['idref'] == tree.attrib['id'] :
-											tag.attrib['idref'] = existing.ID
-											break
-
-
-						#updateIDREFS(treeRoot, tree.attrib['id'], existing.ID)
+				if existing.ID != tree.attrib['id'] :
 					mergeModels(tree, existing)
 					break
 		else :
@@ -577,39 +556,3 @@ def mergeRefs(nList, eList, eType) :
 		delete(eList)
 		for elem in nList :
 			eList.append(createLink(eType, elem))
-	
-"""def mergeRefs(cList, oList, pList) :
-	cridata = Crisis.all()
-	orgdata = Organization.all()
-	perdata = Person.all()
-
-
-	for crisis in cList :
-		for ecri in cridata :
-			if crisis.key() == ecri.key() :
-				continue
-			if compareCrises(crisis, ecri) :
-				crisis.refer = ecri
-
-	for person in pList :
-		for eper in perdata :
-			if person.key() == eper.key() :
-				continue
-			if comparePerson(person, eper) :
-				person.refer = eper
-
-	for org in oList :
-		for eorg in orgdata :
-			if org.key() == eorg.key() :
-				continue
-			if compareOrganization(org, eorg) :
-				org.refer = eorg
-
-
-	for crisis in cList :
-		if crisis.refer == None :
-			continue
-		#update idrefs to crisis to refer's idref.
-		mergeCrisis(crisis, crisis.refer)
-		#delete
-		deleteCrisis(crisis)"""

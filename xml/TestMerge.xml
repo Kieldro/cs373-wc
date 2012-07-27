@@ -68,7 +68,7 @@
 			</ref>
 			<misc></misc>
             <org idref="american_red_cross"/>
-            <person idref="dubya"/>
+            <person idref="GEORGE"/>
         </crisis>
  
         <organization id="american_red_cross">
@@ -128,29 +128,29 @@
 			</ref>
 			<misc></misc>
             <crisis idref="hiv_aids"/>
-            <person idref="dubya"/>
+            <person idref="GEORGE"/>
 
         </organization>
 		
-        <person id="dubya">
+        <person id="GEORGE">
             <name>George W. Bush</name>
             <info>
 				<type>Former U.S. President</type>
 				<birthdate>
-					<time></time>
+					<time>6:66</time>
 					<day>06</day>
 					<month>07</month>
 					<year>1946</year>
-					<misc>cunt</misc>
+					<misc>slut</misc>
 				</birthdate>
 				<nationality>American</nationality>
-				<biography>George Walker Bush</biography>
+				<biography>I love Jesus.</biography>
 			</info>
 			<ref>
 				<primaryImage>
 					<site></site>
-					<title>Close up of George Bush</title>
-					<url>http://raoulpop.files.wordpress.com/2008/10/george-w-bush-41.jpeg </url>
+					<title>W</title>
+					<url>http://www.endevil.com/images/George_Bush.jpg</url>
 					<description></description>
 				</primaryImage>
 				<image>
@@ -163,18 +163,24 @@
 					<site>http://www.youtube.com</site>
 					<title>President George W. Bush Inaugural Address</title>
 					<url>http://www.youtube.com/embed/rXzgMdj5urs</url>
-					<description>asdqwd</description>
+					<description>svcadccsas</description>
+				</video>
+				<video>
+					<site>http://www.youtube.com</site>
+					<title>bloopity bloopers</title>
+					<url>http://www.youtube.com/watch?v=DEbZqvMu2cQ</url>
+					<description>bloops</description>
 				</video>
 				<social>
 					<site></site>
 					<title>Facebook concerning George W. Bush</title>
-					<url>https://www.facebook.com/georgewbush </url>
+					<url>http://www.facebook.com/USSGeorgeHWBush </url>
 					<description></description>
 				</social>
 				<ext>
 					<site></site>
-					<title>Wikipedia Article concerning George W. Bush</title>
-					<url>http://en.wikipedia.org/wiki/George_W._Bush </url>
+					<title>Wikipedia Article concerning el Diablo</title>
+					<url>http://en.wikipedia.org/wiki/Satan </url>
 					<description></description>
 				</ext>
 			</ref>
