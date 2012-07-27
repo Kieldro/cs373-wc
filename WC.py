@@ -249,17 +249,17 @@ class SearchPage(BaseHandler) :
 		name = self.request.get('name')
 		mode = self.request.get('type')
 		if (mode == 'e'):
-			r = searchForString(name)
-		else:
-			r = searchForString(re.sub(" ", " AND ", name))
-			s = searchForString(re.sub(" ", " OR ", name))
-			
-
-		x = set(r)
-		y = set(s)
-		y = y - x
-
-		self.render_template('search.html', term=name, results=x, results2=y)
+			x = searchForString("'"+name+"'")
+			self.render_template('search.html', term=name, results=x)
+		elif (mode == 'k'):
+			andterms = re.sub(" ", " AND ", name)
+			orterms =  re.sub(" ", " OR ", name)
+			r = searchForString(andterms)
+			s = searchForString(orterms)
+			x = set(r)
+			y = set(s)
+			y = y - x
+			self.render_template('search.html', term=andterms, term2=orterms, results=x, results2=y)
 
 application = webapp.WSGIApplication([('/', MainPage),
 									  ('/about', AboutPage),
