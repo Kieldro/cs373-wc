@@ -5,6 +5,7 @@ from Import import *
 from Export import *
 from xml.etree.ElementTree import Element, SubElement, parse, fromstring, tostring, dump
 import StringIO
+from sys import stderr
 
 class TestWC2(unittest.TestCase):
 # -----------
@@ -597,6 +598,8 @@ class TestWC2(unittest.TestCase):
 
 	def test_merge_refs3(self) :
 		root = fromstring(orgtag2)
+		print >>stderr, type(root)
+		print >>stderr, type([])
 		model = createOrganization(root)
 		num_images = len(model.reflink.image)
 		num_video = len(model.reflink.video)
@@ -609,7 +612,17 @@ class TestWC2(unittest.TestCase):
 		mergeOrganization(root, model)
 		self.assert_(len(model.reflink.image) == num_images)
 		self.assert_(len(model.reflink.video) == num_video)
-
+	
+	'''def test_update_ids1(self) :
+		tree = fromstring(orgtag2)		# Element tree
+		root = tree.getroot()			# root of tree
+		personTrees = root.findall('person')
+		
+		
+		model = createOrganization(root)
+		num_images = len(model.reflink.image)
+		self.assert_(len(model.reflink.video) > num_video)
+'''
 		
 # Test strings
 headOpen = """<worldCrises>"""
