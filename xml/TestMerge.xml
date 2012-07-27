@@ -1,34 +1,34 @@
 <!--Contains 1 of each crisis, person, and organization--> 
 <worldCrises>
-        <crisis id="hiv_aids">
-            <name>AIDS/HIV</name>
-			<info>
-				<history>Human immunodeficiency virus infection</history>
-				<help>Money donations, Awareness campaigns, Volunteering</help>
-				<resources>Money donations, Health care workers</resources>
-				<type>Epidemic</type>
+	<crisis id="darfur_conflict">
+            <name>War in Darfur</name>
+            <info>
+				<history>The Darfur Conflict was a guerrilla conflict.</history>
+				<help>Money donations, Awareness campaigns</help>
+				<resources>Political intervention, Peace efforts</resources>
+				<type>Rebellion</type>
 				<time>
-					<time></time>
+					<time/>
 					<day>1</day>
-					<month>1</month>
-					<year>2010</year>
+					<month>2</month>
+					<year>2003</year>
 					<misc></misc>
 				</time>
 				<loc>
 					<city></city>
 					<region></region>
-					<country>Sub-Saharan Africa</country>
+					<country>Sudan</country>
 				</loc>
 				<impact>
 					<human>
-						<deaths>22900000</deaths>
+						<deaths>300000</deaths>
 						<displaced>0</displaced>
 						<injured>0</injured>
 						<missing>0</missing>
 						<misc></misc>
 					</human>
 					<economic>
-						<amount>13000000</amount>
+						<amount>24000000000</amount>
 						<currency>dollars</currency>
 						<misc></misc>
 					</economic>
@@ -37,38 +37,38 @@
 			<ref>
 				<primaryImage>
 					<site></site>
-					<title>Woman affected by AIDS</title>
-					<url>http://africanheritageculturalcenter.org/wp-content/uploads/2010/06/AIDS-Epidemic-in-Africa.jpg </url>
+					<title>Darfur Child with AK-47</title>
+					<url>http://www.diplomatie.gouv.fr/en/IMG/jpg/58w1.jpg</url>
 					<description></description>
 				</primaryImage>
 				<image>
 					<site></site>
-					<title>Girl living with HIV and her Mother in Law in Malawi</title>
-					<url>http://www.avert.org/apps/media_gallery/files/images/350/a-girl-living-with-hiv-and-her-mother-in-malawi-web.jpg </url>
+					<title>Innocent bystanders in the conflict of Darfur</title>
+					<url>http://www.care.org/photos/_full/darfur_reuters_full.jpg </url>
 					<description></description>
-				 </image>
+				</image>
 				<video>
 					<site></site>
-					<title>HIV AIDS in Africa </title>
-					<url>http://www.youtube.com/embed/7gk4xZMVSW8</url>
+					<title>Darfur in 10 Minutes: An Overview of the Conflict in Sudan</title>
+					<url>http://www.youtube.com/embed/USLDoIiFzzg</url>
 					<description></description>
 				</video>
 				<social>
 					<site></site>
-					<title>Twitter concerning HIV/AIDS Africa</title>
-					<url>https://twitter.com/#!/hivaidsafrica </url>
+					<title>Twitter concerning saving Darfur</title>
+					<url>https://twitter.com/#!/SaveDarfur</url>
 					<description></description>
 				</social>
 				<ext>
 					<site></site>
-					<title>HIV/AIDS in Africa</title>
-					<url>http://www.avert.org/</url>
+					<title>Wikipedia Acticle</title>
+					<url>http://en.wikipedia.org/wiki/darfur_conflict  </url>
 					<description></description>
 				</ext>
 			</ref>
 			<misc></misc>
             <org idref="american_red_cross"/>
-            <person idref="GEORGE"/>
+            <person idref="dubya"/>
         </crisis>
  
         <organization id="american_red_cross">
@@ -127,12 +127,12 @@
 				</ext>
 			</ref>
 			<misc></misc>
-            <crisis idref="hiv_aids"/>
-            <person idref="GEORGE"/>
+            <crisis idref="darfur_conflict"/>
+            <person idref="dubya"/>
 
         </organization>
 		
-        <person id="GEORGE">
+        <person id="dubya">
             <name>George W. Bush</name>
             <info>
 				<type>Former U.S. President</type>
@@ -168,13 +168,13 @@
 				<video>
 					<site>http://www.youtube.com</site>
 					<title>bloopity bloopers</title>
-					<url>http://www.youtube.com/watch?v=DEbZqvMu2cQ</url>
+					<url>http://www.youtube.com/embed/DEbZqvMu2cQ</url>
 					<description>bloops</description>
 				</video>
 				<social>
 					<site></site>
 					<title>Facebook concerning George W. Bush</title>
-					<url>http://www.facebook.com/USSGeorgeHWBush </url>
+					<url>http://www.facebook.com/georgewbush </url>
 					<description></description>
 				</social>
 				<ext>
@@ -185,7 +185,7 @@
 				</ext>
 			</ref>
 			<misc></misc>
-			<crisis idref="hiv_aids"/>
+            <crisis idref="darfur_conflict"/>
             <org idref="american_red_cross"/>
         </person>
 </worldCrises>
