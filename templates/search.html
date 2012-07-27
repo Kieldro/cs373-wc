@@ -10,9 +10,9 @@
 			<div class="span12">
 				<form class="well form-inline" style="text-align: center;">
 					<button type="submit" class="btn btn-primary">Search</button>
-					<input type="text" name="terms"> 
+					<input type="text" name="name"> 
 					<label>by</label>
-					<select name="type">
+					<select name="type" option="e">
 						<option value="k">Keywords</option>
 						<option value="e">Exact Match</option>
 					</select>
@@ -21,29 +21,26 @@
 		</div>
 		<div class="row">
 			<div class="span12">
-				<h1>Results for <small>{{ term }}<small></h1>
-				{% if results %}
-				<ul class="entries">
-					{% for result in results %}
-					<li>
-						<a href="/entry?name={{ result.fields.0.value }}">
-							<h1>{{ result.fields.0.value }}
-							</h1>
-						</a>
-						<p>{{ result.expressions.0}}</p>
-					</li>
-					{% endfor %}
-				</ul>
-				{% else %}
-					<br/>
+				<h1>Results for <small>{{ term }}</small></h1>
+				{% ifequal results.number_found 0%}
 					<h4>
 						Sorry! No results were found!
-						Search has only basic functionality at the moment, 
-						so again sometime in the next two weeks!
 					</h4>
-				{% endif %}
+				{% else %}
+					<ul class="entries">
+						{% for result in results %}
+						<li>
+							<a href="/entry?name={{ result.fields.0.value }}">
+								<h1>{{ result.fields.0.value }}
+								</h1>
+							</a>
+							<p>{{ result.expressions.0}}</p>
+						</li>
+						{% endfor %}
+					</ul>
+				{% endifequal %}
 				{% if results2 %}
-				<h1>ORs</h1> 
+				<h1>Results for <small>{{ term2 }}</small></h1> 
 				<ul class="orentries">
 					{% for result in results2 %}
 					<li>
