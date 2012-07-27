@@ -75,37 +75,37 @@
             <name>The American Red Cross</name>
 			<info>
 	            <type>Humanitarian</type>
-				<history>The American Red Cross (ARC), also known as the American National Red Cross</history>
+				<history>The American Red Cross (ARC), also known as the American National Red Cross.</history>
 				<contact>
-					<phone>1-800-733-27677</phone>
-					<email></email>
+					<phone>8888888888</phone>
+					<email>ian@ian.com</email>
 					<mail>
-						<address></address>
-						<city></city>
-						<state></state>
-						<country></country>
-						<zip></zip>
+						<address>1</address>
+						<city>1</city>
+						<state>1</state>
+						<country>1</country>
+						<zip>1</zip>
 					</mail>
 				</contact>
 				<loc>
-					<city></city>
-					<region></region>
+					<city>austin</city>
+					<region>texas</region>
 					<country>United States</country>
 				</loc>
 			</info>
 			
 			<ref>
 				<primaryImage>
-					<site></site>
+					<site>http://bethelbuzznews.files.wordpress.com</site>
 					<title>American Red Cross logo</title>
 					<url>http://bethelbuzznews.files.wordpress.com/2011/12/red-cross.jpg </url>
-					<description></description>
+					<description>http://bethelbuzznews.files.wordpress.com</description>
 				</primaryImage>
 				<image>
-					<site></site>
+					<site>http://redcross.pmhclients.com</site>
 					<title>Red Cross Volunteers</title>
 					<url>http://redcross.pmhclients.com/images/uploads/new_volunteers_thumb.jpg</url>
-					<description></description>
+					<description>http://redcross.pmhclients.com</description>
 				</image>
 				<video>
 					<site></site>
@@ -114,16 +114,16 @@
 					<description></description>
 				</video>
 				<social>
-					<site></site>
+					<site>http://blog.redcross.org/</site>
 					<title>Red Cross Volunteer Blog</title>
 					<url>http://blog.redcross.org/ </url>
-					<description></description>
+					<description>http://blog.redcross.org/</description>
 				</social>
 				<ext>
-					<site></site>
+					<site>http://www.redcross.org/</site>
 					<title>The American Red Cross</title>
 					<url>http://www.redcross.org/ </url>
-					<description></description>
+					<description>http://www.redcross.org/</description>
 				</ext>
 			</ref>
 			<misc></misc>
@@ -184,7 +184,7 @@
 					<description></description>
 				</ext>
 			</ref>
-			<misc></misc>
+			<misc>sadf</misc>
 			<crisis idref="hiv_aids"/>
             <org idref="american_red_cross"/>
         </person>

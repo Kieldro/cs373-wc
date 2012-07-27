@@ -544,12 +544,35 @@ def mergeOrganization(source, dest) :
 	dest.name = source.findtext('name')
 
 	orginfo = source.find('info')
+
+	dest.orginfo.otype = orginfo.findtext('type')
+
 	history = orginfo.findtext('history')
 	estring = unicode(dest.orginfo.history)
 	if history not in estring:
 		dest.orginfo.history = dest.orginfo.history + " " + history
 
-	#otype = 
+	ncontact = orginfo.find('contact')
+	dest.orginfo.contacts.phone = ncontact.findtext('phone')
+	dest.orginfo.contacts.email = ncontact.findtext('email')
+	
+	nmail = ncontact.find('mail')
+	dest.orginfo.contacts.address.address = nmail.findtext('address')
+	dest.orginfo.contacts.address.city = nmail.findtext('city')
+	dest.orginfo.contacts.address.state = nmail.findtext('state')
+	dest.orginfo.contacts.address.country = nmail.findtext('country')
+	dest.orginfo.contacts.address.zipcode = nmail.findtext('zip')
+
+	dest.orginfo.contacts.address.put()
+	dest.orginfo.contacts.put()
+
+	nloc = orginfo.find('loc')
+	dest.orginfo.location.city = nloc.findtext('city')
+	dest.orginfo.location.region = nloc.findtext('region')
+	dest.orginfo.location.country = nloc.findtext('country')
+
+	dest.orginfo.location.put()
+	dest.orginfo.put()
 
 	misc = source.findtext('misc')
 	estring = unicode(dest.misc)
@@ -557,18 +580,22 @@ def mergeOrganization(source, dest) :
 		dest.misc = dest.misc + " " + misc
 
 
-	mergeIDREFS(source, dest)
+	mergeIDREFS(source, dest, "crisis", dest.crisisref)
+	mergeIDREFS(source, dest, "person", dest.personref)
 	mergeLinks(source, dest)
 	dest.put()
 
 def mergePerson(source, dest) :
 	dest.name = source.findtext('name')
-	mergeIDREFS(source, dest)
+	mergeIDREFS(source, dest, "crisis", dest.crisisref)
+	mergeIDREFS(source, dest, "org", dest.orgref)
 	mergeLinks(source, dest)
 	dest.put()
 
 def mergeCrisis(source, dest) :
 	dest.name = source.findtext('name')
+	mergeIDREFS(source, dest, "person", dest.personref)
+	mergeIDREFS(source, dest, "org", dest.orgref)
 	mergeLinks(source, dest)
 
 def mergeLinks(source, dest) :
@@ -593,14 +620,14 @@ def mergeRefs(nList, eList, eType) :
 		for elem in nList :
 			eList.append(createLink(eType, elem).key())
 
-def mergeIDREFS(source, dest) :
-	idList = source.findall('crisis')
+def mergeIDREFS(source, dest, eType, refObject) :
+	idList = source.findall(eType)
 
 	for i in idList :
-		for j in dest.crisisref:
+		for j in refObject:
 			elem = get(j)
 			if i.attrib['idref'] == elem.sref :
 				break
 		else :
 			#add i to dest
-			dest.crisisref.append(createSingleReference("crisis", i).key())
+			refObject.append(createSingleReference(eType, i).key())

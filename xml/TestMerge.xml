@@ -74,22 +74,22 @@
         <organization id="american_red_cross">
             <name>The American Red Cross</name>
 			<info>
-	            <type>Humanitarian</type>
-				<history>The American Red Cross (ARC), also known as the American National Red Cross</history>
+	            <type>Better Humanitarian</type>
+				<history>The American Red Cross does a lot of stuff to help people.  </history>
 				<contact>
 					<phone>1-800-733-27677</phone>
-					<email></email>
+					<email>blue@red.com</email>
 					<mail>
-						<address></address>
-						<city></city>
-						<state></state>
-						<country></country>
-						<zip></zip>
+						<address>2</address>
+						<city>2</city>
+						<state>2</state>
+						<country>2</country>
+						<zip>2</zip>
 					</mail>
 				</contact>
 				<loc>
-					<city></city>
-					<region></region>
+					<city>new york</city>
+					<region>new york</region>
 					<country>United States</country>
 				</loc>
 			</info>
@@ -135,7 +135,7 @@
         <person id="dubya">
             <name>George W. Bush</name>
             <info>
-				<type>Former U.S. President</type>
+				<type>Retard</type>
 				<birthdate>
 					<time>6:66</time>
 					<day>06</day>
@@ -184,7 +184,7 @@
 					<description>http://en.wikipedia.org</description>
 				</ext>
 			</ref>
-			<misc></misc>
+			<misc>nuculer</misc>
             <crisis idref="darfur_conflict"/>
             <org idref="american_red_cross"/>
         </person>
