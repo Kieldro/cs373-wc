@@ -555,7 +555,7 @@ def mergeOrganization(source, dest) :
 	ncontact = orginfo.find('contact')
 	dest.orginfo.contacts.phone = ncontact.findtext('phone')
 	dest.orginfo.contacts.email = ncontact.findtext('email')
-	
+
 	nmail = ncontact.find('mail')
 	dest.orginfo.contacts.address.address = nmail.findtext('address')
 	dest.orginfo.contacts.address.city = nmail.findtext('city')
@@ -587,6 +587,29 @@ def mergeOrganization(source, dest) :
 
 def mergePerson(source, dest) :
 	dest.name = source.findtext('name')
+
+	perinfo = source.find('info')
+
+	dest.personinfo.ptype = perinfo.findtext('type')
+	dest.personinfo.nationality = perinfo.findtext('nationality')
+	dest.personinfo.biography = perinfo.findtext('biography')
+
+	bday = perinfo.find('birthdate')
+	dest.personinfo.birthdate.time = bday.findtext('time')
+	dest.personinfo.birthdate.day = bday.findtext('day')
+	dest.personinfo.birthdate.month = bday.findtext('month')
+	dest.personinfo.birthdate.year = bday.findtext('year')
+	dest.personinfo.birthdate.time_misc = bday.findtext('misc')
+	dest.personinfo.birthdate.put()
+
+	dest.personinfo.put()
+
+	misc = source.findtext('misc')
+	estring = unicode(dest.misc)
+	if misc not in estring:
+		dest.misc = dest.misc + " " + misc
+
+
 	mergeIDREFS(source, dest, "crisis", dest.crisisref)
 	mergeIDREFS(source, dest, "org", dest.orgref)
 	mergeLinks(source, dest)
@@ -594,9 +617,62 @@ def mergePerson(source, dest) :
 
 def mergeCrisis(source, dest) :
 	dest.name = source.findtext('name')
+
+	criinfo = source.find('info')
+
+	history = criinfo.findtext('history')
+	estring = unicode(dest.crisisinfo.history)
+	if history not in estring:
+		dest.crisisinfo.history = dest.crisisinfo.history + " " + history
+
+	dest.crisisinfo.helps = criinfo.findtext('help')
+	dest.crisisinfo.resources = criinfo.findtext('resources')
+	dest.crisisinfo.ctype = criinfo.findtext('type')
+
+	nloc = criinfo.find('loc')
+	dest.crisisinfo.location.city = nloc.findtext('city')
+	dest.crisisinfo.location.region = nloc.findtext('region')
+	dest.crisisinfo.location.country = nloc.findtext('country')
+	dest.crisisinfo.location.put()
+
+	impact = criinfo.find('impact')
+	himpact = impact.find('human')
+	dest.crisisinfo.impact.human_impact.deaths = himpact.findtext('deaths')
+	dest.crisisinfo.impact.human_impact.displaced = himpact.findtext('displaced')
+	dest.crisisinfo.impact.human_impact.injured = himpact.findtext('injured')
+	dest.crisisinfo.impact.human_impact.missing = himpact.findtext('missing')
+	dest.crisisinfo.impact.human_impact.himpact_misc = himpact.findtext('misc')
+	dest.crisisinfo.impact.human_impact.put()
+
+	eimpact = impact.find('economic')
+	dest.crisisinfo.impact.eco_impact.amount = eimpact.findtext('amount')
+	dest.crisisinfo.impact.eco_impact.currency =  eimpact.findtext('currency')
+	dest.crisisinfo.impact.eco_impact.eimpact_misc = eimpact.findtext('misc')
+	dest.crisisinfo.impact.eco_impact.put()
+	dest.crisisinfo.impact.put()
+
+	time = criinfo.find('time')
+	dest.crisisinfo.date.time = time.findtext('time')
+	dest.crisisinfo.date.day = time.findtext('day')
+	dest.crisisinfo.date.month = time.findtext('month')
+	dest.crisisinfo.date.year = time.findtext('year')
+	dest.crisisinfo.date.time_misc = time.findtext('misc')
+	dest.crisisinfo.date.put()
+
+	dest.crisisinfo.put()
+
+
+
+	misc = source.findtext('misc')
+	estring = unicode(dest.misc)
+	if misc not in estring:
+		dest.misc = dest.misc + " " + misc
+
+
 	mergeIDREFS(source, dest, "person", dest.personref)
 	mergeIDREFS(source, dest, "org", dest.orgref)
 	mergeLinks(source, dest)
+	dest.put()
 
 def mergeLinks(source, dest) :
 	refs = source.find('ref')

@@ -4,20 +4,20 @@
             <name>War in Darfur</name>
             <info>
 				<history>The Darfur Conflict was a guerrilla conflict.</history>
-				<help>Money donations, Awareness campaigns</help>
-				<resources>Political intervention, Peace efforts</resources>
-				<type>Rebellion</type>
+				<help>new</help>
+				<resources>new</resources>
+				<type>new Rebellion</type>
 				<time>
-					<time/>
-					<day>1</day>
+					<time>2</time>
+					<day>2</day>
 					<month>2</month>
-					<year>2003</year>
-					<misc></misc>
+					<year>2</year>
+					<misc>qwer</misc>
 				</time>
 				<loc>
-					<city></city>
-					<region></region>
-					<country>Sudan</country>
+					<city>qwer</city>
+					<region>qwer</region>
+					<country>qwer</country>
 				</loc>
 				<impact>
 					<human>
@@ -29,7 +29,7 @@
 					</human>
 					<economic>
 						<amount>24000000000</amount>
-						<currency>dollars</currency>
+						<currency>things</currency>
 						<misc></misc>
 					</economic>
 				</impact>
@@ -138,9 +138,9 @@
 				<type>Retard</type>
 				<birthdate>
 					<time>6:66</time>
-					<day>06</day>
-					<month>07</month>
-					<year>1946</year>
+					<day>02</day>
+					<month>02</month>
+					<year>1942</year>
 					<misc>slut</misc>
 				</birthdate>
 				<nationality>American</nationality>

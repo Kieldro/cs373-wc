@@ -8,16 +8,16 @@
 				<resources>Money donations, Health care workers</resources>
 				<type>Epidemic</type>
 				<time>
-					<time></time>
+					<time>asdf</time>
 					<day>1</day>
 					<month>1</month>
-					<year>2010</year>
-					<misc></misc>
+					<year>1</year>
+					<misc>asdf</misc>
 				</time>
 				<loc>
-					<city></city>
-					<region></region>
-					<country>Sub-Saharan Africa</country>
+					<city>asdf</city>
+					<region>asdf</region>
+					<country>Sasdfa</country>
 				</loc>
 				<impact>
 					<human>
@@ -25,12 +25,12 @@
 						<displaced>0</displaced>
 						<injured>0</injured>
 						<missing>0</missing>
-						<misc></misc>
+						<misc>a</misc>
 					</human>
 					<economic>
 						<amount>13000000</amount>
 						<currency>dollars</currency>
-						<misc></misc>
+						<misc>a</misc>
 					</economic>
 				</impact>
 			</info>
@@ -144,7 +144,7 @@
 					<misc>cunt</misc>
 				</birthdate>
 				<nationality>American</nationality>
-				<biography>George Walker Bush</biography>
+				<biography>George Walker Bush was an alright president.</biography>
 			</info>
 			<ref>
 				<primaryImage>
