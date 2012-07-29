@@ -14,7 +14,15 @@ header small {
 .typeahead  {
 	z-index: 2000;
 }
-
+.anchor {
+	padding-top: 40px;
+	color: #333;
+	
+}
+.anchor:hover {
+	text-decoration: none;
+	color: #333;
+}
 section {
 	padding-top: 2em;
 }

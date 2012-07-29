@@ -61,20 +61,70 @@
 			<div class="span6">
 				<h4>Pre-Import Checklist</h4>
 				<ol>
-					<li><a href="#">Properly Structure Your XML</a>
+					<li><a href="#structure">Properly Structure Your XML</a>
 					<li><a href="#idrefs">Check Your IDs and IDREFS</a></li>
 					<li><a href="#">Use special values for unknown data fields</a></li>
 				</ol>
 			</div>
 		</div>
-		<div>
-			<h2>Propery Structure Your XML</h2>
+		
+		<h2><a class="anchor" id="structure">Propery Structure Your XML</a></h2>
+		<div class="row">
 			<div class="span12">
+				<p>Your XML file should be structured according the XSD schema.
+				We have an example XML file below, with more commentary and details to the side.
+				However, if you want to see our precise schema, you can find it <a href="#">here</a>. Be warned though, it's kind of hard to read.</p>
 			</div>
 		</div>
 		<div class="row">
+			<div class="span6">
+				<pre class="prettyprint linenums">
+&lt;worldCrises&gt;
+    &lt;crisis id="id_name"&gt;
+        &lt;name&gt;
+        &lt;info&gt;
+            &lt;history&gt;...&lt;/history&gt;
+            &lt;help&gt;...&lt;/help&gt;
+            &lt;resources&gt;...&lt;/resources&gt;
+            &lt;type&gt;...&lt;/type&gt;
+            &lt;time&gt;
+                &lt;time&gt;...&lt;/time&gt;
+                &lt;day&gt;...&lt;/day&gt;
+                &lt;month&gt;...&lt;/month&gt;
+                &lt;year&gt;...&lt;/year&gt;
+                &lt;misc&gt;...&lt;/misc&gt;
+            &lt;/time&gt;
+            &lt;loc&gt;
+                &lt;city&gt;...&lt;/city&gt;
+                &lt;region&gt;...&lt;region&gt;
+                &lt;country&gt;...&lt;country&gt;
+            &lt;/loc&gt;
+            &lt;impact&gt;
+                &lt;human&gt;
+                    &lt;deaths&gt;...&lt;/deaths&gt;
+                    &lt;displaced&gt;...&lt;/displaced&gt;
+                    &lt;injured&gt;...&lt;/injured&gt;
+                    &lt;missing&gt;...&lt;/missing&gt;
+                    &lt;misc&gt;...&lt;misc&gt;
+                &lt;/human&gt;
+                &lt;economic&gt;
+                    &lt;amount&gt;...&lt;/amount&gt;
+                    &lt;currency&gt;...&lt;/currency&gt;
+                    &lt;misc&gt;...&lt;misc&gt;
+                &lt;/economic&gt;
+            &lt;/impact&gt;
+        &lt;/info&gt;
+    &lt;/crisis&gt;
+&lt;/worldCrises&gt;</pre>
+			</div>
+			<div class="span6">
+			
+			</div>
+		</div>
+		
+		<div class="row">
 			<div class="span12">
-				<h2 name="idrefs">Check Your IDs and IDREFs</h2>
+				<h2><a class="anchor" id="idrefs">Check Your IDs and IDREFs</a></h2>
 				<p>If you're adding to pages that already exist, it is <em>imperative</em> 
 					that you label each Crisis, Organization, or Person with the correct ID,
 					and any related pages with the correct IDREF. Below is a list of all of our
