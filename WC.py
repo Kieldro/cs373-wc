@@ -126,7 +126,8 @@ class ImportPage(BaseHandler):
 	On POST, the xml given by the user is validated. If it passes, it is added to the models.
 	"""
 	def get(self):
-		self.render_template('import.html')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage ORDER by name")
+		self.render_template('import.html', pages=q)
 
 	def post(self):
 		xmlfile = self.request.get("data")
