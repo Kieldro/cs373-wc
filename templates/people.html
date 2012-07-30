@@ -9,7 +9,7 @@
 		<ul class="thumbnails">
 			{% for person in people_list %}
 			<li class="span3">
-				<a href="/entry?name={{ person.name }}" class="thumbnail">
+				<a href="/entry?id={{ person.ID }}" class="thumbnail">
 					<img src="{{ person.reflink.primaryImage.url }}" alt="">
 				</a>
 			</li>
@@ -21,7 +21,7 @@
 		<ul class="entries">
 			{% for person in people_list %}
 				<li>
-					<a href="/entry?name={{ person.name }}">
+					<a href="/entry?id={{ person.ID }}">
 						<h1>{{ person.name }}
 							<small> {{person.personinfo.ptype}}</small>
 						</h1>
@@ -31,5 +31,12 @@
 			{% endfor %}
 		</ul>
 	</section>
+	<div class="pagination pagination-centered">
+		<ul>
+		{% for page in pagenav%}
+			{{ page }}
+		{% endfor %}
+		</ul>
+	</div>
 </div>
 {% endblock %}

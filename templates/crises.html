@@ -9,7 +9,7 @@
 		<ul class="thumbnails">
 			{% for crisis in crises_list %}
 			<li class="span3">
-				<a href="/entry?name={{ crisis.name }}" class="thumbnail">
+				<a href="/entry?id={{ crisis.ID }}" class="thumbnail">
 					<img src="{{ crisis.reflink.primaryImage.url }}" alt="">
 				</a>
 			</li>
@@ -21,7 +21,7 @@
 		<ul class="entries">
 			{% for crisis in crises_list %}
 				<li>
-					<a href="/entry?name={{ crisis.name }}">
+					<a href="/entry?id={{ crisis.ID }}">
 						<h1>{{ crisis.name }}
 							<small> {{crisis.crisisinfo.location.city}}, {{crisis.crisisinfo.location.region}}, {{crisis.crisisinfo.location.country}}</small>
 						</h1>
@@ -31,5 +31,12 @@
 			{% endfor %}
 		</ul>
 	</section>
+	<div class="pagination pagination-centered">
+		<ul>
+		{% for page in pagenav%}
+			{{ page }}
+		{% endfor %}
+		</ul>
+	</div>
 </div>
 {% endblock %}
