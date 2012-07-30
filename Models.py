@@ -158,7 +158,6 @@ class PersonInfo(db.Model):
 	nationality = db.StringProperty()
 	biography = db.TextProperty()
 	birthdate = db.ReferenceProperty(Date)
-	
 
 # ---------------
 # Organization
