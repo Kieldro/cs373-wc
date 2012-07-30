@@ -98,7 +98,7 @@ class Location(db.Model):
 class Link(db.Model):
 	site = db.StringProperty()
 	title = db.StringProperty()
-	url = db.LinkProperty()
+	url = db.StringProperty()
 	description = db.TextProperty(default=None)
 	link_type = db.StringProperty(choices=["primaryImage", "image", "video", "social", "ext"])
 
