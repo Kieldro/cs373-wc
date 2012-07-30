@@ -31,5 +31,12 @@
 			{% endfor %}
 		</ul>
 	</section>
+	<div class="pagination pagination-centered">
+		<ul>
+		{% for page in pagenav%}
+			{{ page }}
+		{% endfor %}
+		</ul>
+	</div>
 </div>
 {% endblock %}
