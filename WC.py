@@ -140,7 +140,7 @@ class CrisesPage(BaseHandler):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE crisisinfo != NULL")
 
-		num_pages = int(ceil(q.count()/4))
+		num_pages = int(ceil(q.count()/float(4)))
 		results = q.fetch(offset=(page-1)*4, limit=4)
 		self.render_template('crises.html', crises_list=results, pagenav=generatePagenavs(page, num_pages))
 
@@ -160,8 +160,11 @@ class PeoplePage(BaseHandler):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE personinfo != NULL")
 
-		num_pages = int(ceil(q.count()/4))
+		num_pages = int(ceil(q.count()/float(4)))
+		self.response.out.write(q.count())
+		self.response.out.write("Math:" + str(num_pages))
 		results = q.fetch(offset=(page-1)*4, limit=4)
+		self.response.out.write((page-1)*4)
 		self.render_template('people.html', people_list=results, pagenav=generatePagenavs(page, num_pages))
 		
 class OrganizationsPage(BaseHandler):
@@ -180,7 +183,7 @@ class OrganizationsPage(BaseHandler):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE orginfo != NULL")
 
-		num_pages = int(ceil(q.count()/4))
+		num_pages = int(ceil(q.count()/float(4)))
 		results = q.fetch(offset=(page-1)*4, limit=4)
 		self.render_template('organizations.html', orgs_list=results, pagenav=generatePagenavs(page, num_pages))
 
