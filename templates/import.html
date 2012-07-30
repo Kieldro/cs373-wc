@@ -50,18 +50,78 @@
 				{% endif %}
 			</div>
 		</div>
-		<!--<div class="row">
+		<h1>But Before You Import...</h1>
+		<div class="row">
+			<div class="span6">	
+				<p>It's important to ensure that your XML file conforms to our XSD schema. 
+					If you follow the checklist to the right, everything should be okay.
+					Click on each item for more details.
+				</p>
+			</div>
+			<div class="span6">
+				<h4>Pre-Import Checklist</h4>
+				<ol>
+					<li><a href="#structure">Properly Structure Your XML</a>
+					<li><a href="#idrefs">Check Your IDs and IDREFS</a></li>
+					<li><a href="#">Use special values for unknown data fields</a></li>
+				</ol>
+			</div>
+		</div>
+		
+		<h2><a class="anchor" id="structure">Propery Structure Your XML</a></h2>
+		<div class="row">
 			<div class="span12">
-				<h1>But Before You Import...</h1>
-				<p>It's important to ensure that your data, in XML form, conforms to our XSD schema. 
+				<p>Your XML file should be structured according the XSD schema.
 				We have an example XML file below, with more commentary and details to the side.
 				However, if you want to see our precise schema, you can find it <a href="#">here</a>. Be warned though, it's kind of hard to read.</p>
 			</div>
 		</div>
 		<div class="row">
-			<div class="span6"/>
-				<p>
-					<pre class="prettyprint linenums">
+			<div class="span6">
+				<pre class="prettyprint linenums">
+&lt;worldCrises&gt;
+	&lt;crisis&gt;
+		...
+	&lt;/crisis&gt;
+	&lt;organization&gt;
+		...
+	&lt;/organization&gt;
+	&lt;person&gt;
+		...
+	&lt;/person&gt;
+&lt;/worldCrises&gt;
+				</pre>
+			</div>
+			<div class="span6">
+				<p><h3>World Crises</h3>Your XML file should start and end with a <code>&lt;worldCrises&gt;</code> tag.
+					Underneath, there needs to be a sequence of three tags: 
+					<ul>
+						<li><code>&lt;crisis&gt;</code></li>
+						<li><code>&lt;organization&gt;</code></li>
+						<li><code>&lt;person&gt;</code></li>
+					</ul>
+					You need at least one of each tag, 
+					and they should all be grouped together in that order.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<p><h3>Crisis</h3>
+					blasdfasdf
+				</p>
+			</div>
+			<div class="span6">
+				<pre class="prettyprint linenums">
+&lt;crisis id="id_name"&gt;
+	&lt;name&gt;
+	&lt;info&gt;
+				</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span6">
+				<pre class="prettyprint linenums">
 &lt;worldCrises&gt;
     &lt;crisis id="id_name"&gt;
         &lt;name&gt;
@@ -97,24 +157,72 @@
                 &lt;/economic&gt;
             &lt;/impact&gt;
         &lt;/info&gt;
+		&lt;ref&gt;
+			&lt;primaryImage&gt;
+				&lt;site&gt;...&lt;/site&gt;
+				&lt;url&gt;...&lt;url&gt;
+				&lt;description&gt;...&lt;/description&gt;
+			&lt;/primaryImage&gt;
+			&lt;image&gt;
+				&lt;site&gt;...&lt;/site&gt;
+				&lt;url&gt;...&lt;url&gt;
+				&lt;description&gt;...&lt;/description&gt;
+			&lt;/image&gt;
+			&lt;video&gt;
+				&lt;site&gt;...&lt;/site&gt;
+				&lt;url&gt;...&lt;url&gt;
+				&lt;description&gt;...&lt;/description&gt;
+			&lt;/video&gt;
+			&lt;social&gt;
+				&lt;site&gt;...&lt;/site&gt;
+				&lt;url&gt;...&lt;url&gt;
+				&lt;description&gt;...&lt;/description&gt;
+			&lt;/social&gt;
+			&lt;ext&gt;
+				&lt;site&gt;...&lt;/site&gt;
+				&lt;url&gt;...&lt;url&gt;
+				&lt;description&gt;...&lt;/description&gt;
+			&lt;/ext&gt;
+		&lt;/ref&gt;
+		&lt;misc&gt;...&lt;/misc&gt;
+		&lt;org&gt;
+		&lt;&gt;
+		&lt;&gt;
+		
     &lt;/crisis&gt;
 &lt;/worldCrises&gt;</pre>
-				</p>
 			</div>
-			<div class="span6"/>
-				<h2>Crisis Tag</h2>
-				<p>To describe a crisis, start off with a <code>&lt;crisis&gt;</code> tag. 
-				Follow up with a <code>&lt;name&gt;</code> tag to specify the name of the crisis. Then insert an <code>&lt;info&gt;</code>tag.
-				These tags <em>must</em> contain the following subtags:
-					<ul>
-						<li><code>&lt;history&gt;</code> - a background of the history of the crisis. (string, up to 500 characters)</li>
-						<li><code>&lt;help&gt;</code> - all the various ways to help. (string, up to 500 characters)</li>
-						<li><code>&lt;resources&gt;</code> - what resources are needed? (string, up to 500 characters)</li>
-						<<li><code>&lt;&gt;</code></li>
-					</ul>
-				</p>
+			<div class="span6">
+			
 			</div>
-		</div>-->
+		</div>
+		
+		<div class="row">
+			<div class="span12">
+				<h2><a class="anchor" id="idrefs">Check Your IDs and IDREFs</a></h2>
+				<p>If you're adding to pages that already exist, it is <em>imperative</em> 
+					that you label each Crisis, Organization, or Person with the correct ID,
+					and any related pages with the correct IDREF. Below is a list of all of our
+					pages, along with their IDs. Make sure they match!
+				</p>
+				<table class="table table-striped table-bordered table-condensed">
+					<thead>
+						<tr>
+							<th>Page Name</th>
+							<th>ID</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for page in pages %}
+						<tr>
+							<td>{{ page.name }}</td>
+							<td>{{ page.ID }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</section>
 </div>
 <script type="text/javascript" src="static/misc/prettify.js"></script>

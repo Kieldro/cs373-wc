@@ -1,3 +1,11 @@
+.fixed-container {
+	width: 570px;
+	height: 321px;
+	overflow: hidden;
+}
+.fixed-container img {
+	width:100%
+}
 header h1 {
 	font-size: 54px;
 	font-weight: bold;
@@ -14,7 +22,15 @@ header small {
 .typeahead  {
 	z-index: 2000;
 }
-
+.anchor {
+	padding-top: 40px;
+	color: #333;
+	
+}
+.anchor:hover {
+	text-decoration: none;
+	color: #333;
+}
 section {
 	padding-top: 2em;
 }

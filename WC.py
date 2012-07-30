@@ -10,6 +10,7 @@ from genxmlif import GenXmlIfError
 from google.appengine.ext.webapp import template
 from random import shuffle
 from SearchFeature import createIndex, searchForString, deleteDocs
+from math import ceil
 import os
 import re
 import StringIO
@@ -35,6 +36,44 @@ def deleteModels() :
 	delete(Crisis.all(keys_only=True))
 	delete(Person.all(keys_only=True))
 
+def generatePagenavs(page, num_pages) :
+		pagenav_list = []
+		
+		if page==1 :
+			pagenav_list.append('<li class="disabled"><a>&laquo</a></li>')
+		else :
+			pagenav_list.append('<li><a href="/crises?p=%s">&laquo</a></li>' % (page-1))
+		
+		# If there are less than 5 pages, just display all.
+		if num_pages <= 5 :
+			for p in range(1,num_pages+1) :
+				if p == page :
+					pagenav_list.append('<li class="active"><a href="/crises?p=%s">%s</a></li>' %(p, p))
+				else:
+					pagenav_list.append('<li><a href="/crises?p=%s">%s</a></li>' % (p,p))
+		# If we can, display 5 at a time with page in the middle:  [<<][p-2][p-1][p][p+1][p+2][>>]
+		elif page+2 <= num_pages :
+			for p in range(page-2, page+3):
+				if p == page :
+					pagenav_list.append('<li class="active"><a href="/crises?p=%s">%s</a></li>' % (p,p))
+				else:
+					pagenav_list.append('<li><a href="/crises?p=%s">%s</a></li>' % (p,p))
+		# If we get here, just display the last 5 pages, current page doesn't have to be in the middle
+		else :
+			for p in range(num_pages-4, num_pages+1) :
+				if p == page :
+					pagenav_list.append('<li class="active"><a href="/crises?p=%s">%s</a></li>' % (p,p))
+				else:
+					pagenav_list.append('<li><a href="/crises?p=%s">%s</a></li>' % (p,p))
+					
+		if page==num_pages :
+			pagenav_list.append('<li class="disabled"><a>&raquo</a></li>')
+		else :
+			pagenav_list.append('<li><a href="/crises?p=%s">&raquo</a></li>' % (page+1))
+			
+		return pagenav_list
+	
+	
 class BaseHandler(webapp.RequestHandler):
 	def render_template(self, filename, **template_args):
 		"""
@@ -78,7 +117,7 @@ class MainPage(BaseHandler):
 		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
 			toplist.append(person)
 		shuffle(toplist)
-		self.render_template('index.html', topimgs=toplist[0:4])
+		self.render_template('index.html', first=toplist[0], topimgs=toplist[1:4])
 		
 class AboutPage(BaseHandler):
 	"""Class that handles the About Page."""
@@ -88,26 +127,62 @@ class AboutPage(BaseHandler):
 class CrisesPage(BaseHandler):
 	"""Class that handles the Crisis listing page."""
 	def get(self):
+		pstring = self.request.get('p')
+		if pstring == '' :
+			page = 1
+		else :
+			try:
+				page = int(pstring)
+			except:
+				self.render_template('_base.html')
+				return
+		
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE crisisinfo != NULL")
-		results = q.fetch(None)
-		self.render_template('crises.html', crises_list=results)
-		
+
+		num_pages = int(ceil(q.count()/4))
+		results = q.fetch(offset=(page-1)*4, limit=4)
+		self.render_template('crises.html', crises_list=results, pagenav=generatePagenavs(page, num_pages))
+
 class PeoplePage(BaseHandler):
 	"""Class that handles the People listing page."""
 	def get(self):
+		pstring = self.request.get('p')
+		if pstring == '' :
+			page = 1
+		else :
+			try:
+				page = int(pstring)
+			except:
+				self.render_template('_base.html')
+				return
+
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE personinfo != NULL")
-		results = q.fetch(None)
-		self.render_template('people.html', people_list=results)
+
+		num_pages = int(ceil(q.count()/4))
+		results = q.fetch(offset=(page-1)*4, limit=4)
+		self.render_template('people.html', people_list=results, pagenav=generatePagenavs(page, num_pages))
 		
 class OrganizationsPage(BaseHandler):
 	"""Class that handles the Organizations listing page."""
 	def get(self):
+		pstring = self.request.get('p')
+		if pstring == '' :
+			page = 1
+		else :
+			try:
+				page = int(pstring)
+			except:
+				self.render_template('_base.html')
+				return
+				
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE orginfo != NULL")
-		results = q.fetch(None)
-		self.render_template('organizations.html', orgs_list=results)
+
+		num_pages = int(ceil(q.count()/4))
+		results = q.fetch(offset=(page-1)*4, limit=4)
+		self.render_template('organizations.html', orgs_list=results, pagenav=generatePagenavs(page, num_pages))
 
 class ImportWorker(webapp.RequestHandler):
 	"""A worker thread that does stuff"""
@@ -132,7 +207,8 @@ class ImportPage(BaseHandler):
 	On POST, the xml given by the user is validated. If it passes, it is added to the models.
 	"""
 	def get(self):
-		self.render_template('import.html')
+		q = db.GqlQuery("SELECT * FROM WorldCrisisPage ORDER by name")
+		self.render_template('import.html', pages=q)
 
 	def post(self):
 		xmlfile = self.request.get("data")
@@ -175,9 +251,9 @@ class ExportPage(BaseHandler):
 class EntryPage(BaseHandler) :
 	"""Class that handles rendering an entry in the datastore."""
 	def get(self):
-		entry_name = self.request.get('name')
+		entry_name = self.request.get('id')
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
-						"WHERE name = '%s'" % entry_name)
+						"WHERE ID = '%s'" % entry_name)
 		if q.count() != 1 :
 			self.render_template('_base.html')
 		else:
@@ -204,7 +280,16 @@ class EntryPage(BaseHandler) :
 			videoKey_list = references.video
 			vids = []
 			for key in videoKey_list:
-				vids.append(Link.get(key))
+				#vids.append(Link.get(key))
+				v = Link.get(key)
+				if re.search("youtube", v.url):
+					if re.search("embed", v.url):
+						vids.append('<iframe width="560" height="315" src="%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>' % v.url)
+					else :
+						vsearch = re.search("v=((.)*)(&)?", v.url)
+						vids.append(vids.append('<iframe width="560" height="315" src="http://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>'% vsearch.group(1)))
+				else :
+					vids.append('<a href="%s">%s</a>' % (v.url, v.url))
 			
 			# ----Page specific Stuff----#
 			class_string = result.class_name()
