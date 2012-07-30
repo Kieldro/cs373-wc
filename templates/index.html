@@ -10,7 +10,7 @@
 						<img src="{{ first.reflink.primaryImage.url }}"/>
 						<div class="carousel-caption">
 							<h4>{{ first.name }}</h4>
-							<p>Click <a href="/entry?name={{ first.name }}">here</a> for more info.</p>
+							<p>Click <a href="/entry?id={{ first.ID }}">here</a> for more info.</p>
 						</div>
 					</div>
 					{% for top in topimgs %}
@@ -18,7 +18,7 @@
 						<img src="{{ top.reflink.primaryImage.url }}"/>
 						<div class="carousel-caption">
 							<h4>{{ top.name }}</h4>
-							<p>Click <a href="/entry?name={{ top.name }}">here</a> for more info.</p>
+							<p>Click <a href="/entry?id={{ top.ID }}">here</a> for more info.</p>
 						</div>
 					</div>
 					{% endfor %}

@@ -9,7 +9,7 @@
 		<ul class="thumbnails">
 			{% for org in orgs_list %}
 			<li class="span3">
-				<a href="/entry?name={{ org.name }}" class="thumbnail">
+				<a href="/entry?id={{ org.ID }}" class="thumbnail">
 					<img src="{{ org.reflink.primaryImage.url }}">
 				</a>
 			</li>
@@ -21,7 +21,7 @@
 		<ul class="entries">
 			{% for org in orgs_list %}
 				<li>
-					<a href="/entry?name={{ org.name }}">
+					<a href="/entry?id={{ org.ID }}">
 						<h1>{{ org.name }}
 							<small> {{org.orginfo.otype}}</small>
 						</h1>

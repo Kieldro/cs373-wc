@@ -258,9 +258,9 @@ class EntryPage(BaseHandler) :
 	Class that handles rendering an entry in the datastore.
 	"""
 	def get(self):
-		entry_name = self.request.get('name')
+		entry_name = self.request.get('id')
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
-						"WHERE name = '%s'" % entry_name)
+						"WHERE ID = '%s'" % entry_name)
 		if q.count() != 1 :
 			self.render_template('_base.html')
 		else:
