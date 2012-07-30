@@ -78,7 +78,7 @@ class FullAddress(db.Model):
 class Contacts(db.Model):
 	phone = db.StringProperty()
 	email = db.StringProperty()
-	address = db.ReferenceProperty(FullAddress, required=True)
+	address = db.ReferenceProperty(FullAddress)
 
 
 # ---------------
@@ -100,7 +100,7 @@ class Link(db.Model):
 	title = db.StringProperty()
 	url = db.LinkProperty()
 	description = db.TextProperty(default=None)
-	link_type = db.StringProperty(choices=["primaryImage", "image", "video", "social", "ext"], required=True)
+	link_type = db.StringProperty(choices=["primaryImage", "image", "video", "social", "ext"])
 
 
 # ---------------
@@ -120,8 +120,8 @@ class ReferenceLinks(db.Model):
 # ---------------
 
 class Impact(db.Model):
-	human_impact = db.ReferenceProperty(HumanImpact, required=True)
-	eco_impact = db.ReferenceProperty(EconomicImpact, required=True)
+	human_impact = db.ReferenceProperty(HumanImpact)
+	eco_impact = db.ReferenceProperty(EconomicImpact)
 	
 
 # ---------------
@@ -131,8 +131,8 @@ class Impact(db.Model):
 class OrgInfo(db.Model):
 	otype = db.StringProperty()
 	history = db.TextProperty()
-	contacts = db.ReferenceProperty(Contacts, required=True)
-	location = db.ReferenceProperty(Location, required=True)
+	contacts = db.ReferenceProperty(Contacts)
+	location = db.ReferenceProperty(Location)
 
 
 # ---------------
@@ -144,9 +144,9 @@ class CrisisInfo(db.Model):
 	helps = db.TextProperty()
 	resources = db.TextProperty()
 	ctype = db.StringProperty()
-	location = db.ReferenceProperty(Location, required=True)
-	impact = db.ReferenceProperty(Impact, required=True)
-	date = db.ReferenceProperty(Date, required=True)
+	location = db.ReferenceProperty(Location)
+	impact = db.ReferenceProperty(Impact)
+	date = db.ReferenceProperty(Date)
 
 
 # ---------------
@@ -157,7 +157,7 @@ class PersonInfo(db.Model):
 	ptype = db.StringProperty()
 	nationality = db.StringProperty()
 	biography = db.TextProperty()
-	birthdate = db.ReferenceProperty(Date, required=True)
+	birthdate = db.ReferenceProperty(Date)
 	
 
 # ---------------
@@ -168,8 +168,8 @@ class Organization(WorldCrisisPage):
 	ID = db.StringProperty(required=True)
 	name = db.StringProperty()
 	misc = db.TextProperty()
-	orginfo = db.ReferenceProperty(OrgInfo, required=True)
-	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
+	orginfo = db.ReferenceProperty(OrgInfo)
+	reflink = db.ReferenceProperty(ReferenceLinks)
 	crisisref = db.ListProperty(db.Key, required = True)
 	personref = db.ListProperty(db.Key, required = True)
 	
@@ -182,8 +182,8 @@ class Crisis(WorldCrisisPage):
 	ID = db.StringProperty(required=True)
 	name = db.StringProperty()
 	misc = db.TextProperty()
-	crisisinfo = db.ReferenceProperty(CrisisInfo, required=True)
-	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
+	crisisinfo = db.ReferenceProperty(CrisisInfo)
+	reflink = db.ReferenceProperty(ReferenceLinks)
 	personref = db.ListProperty(db.Key, required = True)
 	orgref = db.ListProperty(db.Key, required = True)
 	
@@ -196,7 +196,7 @@ class Person(WorldCrisisPage):
 	ID = db.StringProperty(required=True)
 	name = db.StringProperty()
 	misc = db.TextProperty()
-	personinfo = db.ReferenceProperty(PersonInfo, required=True)
-	reflink = db.ReferenceProperty(ReferenceLinks, required=True)
+	personinfo = db.ReferenceProperty(PersonInfo)
+	reflink = db.ReferenceProperty(ReferenceLinks)
 	crisisref = db.ListProperty(db.Key, required = True)
 	orgref = db.ListProperty(db.Key, required = True)

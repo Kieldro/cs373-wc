@@ -1,3 +1,4 @@
+from google.appengine.api import taskqueue
 from google.appengine.ext import webapp
 from google.appengine.ext.db import delete, Query
 from Models import *
@@ -12,6 +13,8 @@ from SearchFeature import createIndex, searchForString, deleteDocs
 import os
 import re
 import StringIO
+import logging
+import unicodedata
 
 def deleteModels() :
 	"""This function deletes all entries in the datastore."""
@@ -106,6 +109,24 @@ class OrganizationsPage(BaseHandler):
 		results = q.fetch(None)
 		self.render_template('organizations.html', orgs_list=results)
 
+class ImportWorker(webapp.RequestHandler):
+	"""A worker thread that does stuff"""
+	def post(self):
+		#merge = self.request.get('merge')
+		xmlfile = self.request.get('xmlfile')
+		backup = self.request.get('backup')
+		runImport(xmlfile)
+		try:				
+			runImport(xmlfile)
+			deleteDocs()
+			createIndex()
+		except Exception, e:
+			logging.error(e.args)
+			deleteModels()
+			#runImport(backup)
+			return
+
+
 class ImportPage(BaseHandler):
 	"""
 	Class that handles the Import page. 
@@ -133,27 +154,16 @@ class ImportPage(BaseHandler):
 			s = "Parsing aborted! Could not parse the XML. Check the syntax of your file."
 			self.render_template('import.html', status='error', message=s)
 			return
-
 		merge = self.request.get("mergebox")
+
+		backup = ""#runExport()
 		if (merge != "merge") :
 			deleteModels()
+		taskqueue.add(url='/ImportWorker', params={'xmlfile': xmlfile, 'backup': backup})
 
-		#try:
-		runImport(xmlfile)
-		#except Exception, e:
-		#	self.render_template('import.html', status='error', message=e.args)
-		#	return
 
-		try:
-			deleteDocs()
-		except Exception, e:
-			self.render_template('import.html', status='error', message="DELETE DOCS "+e.args)
-			
-		try:
-			createIndex()
-			self.render_template('import.html', status='success', message="Everything's OKAY!")
-		except Exception, e:
-			self.render_template('import.html', status='error', message=e.args)
+		self.render_template('import.html', status='success', message="Everything's OKAY! It is now being imported in the background!")
+
 		
 class ExportPage(BaseHandler):
 	"""Class that handles the Export page."""
@@ -231,6 +241,7 @@ class EntryPage(BaseHandler) :
 				c_refs = []
 				for key in result.crisisref:
 					c_refs.append(Reference.get(key))
+
 				o_refs = []
 				for key in result.orgref:
 					o_refs.append(Reference.get(key))
@@ -270,6 +281,7 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/export', ExportPage),
 									  ('/entry', EntryPage),
 									  ('/search', SearchPage),
+									  ('/ImportWorker', ImportWorker),
 									  ], debug=True)
 
 def main():

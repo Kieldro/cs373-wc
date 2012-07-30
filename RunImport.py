@@ -3,6 +3,7 @@ from xml.etree.ElementTree import Element, SubElement, parse
 from Import import buildModels
 import StringIO
 import sys, operator
+import unicodedata
 
 def runImport(filestring):
 	""" 
@@ -10,7 +11,8 @@ def runImport(filestring):
 	datasotre. 
 	filestring is a string that contains an xml instance
 	"""
-	xmlstring = StringIO.StringIO(filestring)
+	xmlstring = unicodedata.normalize('NFKD', filestring).encode('ascii', 'ignore')
+	xmlstring = StringIO.StringIO(xmlstring)
 	tree = parse(xmlstring)
 	buildModels(tree)
 	

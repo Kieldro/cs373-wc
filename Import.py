@@ -3,6 +3,7 @@
 from Models import *
 from google.appengine.ext.db import delete, get
 from xml.etree.ElementTree import Element, SubElement
+import cgi
 
 # ------------------
 # buildModels
@@ -26,7 +27,6 @@ def buildModels(tree) :
 	pList= generateList(per_list, Person.all(), createPerson, mergePerson, root)
 
 	buildReferences(Crisis.all(), Organization.all(), Person.all())
-	#mergeRefs(cList, oList, pList)
 
 	return cList, oList, pList
 
@@ -281,7 +281,7 @@ def createLink(etype, elem) :
 	d['site'] = elem.findtext('site')
 	d['title'] = elem.findtext('title')
 	s = elem.findtext('url')
-	d['url'] = s.strip()
+	d['url'] = cgi.escape(s.strip())
 	desc = elem.findtext('description')
 	if(desc) :
 		d['description'] = desc
