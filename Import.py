@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """This module builds the models from the constructed tree."""
 from Models import *
-from google.appengine.ext.db import delete
+from google.appengine.ext.db import delete, get
 from xml.etree.ElementTree import Element, SubElement
+import cgi
 
 # ------------------
 # buildModels
@@ -25,8 +26,7 @@ def buildModels(tree) :
 	oList = generateList(org_list, Organization.all(), createOrganization, mergeOrganization, root)
 	pList= generateList(per_list, Person.all(), createPerson, mergePerson, root)
 
-	buildReferences(cList, oList, pList)
-	#mergeRefs(cList, oList, pList)
+	buildReferences(Crisis.all(), Organization.all(), Person.all())
 
 	return cList, oList, pList
 
@@ -40,31 +40,9 @@ def generateList(treeList, dataList, createModel, mergeModels, treeRoot):
 	
 	for tree in treeList :
 		for existing in dataList :
-			if existing.name.lower() == tree.findtext('name').lower() or existing.ID == tree.attrib['id'] :
-					if existing.ID != tree.attrib['id'] :
-						updateList = tree.findall('crisis')
-						updateList.append(tree.findall('org'))
-						updateList.append(tree.findall('person'))
-
-						eList = treeRoot.findall('crisis')
-						eList.append(treeRoot.findall('organization'))
-						eList.append(treeRoot.findall('person'))
-
-						for elem in eList :
-							for update in updateList :
-								if elem.attrib['id'] == update.attrib['idref'] :
-									tagList = update.findall('crisis')
-									tagList.append(update.findall('org'))
-									tagList.append(update.findall('person'))
-									for tag in tagList :
-										if tag.attrib['idref'] == tree.attrib['id'] :
-											tag.attrib['idref'] = existing.ID
-											break
-
-
-						#updateIDREFS(treeRoot, tree.attrib['id'], existing.ID)
-					mergeModels(tree, existing)
-					break
+			if existing.ID == tree.attrib['id'] :
+				mergeModels(tree, existing)
+				break
 		else :
 			modelList.append(createModel(tree))
 	
@@ -303,7 +281,7 @@ def createLink(etype, elem) :
 	d['site'] = elem.findtext('site')
 	d['title'] = elem.findtext('title')
 	s = elem.findtext('url')
-	d['url'] = s.strip()
+	d['url'] = cgi.escape(s.strip())
 	desc = elem.findtext('description')
 	if(desc) :
 		d['description'] = desc
@@ -338,6 +316,26 @@ def createReferences(itype, elem) :
 		ref_list.append(r.key())
 
 	return ref_list
+
+# ------------------
+# createReferences
+# ------------------
+
+def createSingleReference(itype, ref) :
+	"""
+	Create a single Reference model, of a given itype and put it in 
+	it in the datastore.
+	itype a string representing of the thing a reference to
+	elem an ElementTree ElementTree
+	return a key to the reference in the datastore.
+	"""
+	d = {}
+	d['sref'] = ref.attrib['idref']
+	d['rType'] = itype
+	r = Reference(**d)
+	r.put()
+
+	return r
 		
 	
 # ------------------
@@ -543,20 +541,138 @@ def mergeOrganization(source, dest) :
 	"""dest is the object in the datastore
 	   source is the element in the ElementTree
 	   """
+	dest.name = source.findtext('name')
 
 	orginfo = source.find('info')
+
+	dest.orginfo.otype = orginfo.findtext('type')
+
 	history = orginfo.findtext('history')
 	estring = unicode(dest.orginfo.history)
 	if history not in estring:
 		dest.orginfo.history = dest.orginfo.history + " " + history
 
+	ncontact = orginfo.find('contact')
+	dest.orginfo.contacts.phone = ncontact.findtext('phone')
+	dest.orginfo.contacts.email = ncontact.findtext('email')
+
+	nmail = ncontact.find('mail')
+	dest.orginfo.contacts.address.address = nmail.findtext('address')
+	dest.orginfo.contacts.address.city = nmail.findtext('city')
+	dest.orginfo.contacts.address.state = nmail.findtext('state')
+	dest.orginfo.contacts.address.country = nmail.findtext('country')
+	dest.orginfo.contacts.address.zipcode = nmail.findtext('zip')
+
+	dest.orginfo.contacts.address.put()
+	dest.orginfo.contacts.put()
+
+	nloc = orginfo.find('loc')
+	dest.orginfo.location.city = nloc.findtext('city')
+	dest.orginfo.location.region = nloc.findtext('region')
+	dest.orginfo.location.country = nloc.findtext('country')
+
+	dest.orginfo.location.put()
+	dest.orginfo.put()
+
+	misc = source.findtext('misc')
+	estring = unicode(dest.misc)
+	if misc not in estring:
+		dest.misc = dest.misc + " " + misc
+
+
+	mergeIDREFS(source, dest, "crisis", dest.crisisref)
+	mergeIDREFS(source, dest, "person", dest.personref)
 	mergeLinks(source, dest)
+	dest.put()
 
 def mergePerson(source, dest) :
-	pass
+	dest.name = source.findtext('name')
+
+	perinfo = source.find('info')
+
+	dest.personinfo.ptype = perinfo.findtext('type')
+	dest.personinfo.nationality = perinfo.findtext('nationality')
+	dest.personinfo.biography = perinfo.findtext('biography')
+
+	bday = perinfo.find('birthdate')
+	dest.personinfo.birthdate.time = bday.findtext('time')
+	dest.personinfo.birthdate.day = bday.findtext('day')
+	dest.personinfo.birthdate.month = bday.findtext('month')
+	dest.personinfo.birthdate.year = bday.findtext('year')
+	dest.personinfo.birthdate.time_misc = bday.findtext('misc')
+	dest.personinfo.birthdate.put()
+
+	dest.personinfo.put()
+
+	misc = source.findtext('misc')
+	estring = unicode(dest.misc)
+	if misc not in estring:
+		dest.misc = dest.misc + " " + misc
+
+
+	mergeIDREFS(source, dest, "crisis", dest.crisisref)
+	mergeIDREFS(source, dest, "org", dest.orgref)
+	mergeLinks(source, dest)
+	dest.put()
 
 def mergeCrisis(source, dest) :
-	pass
+	dest.name = source.findtext('name')
+
+	criinfo = source.find('info')
+
+	history = criinfo.findtext('history')
+	estring = unicode(dest.crisisinfo.history)
+	if history not in estring:
+		dest.crisisinfo.history = dest.crisisinfo.history + " " + history
+
+	dest.crisisinfo.helps = criinfo.findtext('help')
+	dest.crisisinfo.resources = criinfo.findtext('resources')
+	dest.crisisinfo.ctype = criinfo.findtext('type')
+
+	nloc = criinfo.find('loc')
+	dest.crisisinfo.location.city = nloc.findtext('city')
+	dest.crisisinfo.location.region = nloc.findtext('region')
+	dest.crisisinfo.location.country = nloc.findtext('country')
+	dest.crisisinfo.location.put()
+
+	impact = criinfo.find('impact')
+	himpact = impact.find('human')
+	dest.crisisinfo.impact.human_impact.deaths = himpact.findtext('deaths')
+	dest.crisisinfo.impact.human_impact.displaced = himpact.findtext('displaced')
+	dest.crisisinfo.impact.human_impact.injured = himpact.findtext('injured')
+	dest.crisisinfo.impact.human_impact.missing = himpact.findtext('missing')
+	dest.crisisinfo.impact.human_impact.himpact_misc = himpact.findtext('misc')
+	dest.crisisinfo.impact.human_impact.put()
+
+	eimpact = impact.find('economic')
+	dest.crisisinfo.impact.eco_impact.amount = eimpact.findtext('amount')
+	dest.crisisinfo.impact.eco_impact.currency =  eimpact.findtext('currency')
+	dest.crisisinfo.impact.eco_impact.eimpact_misc = eimpact.findtext('misc')
+	dest.crisisinfo.impact.eco_impact.put()
+	dest.crisisinfo.impact.put()
+
+	time = criinfo.find('time')
+	dest.crisisinfo.date.time = time.findtext('time')
+	dest.crisisinfo.date.day = time.findtext('day')
+	dest.crisisinfo.date.month = time.findtext('month')
+	dest.crisisinfo.date.year = time.findtext('year')
+	dest.crisisinfo.date.time_misc = time.findtext('misc')
+	dest.crisisinfo.date.put()
+
+	dest.crisisinfo.put()
+
+
+
+	misc = source.findtext('misc')
+	estring = unicode(dest.misc)
+	if misc not in estring:
+		dest.misc = dest.misc + " " + misc
+
+
+	mergeIDREFS(source, dest, "person", dest.personref)
+	mergeIDREFS(source, dest, "org", dest.orgref)
+	mergeLinks(source, dest)
+	dest.put()
 
 def mergeLinks(source, dest) :
 	refs = source.find('ref')
@@ -566,50 +682,28 @@ def mergeLinks(source, dest) :
 	epi.title = primaryImage.findtext('title')
 	epi.url = primaryImage.findtext('url').strip()
 	epi.description = primaryImage.findtext('description')
+	dest.reflink.primaryImage.put()
 	
 	mergeRefs(refs.findall('image'), dest.reflink.image, 'image')
 	mergeRefs(refs.findall('video'), dest.reflink.video, 'video')
 	mergeRefs(refs.findall('social'), dest.reflink.social, 'social')
 	mergeRefs(refs.findall('ext'), dest.reflink.ext, 'ext')
+	dest.reflink.put()
 
 def mergeRefs(nList, eList, eType) :
-	if len(nList) > len(eList) :
-		delete(eList)
+	if len(nList) >= len(eList) :
+		eList = []
 		for elem in nList :
-			eList.append(createLink(eType, elem))
-	
-"""def mergeRefs(cList, oList, pList) :
-	cridata = Crisis.all()
-	orgdata = Organization.all()
-	perdata = Person.all()
+			eList.append(createLink(eType, elem).key())
 
+def mergeIDREFS(source, dest, eType, refObject) :
+	idList = source.findall(eType)
 
-	for crisis in cList :
-		for ecri in cridata :
-			if crisis.key() == ecri.key() :
-				continue
-			if compareCrises(crisis, ecri) :
-				crisis.refer = ecri
-
-	for person in pList :
-		for eper in perdata :
-			if person.key() == eper.key() :
-				continue
-			if comparePerson(person, eper) :
-				person.refer = eper
-
-	for org in oList :
-		for eorg in orgdata :
-			if org.key() == eorg.key() :
-				continue
-			if compareOrganization(org, eorg) :
-				org.refer = eorg
-
-
-	for crisis in cList :
-		if crisis.refer == None :
-			continue
-		#update idrefs to crisis to refer's idref.
-		mergeCrisis(crisis, crisis.refer)
-		#delete
-		deleteCrisis(crisis)"""
+	for i in idList :
+		for j in refObject:
+			elem = get(j)
+			if i.attrib['idref'] == elem.sref :
+				break
+		else :
+			#add i to dest
+			refObject.append(createSingleReference(eType, i).key())

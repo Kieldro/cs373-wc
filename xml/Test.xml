@@ -3,21 +3,21 @@
         <crisis id="hiv_aids">
             <name>AIDS/HIV</name>
 			<info>
-				<history>Human immunodeficiency virus infection / Acquired immunodeficiency syndrome (HIV/AIDS) is a disease of the human immune system caused by the human immunodeficiency virus (HIV). The illness interferes with the immune system, making people with AIDS much more likely to get infections, including opportunistic infections and tumors that do not usually affect people with working immune systems. This susceptibility increases as the disease worsens.</history>
+				<history>Human immunodeficiency virus infection</history>
 				<help>Money donations, Awareness campaigns, Volunteering</help>
 				<resources>Money donations, Health care workers</resources>
 				<type>Epidemic</type>
 				<time>
-					<time></time>
+					<time>asdf</time>
 					<day>1</day>
 					<month>1</month>
-					<year>2010</year>
-					<misc></misc>
+					<year>1</year>
+					<misc>asdf</misc>
 				</time>
 				<loc>
-					<city></city>
-					<region></region>
-					<country>Sub-Saharan Africa</country>
+					<city>asdf</city>
+					<region>asdf</region>
+					<country>Sasdfa</country>
 				</loc>
 				<impact>
 					<human>
@@ -25,12 +25,12 @@
 						<displaced>0</displaced>
 						<injured>0</injured>
 						<missing>0</missing>
-						<misc></misc>
+						<misc>a</misc>
 					</human>
 					<economic>
 						<amount>13000000</amount>
 						<currency>dollars</currency>
-						<misc></misc>
+						<misc>a</misc>
 					</economic>
 				</impact>
 			</info>
@@ -47,46 +47,10 @@
 					<url>http://www.avert.org/apps/media_gallery/files/images/350/a-girl-living-with-hiv-and-her-mother-in-malawi-web.jpg </url>
 					<description></description>
 				 </image>
-				<image>
-					<site></site>
-					<title>AIDS Victim</title>
-					<url>http://www.usnews.com/usnews/photography/aids/graphics/aids1.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>Man With AIDS</title>
-					<url>http://cdn.eurweb.com/wp-content/uploads/2011/04/AIDS.jpeg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>AIDS</title>
-					<url>http://scrapetv.com/News/News%20Pages/Health/images-2/aids-victim.jpg</url>
-					<description></description>
-				</image>
 				<video>
 					<site></site>
 					<title>HIV AIDS in Africa </title>
 					<url>http://www.youtube.com/embed/7gk4xZMVSW8</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>HIV AIDS in Africa </title>
-					<url>http://www.youtube.com/embed/P91nIGt1axs</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>HIV AIDS in Africa </title>
-					<url>http://www.youtube.com/embed/sRxDRzZxDbI</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>HIV AIDS in Africa </title>
-					<url>http://www.youtube.com/embed/kc0_Rh6f6dw</url>
 					<description></description>
 				</video>
 				<social>
@@ -104,62 +68,44 @@
 			</ref>
 			<misc></misc>
             <org idref="american_red_cross"/>
-            <person idref="george_w_bush"/>
+            <person idref="dubya"/>
         </crisis>
  
         <organization id="american_red_cross">
             <name>The American Red Cross</name>
 			<info>
 	            <type>Humanitarian</type>
-				<history>The American Red Cross (ARC), also known as the American National Red Cross, is a volunteer-led, humanitarian organization that provides emergency assistance, disaster relief and education inside the United States. It is the designated U.S. affiliate of the International Federation of Red Cross and Red Crescent Societies.</history>
+				<history>The American Red Cross (ARC), also known as the American National Red Cross.</history>
 				<contact>
-					<phone>1-800-733-27677</phone>
-					<email></email>
+					<phone>8888888888</phone>
+					<email>ian@ian.com</email>
 					<mail>
-						<address></address>
-						<city></city>
-						<state></state>
-						<country></country>
-						<zip></zip>
+						<address>1</address>
+						<city>1</city>
+						<state>1</state>
+						<country>1</country>
+						<zip>1</zip>
 					</mail>
 				</contact>
 				<loc>
-					<city></city>
-					<region></region>
+					<city>austin</city>
+					<region>texas</region>
 					<country>United States</country>
 				</loc>
 			</info>
 			
 			<ref>
 				<primaryImage>
-					<site></site>
+					<site>http://bethelbuzznews.files.wordpress.com</site>
 					<title>American Red Cross logo</title>
 					<url>http://bethelbuzznews.files.wordpress.com/2011/12/red-cross.jpg </url>
-					<description></description>
+					<description>http://bethelbuzznews.files.wordpress.com</description>
 				</primaryImage>
 				<image>
-					<site></site>
+					<site>http://redcross.pmhclients.com</site>
 					<title>Red Cross Volunteers</title>
 					<url>http://redcross.pmhclients.com/images/uploads/new_volunteers_thumb.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>More Volunteers</title>
-					<url>http://blog.nj.com/somersetreporter_impact/2009/07/large_pix-0716RedCrossSV1.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>Red Cross in Africa</title>
-					<url>http://www.icrc.org/eng/assets/images/photos/2010/central-african-rep-cf-e-00320.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>Red Cross Helicopter</title>
-					<url>http://www.key.aero/central/images/news/2530.jpg</url>
-					<description></description>
+					<description>http://redcross.pmhclients.com</description>
 				</image>
 				<video>
 					<site></site>
@@ -167,51 +113,27 @@
 					<url>http://www.youtube.com/embed/7k0D01ODDFA</url>
 					<description></description>
 				</video>
-				<video>
-					<site></site>
-					<title>American Red Cross- Clara Barton-Beaufort,SC 1893</title>
-					<url>http://www.youtube.com/embed/4pqIWDE47iU</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>Volunteer Orientation 1: History I </title>
-					<url>http://www.youtube.com/embed/J_2JYsKVwBU</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>How does the American Red Cross respond to international disasters?</title>
-					<url>http://www.youtube.com/embed/xRcEKX50nqo</url>
-					<description></description>
-				</video>
 				<social>
-					<site></site>
+					<site>http://blog.redcross.org/</site>
 					<title>Red Cross Volunteer Blog</title>
 					<url>http://blog.redcross.org/ </url>
-					<description></description>
-				</social>
-				<social>
-					<site></site>
-					<title>Official Twitter of American Red Cross</title>
-					<url>https://twitter.com/#!/RedCross </url>
-					<description></description>
+					<description>http://blog.redcross.org/</description>
 				</social>
 				<ext>
-					<site></site>
+					<site>http://www.redcross.org/</site>
 					<title>The American Red Cross</title>
 					<url>http://www.redcross.org/ </url>
-					<description></description>
+					<description>http://www.redcross.org/</description>
 				</ext>
 			</ref>
 			<misc></misc>
             <crisis idref="hiv_aids"/>
-            <person idref="george_w_bush"/>
+            <person idref="dubya"/>
 
         </organization>
 		
-        <person id="george_w_bush">
-            <name>George W. Bush</name>
+        <person id="dubya">
+            <name>George Bush</name>
             <info>
 				<type>Former U.S. President</type>
 				<birthdate>
@@ -219,71 +141,41 @@
 					<day>06</day>
 					<month>07</month>
 					<year>1946</year>
-					<misc></misc>
+					<misc>cunt</misc>
 				</birthdate>
 				<nationality>American</nationality>
-				<biography>George Walker Bush (born July 6, 1946) is an American politician and businessman who was the 43rd President of the United States from 2001 to 2009 and the 46th Governor of Texas from 1995 to 2000. The eldest son of Barbara Bush and George H. W. Bush, he was born in New Haven, Connecticut. After graduating from Yale University in 1968 and Harvard Business School in 1975, Bush worked in oil businesses. He married Laura Welch in 1977 and ran unsuccessfully for the House of Representatives shortly thereafter. He later co-owned the Texas Rangers baseball team before defeating Ann Richards in the 1994 Texas gubernatorial election. In a close and controversial election, Bush was elected president in 2000, becoming the fourth president to be elected despite receiving less popular votes nationwide than his opponent. Bush is the second president to have been the son of a former president. He is also the brother of Jeb Bush, former Governor of Florida.</biography>
+				<biography>George Walker Bush was an alright president.</biography>
 			</info>
 			<ref>
 				<primaryImage>
-					<site></site>
+					<site>http://raoulpop.files.wordpress.com</site>
 					<title>Close up of George Bush</title>
 					<url>http://raoulpop.files.wordpress.com/2008/10/george-w-bush-41.jpeg </url>
-					<description></description>
+					<description>http://raoulpop.files.wordpress.com</description>
 				</primaryImage>
 				<image>
-					<site></site>
+					<site>http://bdnpull.bangorpublishing.netdna-cdn.com</site>
 					<title>George Bush Oval Office</title>
 					<url>http://bdnpull.bangorpublishing.netdna-cdn.com/wp-content/uploads/2012/05/president-george-w-bush.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>George Bush Talk</title>
-					<url>http://blog.chron.com/txpotomac/files/2011/05/George_W_Bush.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>George Bush Speech</title>
-					<url>http://2.bp.blogspot.com/-Uzt-NHCMauE/T1x2uuIcLDI/AAAAAAAABEU/l-2HG5Z3NQ0/s1600/george-w-bush-speech.jpg</url>
-					<description></description>
-				</image>
-				<image>
-					<site></site>
-					<title>George Bush at Podium</title>
-					<url>http://www.jlcauvin.com/wp-content/uploads/2009/05/gallery-president-george-001.jpg</url>
-					<description></description>
+					<description>http://bdnpull.bangorpublishing.netdna-cdn.com</description>
 				</image>
 				<video>
-					<site></site>
+					<site>http://www.youtube.com</site>
 					<title>President George W. Bush Inaugural Address</title>
 					<url>http://www.youtube.com/embed/rXzgMdj5urs</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>George Bush Apology for Katrina</title>
-					<url>http://www.youtube.com/embed/k8az4CfEDpw</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>President Bush Warns Of Hurricane Katrina </title>
-					<url>http://www.youtube.com/embed/17hjO8vfigg</url>
-					<description></description>
-				</video>
-				<video>
-					<site></site>
-					<title>Bush response to Kanye for Katrina</title>
-					<url>http://www.youtube.com/embed/ClGv2kiV770</url>
-					<description></description>
+					<description>asdqwd</description>
 				</video>
 				<social>
-					<site></site>
+					<site>https://www.facebook.com</site>
 					<title>Facebook concerning George W. Bush</title>
 					<url>https://www.facebook.com/georgewbush </url>
-					<description></description>
+					<description>https://www.facebook.com</description>
+				</social>
+				<social>
+					<site>https://www.facebook.com</site>
+					<title>Facebook concerning George W. Bush</title>
+					<url>https://www.facebook.com/USSGeorgeHWBush </url>
+					<description>https://www.facebook.com</description>
 				</social>
 				<ext>
 					<site></site>
@@ -292,7 +184,7 @@
 					<description></description>
 				</ext>
 			</ref>
-			<misc></misc>
+			<misc>sadf</misc>
 			<crisis idref="hiv_aids"/>
             <org idref="american_red_cross"/>
         </person>

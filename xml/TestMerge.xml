@@ -1,0 +1,191 @@
+<!--Contains 1 of each crisis, person, and organization--> 
+<worldCrises>
+	<crisis id="darfur_conflict">
+            <name>War in Darfur</name>
+            <info>
+				<history>The Darfur Conflict was a guerrilla conflict.</history>
+				<help>new</help>
+				<resources>new</resources>
+				<type>new Rebellion</type>
+				<time>
+					<time>2</time>
+					<day>2</day>
+					<month>2</month>
+					<year>2</year>
+					<misc>qwer</misc>
+				</time>
+				<loc>
+					<city>qwer</city>
+					<region>qwer</region>
+					<country>qwer</country>
+				</loc>
+				<impact>
+					<human>
+						<deaths>300000</deaths>
+						<displaced>0</displaced>
+						<injured>0</injured>
+						<missing>0</missing>
+						<misc></misc>
+					</human>
+					<economic>
+						<amount>24000000000</amount>
+						<currency>things</currency>
+						<misc></misc>
+					</economic>
+				</impact>
+			</info>
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>Darfur Child with AK-47</title>
+					<url>http://www.diplomatie.gouv.fr/en/IMG/jpg/58w1.jpg</url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Innocent bystanders in the conflict of Darfur</title>
+					<url>http://www.care.org/photos/_full/darfur_reuters_full.jpg </url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Darfur in 10 Minutes: An Overview of the Conflict in Sudan</title>
+					<url>http://www.youtube.com/embed/USLDoIiFzzg</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Twitter concerning saving Darfur</title>
+					<url>https://twitter.com/#!/SaveDarfur</url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>Wikipedia Acticle</title>
+					<url>http://en.wikipedia.org/wiki/darfur_conflict  </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <org idref="american_red_cross"/>
+            <person idref="dubya"/>
+        </crisis>
+ 
+        <organization id="american_red_cross">
+            <name>The American Red Cross</name>
+			<info>
+	            <type>Better Humanitarian</type>
+				<history>The American Red Cross does a lot of stuff to help people.  </history>
+				<contact>
+					<phone>1-800-733-27677</phone>
+					<email>blue@red.com</email>
+					<mail>
+						<address>2</address>
+						<city>2</city>
+						<state>2</state>
+						<country>2</country>
+						<zip>2</zip>
+					</mail>
+				</contact>
+				<loc>
+					<city>new york</city>
+					<region>new york</region>
+					<country>United States</country>
+				</loc>
+			</info>
+			
+			<ref>
+				<primaryImage>
+					<site></site>
+					<title>American Red Cross logo</title>
+					<url>http://bethelbuzznews.files.wordpress.com/2011/12/red-cross.jpg </url>
+					<description></description>
+				</primaryImage>
+				<image>
+					<site></site>
+					<title>Red Cross Volunteers</title>
+					<url>http://redcross.pmhclients.com/images/uploads/new_volunteers_thumb.jpg</url>
+					<description></description>
+				</image>
+				<video>
+					<site></site>
+					<title>Clara Barton: The Beginnings of the American Red Cross</title>
+					<url>http://www.youtube.com/embed/7k0D01ODDFA</url>
+					<description></description>
+				</video>
+				<social>
+					<site></site>
+					<title>Red Cross Volunteer Blog</title>
+					<url>http://blog.redcross.org/ </url>
+					<description></description>
+				</social>
+				<ext>
+					<site></site>
+					<title>The American Red Cross</title>
+					<url>http://www.redcross.org/ </url>
+					<description></description>
+				</ext>
+			</ref>
+			<misc></misc>
+            <crisis idref="darfur_conflict"/>
+            <person idref="dubya"/>
+
+        </organization>
+		
+        <person id="dubya">
+            <name>George W. Bush</name>
+            <info>
+				<type>Retard</type>
+				<birthdate>
+					<time>6:66</time>
+					<day>02</day>
+					<month>02</month>
+					<year>1942</year>
+					<misc>slut</misc>
+				</birthdate>
+				<nationality>American</nationality>
+				<biography>I love Jesus.</biography>
+			</info>
+			<ref>
+				<primaryImage>
+					<site>http://www.endevil.com/</site>
+					<title>W</title>
+					<url>http://www.endevil.com/images/George_Bush.jpg</url>
+					<description>sadf</description>
+				</primaryImage>
+				<image>
+					<site>http://bdnpull.bangorpublishing.netdna-cdn.com</site>
+					<title>George Bush Oval Office</title>
+					<url>http://bdnpull.bangorpublishing.netdna-cdn.com/wp-content/uploads/2012/05/president-george-w-bush.jpg</url>
+					<description>http://en.wikipedia.org</description>
+				</image>
+				<video>
+					<site>http://www.youtube.com</site>
+					<title>President George W. Bush Inaugural Address</title>
+					<url>http://www.youtube.com/embed/rXzgMdj5urs</url>
+					<description>svcadccsas</description>
+				</video>
+				<video>
+					<site>http://www.youtube.com</site>
+					<title>bloopity bloopers</title>
+					<url>http://www.youtube.com/embed/DEbZqvMu2cQ</url>
+					<description>bloops</description>
+				</video>
+				<social>
+					<site>http://www.facebook.com</site>
+					<title>Facebook concerningaaa George W. Bush</title>
+					<url>http://www.facebook.com/georgewbush </url>
+					<description>http://en.facebook.org</description>
+				</social>
+				<ext>
+					<site>http://en.wikipedia.org</site>
+					<title>Wikipedia Article concerning el Diablo</title>
+					<url>http://en.wikipedia.org/wiki/Satan </url>
+					<description>http://en.wikipedia.org</description>
+				</ext>
+			</ref>
+			<misc>nuculer</misc>
+            <crisis idref="darfur_conflict"/>
+            <org idref="american_red_cross"/>
+        </person>
+</worldCrises>

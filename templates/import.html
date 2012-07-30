@@ -33,7 +33,7 @@
 					{% ifequal status "success" %}
 						<div class="alert alert-block alert-success">
 						<h4>Success!</h4>
-							Your XML has validated, and is now a part of the database!
+							{{ message }}
 						</div>
 					{% endifequal %}
 					{% ifequal status "error" %}

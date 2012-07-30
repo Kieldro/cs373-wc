@@ -1,3 +1,4 @@
+from google.appengine.api import taskqueue
 from google.appengine.ext import webapp
 from google.appengine.ext.db import delete, Query
 from Models import *
@@ -10,15 +11,14 @@ from google.appengine.ext.webapp import template
 from random import shuffle
 from SearchFeature import createIndex, searchForString, deleteDocs
 from math import ceil
-
 import os
 import re
 import StringIO
+import logging
+import unicodedata
 
 def deleteModels() :
-	"""
-	This function deletes all entries in the datastore.
-	"""
+	"""This function deletes all entries in the datastore."""
 	delete(HumanImpact.all(keys_only=True))
 	delete(EconomicImpact.all(keys_only=True))
 	delete(Date.all(keys_only=True))
@@ -107,9 +107,7 @@ class BaseHandler(webapp.RequestHandler):
 		self.response.out.write(template.render(path, template_args))
 	
 class MainPage(BaseHandler):
-	"""
-	Class that handles the index page.
-	"""
+	"""Class that handles the index page."""
 	def get(self):
 		toplist = []
 		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
@@ -122,16 +120,12 @@ class MainPage(BaseHandler):
 		self.render_template('index.html', first=toplist[0], topimgs=toplist[1:4])
 		
 class AboutPage(BaseHandler):
-	"""
-	Class that handles the About Page.
-	"""
+	"""Class that handles the About Page."""
 	def get(self):
 		self.render_template('about.html')
 		
 class CrisesPage(BaseHandler):
-	"""
-	Class that handles the Crisis listing page.
-	"""
+	"""Class that handles the Crisis listing page."""
 	def get(self):
 		pstring = self.request.get('p')
 		if pstring == '' :
@@ -145,14 +139,13 @@ class CrisesPage(BaseHandler):
 		
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE crisisinfo != NULL")
+
 		num_pages = int(ceil(q.count()/4))
 		results = q.fetch(offset=(page-1)*4, limit=4)
 		self.render_template('crises.html', crises_list=results, pagenav=generatePagenavs(page, num_pages))
-		
+
 class PeoplePage(BaseHandler):
-	"""
-	Class that handles the People listing page.
-	"""
+	"""Class that handles the People listing page."""
 	def get(self):
 		pstring = self.request.get('p')
 		if pstring == '' :
@@ -166,14 +159,13 @@ class PeoplePage(BaseHandler):
 
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE personinfo != NULL")
+
 		num_pages = int(ceil(q.count()/4))
 		results = q.fetch(offset=(page-1)*4, limit=4)
 		self.render_template('people.html', people_list=results, pagenav=generatePagenavs(page, num_pages))
 		
 class OrganizationsPage(BaseHandler):
-	"""
-	Class that handles the Organizations listing page.
-	"""
+	"""Class that handles the Organizations listing page."""
 	def get(self):
 		pstring = self.request.get('p')
 		if pstring == '' :
@@ -187,9 +179,26 @@ class OrganizationsPage(BaseHandler):
 				
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE orginfo != NULL")
+
 		num_pages = int(ceil(q.count()/4))
 		results = q.fetch(offset=(page-1)*4, limit=4)
 		self.render_template('organizations.html', orgs_list=results, pagenav=generatePagenavs(page, num_pages))
+
+class ImportWorker(webapp.RequestHandler):
+	"""A worker thread that does stuff"""
+	def post(self):
+		xmlfile = self.request.get('xmlfile')
+		backup = self.request.get('backup')
+		try:				
+			runImport(xmlfile)
+			deleteDocs()
+			createIndex()
+		except Exception, e:
+			logging.error(e.args)
+			deleteModels()
+			runImport(backup)
+			return
+
 
 class ImportPage(BaseHandler):
 	"""
@@ -219,32 +228,18 @@ class ImportPage(BaseHandler):
 			s = "Parsing aborted! Could not parse the XML. Check the syntax of your file."
 			self.render_template('import.html', status='error', message=s)
 			return
-
 		merge = self.request.get("mergebox")
+
+		backup = runExport()
 		if (merge != "merge") :
 			deleteModels()
+		taskqueue.add(url='/ImportWorker', params={'xmlfile': xmlfile, 'backup': backup})
 
-		#try:
-		runImport(xmlfile)
-		#except Exception, e:
-		#	self.render_template('import.html', status='error', message=e.args)
-		#	return
+		self.render_template('import.html', status='success', message="Everything's OKAY! It is now being imported in the background!")
 
-		try:
-			deleteDocs()
-		except Exception, e:
-			self.render_template('import.html', status='error', message="DELETE DOCS "+e.args)
-			
-		try:
-			createIndex()
-			self.render_template('import.html', status='success', message="Everything's OKAY!")
-		except Exception, e:
-			self.render_template('import.html', status='error', message=e.args)
 		
 class ExportPage(BaseHandler):
-	"""
-	Class that handles the Export page.
-	"""
+	"""Class that handles the Export page."""
 	def post(self):
 		result = runExport()
 		self.response.headers['Content-Type'] = 'text/xml'
@@ -254,9 +249,7 @@ class ExportPage(BaseHandler):
 		self.render_template('export.html')
 		
 class EntryPage(BaseHandler) :
-	"""
-	Class that handles rendering an entry in the datastore.
-	"""
+	"""Class that handles rendering an entry in the datastore."""
 	def get(self):
 		entry_name = self.request.get('id')
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
@@ -330,6 +323,7 @@ class EntryPage(BaseHandler) :
 				c_refs = []
 				for key in result.crisisref:
 					c_refs.append(Reference.get(key))
+
 				o_refs = []
 				for key in result.orgref:
 					o_refs.append(Reference.get(key))
@@ -343,9 +337,7 @@ class EntryPage(BaseHandler) :
 				self.render_template('_base.html')
 
 class SearchPage(BaseHandler) :
-	"""
-	Class that handles searching and the displaying of search results.
-	"""
+	"""Class that handles searching and the displaying of search results."""
 	def get(self) :
 		name = self.request.get('name')
 		mode = self.request.get('type')
@@ -371,6 +363,7 @@ application = webapp.WSGIApplication([('/', MainPage),
 									  ('/export', ExportPage),
 									  ('/entry', EntryPage),
 									  ('/search', SearchPage),
+									  ('/ImportWorker', ImportWorker),
 									  ], debug=True)
 
 def main():
