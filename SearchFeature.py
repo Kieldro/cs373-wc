@@ -30,8 +30,7 @@ def createIndex() :
 		elif (page.class_name() == 'Person' ):
 			content = page.personinfo.biography
 			type = page.personinfo.ptype
-			loc = page.personinfo.location
-			location = '%s %s %s' % (loc.city, loc.region, loc.city)
+			location = page.personinfo.nationality
 		else :
 			raise Exception
 		
