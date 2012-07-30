@@ -67,11 +67,7 @@
 						<ul class="unstyled">
 							{% for video in videos %}
 							<li>
-								{% ifequal video.site 'http://www.youtube.com' %}
-									<iframe width="560" height="315" src="{{ video.url }}?wmode=transparent" frameborder="0" allowfullscreen></iframe>
-								{% else %}
-									<a href="{{ video.url }}">{{ video.description }}</a> at {{ video.site }}
-								{% endifequal %}
+								{{ video }}
 							</li>	
 							{% endfor %}
 						</ul>

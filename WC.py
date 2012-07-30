@@ -287,7 +287,16 @@ class EntryPage(BaseHandler) :
 			videoKey_list = references.video
 			vids = []
 			for key in videoKey_list:
-				vids.append(Link.get(key))
+				#vids.append(Link.get(key))
+				v = Link.get(key)
+				if re.search("youtube", v.url):
+					if re.search("embed", v.url):
+						vids.append('<iframe width="560" height="315" src="%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>' % v.url)
+					else :
+						vsearch = re.search("v=((.)*)(&)?", v.url)
+						vids.append(vids.append('<iframe width="560" height="315" src="http://www.youtube.com/embed/%s?wmode=transparent" frameborder="0" allowfullscreen></iframe>'% vsearch.group(1)))
+				else :
+					vids.append('<a href="%s">%s</a>' % (v.url, v.url))
 			
 			# ----Page specific Stuff----#
 			class_string = result.class_name()
