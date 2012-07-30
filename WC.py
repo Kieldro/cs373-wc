@@ -112,10 +112,8 @@ class OrganizationsPage(BaseHandler):
 class ImportWorker(webapp.RequestHandler):
 	"""A worker thread that does stuff"""
 	def post(self):
-		#merge = self.request.get('merge')
 		xmlfile = self.request.get('xmlfile')
 		backup = self.request.get('backup')
-		runImport(xmlfile)
 		try:				
 			runImport(xmlfile)
 			deleteDocs()
@@ -123,7 +121,7 @@ class ImportWorker(webapp.RequestHandler):
 		except Exception, e:
 			logging.error(e.args)
 			deleteModels()
-			#runImport(backup)
+			runImport(backup)
 			return
 
 
@@ -156,11 +154,10 @@ class ImportPage(BaseHandler):
 			return
 		merge = self.request.get("mergebox")
 
-		backup = ""#runExport()
+		backup = runExport()
 		if (merge != "merge") :
 			deleteModels()
 		taskqueue.add(url='/ImportWorker', params={'xmlfile': xmlfile, 'backup': backup})
-
 
 		self.render_template('import.html', status='success', message="Everything's OKAY! It is now being imported in the background!")
 
