@@ -52,7 +52,7 @@ class TestWC3(unittest.TestCase):
 		self.assert_(len(model.reflink.social) == num_social)
 		self.assert_(len(model.reflink.ext) == num_ext)
 
-	def test_merge_refs2(self) :
+	"""def test_merge_refs2(self) :
 		root = fromstring(orgtag2)
 		model = createOrganization(root)
 		num_images = len(model.reflink.image)
@@ -77,7 +77,7 @@ class TestWC3(unittest.TestCase):
 		num_video = len(model.reflink.video)
 		mergeOrganization(root, model)
 		self.assert_(len(model.reflink.image) == num_images)
-		self.assert_(len(model.reflink.video) == num_video)
+		self.assert_(len(model.reflink.video) == num_video)"""
 	
 	'''def test_update_ids1(self) :
 		tree = fromstring(orgtag2)		# Element tree

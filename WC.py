@@ -36,42 +36,48 @@ def deleteModels() :
 	delete(Crisis.all(keys_only=True))
 	delete(Person.all(keys_only=True))
 
-def generatePagenavs(page, num_pages) :
-		pagenav_list = []
+def generatePagenavs(page, num_pages, page_string) :
+	"""
+	Generates the page navigation at the bottom of the Crises, Organizations, and People Master Pages.
+	page is the current page number
+	num_pages is the total page number
+	page_string is the string hyperlink fragment
+	"""	
+	pagenav_list = []
+	
+	if page==1 :
+		pagenav_list.append('<li class="disabled"><a>&laquo</a></li>')
+	else :
+		pagenav_list.append('<li><a href="/%s?p=%s">&laquo</a></li>' % (page_string, page-1))
+	
+	# If there are less than 5 pages, just display all.
+	if num_pages <= 5 :
+		for p in range(1,num_pages+1) :
+			if p == page :
+				pagenav_list.append('<li class="active"><a href="/%s?p=%s">%s</a></li>' %(page_string, p, p))
+			else:
+				pagenav_list.append('<li><a href="/%s?p=%s">%s</a></li>' % (page_string,p,p))
+	# If we can, display 5 at a time with page in the middle:  [<<][p-2][p-1][p][p+1][p+2][>>]
+	elif page+2 <= num_pages :
+		for p in range(page-2, page+3):
+			if p == page :
+				pagenav_list.append('<li class="active"><a href="/%s?p=%s">%s</a></li>' % (page_string, p, p))
+			else:
+				pagenav_list.append('<li><a href="/%s?p=%s">%s</a></li>' % (page_string,p,p))
+	# If we get here, just display the last 5 pages, current page doesn't have to be in the middle
+	else :
+		for p in range(num_pages-4, num_pages+1) :
+			if p == page :
+				pagenav_list.append('<li class="active"><a href="/%s?p=%s">%s</a></li>' % (page_string, p, p))
+			else:
+				pagenav_list.append('<li><a href="/%s?p=%s">%s</a></li>' % (page_string,p,p))
+				
+	if page==num_pages :
+		pagenav_list.append('<li class="disabled"><a>&raquo</a></li>')
+	else :
+		pagenav_list.append('<li><a href="/%s?p=%s">&raquo</a></li>' % (page_string, page+1))
 		
-		if page==1 :
-			pagenav_list.append('<li class="disabled"><a>&laquo</a></li>')
-		else :
-			pagenav_list.append('<li><a href="/crises?p=%s">&laquo</a></li>' % (page-1))
-		
-		# If there are less than 5 pages, just display all.
-		if num_pages <= 5 :
-			for p in range(1,num_pages+1) :
-				if p == page :
-					pagenav_list.append('<li class="active"><a href="/crises?p=%s">%s</a></li>' %(p, p))
-				else:
-					pagenav_list.append('<li><a href="/crises?p=%s">%s</a></li>' % (p,p))
-		# If we can, display 5 at a time with page in the middle:  [<<][p-2][p-1][p][p+1][p+2][>>]
-		elif page+2 <= num_pages :
-			for p in range(page-2, page+3):
-				if p == page :
-					pagenav_list.append('<li class="active"><a href="/crises?p=%s">%s</a></li>' % (p,p))
-				else:
-					pagenav_list.append('<li><a href="/crises?p=%s">%s</a></li>' % (p,p))
-		# If we get here, just display the last 5 pages, current page doesn't have to be in the middle
-		else :
-			for p in range(num_pages-4, num_pages+1) :
-				if p == page :
-					pagenav_list.append('<li class="active"><a href="/crises?p=%s">%s</a></li>' % (p,p))
-				else:
-					pagenav_list.append('<li><a href="/crises?p=%s">%s</a></li>' % (p,p))
-					
-		if page==num_pages :
-			pagenav_list.append('<li class="disabled"><a>&raquo</a></li>')
-		else :
-			pagenav_list.append('<li><a href="/crises?p=%s">&raquo</a></li>' % (page+1))
-			
-		return pagenav_list
+	return pagenav_list
 	
 	
 class BaseHandler(webapp.RequestHandler):
@@ -142,7 +148,7 @@ class CrisesPage(BaseHandler):
 
 		num_pages = int(ceil(q.count()/float(4)))
 		results = q.fetch(offset=(page-1)*4, limit=4)
-		self.render_template('crises.html', crises_list=results, pagenav=generatePagenavs(page, num_pages))
+		self.render_template('crises.html', crises_list=results, pagenav=generatePagenavs(page, num_pages,'crises'))
 
 class PeoplePage(BaseHandler):
 	"""Class that handles the People listing page."""
@@ -161,11 +167,8 @@ class PeoplePage(BaseHandler):
 						"WHERE personinfo != NULL")
 
 		num_pages = int(ceil(q.count()/float(4)))
-		self.response.out.write(q.count())
-		self.response.out.write("Math:" + str(num_pages))
 		results = q.fetch(offset=(page-1)*4, limit=4)
-		self.response.out.write((page-1)*4)
-		self.render_template('people.html', people_list=results, pagenav=generatePagenavs(page, num_pages))
+		self.render_template('people.html', people_list=results, pagenav=generatePagenavs(page, num_pages, 'people'))
 		
 class OrganizationsPage(BaseHandler):
 	"""Class that handles the Organizations listing page."""
@@ -185,13 +188,16 @@ class OrganizationsPage(BaseHandler):
 
 		num_pages = int(ceil(q.count()/float(4)))
 		results = q.fetch(offset=(page-1)*4, limit=4)
-		self.render_template('organizations.html', orgs_list=results, pagenav=generatePagenavs(page, num_pages))
+		self.render_template('organizations.html', orgs_list=results, pagenav=generatePagenavs(page, num_pages,'organizations'))
 
 class ImportWorker(webapp.RequestHandler):
 	"""A worker thread that does stuff"""
 	def post(self):
 		xmlfile = self.request.get('xmlfile')
-		backup = self.request.get('backup')
+		backup = runExport()
+		merge = self.request.get('merge')
+		if (merge != "merge") :
+			deleteModels()
 		try:				
 			runImport(xmlfile)
 			deleteDocs()
@@ -233,10 +239,7 @@ class ImportPage(BaseHandler):
 			return
 		merge = self.request.get("mergebox")
 
-		backup = runExport()
-		if (merge != "merge") :
-			deleteModels()
-		taskqueue.add(url='/ImportWorker', params={'xmlfile': xmlfile, 'backup': backup})
+		taskqueue.add(url='/ImportWorker', params={'xmlfile': xmlfile, 'merge': merge})
 
 		self.render_template('import.html', status='success', message="Everything's OKAY! It is now being imported in the background!")
 
