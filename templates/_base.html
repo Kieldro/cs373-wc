@@ -27,7 +27,7 @@
 							<ul class="dropdown-menu">
 								<li><p class="nav-header">Recent Entries:</p></li>
 								{% for crisis in cNav %}
-									<li><a href="/id?name={{ crisis.ID }}">{{ crisis.name }}</a></li>
+									<li><a href="/entry?id={{ crisis.ID }}">{{ crisis.name }}</a></li>
 								{% endfor %}
 								<li class="divider"></li>
 								<li><a href="/crises">See All...</a></li>
