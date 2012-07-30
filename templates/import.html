@@ -29,25 +29,7 @@
 				</div>
 			</div>
 			<div class="span4">
-				{% if status %}
-					{% ifequal status "success" %}
-						<div class="alert alert-block alert-success">
-						<h4>Success!</h4>
-							{{ message }}
-						</div>
-					{% endifequal %}
-					{% ifequal status "error" %}
-						<div class="alert alert-block alert-error">
-						<h4>Error!</h4>
-						{{ message }}
-						</div>
-					{% endifequal %}
-				{% else %}
-					<div class="alert alert-block alert-info">
-					<h4>Note</h4>
-					Watch this space&mdash;if anything goes wrong, you'll see an alert here!
-					</div>
-				{% endif %}
+				{{ msg }}
 			</div>
 		</div>
 		<h1>But Before You Import...</h1>

@@ -118,12 +118,11 @@ class MainPage(BaseHandler):
 		toplist = []
 		for crisis in Crisis.gql("ORDER BY last_modified DESC LIMIT 4"):
 			toplist.append(crisis)
-		for org in Organization.gql("ORDER BY last_modified DESC LIMIT 4"):
-			toplist.append(org)
-		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
-			toplist.append(person)
 		shuffle(toplist)
-		self.render_template('index.html', first=toplist[0], topimgs=toplist[1:4])
+		if len(toplist) > 0 :
+			self.render_template('index.html', first=toplist[0], topimgs=toplist[1:])
+		else:
+			self.render_template('index.html')
 		
 class AboutPage(BaseHandler):
 	"""Class that handles the About Page."""
@@ -216,8 +215,33 @@ class ImportPage(BaseHandler):
 	On POST, the xml given by the user is validated. If it passes, it is added to the models.
 	"""
 	def get(self):
+		msg = self.request.get('msg')
+		
+		if msg == 'validation' :
+			info = """<div class="alert alert-block alert-error">
+						<h4>Error!</h4>
+						Validation aborted! XML does not conform to the schema.
+						</div>"""
+		elif msg == 'parsing' :
+			info = """<div class="alert alert-block alert-error">
+						<h4>Error!</h4>
+						Parsing aborted! Could not parse the XML. Check the syntax of your file.
+						</div>
+						"""
+		elif msg == 'success' :
+			info = """<div class="alert alert-block alert-success">
+						<h4>Success!</h4>
+						The file parsed and passed validation! The database will be updated in the background,
+						so you might not see the changes right away.
+						</div>"""
+		else :
+			info = """<div class="alert alert-block alert-info">
+					<h4>Note</h4>
+					Watch this space&mdash;if anything goes wrong, you'll see an alert here!
+					</div>""" 
+		
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage ORDER by name")
-		self.render_template('import.html', pages=q)
+		self.render_template('import.html', pages=q, msg=info)
 
 	def post(self):
 		xmlfile = self.request.get("data")
@@ -230,19 +254,15 @@ class ImportPage(BaseHandler):
 			#elementtree object after validation
 			elemTree = elementTreeWrapper.getTree()
 		except pyxsval.XsvalError, errstr:
-			s= "Validation aborted! XML does not conform to the schema."
-			self.render_template('import.html', status='error', message=s)
+			self.redirect('/import?msg=validation')
 			return
 		except GenXmlIfError, errstr:
-			s = "Parsing aborted! Could not parse the XML. Check the syntax of your file."
-			self.render_template('import.html', status='error', message=s)
+			self.redirect('/import?msg=validation')
 			return
 		merge = self.request.get("mergebox")
 
 		taskqueue.add(url='/ImportWorker', params={'xmlfile': xmlfile, 'merge': merge})
-
-		self.render_template('import.html', status='success', message="Everything's OKAY! It is now being imported in the background!")
-
+		self.redirect('/import?msg=success')
 		
 class ExportPage(BaseHandler):
 	"""Class that handles the Export page."""
