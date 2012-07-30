@@ -48,7 +48,11 @@
 							<h1>{{ result.fields.0.value }}
 							</h1>
 						</a>
-						<p>{{ result.expressions.0}}</p>
+						<p>
+							{% for res in result.expressions %}
+								{{res.expression}} ...
+							{% endfor %}
+						</p>
 					</li>
 					{% endfor %}
 				</ul>
