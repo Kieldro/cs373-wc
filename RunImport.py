@@ -11,7 +11,7 @@ def runImport(filestring):
 	datasotre. 
 	filestring is a string that contains an xml instance
 	"""
-	xmlstring = unicodedata.normalize('NFKD', filestring).encode('ascii', 'ignore')
+	xmlstring = unicodedata.normalize('NFKD', unicode(filestring)).encode('ascii', 'ignore')
 	xmlstring = StringIO.StringIO(xmlstring)
 	tree = parse(xmlstring)
 	buildModels(tree)

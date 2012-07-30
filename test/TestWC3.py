@@ -87,8 +87,8 @@ class TestWC3(unittest.TestCase):
 		
 		model = createOrganization(root)
 		num_images = len(model.reflink.image)
-		self.assert_(len(model.reflink.video) > num_video)
-'''
+		self.assert_(len(model.reflink.video) > num_video)'''
+
 # -----------
 # test_person
 # -----------

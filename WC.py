@@ -123,7 +123,7 @@ class MainPage(BaseHandler):
 		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
 			toplist.append(person)
 		shuffle(toplist)
-		self.render_template('index.html', first=toplist[0], topimgs=toplist[1:4])
+		self.render_template('index.html', first=toplist[0], topimgs=toplist[1:])
 		
 class AboutPage(BaseHandler):
 	"""Class that handles the About Page."""
@@ -198,6 +198,7 @@ class ImportWorker(webapp.RequestHandler):
 		merge = self.request.get('merge')
 		if (merge != "merge") :
 			deleteModels()
+		runImport(xmlfile)
 		try:				
 			runImport(xmlfile)
 			deleteDocs()
@@ -232,10 +233,12 @@ class ImportPage(BaseHandler):
 		except pyxsval.XsvalError, errstr:
 			s= "Validation aborted! XML does not conform to the schema."
 			self.render_template('import.html', status='error', message=s)
+			logging.error(errstr.args)
 			return
 		except GenXmlIfError, errstr:
 			s = "Parsing aborted! Could not parse the XML. Check the syntax of your file."
 			self.render_template('import.html', status='error', message=s)
+			logging.error(errstr.args)
 			return
 		merge = self.request.get("mergebox")
 
