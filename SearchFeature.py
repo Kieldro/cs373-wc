@@ -1,11 +1,12 @@
 from google.appengine.api import search
 from google.appengine.ext import db
 
-def createDocument(name, paragraph, type ):
+def createDocument(name, paragraph, type, location ):
     return search.Document(
         fields=[search.TextField(name = 'name', value = name),
                 search.TextField(name = 'content', value = paragraph),
-				search.TextField(name = 'type', value = type)])
+				search.TextField(name = 'type', value = type),
+				search.TextField(name = 'location', value = location)])
 
 def createIndex() :
 	q = db.GqlQuery("SELECT * FROM WorldCrisisPage")
@@ -19,16 +20,22 @@ def createIndex() :
 		if (page.class_name() == 'Crisis'):
 			content = page.crisisinfo.history + page.crisisinfo.helps + page.crisisinfo.resources
 			type = page.crisisinfo.ctype
+			loc = page.crisisinfo.location
+			location = '%s %s %s' % (loc.city, loc.region, loc.city)
 		elif (page.class_name() == 'Organization'):
 			content = page.orginfo.history
 			type = page.orginfo.otype
+			loc = page.orginfo.location
+			location = '%s %s %s' % (loc.city, loc.region, loc.city)
 		elif (page.class_name() == 'Person' ):
 			content = page.personinfo.biography
 			type = page.personinfo.ptype
+			loc = page.personinfo.location
+			location = '%s %s %s' % (loc.city, loc.region, loc.city)
 		else :
 			raise Exception
 		
-		index.add(createDocument(page.name, content, type))
+		index.add(createDocument(page.name, content, type, location))
 
 def deleteDocs() :
 	doc_index = search.Index('index')
@@ -43,7 +50,7 @@ def searchForString(search_string):
 	options = search.QueryOptions(
 		limit = 10, 					# the number of results to return)
 		returned_fields=['name'],
-		snippeted_fields=['content'])  # AT THE MOMENT, SNIPPETS ONLY WORK ON PRODUCTION APPSERVER!
+		snippeted_fields=['name', 'content', 'type', 'location'])
 
 	q = search.Query(query_string=search_string, options=options)
 
