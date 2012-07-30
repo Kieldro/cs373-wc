@@ -119,7 +119,7 @@ class MainPage(BaseHandler):
 		for person in Person.gql("ORDER BY last_modified DESC LIMIT 4"):
 			toplist.append(person)
 		shuffle(toplist)
-		self.render_template('index.html', topimgs=toplist[0:4])
+		self.render_template('index.html', first=toplist[0], topimgs=toplist[1:4])
 		
 class AboutPage(BaseHandler):
 	"""
@@ -146,8 +146,6 @@ class CrisesPage(BaseHandler):
 		q = db.GqlQuery("SELECT * FROM WorldCrisisPage " +
 						"WHERE crisisinfo != NULL")
 		num_pages = int(ceil(q.count()/4))
-		self.response.out.write(q.count())
-		self.response.out.write(num_pages)
 		results = q.fetch(offset=(page-1)*4, limit=4)
 		self.render_template('crises.html', crises_list=results, pagenav=generatePagenavs(page, num_pages))
 		

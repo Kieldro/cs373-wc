@@ -2,15 +2,41 @@
 {% block body %}
 <div class="container">
 	<div class="row">
-		<ul class="thumbnails">
-			{% for top in topimgs %}
+		<div class="span6 offset3">
+			<div id="myCarousel" class="carousel slide">
+				<!-- Carousel Images -->
+				<div class="carousel-inner">
+					<div class="item fixed-container active">
+						<img src="{{ first.reflink.primaryImage.url }}"/>
+						<div class="carousel-caption">
+							<h4>{{ first.name }}</h4>
+							<p>Click <a href="/entry?name={{ first.name }}">here</a> for more info.</p>
+						</div>
+					</div>
+					{% for top in topimgs %}
+					<div class="item fixed-container">
+						<img src="{{ top.reflink.primaryImage.url }}"/>
+						<div class="carousel-caption">
+							<h4>{{ top.name }}</h4>
+							<p>Click <a href="/entry?name={{ top.name }}">here</a> for more info.</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<!-- Carousel Buttons -->
+				<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+			</div>
+		</div>
+		<!--<ul class="thumbnails">
+			% for top in topimgs %
 			<li class="span3">
-				<a class="thumbnail" href="/entry?name={{ top.name }}">
-					<img src="{{ top.reflink.primaryImage.url }}"/>
+				<a class="thumbnail" href="/entry?name={ top.name }">
+					<img src="{ top.reflink.primaryImage.url }"/>
 				</a>
 			</li>
-			{% endfor %}
-		</ul>
+			% endfor %
+		</ul>-->
 	</div>
 
 	<div class="row">
