@@ -48,7 +48,7 @@ def deleteDocs() :
 def searchForString(search_string):
 	options = search.QueryOptions(
 		limit = 10, 					# the number of results to return)
-		returned_fields=['name'],
+		returned_fields=['name', 'ID'],
 		snippeted_fields=['name', 'content', 'type', 'location'])
 
 	q = search.Query(query_string=search_string, options=options)

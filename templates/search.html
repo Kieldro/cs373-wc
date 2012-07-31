@@ -27,10 +27,10 @@
 						Sorry! No results were found!
 					</h4>
 				{% else %}
-					<ul class="entries">
+					<ul class="entries ">
 						{% for result in results %}
 						<li>
-							<a href="/entry?name={{ result.fields.0.value }}">
+							<a href="/entry?id={{ result.fields.1.value }}">
 								<h1>{{ result.fields.0.value }}
 								</h1>
 							</a>
@@ -41,10 +41,10 @@
 				{% endifequal %}
 				{% if results2 %}
 				<h1>Results for <small>{{ term2 }}</small></h1> 
-				<ul class="orentries">
+				<ul class="entries">
 					{% for result in results2 %}
 					<li>
-						<a href="/entry?name={{ result.fields.0.value }}">
+						<a href="/entry?id={{ result.fields.1.value }}">
 							<h1>{{ result.fields.0.value }}
 							</h1>
 						</a>
