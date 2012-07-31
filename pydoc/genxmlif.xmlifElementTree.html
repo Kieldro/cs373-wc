@@ -1,0 +1,344 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module genxmlif.xmlifElementTree</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="genxmlif.html"><font color="#ffffff">genxmlif</font></a>.xmlifElementTree</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/genxmlif/xmlifElementTree.py">/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/genxmlif/xmlifElementTree.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;genxmlif,&nbsp;Release&nbsp;0.9.0<br>
+#&nbsp;file:&nbsp;xmlifElementTree.py<br>
+#<br>
+#&nbsp;XML&nbsp;interface&nbsp;class&nbsp;to&nbsp;elementtree&nbsp;toolkit&nbsp;by&nbsp;Fredrik&nbsp;Lundh<br>
+#<br>
+#&nbsp;history:<br>
+#&nbsp;2005-04-25&nbsp;rl&nbsp;&nbsp;&nbsp;created<br>
+#&nbsp;2007-05-25&nbsp;rl&nbsp;&nbsp;&nbsp;performance&nbsp;optimization&nbsp;(caching)&nbsp;added,&nbsp;some&nbsp;bugfixes<br>
+#&nbsp;2007-06-29&nbsp;rl&nbsp;&nbsp;&nbsp;complete&nbsp;re-design,&nbsp;<a href="#ElementExtension">ElementExtension</a>&nbsp;class&nbsp;introduced<br>
+#&nbsp;2008-07-01&nbsp;rl&nbsp;&nbsp;&nbsp;Limited&nbsp;support&nbsp;of&nbsp;XInclude&nbsp;added<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe.&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved.<br>
+#<br>
+#&nbsp;--------------------------------------------------------------------<br>
+#&nbsp;The&nbsp;generic&nbsp;XML&nbsp;interface&nbsp;is<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe<br>
+#<br>
+#&nbsp;By&nbsp;obtaining,&nbsp;using,&nbsp;and/or&nbsp;copying&nbsp;this&nbsp;software&nbsp;and/or&nbsp;its<br>
+#&nbsp;associated&nbsp;documentation,&nbsp;you&nbsp;agree&nbsp;that&nbsp;you&nbsp;have&nbsp;read,&nbsp;understood,<br>
+#&nbsp;and&nbsp;will&nbsp;comply&nbsp;with&nbsp;the&nbsp;following&nbsp;terms&nbsp;and&nbsp;conditions:<br>
+#<br>
+#&nbsp;Permission&nbsp;to&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;and&nbsp;distribute&nbsp;this&nbsp;software&nbsp;and<br>
+#&nbsp;its&nbsp;associated&nbsp;documentation&nbsp;for&nbsp;any&nbsp;purpose&nbsp;and&nbsp;without&nbsp;fee&nbsp;is<br>
+#&nbsp;hereby&nbsp;granted,&nbsp;provided&nbsp;that&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice&nbsp;appears&nbsp;in<br>
+#&nbsp;all&nbsp;copies,&nbsp;and&nbsp;that&nbsp;both&nbsp;that&nbsp;copyright&nbsp;notice&nbsp;and&nbsp;this&nbsp;permission<br>
+#&nbsp;notice&nbsp;appear&nbsp;in&nbsp;supporting&nbsp;documentation,&nbsp;and&nbsp;that&nbsp;the&nbsp;name&nbsp;of<br>
+#&nbsp;the&nbsp;author&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;advertising&nbsp;or&nbsp;publicity<br>
+#&nbsp;pertaining&nbsp;to&nbsp;distribution&nbsp;of&nbsp;the&nbsp;software&nbsp;without&nbsp;specific,&nbsp;written<br>
+#&nbsp;prior&nbsp;permission.<br>
+#<br>
+#&nbsp;THE&nbsp;AUTHOR&nbsp;DISCLAIMS&nbsp;ALL&nbsp;WARRANTIES&nbsp;WITH&nbsp;REGARD<br>
+#&nbsp;TO&nbsp;THIS&nbsp;SOFTWARE,&nbsp;INCLUDING&nbsp;ALL&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANT-<br>
+#&nbsp;ABILITY&nbsp;AND&nbsp;FITNESS.&nbsp;&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;AUTHOR<br>
+#&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;SPECIAL,&nbsp;INDIRECT&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;OR&nbsp;ANY<br>
+#&nbsp;DAMAGES&nbsp;WHATSOEVER&nbsp;RESULTING&nbsp;FROM&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA&nbsp;OR&nbsp;PROFITS,<br>
+#&nbsp;WHETHER&nbsp;IN&nbsp;AN&nbsp;ACTION&nbsp;OF&nbsp;CONTRACT,&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHER&nbsp;TORTIOUS<br>
+#&nbsp;ACTION,&nbsp;ARISING&nbsp;OUT&nbsp;OF&nbsp;OR&nbsp;IN&nbsp;CONNECTION&nbsp;WITH&nbsp;THE&nbsp;USE&nbsp;OR&nbsp;PERFORMANCE<br>
+#&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE.<br>
+#&nbsp;--------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="xml.etree.ElementInclude.html">xml.etree.ElementInclude</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="urllib.html">urllib</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifApi.html#XmlInterfaceBase">genxmlif.xmlifApi.XmlInterfaceBase</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifElementTree.html#XmlInterfaceElementTree">XmlInterfaceElementTree</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">genxmlif.xmlifBase.XmlIfBuilderExtensionBase</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifElementTree.html#ExtXMLTreeBuilder">ExtXMLTreeBuilder</a>(<a href="xml.etree.ElementTree.html#XMLTreeBuilder">xml.etree.ElementTree.XMLTreeBuilder</a>, <a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">genxmlif.xmlifBase.XmlIfBuilderExtensionBase</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifElementTree.html#ExtXIncludeLoader">ExtXIncludeLoader</a>
+</font></dt><dt><font face="helvetica, arial"><a href="xml.etree.ElementTree.html#ElementTree">xml.etree.ElementTree.ElementTree</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifElementTree.html#ElementTreeExtension">ElementTreeExtension</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="xml.etree.ElementTree.html#XMLTreeBuilder">xml.etree.ElementTree.XMLTreeBuilder</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifElementTree.html#ExtXMLTreeBuilder">ExtXMLTreeBuilder</a>(<a href="xml.etree.ElementTree.html#XMLTreeBuilder">xml.etree.ElementTree.XMLTreeBuilder</a>, <a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">genxmlif.xmlifBase.XmlIfBuilderExtensionBase</a>)
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="xml.etree.ElementTree.html#_ElementInterface">xml.etree.ElementTree._ElementInterface</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifElementTree.html#ElementExtension">ElementExtension</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ElementExtension">class <strong>ElementExtension</strong></a>(<a href="xml.etree.ElementTree.html#_ElementInterface">xml.etree.ElementTree._ElementInterface</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ElementExtension-__init__"><strong>__init__</strong></a>(self, xmlRootTagName, attributeDict)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtAppendChild"><strong>xmlIfExtAppendChild</strong></a>(self, childElement)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtCloneNode"><strong>xmlIfExtCloneNode</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetAttribute"><strong>xmlIfExtGetAttribute</strong></a>(self, tupleOrAttrName)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetAttributeDict"><strong>xmlIfExtGetAttributeDict</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetChildren"><strong>xmlIfExtGetChildren</strong></a>(self, filterTag<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetElementTailText"><strong>xmlIfExtGetElementTailText</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetElementText"><strong>xmlIfExtGetElementText</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetElementValueFragments"><strong>xmlIfExtGetElementValueFragments</strong></a>(self, ignoreEmtpyStringFragments)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetElementsByTagName"><strong>xmlIfExtGetElementsByTagName</strong></a>(self, filterTag<font color="#909090">=(None, None)</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetFirstChild"><strong>xmlIfExtGetFirstChild</strong></a>(self, filterTag<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetIterator"><strong>xmlIfExtGetIterator</strong></a>(self, filterTag<font color="#909090">=(None, None)</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetNamespaceURI"><strong>xmlIfExtGetNamespaceURI</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetParentNode"><strong>xmlIfExtGetParentNode</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtGetTagName"><strong>xmlIfExtGetTagName</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtInsertBefore"><strong>xmlIfExtInsertBefore</strong></a>(self, childElement, refChildElement)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtInsertSubtree"><strong>xmlIfExtInsertSubtree</strong></a>(self, refChildElement, subTree, insertSubTreeRootNode)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtProcessWsElementValue"><strong>xmlIfExtProcessWsElementValue</strong></a>(self, wsAction)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtRemoveAttribute"><strong>xmlIfExtRemoveAttribute</strong></a>(self, tupleOrAttrName)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtRemoveChild"><strong>xmlIfExtRemoveChild</strong></a>(self, childElement)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtSetAttribute"><strong>xmlIfExtSetAttribute</strong></a>(self, tupleOrAttrName, attributeValue, curNs)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtSetElementValue"><strong>xmlIfExtSetElementValue</strong></a>(self, elementValue)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtSetParentNode"><strong>xmlIfExtSetParentNode</strong></a>(self, parentElement)</dt></dl>
+
+<dl><dt><a name="ElementExtension-xmlIfExtUnlink"><strong>xmlIfExtUnlink</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="xml.etree.ElementTree.html#_ElementInterface">xml.etree.ElementTree._ElementInterface</a>:<br>
+<dl><dt><a name="ElementExtension-__delitem__"><strong>__delitem__</strong></a>(self, index)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__delslice__"><strong>__delslice__</strong></a>(self, start, stop)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__getitem__"><strong>__getitem__</strong></a>(self, index)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__getslice__"><strong>__getslice__</strong></a>(self, start, stop)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__len__"><strong>__len__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__repr__"><strong>__repr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__setitem__"><strong>__setitem__</strong></a>(self, index, element)</dt></dl>
+
+<dl><dt><a name="ElementExtension-__setslice__"><strong>__setslice__</strong></a>(self, start, stop, elements)</dt></dl>
+
+<dl><dt><a name="ElementExtension-append"><strong>append</strong></a>(self, element)</dt></dl>
+
+<dl><dt><a name="ElementExtension-clear"><strong>clear</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-find"><strong>find</strong></a>(self, path)</dt></dl>
+
+<dl><dt><a name="ElementExtension-findall"><strong>findall</strong></a>(self, path)</dt></dl>
+
+<dl><dt><a name="ElementExtension-findtext"><strong>findtext</strong></a>(self, path, default<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-get"><strong>get</strong></a>(self, key, default<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-getchildren"><strong>getchildren</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-getiterator"><strong>getiterator</strong></a>(self, tag<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementExtension-insert"><strong>insert</strong></a>(self, index, element)</dt></dl>
+
+<dl><dt><a name="ElementExtension-items"><strong>items</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-keys"><strong>keys</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementExtension-makeelement"><strong>makeelement</strong></a>(self, tag, attrib)</dt></dl>
+
+<dl><dt><a name="ElementExtension-remove"><strong>remove</strong></a>(self, element)</dt></dl>
+
+<dl><dt><a name="ElementExtension-set"><strong>set</strong></a>(self, key, value)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="xml.etree.ElementTree.html#_ElementInterface">xml.etree.ElementTree._ElementInterface</a>:<br>
+<dl><dt><strong>attrib</strong> = None</dl>
+
+<dl><dt><strong>tag</strong> = None</dl>
+
+<dl><dt><strong>tail</strong> = None</dl>
+
+<dl><dt><strong>text</strong> = None</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ElementTreeExtension">class <strong>ElementTreeExtension</strong></a>(<a href="xml.etree.ElementTree.html#ElementTree">xml.etree.ElementTree.ElementTree</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ElementTreeExtension-xmlIfExtCloneTree"><strong>xmlIfExtCloneTree</strong></a>(self, rootElementCopy)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-xmlIfExtCreateElement"><strong>xmlIfExtCreateElement</strong></a>(self, nsName, attributeDict, curNs)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-xmlIfExtGetRootNode"><strong>xmlIfExtGetRootNode</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="xml.etree.ElementTree.html#ElementTree">xml.etree.ElementTree.ElementTree</a>:<br>
+<dl><dt><a name="ElementTreeExtension-__init__"><strong>__init__</strong></a>(self, element<font color="#909090">=None</font>, file<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-find"><strong>find</strong></a>(self, path)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-findall"><strong>findall</strong></a>(self, path)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-findtext"><strong>findtext</strong></a>(self, path, default<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-getiterator"><strong>getiterator</strong></a>(self, tag<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-getroot"><strong>getroot</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-parse"><strong>parse</strong></a>(self, source, parser<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="ElementTreeExtension-write"><strong>write</strong></a>(self, file, encoding<font color="#909090">='us-ascii'</font>)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ExtXIncludeLoader">class <strong>ExtXIncludeLoader</strong></a></font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ExtXIncludeLoader-__init__"><strong>__init__</strong></a>(self, parser, baseUrl, ownerDoc)</dt></dl>
+
+<dl><dt><a name="ExtXIncludeLoader-loader"><strong>loader</strong></a>(self, href, parse, encoding<font color="#909090">=None</font>)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ExtXMLTreeBuilder">class <strong>ExtXMLTreeBuilder</strong></a>(<a href="xml.etree.ElementTree.html#XMLTreeBuilder">xml.etree.ElementTree.XMLTreeBuilder</a>, <a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">genxmlif.xmlifBase.XmlIfBuilderExtensionBase</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="genxmlif.xmlifElementTree.html#ExtXMLTreeBuilder">ExtXMLTreeBuilder</a></dd>
+<dd><a href="xml.etree.ElementTree.html#XMLTreeBuilder">xml.etree.ElementTree.XMLTreeBuilder</a></dd>
+<dd><a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">genxmlif.xmlifBase.XmlIfBuilderExtensionBase</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ExtXMLTreeBuilder-__init__"><strong>__init__</strong></a>(self, filePath, absUrl, xmlIf, treeWrapper)</dt></dl>
+
+<dl><dt><a name="ExtXMLTreeBuilder-end"><strong>end</strong></a>(self, element)</dt></dl>
+
+<dl><dt><a name="ExtXMLTreeBuilder-start"><strong>start</strong></a>(self, element, attributes)</dt></dl>
+
+<hr>
+Methods inherited from <a href="xml.etree.ElementTree.html#XMLTreeBuilder">xml.etree.ElementTree.XMLTreeBuilder</a>:<br>
+<dl><dt><a name="ExtXMLTreeBuilder-close"><strong>close</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ExtXMLTreeBuilder-doctype"><strong>doctype</strong></a>(self, name, pubid, system)</dt></dl>
+
+<dl><dt><a name="ExtXMLTreeBuilder-feed"><strong>feed</strong></a>(self, data)</dt></dl>
+
+<hr>
+Methods inherited from <a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">genxmlif.xmlifBase.XmlIfBuilderExtensionBase</a>:<br>
+<dl><dt><a name="ExtXMLTreeBuilder-endElementHandler"><strong>endElementHandler</strong></a>(self, curNode, endLineNumber)</dt><dd><tt>Called&nbsp;by&nbsp;the&nbsp;XML&nbsp;parser&nbsp;after&nbsp;creation&nbsp;of&nbsp;an&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;&nbsp;endLineNumber:&nbsp;&nbsp;&nbsp;&nbsp;last&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;element&nbsp;tag&nbsp;in&nbsp;XML&nbsp;file</tt></dd></dl>
+
+<dl><dt><a name="ExtXMLTreeBuilder-startElementHandler"><strong>startElementHandler</strong></a>(self, curNode, startLineNumber, curNs, attributes<font color="#909090">=[]</font>)</dt><dd><tt>Called&nbsp;by&nbsp;the&nbsp;XML&nbsp;parser&nbsp;at&nbsp;creation&nbsp;of&nbsp;an&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;&nbsp;startLineNumber:&nbsp;&nbsp;first&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;element&nbsp;tag&nbsp;in&nbsp;XML&nbsp;file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespaces&nbsp;visible&nbsp;for&nbsp;this&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;attributes&nbsp;and&nbsp;their&nbsp;values&nbsp;for&nbsp;this&nbsp;element&nbsp;node&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(same&nbsp;sequence&nbsp;as&nbsp;int&nbsp;he&nbsp;XML&nbsp;file)</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XmlInterfaceElementTree">class <strong>XmlInterfaceElementTree</strong></a>(<a href="genxmlif.xmlifApi.html#XmlInterfaceBase">genxmlif.xmlifApi.XmlInterfaceBase</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XmlInterfaceElementTree-__init__"><strong>__init__</strong></a>(self, verbose, useCaching, processXInclude)</dt></dl>
+
+<dl><dt><a name="XmlInterfaceElementTree-createXmlTree"><strong>createXmlTree</strong></a>(self, namespace, xmlRootTagName, attributeDict<font color="#909090">={}</font>, publicId<font color="#909090">=None</font>, systemId<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="XmlInterfaceElementTree-parse"><strong>parse</strong></a>(self, file, baseUrl<font color="#909090">=''</font>, ownerDoc<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="XmlInterfaceElementTree-parseString"><strong>parseString</strong></a>(self, text, baseUrl<font color="#909090">=''</font>, ownerDoc<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="genxmlif.xmlifApi.html#XmlInterfaceBase">genxmlif.xmlifApi.XmlInterfaceBase</a>:<br>
+<dl><dt><a name="XmlInterfaceElementTree-getXmlIfType"><strong>getXmlIfType</strong></a>(self)</dt><dd><tt>Retrieve&nbsp;the&nbsp;type&nbsp;of&nbsp;the&nbsp;XML&nbsp;interface.</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceElementTree-setElementWrapperClass"><strong>setElementWrapperClass</strong></a>(self, elementWrapperClass)</dt><dd><tt>Set&nbsp;the&nbsp;element&nbsp;wrapper&nbsp;classes&nbsp;which&nbsp;shall&nbsp;be&nbsp;used&nbsp;by&nbsp;this&nbsp;interface.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elementWrapperClass:&nbsp;&nbsp;element&nbsp;wrapper&nbsp;class</tt></dd></dl>
+
+<dl><dt><a name="XmlInterfaceElementTree-setTreeWrapperClass"><strong>setTreeWrapperClass</strong></a>(self, treeWrapperClass)</dt><dd><tt>Set&nbsp;the&nbsp;tree&nbsp;wrapper&nbsp;class&nbsp;which&nbsp;shall&nbsp;be&nbsp;used&nbsp;by&nbsp;this&nbsp;interface.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;treeWrapperClass:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tree&nbsp;wrapper&nbsp;class</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>EMPTY_NAMESPACE</strong> = None<br>
+<strong>XMLIF_ELEMENTTREE</strong> = 'XMLIF_ELEMENTTREE'<br>
+<strong>XMLNS_NAMESPACE</strong> = 'http://www.w3.org/2000/xmlns/'</td></tr></table>
+</body></html>

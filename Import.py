@@ -586,6 +586,9 @@ def mergeOrganization(source, dest) :
 	dest.put()
 
 def mergePerson(source, dest) :
+	'''Merges two people
+	dest is the object in the datastore
+	source is the element in the ElementTree'''
 	dest.name = source.findtext('name')
 
 	perinfo = source.find('info')
@@ -616,6 +619,9 @@ def mergePerson(source, dest) :
 	dest.put()
 
 def mergeCrisis(source, dest) :
+	'''Merges two crises
+	dest is the object in the datastore
+	source is the element in the ElementTree'''
 	dest.name = source.findtext('name')
 
 	criinfo = source.find('info')
@@ -675,6 +681,7 @@ def mergeCrisis(source, dest) :
 	dest.put()
 
 def mergeLinks(source, dest) :
+	'''Merges the links of the entities'''
 	refs = source.find('ref')
 	primaryImage = refs.find('primaryImage')
 	epi = dest.reflink.primaryImage
@@ -691,12 +698,14 @@ def mergeLinks(source, dest) :
 	dest.reflink.put()
 
 def mergeRefs(nList, eList, eType) :
+	'''Merges the RefLinks of the entities.'''
 	if len(nList) >= len(eList) :
 		eList = []
 		for elem in nList :
 			eList.append(createLink(eType, elem).key())
 
 def mergeIDREFS(source, dest, eType, refObject) :
+	'''Merges the idrefs of the entities.'''
 	idList = source.findall(eType)
 
 	for i in idList :

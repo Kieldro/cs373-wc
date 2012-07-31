@@ -190,7 +190,7 @@ class OrganizationsPage(BaseHandler):
 		self.render_template('organizations.html', orgs_list=results, pagenav=generatePagenavs(page, num_pages,'organizations'))
 
 class ImportWorker(webapp.RequestHandler):
-	"""A worker thread that does stuff"""
+	"""A worker thread that does the import in the background"""
 	def post(self):
 		xmlfile = self.request.get('xmlfile')
 		backup = runExport()

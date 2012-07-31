@@ -1,3 +1,535 @@
+commit 3b6abb46a08bbf054f7797be3352bdfead220b85
+Merge: 8e9ae81 345edb7
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 18:08:54 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 8e9ae8184c027949b10851fa31487a22d10d8fd9
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 18:08:20 2012 -0500
+
+    More modifications
+
+commit 345edb7e19c2fe8cde25e34b1f276ad30aab3239
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 30 18:01:37 2012 -0500
+
+    quickfixes, fayz broke it.
+
+commit 41cc1bf6448a1964ba2f933fbe44b487ce6a10c2
+Merge: 463ff4c e018619
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 17:42:30 2012 -0500
+
+    Merging stuff
+
+commit e0186194eac6835892c151415ae41e123684c6f2
+Merge: 45749de 34c829e
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 30 17:39:17 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 45749def524d798e66010717f0cb52b212bd1dd2
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 30 17:38:38 2012 -0500
+
+    tweaks about unicode and improper unit testing
+
+commit 463ff4c25a39ae694b7a7666b2b59b5a82e9a22d
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 17:37:31 2012 -0500
+
+    Search more fields, urls just urls in entry pages
+
+commit 5554756677282b44f91b664b9d68c71c8ca6782b
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 17:12:22 2012 -0500
+
+    Frontpage handles empty, import now redirects
+
+commit 34c829e422ecaff1e758f98b04398777ad8c13ba
+Merge: 1b18368 65d88b9
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 16:18:41 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 1b183685f718e7e5a743e09efe38b228f92b5104
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 16:17:53 2012 -0500
+
+    Fixed navbar, more xml work
+
+commit 65d88b9e9ad0c845be2f8bacf73f7f8df0ecc6ce
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 30 16:15:15 2012 -0500
+
+    quickfix to too large of task error
+
+commit a19196517750edbcb70327314242d2cc7b243ba0
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 16:05:15 2012 -0500
+
+    Navbar and snippet fix
+
+commit d55b4642ee080610ddf0793d9fd0e2ae1a8e8dbb
+Merge: 1af7d52 2c13904
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 15:47:24 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 1af7d52efff4e4a63b1a6420afbe5fa266eeca6c
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 15:44:25 2012 -0500
+
+    Got pages working again--problem was int division
+
+commit 2c139043cafe9152ace7e6b04f5777c717eb89ab
+Merge: 2772599 5fee622
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 13:33:21 2012 -0700
+
+    Merge pull request #121 from fnrahman/master
+    
+    Merge to latest version.
+
+commit 5fee622cd71231fd7c9279224d5d711765af59da
+Merge: 6afccdd 2772599
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 15:25:11 2012 -0500
+
+    Merging work from Jake and Fayz
+
+commit 6afccdd0fbe0735c2b28307f27b6e63426a4f954
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 15:16:15 2012 -0500
+
+    Working on import instructions
+
+commit 2772599d755f9b2bfbb24b37625d188660e3e545
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 30 15:06:13 2012 -0500
+
+    whoops, forgot to uncomment some stuff.
+
+commit 80955519f96c4fdd73bf7f5c291cd67b20287240
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 30 14:53:43 2012 -0500
+
+    taskqueue implemented, unicode now replaced with ascii. great success
+
+commit b5c05ea055e18196a78e9ca88cfd377e1e0c755e
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 14:27:53 2012 -0500
+
+    All entry links now use IDs instead of names
+
+commit 1726d20790de3180373171c913d0e47d92b3500f
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 08:28:42 2012 -0500
+
+    Regex for Youtube Video links
+    
+    Youtube videos can now be in the standard, youtube.com/watch?=...
+    format. The regex will strip out the video id and place it in the
+    embedded code.
+
+commit d6c5bdb7e484a31193f9533a3a78f1671fedd87d
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 30 01:31:38 2012 -0500
+
+    Frontpage Carousel reinstated, at constant size
+
+commit 31f9baeb7cb3eb833260aa5105bc73bac895ccd0
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 29 20:30:39 2012 -0500
+
+    Added pagination to master pages
+
+commit 33d3a11524fe814d7b8fd94571df58e6aea5dc93
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 29 16:38:31 2012 -0500
+
+    Added anchor tags and more import instructions
+
+commit a786803c6115560ee10f8016a19773279a1602bb
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Sun Jul 29 15:10:18 2012 -0500
+
+    Got it to print list of IDs.
+    
+    Might have to rework how we render the import page to utilize redirects.
+    When importing new xml, right now, it won't refresh the ID list.
+
+commit d2007738bd0fee16cc330f44bd7cf17d43411f32
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Fri Jul 27 19:08:05 2012 -0500
+
+    merge import is completed, pushing to appspot
+
+commit fa7676a46df72f3fe3e4067451ea4ea4efef4053
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Fri Jul 27 18:30:16 2012 -0500
+
+    merge organization is done.
+
+commit 29905484beb82fe971489631258d49f07f2f4254
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Fri Jul 27 17:45:55 2012 -0500
+
+    reflinks and idrefs merged
+
+commit b621d3eda39705b5c0a192f2cd6926a59d11d32c
+Merge: 8d7b623 95ed78a
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 27 16:07:08 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 8d7b623a4c4361b7c22b32401816e0985fbcabf2
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 27 16:06:59 2012 -0500
+
+    Improving test xmls.
+
+commit 95ed78ac41a564040a63bc0ce9439bcf98105d41
+Merge: 91f4536 1b2e034
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 27 14:04:45 2012 -0700
+
+    Merge pull request #117 from fnrahman/master
+    
+    Search improved.
+
+commit 1b2e034a3b4999abd8f2c432b382f6ddfab81444
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 27 16:03:07 2012 -0500
+
+    Touching up search functionality
+
+commit 91f4536e9ea7dc3d3eeb302fba0ef01120b82ca5
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 27 15:26:20 2012 -0500
+
+    added TestMerge.xml.
+
+commit 0025c473148f680315bcf58fa94f46aefed070cd
+Merge: f17223f 8703411
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 27 12:27:59 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 8703411d98376b7a48f275b342642b2c59c71697
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Fri Jul 27 12:26:56 2012 -0500
+
+    more merge policy
+
+commit f17223f35b2c45cb206e4e2f66e0c0b2003ce2f7
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jul 27 12:24:08 2012 -0500
+
+    trying to write updateID tests.
+
+commit 374f1b5d7b3f29c01aaa5f85c30110d8dafd3159
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Thu Jul 26 17:23:17 2012 -0500
+
+    Finishes mergeRefs(). New merge policy: if the new instance has more data, update the old data to the new data.
+
+commit 612ec17f4bf7139b867a249d553b6efaff2814e2
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 26 15:59:15 2012 -0500
+
+    began implmenting basic merge policies.
+
+commit de530fd2a615ee67b0cec41cbb11da48765045b6
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Thu Jul 26 14:26:11 2012 -0500
+
+    Some refactoring in Import.py and move xml files to xml folder.
+
+commit 87f74d024fd09b4c5e25c59d65ebf067690eee43
+Merge: 929dd9d b09900d
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 26 12:51:25 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 929dd9dea1486c79ce0310f40e663070cdb71ad1
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Thu Jul 26 12:50:59 2012 -0500
+
+    no big changes, just pushing
+
+commit b09900dc4375138622eda6569cada89d048a0543
+Merge: 3d5f7c1 6a85a0a
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Wed Jul 25 16:39:43 2012 -0700
+
+    Merge pull request #115 from grsshwarts/master
+    
+    Changed search to include AND and OR with them separated
+
+commit 6a85a0a7692ee2e3805a5f0a5be1bbea310b3adc
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Wed Jul 25 18:37:45 2012 -0500
+
+    added AND and OR feature for searches
+
+commit 3d5f7c150d2bf623456fa4da98d450da17ff26b1
+Merge: c0280a8 2514f06
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Wed Jul 25 15:06:53 2012 -0700
+
+    Merge pull request #114 from fnrahman/master
+    
+    Snippets added, not sure if working
+
+commit 2514f06d6fe7d95cd7a68cb02303ef38fe526c67
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Wed Jul 25 07:02:04 2012 -0500
+
+    Search options, snippets theoretically working
+
+commit c0280a809b347ccfe37af543b88664251cc571df
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 24 15:38:42 2012 -0500
+
+    merge import now correctly rejects duplicate xml files. still rather dumb though
+
+commit 7bbe9e369080bdc6945961c1bf96447ed22565a0
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 24 15:00:35 2012 -0500
+
+    very basic Merge Import working, interface connected. duplicates not detected yet.
+
+commit f669e2fc5d3573e6980a7c398a6f177f98ba4195
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 24 14:34:29 2012 -0500
+
+    Fixed WC.py that jake messed up. And added dummy checkbox.
+
+commit bf6d63a0e0d0e9c516b3d6cc11c6e04fcf3813b2
+Merge: 085daf4 d1fa332
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 24 12:35:37 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 085daf4857b51f3ed6d4482925ec81b458a9468b
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 24 12:35:18 2012 -0500
+
+    fixed the error for URLs with whitespace, have a really basic merge working but not hooked into the interface.
+
+commit d1fa3325c793d98404b23eae4a1652ffc892679e
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 24 12:34:16 2012 -0500
+
+    Adds xml folder to hold all xml instances for testing.
+
+commit fb3b4e069eacdb4b1178585e6c3f0866e2ea1d84
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Tue Jul 24 11:33:45 2012 -0500
+
+    quickfix to URL ref in models.
+
+commit 73bddbfe70265bde56ad683ff67ed442f2fcc085
+Merge: 10ecf27 f7513cc
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 24 11:19:41 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
+commit 10ecf27c3a4430eb5f36afd9e9fae5c573ca3814
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 24 11:16:26 2012 -0500
+
+    Renames files to WC3*. Deletes extraneous files.
+
+commit f7513cc4123112ab934518da629c660537b56354
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jul 24 11:16:26 2012 -0500
+
+    renamed files to WC3*. Deleted extraneous failes.
+
+commit c379972349341b6780fe71a7abd021f8ef9b5810
+Merge: c78966e d16819b
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 23 19:12:16 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit d16819ba74545ad403af34ee00f71f33c6c78904
+Merge: 33683c2 9054363
+Author: grsshwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 23 15:08:47 2012 -0700
+
+    Merge pull request #111 from grsshwarts/master
+    
+    I request a pull for adding a file to allow a one word search on the site
+
+commit 9054363a34f31ebfa71a5bdd3d904632e831f2d3
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 23 17:06:59 2012 -0500
+
+    post fixing search for one word
+
+commit 7ac9a6fcae52b54a2a555e81d16eb867177ee2e9
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 23 16:01:03 2012 -0500
+
+    Search stuff
+
+commit bb7d8a0ee2f338f9aa9588f6249f8e3ff79df9e2
+Merge: 33683c2 31a60ba
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 23 14:34:08 2012 -0500
+
+    Merge branch 'master' of github.com:grsshwarts/cs373-wc
+
+commit c78966ec6366013ed400cd6854cb50205805ba87
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Fri Jul 20 19:51:10 2012 -0500
+
+    Moved Related Links to bottom of Entry Pages
+
+commit 33683c229edb2f65404498465eb3ae144ccf1400
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jul 16 17:02:34 2012 -0500
+
+    Updated RunExport.py to ensure output sorted by id
+
+commit cf6d584d8f65f67fce40fd4c87f60f6667365e5d
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 15:46:41 2012 -0500
+
+    More cosmetic changes
+
+commit acd76819e61ebc3836373278fb5942607d6a5fd0
+Merge: d7b47e6 45788ff
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 15:31:59 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit d7b47e6ac493fb3911a3959874b8122394c22361
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 15:30:43 2012 -0500
+
+    About page touched up.
+
+commit 45788ffbd6d32536aecbd2aee0da2d06a83c0a2f
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 16 15:28:46 2012 -0500
+
+    pydoc done, small changes to xml file
+
+commit 12f14b6fb21d030418a2d815a96360174d6f9662
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 15:15:10 2012 -0500
+
+    Fixed broken images under Crisis and Org pages
+
+commit 6af789baba23e1a41b866e48552168fe8e3037e6
+Merge: 033d5f8 c558503
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 15:08:36 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit 033d5f861b7b9896216b534f68fe960a513ee4ab
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 15:06:48 2012 -0500
+
+    Fixed Export, adjused Import
+
+commit c5585035dacb52ad302119045da478467d8fdee6
+Merge: 82b0d50 0a4815e
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 12:57:01 2012 -0700
+
+    Merge pull request #107 from fnrahman/master
+    
+    All images now online.
+
+commit 82b0d50454ed0a323a546e0f915643072fa77d8c
+Merge: 244fc15 e1bc4db
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jul 16 14:55:11 2012 -0500
+
+    Merge branch 'master' of http://github.com/Kieldro/cs373-wc
+
+commit 244fc155d9a96f07dd8299bb1d77a4919fe7e0d4
+Author: Robert Reed <callmeelasinthe@gmail.com>
+Date:   Mon Jul 16 14:54:59 2012 -0500
+
+    Added comments to export
+
+commit 0a4815e8b4465ec605b4f89c427a7789d1a50e8b
+Merge: 0735601 e1bc4db
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 14:54:52 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit e1bc4db2129f6b4d7560f30bd5ec0a0202ceffa3
+Author: Jacob Wilke <jake.wilke@gmail.com>
+Date:   Mon Jul 16 14:53:57 2012 -0500
+
+    critical fixes to the xml
+
+commit 07356018af4da47191acec57951ecbcea8662a59
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 14:53:08 2012 -0500
+
+    All non-entry page images online
+
+commit afbe164094e44b437ac625d92f1f368142d878f0
+Merge: ec83151 1b24b82
+Author: fnrahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 11:32:46 2012 -0700
+
+    Merge pull request #100 from fnrahman/master
+    
+    Redone Front page
+
+commit 1b24b828df408e92da6a7108111a994572583403
+Merge: a80bd06 ec83151
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 13:31:30 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
+
+commit a80bd06befff53043c561972f34f8c8735e84f9a
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 13:30:50 2012 -0500
+
+    Front page switched to thumbnails
+
+commit ec83151fd64a95da9a2245fc0b3bded71810227c
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jul 16 11:56:15 2012 -0500
+
+    final UML file uploaded.
+
+commit 34b04798d32b6e696727976ca6c54a3a9ccc93ae
+Author: Fayz Rahman <fayz.rahman@utexas.edu>
+Date:   Mon Jul 16 00:47:58 2012 -0500
+
+    Cleanup, plus basic search functionality
+
+commit 0a1ab1f1edf55fa2a639217a39e4534b448701f4
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jul 15 21:01:26 2012 -0500
+
+    Adds required files, mostly placeholders.
+
 commit 22a707e44f65d531ceeaa869c7f2b8bf025c805b
 Author: Ian Buitrago <kieldro@gmail.com>
 Date:   Sun Jul 15 20:05:49 2012 -0500
@@ -489,6 +1021,13 @@ Date:   Tue Jul 10 16:30:18 2012 -0500
 
     working version of import
 
+commit 31a60ba40aa20a6e986ac3ea17feca4dfec803df
+Merge: d118591 913ba89
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Mon Jul 9 20:21:55 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-wc
+
 commit 913ba89f747b1cca8de07f5c510739d5ae004591
 Author: Robert Reed <callmeelasinthe@gmail.com>
 Date:   Mon Jul 9 18:34:07 2012 -0500
@@ -500,6 +1039,13 @@ Author: Robert Reed <callmeelasinthe@gmail.com>
 Date:   Mon Jul 9 12:42:23 2012 -0500
 
     Redid models to conform to UML design
+
+commit d118591a022ec32538851d9adce89610e918bcc0
+Merge: 72efba7 439531d
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sun Jul 8 18:37:26 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
 
 commit 439531de9b9b0e210c0c7dee93514ffbc9bbc10e
 Author: Robert Reed <callmeelasinthe@gmail.com>
@@ -571,6 +1117,13 @@ Author: Ian Buitrago <kieldro@gmail.com>
 Date:   Thu Jul 5 18:58:40 2012 -0500
 
     technical report started.
+
+commit 72efba7e8d280695104de7e558304abc3ee3b039
+Merge: a8d49f8 a5856ab
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Thu Jul 5 18:13:11 2012 -0500
+
+    Merge branch 'master' of https://github.com/Kieldro/cs373-wc
 
 commit a5856abe9e844d0a6ed00f5cdfd5a4f86fc0cbbb
 Author: Ross Shwarts <grsshwarts@gmail.com>
@@ -1295,6 +1848,12 @@ Author: Ross Shwarts <grsshwarts@gmail.com>
 Date:   Sun Jun 24 14:30:42 2012 -0500
 
     first 3 research sets, waiting on the last one
+
+commit a8d49f8dfbe5eadb78db87a8d480a0ef88f07817
+Author: Ross Shwarts <grsshwarts@gmail.com>
+Date:   Sat Jun 23 17:45:17 2012 -0500
+
+    added the first 3 groups of research waiting on 1 more
 
 commit c60fb2627cf40e4b7123f0af685994f9fd22da49
 Author: Ian Buitrago <kieldro@gmail.com>
