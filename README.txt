@@ -6,10 +6,10 @@ First Name:					Jake
 Last Name:					Wilke
 EID:						jlw3599
 E-mail:						jake.wilke@gmail.com
-Estimated number of hours:	30
-Actual    number of hours:	30
+Estimated number of hours:	50
+Actual    number of hours:	60
 
-Turnin CS Username:		jake
+Turnin CS Username:		jwilke
 GitHub ID:				Kieldro
 GitHub Repository Name:	cs373-wc
 Google App Engine URL:	jwilke-cs373-wc.appspot.com
@@ -23,28 +23,28 @@ Member Last Name:			Rahman
 Member EID:					fnr75
 Member E-mail:				fayz.rahman@utexas.edu
 Member Rating:				Excellent
-Member Point Adjustment:	NA	<only if you're leader>
+Member Point Adjustment:		+0
 
 Member First Name:			Ian
 Member Last Name:			Buitrago
 Member EID:					ib
 Member E-mail:				kieldro@gmail.com
 Member Rating:				Excellent
-Member Point Adjustment:	NA	<only if you're leader>
+Member Point Adjustment:		+0
 
 Member First Name:			George
 Member Last Name:			Shwarts
 Member EID:					grs626
 Member E-mail:				grsshwarts@utexas.edu
 Member Rating:				Satisfactory
-Member Point Adjustment:	NA	<only if you're leader>
+Member Point Adjustment:		+0
 
 Member First Name:			Robert
 Member Last Name:			Reed
 Member EID:					rer945
 Member E-mail:				callmeelasinthe@gmail.com
 Member Rating:				Excellent
-Member Point Adjustment:	NA	<only if you're leader>
+Member Point Adjustment:		+0
 
 Comments:
 UML diagram link: http://www.gliffy.com/pubdoc/3716424/L.png

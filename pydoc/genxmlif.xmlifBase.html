@@ -1,0 +1,115 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module genxmlif.xmlifBase</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="genxmlif.html"><font color="#ffffff">genxmlif</font></a>.xmlifBase</strong></big></big> (version 0.9, 28 July 2008)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/genxmlif/xmlifBase.py">/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/genxmlif/xmlifBase.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;genxmlif,&nbsp;Release&nbsp;0.9.0<br>
+#&nbsp;file:&nbsp;xmlifbase.py<br>
+#<br>
+#&nbsp;XML&nbsp;interface&nbsp;base&nbsp;classes<br>
+#<br>
+#&nbsp;history:<br>
+#&nbsp;2005-04-25&nbsp;rl&nbsp;&nbsp;&nbsp;created<br>
+#&nbsp;2006-08-18&nbsp;rl&nbsp;&nbsp;&nbsp;some&nbsp;methods&nbsp;for&nbsp;XML&nbsp;schema&nbsp;validation&nbsp;support&nbsp;added<br>
+#&nbsp;2007-05-25&nbsp;rl&nbsp;&nbsp;&nbsp;performance&nbsp;optimization&nbsp;(caching)&nbsp;added,&nbsp;bugfixes&nbsp;for&nbsp;XPath&nbsp;handling<br>
+#&nbsp;2007-07-04&nbsp;rl&nbsp;&nbsp;&nbsp;complete&nbsp;re-design,&nbsp;API&nbsp;classes&nbsp;moved&nbsp;to&nbsp;xmlifApi.py<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe.&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved.<br>
+#<br>
+#&nbsp;--------------------------------------------------------------------<br>
+#&nbsp;The&nbsp;generic&nbsp;XML&nbsp;interface&nbsp;is<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe<br>
+#<br>
+#&nbsp;By&nbsp;obtaining,&nbsp;using,&nbsp;and/or&nbsp;copying&nbsp;this&nbsp;software&nbsp;and/or&nbsp;its<br>
+#&nbsp;associated&nbsp;documentation,&nbsp;you&nbsp;agree&nbsp;that&nbsp;you&nbsp;have&nbsp;read,&nbsp;understood,<br>
+#&nbsp;and&nbsp;will&nbsp;comply&nbsp;with&nbsp;the&nbsp;following&nbsp;terms&nbsp;and&nbsp;conditions:<br>
+#<br>
+#&nbsp;Permission&nbsp;to&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;and&nbsp;distribute&nbsp;this&nbsp;software&nbsp;and<br>
+#&nbsp;its&nbsp;associated&nbsp;documentation&nbsp;for&nbsp;any&nbsp;purpose&nbsp;and&nbsp;without&nbsp;fee&nbsp;is<br>
+#&nbsp;hereby&nbsp;granted,&nbsp;provided&nbsp;that&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice&nbsp;appears&nbsp;in<br>
+#&nbsp;all&nbsp;copies,&nbsp;and&nbsp;that&nbsp;both&nbsp;that&nbsp;copyright&nbsp;notice&nbsp;and&nbsp;this&nbsp;permission<br>
+#&nbsp;notice&nbsp;appear&nbsp;in&nbsp;supporting&nbsp;documentation,&nbsp;and&nbsp;that&nbsp;the&nbsp;name&nbsp;of<br>
+#&nbsp;the&nbsp;author&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;advertising&nbsp;or&nbsp;publicity<br>
+#&nbsp;pertaining&nbsp;to&nbsp;distribution&nbsp;of&nbsp;the&nbsp;software&nbsp;without&nbsp;specific,&nbsp;written<br>
+#&nbsp;prior&nbsp;permission.<br>
+#<br>
+#&nbsp;THE&nbsp;AUTHOR&nbsp;DISCLAIMS&nbsp;ALL&nbsp;WARRANTIES&nbsp;WITH&nbsp;REGARD<br>
+#&nbsp;TO&nbsp;THIS&nbsp;SOFTWARE,&nbsp;INCLUDING&nbsp;ALL&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANT-<br>
+#&nbsp;ABILITY&nbsp;AND&nbsp;FITNESS.&nbsp;&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;AUTHOR<br>
+#&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;SPECIAL,&nbsp;INDIRECT&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;OR&nbsp;ANY<br>
+#&nbsp;DAMAGES&nbsp;WHATSOEVER&nbsp;RESULTING&nbsp;FROM&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA&nbsp;OR&nbsp;PROFITS,<br>
+#&nbsp;WHETHER&nbsp;IN&nbsp;AN&nbsp;ACTION&nbsp;OF&nbsp;CONTRACT,&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHER&nbsp;TORTIOUS<br>
+#&nbsp;ACTION,&nbsp;ARISING&nbsp;OUT&nbsp;OF&nbsp;OR&nbsp;IN&nbsp;CONNECTION&nbsp;WITH&nbsp;THE&nbsp;USE&nbsp;OR&nbsp;PERFORMANCE<br>
+#&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE.<br>
+#&nbsp;--------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifBase.html#XmlIfBuilderExtensionBase">XmlIfBuilderExtensionBase</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="XmlIfBuilderExtensionBase">class <strong>XmlIfBuilderExtensionBase</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>XmlIf&nbsp;builder&nbsp;extension&nbsp;base&nbsp;class.<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;provides&nbsp;additional&nbsp;data&nbsp;(e.g.&nbsp;line&nbsp;numbers&nbsp;or&nbsp;caches)&nbsp;<br>
+for&nbsp;an&nbsp;element&nbsp;node&nbsp;which&nbsp;are&nbsp;stored&nbsp;in&nbsp;the&nbsp;element&nbsp;node&nbsp;object&nbsp;during&nbsp;parsing.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="XmlIfBuilderExtensionBase-__init__"><strong>__init__</strong></a>(self, filePath, absUrl, treeWrapper, elementWrapperClass)</dt><dd><tt>Constructor&nbsp;for&nbsp;this&nbsp;class<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filePath:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains&nbsp;the&nbsp;file&nbsp;path&nbsp;of&nbsp;the&nbsp;corresponding&nbsp;XML&nbsp;file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;absUrl:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contains&nbsp;the&nbsp;absolute&nbsp;URL&nbsp;of&nbsp;the&nbsp;corresponding&nbsp;XML&nbsp;file</tt></dd></dl>
+
+<dl><dt><a name="XmlIfBuilderExtensionBase-endElementHandler"><strong>endElementHandler</strong></a>(self, curNode, endLineNumber)</dt><dd><tt>Called&nbsp;by&nbsp;the&nbsp;XML&nbsp;parser&nbsp;after&nbsp;creation&nbsp;of&nbsp;an&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;&nbsp;endLineNumber:&nbsp;&nbsp;&nbsp;&nbsp;last&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;element&nbsp;tag&nbsp;in&nbsp;XML&nbsp;file</tt></dd></dl>
+
+<dl><dt><a name="XmlIfBuilderExtensionBase-startElementHandler"><strong>startElementHandler</strong></a>(self, curNode, startLineNumber, curNs, attributes<font color="#909090">=[]</font>)</dt><dd><tt>Called&nbsp;by&nbsp;the&nbsp;XML&nbsp;parser&nbsp;at&nbsp;creation&nbsp;of&nbsp;an&nbsp;element&nbsp;node.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNode:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;&nbsp;startLineNumber:&nbsp;&nbsp;first&nbsp;line&nbsp;number&nbsp;of&nbsp;the&nbsp;element&nbsp;tag&nbsp;in&nbsp;XML&nbsp;file<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;namespaces&nbsp;visible&nbsp;for&nbsp;this&nbsp;element&nbsp;node<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attributes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;attributes&nbsp;and&nbsp;their&nbsp;values&nbsp;for&nbsp;this&nbsp;element&nbsp;node&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(same&nbsp;sequence&nbsp;as&nbsp;int&nbsp;he&nbsp;XML&nbsp;file)</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>XMLNS_NAMESPACE</strong> = 'http://www.w3.org/2000/xmlns/'<br>
+<strong>XML_NAMESPACE</strong> = 'http://www.w3.org/XML/1998/namespace'<br>
+<strong>__author__</strong> = 'Roland Leuthe &lt;roland@leuthe-net.de&gt;'<br>
+<strong>__date__</strong> = '28 July 2008'<br>
+<strong>__version__</strong> = '0.9'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Roland&nbsp;Leuthe&nbsp;&lt;roland@leuthe-net.de&gt;</td></tr></table>
+</body></html>

@@ -1,0 +1,283 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module genxmlif.xmlifUtils</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="genxmlif.html"><font color="#ffffff">genxmlif</font></a>.xmlifUtils</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/genxmlif/xmlifUtils.py">/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/genxmlif/xmlifUtils.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;genxmlif,&nbsp;Release&nbsp;0.9.0<br>
+#&nbsp;file:&nbsp;xmlifUtils.py<br>
+#<br>
+#&nbsp;utility&nbsp;module&nbsp;for&nbsp;genxmlif<br>
+#<br>
+#&nbsp;history:<br>
+#&nbsp;2005-04-25&nbsp;rl&nbsp;&nbsp;&nbsp;created<br>
+#&nbsp;2008-08-01&nbsp;rl&nbsp;&nbsp;&nbsp;encoding&nbsp;support&nbsp;added<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe.&nbsp;&nbsp;All&nbsp;rights&nbsp;reserved.<br>
+#<br>
+#&nbsp;--------------------------------------------------------------------<br>
+#&nbsp;The&nbsp;generic&nbsp;XML&nbsp;interface&nbsp;is<br>
+#<br>
+#&nbsp;Copyright&nbsp;(c)&nbsp;2005-2008&nbsp;by&nbsp;Roland&nbsp;Leuthe<br>
+#<br>
+#&nbsp;By&nbsp;obtaining,&nbsp;using,&nbsp;and/or&nbsp;copying&nbsp;this&nbsp;software&nbsp;and/or&nbsp;its<br>
+#&nbsp;associated&nbsp;documentation,&nbsp;you&nbsp;agree&nbsp;that&nbsp;you&nbsp;have&nbsp;read,&nbsp;understood,<br>
+#&nbsp;and&nbsp;will&nbsp;comply&nbsp;with&nbsp;the&nbsp;following&nbsp;terms&nbsp;and&nbsp;conditions:<br>
+#<br>
+#&nbsp;Permission&nbsp;to&nbsp;use,&nbsp;copy,&nbsp;modify,&nbsp;and&nbsp;distribute&nbsp;this&nbsp;software&nbsp;and<br>
+#&nbsp;its&nbsp;associated&nbsp;documentation&nbsp;for&nbsp;any&nbsp;purpose&nbsp;and&nbsp;without&nbsp;fee&nbsp;is<br>
+#&nbsp;hereby&nbsp;granted,&nbsp;provided&nbsp;that&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice&nbsp;appears&nbsp;in<br>
+#&nbsp;all&nbsp;copies,&nbsp;and&nbsp;that&nbsp;both&nbsp;that&nbsp;copyright&nbsp;notice&nbsp;and&nbsp;this&nbsp;permission<br>
+#&nbsp;notice&nbsp;appear&nbsp;in&nbsp;supporting&nbsp;documentation,&nbsp;and&nbsp;that&nbsp;the&nbsp;name&nbsp;of<br>
+#&nbsp;the&nbsp;author&nbsp;not&nbsp;be&nbsp;used&nbsp;in&nbsp;advertising&nbsp;or&nbsp;publicity<br>
+#&nbsp;pertaining&nbsp;to&nbsp;distribution&nbsp;of&nbsp;the&nbsp;software&nbsp;without&nbsp;specific,&nbsp;written<br>
+#&nbsp;prior&nbsp;permission.<br>
+#<br>
+#&nbsp;THE&nbsp;AUTHOR&nbsp;DISCLAIMS&nbsp;ALL&nbsp;WARRANTIES&nbsp;WITH&nbsp;REGARD<br>
+#&nbsp;TO&nbsp;THIS&nbsp;SOFTWARE,&nbsp;INCLUDING&nbsp;ALL&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANT-<br>
+#&nbsp;ABILITY&nbsp;AND&nbsp;FITNESS.&nbsp;&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;AUTHOR<br>
+#&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;SPECIAL,&nbsp;INDIRECT&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;OR&nbsp;ANY<br>
+#&nbsp;DAMAGES&nbsp;WHATSOEVER&nbsp;RESULTING&nbsp;FROM&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA&nbsp;OR&nbsp;PROFITS,<br>
+#&nbsp;WHETHER&nbsp;IN&nbsp;AN&nbsp;ACTION&nbsp;OF&nbsp;CONTRACT,&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHER&nbsp;TORTIOUS<br>
+#&nbsp;ACTION,&nbsp;ARISING&nbsp;OUT&nbsp;OF&nbsp;OR&nbsp;IN&nbsp;CONNECTION&nbsp;WITH&nbsp;THE&nbsp;USE&nbsp;OR&nbsp;PERFORMANCE<br>
+#&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE.<br>
+#&nbsp;--------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top><a href="string.html">string</a><br>
+<a href="urllib.html">urllib</a><br>
+</td><td width="25%" valign=top><a href="urlparse.html">urlparse</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#tuple">__builtin__.tuple</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="genxmlif.xmlifUtils.html#NsNameTuple">NsNameTuple</a>
+</font></dt><dt><font face="helvetica, arial"><a href="genxmlif.xmlifUtils.html#QNameTuple">QNameTuple</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NsNameTuple">class <strong>NsNameTuple</strong></a>(<a href="__builtin__.html#tuple">__builtin__.tuple</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>######################################################################<br>
+#&nbsp;class&nbsp;containing&nbsp;a&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;of&nbsp;namespace&nbsp;and&nbsp;localName<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="genxmlif.xmlifUtils.html#NsNameTuple">NsNameTuple</a></dd>
+<dd><a href="__builtin__.html#tuple">__builtin__.tuple</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NsNameTuple-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="__builtin__.html#tuple">__builtin__.tuple</a>:<br>
+<dl><dt><a name="NsNameTuple-__add__"><strong>__add__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__add__">__add__</a>(y)&nbsp;&lt;==&gt;&nbsp;x+y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__contains__"><strong>__contains__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__contains__">__contains__</a>(y)&nbsp;&lt;==&gt;&nbsp;y&nbsp;in&nbsp;x</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__eq__"><strong>__eq__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__eq__">__eq__</a>(y)&nbsp;&lt;==&gt;&nbsp;x==y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__ge__"><strong>__ge__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__ge__">__ge__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;=y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__getnewargs__"><strong>__getnewargs__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="NsNameTuple-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__gt__"><strong>__gt__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__gt__">__gt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__iter__"><strong>__iter__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__iter__">__iter__</a>()&nbsp;&lt;==&gt;&nbsp;iter(x)</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__le__"><strong>__le__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__le__">__le__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;=y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__len__"><strong>__len__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__len__">__len__</a>()&nbsp;&lt;==&gt;&nbsp;len(x)</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__lt__"><strong>__lt__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__lt__">__lt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__mul__"><strong>__mul__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__mul__">__mul__</a>(n)&nbsp;&lt;==&gt;&nbsp;x*n</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__ne__"><strong>__ne__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__ne__">__ne__</a>(y)&nbsp;&lt;==&gt;&nbsp;x!=y</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__rmul__"><strong>__rmul__</strong></a>(...)</dt><dd><tt>x.<a href="#NsNameTuple-__rmul__">__rmul__</a>(n)&nbsp;&lt;==&gt;&nbsp;n*x</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-__sizeof__"><strong>__sizeof__</strong></a>(...)</dt><dd><tt>T.<a href="#NsNameTuple-__sizeof__">__sizeof__</a>()&nbsp;--&nbsp;size&nbsp;of&nbsp;T&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-count"><strong>count</strong></a>(...)</dt><dd><tt>T.<a href="#NsNameTuple-count">count</a>(value)&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="NsNameTuple-index"><strong>index</strong></a>(...)</dt><dd><tt>T.<a href="#NsNameTuple-index">index</a>(value,&nbsp;[start,&nbsp;[stop]])&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="__builtin__.html#tuple">__builtin__.tuple</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#NsNameTuple-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="QNameTuple">class <strong>QNameTuple</strong></a>(<a href="__builtin__.html#tuple">__builtin__.tuple</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>######################################################################<br>
+#&nbsp;class&nbsp;containing&nbsp;a&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;of&nbsp;namespace&nbsp;prefix&nbsp;and&nbsp;localName<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="genxmlif.xmlifUtils.html#QNameTuple">QNameTuple</a></dd>
+<dd><a href="__builtin__.html#tuple">__builtin__.tuple</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="QNameTuple-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="__builtin__.html#tuple">__builtin__.tuple</a>:<br>
+<dl><dt><a name="QNameTuple-__add__"><strong>__add__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__add__">__add__</a>(y)&nbsp;&lt;==&gt;&nbsp;x+y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__contains__"><strong>__contains__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__contains__">__contains__</a>(y)&nbsp;&lt;==&gt;&nbsp;y&nbsp;in&nbsp;x</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__eq__"><strong>__eq__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__eq__">__eq__</a>(y)&nbsp;&lt;==&gt;&nbsp;x==y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__ge__"><strong>__ge__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__ge__">__ge__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;=y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__getnewargs__"><strong>__getnewargs__</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="QNameTuple-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__gt__"><strong>__gt__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__gt__">__gt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__iter__"><strong>__iter__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__iter__">__iter__</a>()&nbsp;&lt;==&gt;&nbsp;iter(x)</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__le__"><strong>__le__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__le__">__le__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;=y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__len__"><strong>__len__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__len__">__len__</a>()&nbsp;&lt;==&gt;&nbsp;len(x)</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__lt__"><strong>__lt__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__lt__">__lt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__mul__"><strong>__mul__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__mul__">__mul__</a>(n)&nbsp;&lt;==&gt;&nbsp;x*n</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__ne__"><strong>__ne__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__ne__">__ne__</a>(y)&nbsp;&lt;==&gt;&nbsp;x!=y</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__rmul__"><strong>__rmul__</strong></a>(...)</dt><dd><tt>x.<a href="#QNameTuple-__rmul__">__rmul__</a>(n)&nbsp;&lt;==&gt;&nbsp;n*x</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-__sizeof__"><strong>__sizeof__</strong></a>(...)</dt><dd><tt>T.<a href="#QNameTuple-__sizeof__">__sizeof__</a>()&nbsp;--&nbsp;size&nbsp;of&nbsp;T&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-count"><strong>count</strong></a>(...)</dt><dd><tt>T.<a href="#QNameTuple-count">count</a>(value)&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="QNameTuple-index"><strong>index</strong></a>(...)</dt><dd><tt>T.<a href="#QNameTuple-index">index</a>(value,&nbsp;[start,&nbsp;[stop]])&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="__builtin__.html#tuple">__builtin__.tuple</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#QNameTuple-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-NsNameTupleFactory"><strong>NsNameTupleFactory</strong></a>(initValue)</dt></dl>
+ <dl><dt><a name="-QNameTupleFactory"><strong>QNameTupleFactory</strong></a>(initValue)</dt></dl>
+ <dl><dt><a name="-collapseString"><strong>collapseString</strong></a>(strValue, lstrip<font color="#909090">=1</font>, rstrip<font color="#909090">=1</font>)</dt><dd><tt>########################################<br>
+#&nbsp;substitute&nbsp;multiple&nbsp;whitespace&nbsp;characters&nbsp;by&nbsp;a&nbsp;single&nbsp;'&nbsp;'</tt></dd></dl>
+ <dl><dt><a name="-convertToAbsUrl"><strong>convertToAbsUrl</strong></a>(fileOrUrl, baseUrl)</dt></dl>
+ <dl><dt><a name="-convertToUrl"><strong>convertToUrl</strong></a>(fileOrUrl)</dt></dl>
+ <dl><dt><a name="-escapeAttribute"><strong>escapeAttribute</strong></a>(text, encoding<font color="#909090">=None</font>, replace<font color="#909090">=&lt;function replace&gt;</font>)</dt></dl>
+ <dl><dt><a name="-escapeCdata"><strong>escapeCdata</strong></a>(text, encoding<font color="#909090">=None</font>, replace<font color="#909090">=&lt;function replace&gt;</font>)</dt></dl>
+ <dl><dt><a name="-normalizeFilter"><strong>normalizeFilter</strong></a>(filterVar)</dt><dd><tt>##########################################################<br>
+#&nbsp;&nbsp;normalize&nbsp;filter</tt></dd></dl>
+ <dl><dt><a name="-normalizeString"><strong>normalizeString</strong></a>(strValue)</dt><dd><tt>########################################<br>
+#&nbsp;substitute&nbsp;each&nbsp;whitespace&nbsp;characters&nbsp;by&nbsp;a&nbsp;single&nbsp;'&nbsp;'</tt></dd></dl>
+ <dl><dt><a name="-nsNameToQName"><strong>nsNameToQName</strong></a>(nsLocalName, curNs)</dt><dd><tt>Convert&nbsp;a&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;'(namespace,&nbsp;localName)'&nbsp;to&nbsp;a&nbsp;string&nbsp;'prefix:localName'<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nsLocalName:&nbsp;&nbsp;&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;'(namespace,&nbsp;localName)'&nbsp;to&nbsp;be&nbsp;converted<br>
+&nbsp;&nbsp;&nbsp;&nbsp;curNs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;current&nbsp;namespaces<br>
+Returns&nbsp;the&nbsp;corresponding&nbsp;string&nbsp;'prefix:localName'&nbsp;for&nbsp;'nsLocalName'.</tt></dd></dl>
+ <dl><dt><a name="-processWhitespaceAction"><strong>processWhitespaceAction</strong></a>(strValue, wsAction, lstrip<font color="#909090">=1</font>, rstrip<font color="#909090">=1</font>)</dt><dd><tt>########################################<br>
+#&nbsp;process&nbsp;whitespace&nbsp;action</tt></dd></dl>
+ <dl><dt><a name="-removeWhitespaces"><strong>removeWhitespaces</strong></a>(strValue)</dt><dd><tt>########################################<br>
+#&nbsp;remove&nbsp;all&nbsp;whitespaces&nbsp;from&nbsp;a&nbsp;string</tt></dd></dl>
+ <dl><dt><a name="-splitClarkQName"><strong>splitClarkQName</strong></a>(qName)</dt><dd><tt>converts&nbsp;clark&nbsp;notation&nbsp;{namespace}localName&nbsp;into&nbsp;a&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;(namespace,&nbsp;localName)<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'qName':&nbsp;&nbsp;{namespace}localName&nbsp;to&nbsp;be&nbsp;converted<br>
+Returns&nbsp;prefix&nbsp;and&nbsp;localName&nbsp;as&nbsp;separate&nbsp;strings</tt></dd></dl>
+ <dl><dt><a name="-splitQName"><strong>splitQName</strong></a>(qName)</dt><dd><tt>Split&nbsp;the&nbsp;given&nbsp;'qName'&nbsp;into&nbsp;prefix/namespace&nbsp;and&nbsp;local&nbsp;name.<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'qName':&nbsp;&nbsp;contains&nbsp;a&nbsp;string&nbsp;'prefix:localName'&nbsp;or&nbsp;'{namespace}localName'<br>
+Returns&nbsp;a&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;(prefixOrNamespace,&nbsp;localName)</tt></dd></dl>
+ <dl><dt><a name="-toClarkQName"><strong>toClarkQName</strong></a>(tupleOrLocalName)</dt><dd><tt>converts&nbsp;a&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;(namespace,&nbsp;localName)&nbsp;into&nbsp;clark&nbsp;notation&nbsp;{namespace}localName<br>
+&nbsp;&nbsp;&nbsp;qNames&nbsp;without&nbsp;namespace&nbsp;remain&nbsp;unchanged<br>
+&nbsp;<br>
+Input&nbsp;parameter:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'tupleOrLocalName':&nbsp;&nbsp;<a href="__builtin__.html#tuple">tuple</a>&nbsp;'(namespace,&nbsp;localName)'&nbsp;to&nbsp;be&nbsp;converted<br>
+Returns&nbsp;a&nbsp;string&nbsp;{namespace}localName</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>EMPTY_NAMESPACE</strong> = None<br>
+<strong>EMPTY_PREFIX</strong> = None<br>
+<strong>StringTypes</strong> = (&lt;type 'str'&gt;, &lt;type 'unicode'&gt;)</td></tr></table>
+</body></html>

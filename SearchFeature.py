@@ -2,13 +2,14 @@ from google.appengine.api import search
 from google.appengine.ext import db
 
 def createDocument(name, paragraph, type, location ):
-    return search.Document(
-        fields=[search.TextField(name = 'name', value = name),
-                search.TextField(name = 'content', value = paragraph),
-				search.TextField(name = 'type', value = type),
-				search.TextField(name = 'location', value = location)])
+	'''Creates a document to search through'''
+	return search.Document(fields=[search.TextField(name = 'name', value = name),
+		search.TextField(name = 'content', value = paragraph),
+		search.TextField(name = 'type', value = type),
+		search.TextField(name = 'location', value = location)])
 
 def createIndex() :
+	'''Creates the index used for search, crawls through the datastore, and populates the index.'''
 	q = db.GqlQuery("SELECT * FROM WorldCrisisPage")
 
 	index = search.Index(name='index',
@@ -37,6 +38,7 @@ def createIndex() :
 		index.add(createDocument(page.name, content, type, location))
 
 def deleteDocs() :
+	'''Removes all documents from the index'''
 	doc_index = search.Index('index')
 	
 	while True:
@@ -46,6 +48,7 @@ def deleteDocs() :
 		doc_index.remove(document_ids)
 		
 def searchForString(search_string):
+	'''Search queries for the given string'''
 	options = search.QueryOptions(
 		limit = 10, 					# the number of results to return)
 		returned_fields=['name', 'ID'],
