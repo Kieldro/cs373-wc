@@ -195,7 +195,7 @@ class ImportWorker(webapp.RequestHandler):
 		xmlfile = self.request.get('xmlfile')
 		backup = runExport()
 		merge = self.request.get('merge')
-		if (merge != "merge") :
+		if (merge == "clean") :
 			deleteModels()
 		try:				
 			runImport(xmlfile)

@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module WC</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>WC</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/WC.py">/v/filer4b/v38q001/jwilke/cs373/WCproj/cs373-wc1/WC.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="StringIO.html">StringIO</a><br>
+<a href="google.appengine.ext.db.html">google.appengine.ext.db</a><br>
+<a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="google.appengine.ext.db.polymodel.html">google.appengine.ext.db.polymodel</a><br>
+<a href="minixsv.pyxsval.html">minixsv.pyxsval</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+<a href="google.appengine.api.taskqueue.html">google.appengine.api.taskqueue</a><br>
+<a href="google.appengine.ext.webapp.template.html">google.appengine.ext.webapp.template</a><br>
+</td><td width="25%" valign=top><a href="unicodedata.html">unicodedata</a><br>
+<a href="google.appengine.ext.webapp.html">google.appengine.ext.webapp</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="WC.html#BaseHandler">BaseHandler</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="WC.html#AboutPage">AboutPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#CrisesPage">CrisesPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#EntryPage">EntryPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#ExportPage">ExportPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#ImportPage">ImportPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#MainPage">MainPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#OrganizationsPage">OrganizationsPage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#PeoplePage">PeoplePage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="WC.html#SearchPage">SearchPage</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="WC.html#ImportWorker">ImportWorker</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="AboutPage">class <strong>AboutPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;About&nbsp;Page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#AboutPage">AboutPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AboutPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="AboutPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="AboutPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#AboutPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="AboutPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="AboutPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#AboutPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#AboutPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#AboutPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#AboutPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="BaseHandler">class <strong>BaseHandler</strong></a>(<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="BaseHandler-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="BaseHandler-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-get"><strong>get</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;GET&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#BaseHandler-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="BaseHandler-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="BaseHandler-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#BaseHandler-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#BaseHandler-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#BaseHandler-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#BaseHandler-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CrisesPage">class <strong>CrisesPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;Crisis&nbsp;listing&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#CrisesPage">CrisesPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CrisesPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="CrisesPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="CrisesPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#CrisesPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="CrisesPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="CrisesPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#CrisesPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#CrisesPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#CrisesPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#CrisesPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EntryPage">class <strong>EntryPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;rendering&nbsp;an&nbsp;entry&nbsp;in&nbsp;the&nbsp;datastore.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#EntryPage">EntryPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EntryPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="EntryPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="EntryPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#EntryPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="EntryPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="EntryPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#EntryPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#EntryPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#EntryPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#EntryPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ExportPage">class <strong>ExportPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;Export&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#ExportPage">ExportPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ExportPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ExportPage-post"><strong>post</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="ExportPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="ExportPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#ExportPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="ExportPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="ExportPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#ExportPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#ExportPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#ExportPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#ExportPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ImportPage">class <strong>ImportPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;Import&nbsp;page.&nbsp;<br>
+On&nbsp;GET,&nbsp;the&nbsp;page&nbsp;is&nbsp;generated.<br>
+On&nbsp;POST,&nbsp;the&nbsp;xml&nbsp;given&nbsp;by&nbsp;the&nbsp;user&nbsp;is&nbsp;validated.&nbsp;If&nbsp;it&nbsp;passes,&nbsp;it&nbsp;is&nbsp;added&nbsp;to&nbsp;the&nbsp;models.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#ImportPage">ImportPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ImportPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="ImportPage-post"><strong>post</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="ImportPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="ImportPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#ImportPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="ImportPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="ImportPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#ImportPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#ImportPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#ImportPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#ImportPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ImportWorker">class <strong>ImportWorker</strong></a>(<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;worker&nbsp;thread&nbsp;that&nbsp;does&nbsp;the&nbsp;import&nbsp;in&nbsp;the&nbsp;background<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#ImportWorker">ImportWorker</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ImportWorker-post"><strong>post</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="ImportWorker-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-get"><strong>get</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;GET&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#ImportWorker-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="ImportWorker-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="ImportWorker-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#ImportWorker-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#ImportWorker-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#ImportWorker-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#ImportWorker-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MainPage">class <strong>MainPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;index&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#MainPage">MainPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="MainPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="MainPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="MainPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="MainPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#MainPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="MainPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="MainPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="MainPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="MainPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#MainPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#MainPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#MainPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#MainPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="OrganizationsPage">class <strong>OrganizationsPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;Organizations&nbsp;listing&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#OrganizationsPage">OrganizationsPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="OrganizationsPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="OrganizationsPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="OrganizationsPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#OrganizationsPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="OrganizationsPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="OrganizationsPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#OrganizationsPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#OrganizationsPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#OrganizationsPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#OrganizationsPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PeoplePage">class <strong>PeoplePage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;People&nbsp;listing&nbsp;page.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#PeoplePage">PeoplePage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="PeoplePage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="PeoplePage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="PeoplePage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#PeoplePage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="PeoplePage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="PeoplePage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#PeoplePage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#PeoplePage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#PeoplePage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#PeoplePage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SearchPage">class <strong>SearchPage</strong></a>(<a href="WC.html#BaseHandler">BaseHandler</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;that&nbsp;handles&nbsp;searching&nbsp;and&nbsp;the&nbsp;displaying&nbsp;of&nbsp;search&nbsp;results.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="WC.html#SearchPage">SearchPage</a></dd>
+<dd><a href="WC.html#BaseHandler">BaseHandler</a></dd>
+<dd><a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SearchPage-get"><strong>get</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="WC.html#BaseHandler">BaseHandler</a>:<br>
+<dl><dt><a name="SearchPage-render_template"><strong>render_template</strong></a>(self, filename, **template_args)</dt><dd><tt>Class&nbsp;that&nbsp;handles&nbsp;the&nbsp;handling&nbsp;of&nbsp;pages.&nbsp;Wherever&nbsp;'webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>'&nbsp;is&nbsp;used,&nbsp;use&nbsp;'<a href="#BaseHandler">BaseHandler</a>'&nbsp;instead.<br>
+self&nbsp;is&nbsp;self-explanitory.<br>
+filename&nbsp;is&nbsp;the&nbsp;filename&nbsp;of&nbsp;the&nbsp;Django&nbsp;template&nbsp;to&nbsp;render.<br>
+**template_args&nbsp;is&nbsp;all&nbsp;the&nbsp;values&nbsp;to&nbsp;pass&nbsp;to&nbsp;the&nbsp;template.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="SearchPage-delete"><strong>delete</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;DELETE&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-error"><strong>error</strong></a>(self, code)</dt><dd><tt>Clears&nbsp;the&nbsp;response&nbsp;output&nbsp;stream&nbsp;and&nbsp;sets&nbsp;the&nbsp;given&nbsp;HTTP&nbsp;error&nbsp;code.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;code:&nbsp;the&nbsp;HTTP&nbsp;status&nbsp;error&nbsp;code&nbsp;(e.g.,&nbsp;501)</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-handle_exception"><strong>handle_exception</strong></a>(self, exception, debug_mode)</dt><dd><tt>Called&nbsp;if&nbsp;this&nbsp;handler&nbsp;throws&nbsp;an&nbsp;exception&nbsp;during&nbsp;execution.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;behavior&nbsp;is&nbsp;to&nbsp;call&nbsp;<a href="#SearchPage-error">error</a>(500)&nbsp;and&nbsp;print&nbsp;a&nbsp;stack&nbsp;trace<br>
+if&nbsp;debug_mode&nbsp;is&nbsp;True.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;exception:&nbsp;the&nbsp;exception&nbsp;that&nbsp;was&nbsp;thrown<br>
+&nbsp;&nbsp;debug_mode:&nbsp;True&nbsp;if&nbsp;the&nbsp;web&nbsp;application&nbsp;is&nbsp;running&nbsp;in&nbsp;debug&nbsp;mode</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-head"><strong>head</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;HEAD&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-initialize"><strong>initialize</strong></a>(self, request, response)</dt><dd><tt>Initializes&nbsp;this&nbsp;request&nbsp;handler&nbsp;with&nbsp;the&nbsp;given&nbsp;Request&nbsp;and&nbsp;Response.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-options"><strong>options</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;OPTIONS&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-post"><strong>post</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;POST&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-put"><strong>put</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;PUT&nbsp;requests.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-redirect"><strong>redirect</strong></a>(self, uri, permanent<font color="#909090">=False</font>)</dt><dd><tt>Issues&nbsp;an&nbsp;HTTP&nbsp;redirect&nbsp;to&nbsp;the&nbsp;given&nbsp;relative&nbsp;URL.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;uri:&nbsp;a&nbsp;relative&nbsp;or&nbsp;absolute&nbsp;URI&nbsp;(e.g.,&nbsp;'../flowers.html')<br>
+&nbsp;&nbsp;permanent:&nbsp;if&nbsp;true,&nbsp;we&nbsp;use&nbsp;a&nbsp;301&nbsp;redirect&nbsp;instead&nbsp;of&nbsp;a&nbsp;302&nbsp;redirect</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-trace"><strong>trace</strong></a>(self, *args)</dt><dd><tt>Handler&nbsp;method&nbsp;for&nbsp;TRACE&nbsp;requests.</tt></dd></dl>
+
+<hr>
+Class methods inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><a name="SearchPage-get_url"><strong>get_url</strong></a>(cls, *args, **kargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Returns&nbsp;the&nbsp;url&nbsp;for&nbsp;the&nbsp;given&nbsp;handler.<br>
+&nbsp;<br>
+The&nbsp;default&nbsp;implementation&nbsp;uses&nbsp;the&nbsp;patterns&nbsp;passed&nbsp;to&nbsp;the&nbsp;active<br>
+WSGIApplication&nbsp;to&nbsp;create&nbsp;a&nbsp;url.&nbsp;However,&nbsp;it&nbsp;is&nbsp;different&nbsp;from&nbsp;Django's<br>
+urlresolvers.reverse()&nbsp;in&nbsp;the&nbsp;following&nbsp;ways:<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;try&nbsp;to&nbsp;resolve&nbsp;handlers&nbsp;via&nbsp;module&nbsp;loading<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;does&nbsp;not&nbsp;support&nbsp;named&nbsp;arguments<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;performs&nbsp;some&nbsp;post-prosessing&nbsp;on&nbsp;the&nbsp;url&nbsp;to&nbsp;remove&nbsp;some&nbsp;regex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;operators.<br>
+&nbsp;&nbsp;-&nbsp;It&nbsp;will&nbsp;try&nbsp;to&nbsp;fill&nbsp;in&nbsp;the&nbsp;left-most&nbsp;missing&nbsp;arguments&nbsp;with&nbsp;the&nbsp;args<br>
+&nbsp;&nbsp;&nbsp;&nbsp;used&nbsp;in&nbsp;the&nbsp;active&nbsp;request.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;args:&nbsp;Parameters&nbsp;for&nbsp;the&nbsp;url&nbsp;pattern's&nbsp;groups.<br>
+&nbsp;&nbsp;kwargs:&nbsp;Optionally&nbsp;contains&nbsp;'implicit_args'&nbsp;that&nbsp;can&nbsp;either&nbsp;be&nbsp;a&nbsp;boolean<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;a&nbsp;tuple.&nbsp;When&nbsp;it&nbsp;is&nbsp;True,&nbsp;it&nbsp;will&nbsp;use&nbsp;the&nbsp;arguments&nbsp;to&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active&nbsp;request&nbsp;as&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;False&nbsp;(default),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it&nbsp;will&nbsp;not&nbsp;use&nbsp;any&nbsp;implicit&nbsp;arguments.&nbsp;When&nbsp;it&nbsp;is&nbsp;a&nbsp;tuple,&nbsp;it<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;will&nbsp;use&nbsp;the&nbsp;tuple&nbsp;as&nbsp;the&nbsp;implicit&nbsp;arguments.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;left-most&nbsp;args&nbsp;if&nbsp;some&nbsp;are&nbsp;missing&nbsp;from&nbsp;args.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;The&nbsp;url&nbsp;for&nbsp;this&nbsp;handler/args&nbsp;combination.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;NoUrlFoundError:&nbsp;No&nbsp;url&nbsp;pattern&nbsp;for&nbsp;this&nbsp;handler&nbsp;has&nbsp;the&nbsp;same<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;args&nbsp;that&nbsp;were&nbsp;passed&nbsp;in.</tt></dd></dl>
+
+<dl><dt><a name="SearchPage-new_factory"><strong>new_factory</strong></a>(cls, *args, **kwargs)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Create&nbsp;new&nbsp;request&nbsp;handler&nbsp;factory.<br>
+&nbsp;<br>
+Use&nbsp;factory&nbsp;method&nbsp;to&nbsp;create&nbsp;reusable&nbsp;request&nbsp;handlers&nbsp;that&nbsp;just<br>
+require&nbsp;a&nbsp;few&nbsp;configuration&nbsp;parameters&nbsp;to&nbsp;construct.&nbsp;&nbsp;Also&nbsp;useful<br>
+for&nbsp;injecting&nbsp;shared&nbsp;state&nbsp;between&nbsp;multiple&nbsp;request&nbsp;handler<br>
+instances&nbsp;without&nbsp;relying&nbsp;on&nbsp;global&nbsp;variables.&nbsp;&nbsp;For&nbsp;example,&nbsp;to<br>
+create&nbsp;a&nbsp;set&nbsp;of&nbsp;post&nbsp;handlers&nbsp;that&nbsp;will&nbsp;do&nbsp;simple&nbsp;text&nbsp;transformations<br>
+you&nbsp;can&nbsp;write:<br>
+&nbsp;<br>
+&nbsp;&nbsp;class&nbsp;ChangeTextHandler(webapp.<a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">RequestHandler</a>):<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#SearchPage-__init__">__init__</a>(self,&nbsp;transform):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>transform</strong>&nbsp;=&nbsp;transform<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;<a href="#SearchPage-post">post</a>(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_text&nbsp;=&nbsp;transform(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>request</strong>.request.body_file.getvalue())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.<strong>response</strong>.out.write(response_text)<br>
+&nbsp;<br>
+&nbsp;&nbsp;application&nbsp;=&nbsp;webapp.WSGIApplication(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('/to_lower',&nbsp;ChangeTextHandler.<a href="#SearchPage-new_factory">new_factory</a>(str.lower)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;('/to_upper',&nbsp;ChangeTextHandler.<a href="#SearchPage-new_factory">new_factory</a>(str.upper)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;debug=True)<br>
+&nbsp;<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_lower&nbsp;will&nbsp;be&nbsp;lower&nbsp;cased.<br>
+Text&nbsp;POSTed&nbsp;to&nbsp;/to_upper&nbsp;will&nbsp;be&nbsp;upper&nbsp;cased.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="google.appengine.ext.webapp._webapp25.html#RequestHandler">google.appengine.ext.webapp._webapp25.RequestHandler</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-ceil"><strong>ceil</strong></a>(...)</dt><dd><tt><a href="#-ceil">ceil</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;ceiling&nbsp;of&nbsp;x&nbsp;as&nbsp;a&nbsp;float.<br>
+This&nbsp;is&nbsp;the&nbsp;smallest&nbsp;integral&nbsp;value&nbsp;&gt;=&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-deleteModels"><strong>deleteModels</strong></a>()</dt><dd><tt>This&nbsp;function&nbsp;deletes&nbsp;all&nbsp;entries&nbsp;in&nbsp;the&nbsp;datastore.</tt></dd></dl>
+ <dl><dt><a name="-generatePagenavs"><strong>generatePagenavs</strong></a>(page, num_pages, page_string)</dt><dd><tt>Generates&nbsp;the&nbsp;page&nbsp;navigation&nbsp;at&nbsp;the&nbsp;bottom&nbsp;of&nbsp;the&nbsp;Crises,&nbsp;Organizations,&nbsp;and&nbsp;People&nbsp;Master&nbsp;Pages.<br>
+page&nbsp;is&nbsp;the&nbsp;current&nbsp;page&nbsp;number<br>
+num_pages&nbsp;is&nbsp;the&nbsp;total&nbsp;page&nbsp;number<br>
+page_string&nbsp;is&nbsp;the&nbsp;string&nbsp;hyperlink&nbsp;fragment</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>application</strong> = &lt;google.appengine.ext.webapp._webapp25.WSGIApplication object&gt;</td></tr></table>
+</body></html>
