@@ -1,9 +1,11 @@
 from google.appengine.api import search
 from google.appengine.ext import db
 
-def createDocument(name, paragraph, type, location ):
+def createDocument(name, paragraph, type, location, id ):
 	'''Creates a document to search through'''
-	return search.Document(fields=[search.TextField(name = 'name', value = name),
+	return search.Document(
+		doc_id = id,
+		fields=[search.TextField(name = 'name', value = name),
 		search.TextField(name = 'content', value = paragraph),
 		search.TextField(name = 'type', value = type),
 		search.TextField(name = 'location', value = location)])
@@ -35,7 +37,7 @@ def createIndex() :
 		else :
 			raise Exception
 		
-		index.add(createDocument(page.name, content, type, location))
+		index.add(createDocument(page.name, content, type, location, page.ID))
 
 def deleteDocs() :
 	'''Removes all documents from the index'''
@@ -50,8 +52,7 @@ def deleteDocs() :
 def searchForString(search_string):
 	'''Search queries for the given string'''
 	options = search.QueryOptions(
-		limit = 10, 					# the number of results to return)
-		returned_fields=['name', 'ID'],
+		returned_fields=['name'],
 		snippeted_fields=['name', 'content', 'type', 'location'])
 
 	q = search.Query(query_string=search_string, options=options)

@@ -30,7 +30,7 @@
 					<ul class="entries ">
 						{% for result in results %}
 						<li>
-							<a href="/entry?id={{ result.fields.1.value }}">
+							<a href="/entry?id={{ result.doc_id }}">
 								<h1>{{ result.fields.0.value }}
 								</h1>
 							</a>
@@ -44,7 +44,7 @@
 				<ul class="entries">
 					{% for result in results2 %}
 					<li>
-						<a href="/entry?id={{ result.fields.1.value }}">
+						<a href="/entry?id={{ result.doc_id }}">
 							<h1>{{ result.fields.0.value }}
 							</h1>
 						</a>
