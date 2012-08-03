@@ -1,13 +1,13 @@
 from google.appengine.api import search
 from google.appengine.ext import db
 
-def createDocument(name, paragraph, type, location, id ):
+def createDocument(name, paragraph, type2, location, id2 ):
 	'''Creates a document to search through'''
 	return search.Document(
-		doc_id = id,
+		doc_id = id2,
 		fields=[search.TextField(name = 'name', value = name),
 		search.TextField(name = 'content', value = paragraph),
-		search.TextField(name = 'type', value = type),
+		search.TextField(name = 'type', value = type2),
 		search.TextField(name = 'location', value = location)])
 
 def createIndex() :
@@ -22,22 +22,22 @@ def createIndex() :
 
 		if (page.class_name() == 'Crisis'):
 			content = page.crisisinfo.history + page.crisisinfo.helps + page.crisisinfo.resources
-			type = page.crisisinfo.ctype
+			type2 = page.crisisinfo.ctype
 			loc = page.crisisinfo.location
 			location = '%s %s %s' % (loc.city, loc.region, loc.city)
 		elif (page.class_name() == 'Organization'):
 			content = page.orginfo.history
-			type = page.orginfo.otype
+			type2 = page.orginfo.otype
 			loc = page.orginfo.location
 			location = '%s %s %s' % (loc.city, loc.region, loc.city)
 		elif (page.class_name() == 'Person' ):
 			content = page.personinfo.biography
-			type = page.personinfo.ptype
+			type2 = page.personinfo.ptype
 			location = page.personinfo.nationality
 		else :
 			raise Exception
 		
-		index.add(createDocument(page.name, content, type, location, page.ID))
+		index.add(createDocument(page.name, content, type2, location, page.ID))
 
 def deleteDocs() :
 	'''Removes all documents from the index'''
