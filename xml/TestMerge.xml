@@ -68,7 +68,7 @@
 			</ref>
 			<misc></misc>
             <org idref="american_red_cross"/>
-            <person idref="dubya"/>
+            <person idref="george_w_bush"/>
         </crisis>
  
         <organization id="american_red_cross">
@@ -128,12 +128,12 @@
 			</ref>
 			<misc></misc>
             <crisis idref="darfur_conflict"/>
-            <person idref="dubya"/>
+            <person idref="george_w_bush"/>
 
         </organization>
 		
-        <person id="dubya">
-            <name>George W. Bush</name>
+        <person id="george_w_bush">
+            <name>Dubya</name>
             <info>
 				<type>Retard</type>
 				<birthdate>
@@ -148,9 +148,9 @@
 			</info>
 			<ref>
 				<primaryImage>
-					<site>http://www.endevil.com/</site>
+					<site>http://2.bp.blogspot.com/</site>
 					<title>W</title>
-					<url>http://www.endevil.com/images/George_Bush.jpg</url>
+					<url>http://2.bp.blogspot.com/-tHvt2s5TdwE/T8HYNHlWLiI/AAAAAAAAQeA/Xel299BOlXQ/s1600/George-Bush-Yale-1st-Base.jpg</url>
 					<description>sadf</description>
 				</primaryImage>
 				<image>
